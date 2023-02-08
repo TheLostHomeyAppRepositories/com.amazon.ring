@@ -1,0 +1,62 @@
+{
+  "2.0.0": {
+    "en": "SDKv2 support, Added Ring Chime action card"
+  },
+  "2.0.1": {
+    "en": "Support the new oauth athentication method"
+  },
+  "2.0.2": {
+    "en": "Ring API change"
+  },
+  "2.0.3": {
+    "en": "Bugfix"
+  },
+  "2.0.4": {
+    "en": "Compatibilty for Homey 2.0"
+  },
+  "2.0.5": {
+    "en": "Fix battery status"
+  },
+  "2.1.0": {
+    "en": "Added Ring image grabber trigger and action card"
+  },
+  "2.1.1": {
+    "en": "Ring grabber bugfixes"
+  },
+  "2.1.2": {
+    "en": "Ring grabber bugfixes"
+  },
+  "2.1.3": {
+    "en": "Ring API change"
+  },
+  "2.1.4": {
+    "en": "Fix authentication failure, add motion enable/disable action cards"
+  },
+  "2.2.0": {
+    "en": "Added 2FA"
+  },
+  "2.2.2": {
+    "en": "Removed markdown from readme"
+  },
+  "2.2.3": {
+    "en": "Added stickup cam snapshot and camera image page"
+  },
+  "2.3.0": {
+    "en": "Added siren/floodlights support"
+  },
+  "2.3.1": {
+    "en": "Added stickup cam enable/disable motion detection"
+  },
+  "2.3.2": {
+    "en": "Added realtime event for Ring security app"
+  },
+  "2.3.3": {
+    "en": "Add location modes and fix unhandled rejection"
+  },
+  "2.3.4": {
+    "en": "Improved visibility authentication state"
+  },
+  "2.3.5": {
+    "en": "Fixed type in error handling"
+  }
+}
