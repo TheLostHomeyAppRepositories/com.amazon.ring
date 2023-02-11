@@ -7,7 +7,7 @@ Two-Factor Security Authentication is required, you must enable this on your Rin
 * Ring Stick Up Cam
 * Ring Video Doorbell (Pro)
 
-The Ring for Homey app was originally developed by [Dennie de Groot](https://github.com/denniedegroot) and transfered on request to Danee de Kruyff to be made compatible with Homey SDK3 and furter maintenance
+The Ring for Homey app was originally developed by [Dennie de Groot](https://github.com/denniedegroot) and transfered to Danee de Kruyff to be made compatible with Homey SDK3
 
 
 ## Licensing:
