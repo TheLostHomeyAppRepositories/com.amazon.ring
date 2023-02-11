@@ -1,10 +1,10 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
-  "sdk": 2,
-  "brandColor": "#4BD762",
+  "sdk": 3,
+  "brandColor": "#1A98D5",
   "name": {"en": "Ring"},
   "author": {
     "name": "Danee de Kruyff",
@@ -34,12 +34,12 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/denniedegroot/com.ring/issues"
+    "url": "https://github.com/daneedk/com.amazon.ring/issues"
   },
-  "source": "https://github.com/denniedegroot/com.ring",
+  "source": "https://github.com/daneedk/com.amazon.ring",
   "description": {
-    "en": "Ring support for Homey",
-    "nl": "Ring ondersteuning voor Homey"
+    "en": "Ring Doorbell and Camera support for Homey",
+    "nl": "Ring Deurbel en Camera ondersteuning voor Homey"
   },
   "images": {
     "large": "./assets/images/large.jpg",

@@ -8,37 +8,36 @@ class DriverChime extends Driver {
     onInit() {
         this.log('onInit');
 
-        new Homey.FlowCardAction('ring_chime')
-            .register()
+        this.homey.flow.getActionCard('ring_chime')
             .registerRunListener(args => args.device.ringChime());
     }
 
-    _onPairListDevices(data, callback) {
-        this.log('_onPairListDevices');
-
-        let foundDevices = [];
-
-        Homey.app.getRingDevices((error, result) => {
-            if (error) {
-                return this.error(error);
-            }
-
-            result.chimes.forEach((device_data) => {
-                foundDevices.push({
-                    name : device_data.description,
-                    data : {
+    onPairListDevices() {
+        this.log('onPairListDevices');
+      
+        return new Promise((resolve, reject) => {
+            let foundDevices = [];
+        
+            this.homey.app.getRingDevices((error, result) => {
+                if (error) {
+                return reject(error);
+                }
+        
+                result.chimes.forEach((device_data) => {
+                    foundDevices.push({
+                        name: device_data.description,
+                        data: {
                         id: device_data.id,
-                        info : device_data
-                    }
+                        info: device_data
+                        }
+                    });
                 });
-            });
 
-            Promise.all(foundDevices).then((results) => {
-                callback(null, foundDevices);
+                resolve(foundDevices);
             });
         });
     }
-
+      
 }
 
 module.exports = DriverChime;

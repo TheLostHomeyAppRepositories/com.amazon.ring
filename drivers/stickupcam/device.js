@@ -20,8 +20,8 @@ class DeviceStickUpCam extends Device {
         this.setAvailable();
         this._setupCameraView(this.getData());
 
-        Homey.on('refresh_device', this._syncDevice.bind(this));
-        Homey.on('refresh_devices', this._syncDevices.bind(this));
+        this.homey.on('refresh_device', this._syncDevice.bind(this));
+        this.homey.on('refresh_devices', this._syncDevices.bind(this));
         //Hook up the capabilities that are already known.
         if(this.hasCapability("flood_light"))
         {
@@ -50,7 +50,6 @@ class DeviceStickUpCam extends Device {
 
     _enableSirenCapability(device_data)
     {
-
         if(device_data.hasOwnProperty('siren_status'))
         {
             console.log("device has a siren, enable siren related features");
@@ -72,30 +71,31 @@ class DeviceStickUpCam extends Device {
         }
     }
 
-    _setupCameraView(device_data) {
+    async _setupCameraView(device_data) {
         this.log('_setupCamera', device_data);
-        this.device.cameraImage = new Homey.Image();
+        //this.device.cameraImage = new Homey.Image();
+        this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            await Homey.app.grabImage(device_data, (error, result) => {
+            await this.homey.app.grabImage(device_data, (error, result) => {
                 if (!error) {
-                    let Duplex = require('stream').Duplex; 
+                    let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(Buffer.from(result, 'binary'));
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
-                    let Duplex = require('stream').Duplex; 
+                    let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(null);
                     return snapshot.pipe(stream);
+                    // This results in invalid_content_type
                 }
             })
         })
-        this.device.cameraImage.register().catch(console.error).then(function() {
+        //this.device.cameraImage.register().catch(console.error).then(function() {
             this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage);
-        }.bind(this));
+        //}.bind(this));
     }
-
 
     _syncDevice(data) {
         this.log('_syncDevice', data);
@@ -112,7 +112,8 @@ class DeviceStickUpCam extends Device {
                         this.error(error);
                     });
 
-                    Homey.app.logRealtime('stickupcam', 'motion');
+                    this.homey.app.logRealtime('stickupcam', 'motion');
+                    console.log('Realtime event emitted for motion');
 
                     clearTimeout(this.device.timer.motion);
 
@@ -181,7 +182,11 @@ class DeviceStickUpCam extends Device {
         let _this = this;
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-                new Homey.FlowCardTrigger('ring_snapshot_received').register().trigger({ring_image: _this.device.cameraImage}).catch(error => { _this.error(error); });
+                //new Homey.FlowCardTrigger('ring_snapshot_received').register().trigger({ring_image: _this.device.cameraImage}).catch(error => { _this.error(error); });
+                var tokens = {ring_image: _this.device.cameraImage};
+                _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens)
+                    .catch(error => { _this.error(error); });
+                
                 return resolve(true);
             });
         });
@@ -216,7 +221,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.lightOn(device_data, (error, result) => {
+            this.homey.app.lightOn(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -229,7 +234,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.lightOff(device_data, (error, result) => {
+            this.homey.app.lightOff(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -254,7 +259,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.sirenOn(device_data, (error, result) => {
+            this.homey.app.sirenOn(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -267,7 +272,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.sirenOff(device_data, (error, result) => {
+            this.homey.app.sirenOff(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -284,7 +289,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.enableMotion(device_data, (error, result) => {
+            _this.homey.app.enableMotion(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -301,7 +306,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.disableMotion(device_data, (error, result) => {
+            _this.homey.app.disableMotion(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 

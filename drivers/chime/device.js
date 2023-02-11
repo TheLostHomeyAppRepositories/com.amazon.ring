@@ -15,8 +15,9 @@ class DeviceChime extends Device {
 
         let device_data = this.getData();
 
+        let _this = this;
         return new Promise(function(resolve, reject) {
-            Homey.app.ringChime(device_data, (error, result) => {
+            _this.homey.app.ringChime(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 

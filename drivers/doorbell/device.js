@@ -24,15 +24,16 @@ class DeviceDoorbell extends Device {
         this.setAvailable();
         this._setupCameraView(this.getData());
 
-        Homey.on('refresh_device', this._syncDevice.bind(this));
-        Homey.on('refresh_devices', this._syncDevices.bind(this));
+        this.homey.on('refresh_device', this._syncDevice.bind(this));
+        this.homey.on('refresh_devices', this._syncDevices.bind(this));
     }
 
-    _setupCameraView(device_data) {
+    async _setupCameraView(device_data) {
         this.log('_setupCamera', device_data);
-        this.device.cameraImage = new Homey.Image();
+        //this.device.cameraImage = new Homey.Image();
+        this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            await Homey.app.grabImage(device_data, (error, result) => {
+            await this.homey.app.grabImage(device_data, (error, result) => {
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -48,15 +49,17 @@ class DeviceDoorbell extends Device {
                 }
             })
         })
-        this.device.cameraImage.register().catch(console.error).then(function() {
+        //this.device.cameraImage.register().catch(console.error).then(function() {
             this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage);
-        }.bind(this));
+        //}.bind(this));
     }
 
     _syncDevice(data) {
         this.log('_syncDevice', data);
 
         data.forEach((device_data) => {
+
+            //Check ringing status
             if (device_data.state === 'ringing') {
                 if (device_data.doorbot_id !== this.getData().id)
                     return;
@@ -66,7 +69,7 @@ class DeviceDoorbell extends Device {
                         this.error(error);
                     });
 
-                    Homey.app.logRealtime('doorbell', 'ding');
+                    this.homey.app.logRealtime('doorbell', 'ding');
                     console.log('Realtime event emitted for ding');
 
                     clearTimeout(this.device.timer.ding);
@@ -83,7 +86,8 @@ class DeviceDoorbell extends Device {
                         this.error(error);
                     });
 
-                    Homey.app.logRealtime('doorbell', 'motion');
+                    this.homey.app.logRealtime('doorbell', 'motion');
+                    console.log('Realtime event emitted for motion');
 
                     clearTimeout(this.device.timer.motion);
 
@@ -128,30 +132,37 @@ class DeviceDoorbell extends Device {
         });
     }
 
-    async onSettings( oldSettings, newSettings, changedKeys ) {
-        changedKeys.forEach((changedSetting) => {
+    grabImage(args, state) {
+        if (this._device instanceof Error)
+            return Promise.reject(this._device);
+
+        let _this = this;    
+        return new Promise(function(resolve, reject) {
+            _this.device.cameraImage.update().then(() =>{
+                //new Homey.FlowCardTrigger('ring_snapshot_received').register().trigger({ring_image: _this.device.cameraImage}).catch(error => { _this.error(error); });
+                var tokens = {ring_image: _this.device.cameraImage};
+                _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens)
+                    .catch(error => { _this.error(error); });
+
+                return resolve(true);
+            });
+        });
+    }
+
+    async onSettings( settings ) {
+        console.log("settings:", settings);
+        console.log("settings.changedKeys:", settings.changedKeys);
+        console.log("settings.newSettings:", settings.newSettings);
+
+        settings.changedKeys.forEach((changedSetting) => {
             if (changedSetting == 'useMotionDetection') {
-                if (newSettings.useMotionDetection) {
+                if (settings.newSettings.useMotionDetection) {
                     this.enableMotion(this._device)
                 } else {
                     this.disableMotion(this._device)
                 }
             }
         })
-
-    }
-
-    grabImage(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
-
-        let _this = this;
-        return new Promise(function(resolve, reject) {
-            _this.device.cameraImage.update().then(() =>{
-                new Homey.FlowCardTrigger('ring_snapshot_received').register().trigger({ring_image: _this.device.cameraImage}).catch(error => { _this.error(error); });
-                return resolve(true);
-            });
-        });
     }
 
     enableMotion(args, state) {
@@ -162,7 +173,7 @@ class DeviceDoorbell extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.enableMotion(device_data, (error, result) => {
+            _this.homey.app.enableMotion(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -179,7 +190,7 @@ class DeviceDoorbell extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            Homey.app.disableMotion(device_data, (error, result) => {
+            _this.homey.app.disableMotion(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 

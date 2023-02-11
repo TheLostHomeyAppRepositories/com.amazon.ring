@@ -8,53 +8,49 @@ class DriverDoorbell extends Driver {
     onInit() {
         this.log('onInit');
 
-        new Homey.FlowCardAction('ring_grab_snapshot')
-            .register()
+        this.homey.flow.getActionCard('ring_grab_snapshot')
             .registerRunListener((args, state) => args.device.grabImage());
 
-        new Homey.FlowCardAction('doorbell_enable_motion')
-            .register()
+        this.homey.flow.getActionCard('doorbell_enable_motion')
             .registerRunListener((args, state) => args.device.enableMotion());
 
-        new Homey.FlowCardAction('doorbell_disable_motion')
-            .register()
+        this.homey.flow.getActionCard('doorbell_disable_motion')
             .registerRunListener((args, state) => args.device.disableMotion());
     }
 
-    _onPairListDevices(data, callback) {
+    onPairListDevices(data, callback) {
         this.log('_onPairListDevices');
 
-        let foundDevices = [];
+        return new Promise((resolve, reject) => {
+            let foundDevices = [];
 
-        Homey.app.getRingDevices((error, result) => {
-            if (error) {
-                return this.error(error);
-            }
+            this.homey.app.getRingDevices((error, result) => {
+                if (error) {
+                    return this.error(error);
+                }
 
-            result.doorbots.forEach((device_data) => {
-                foundDevices.push({
-                    name : device_data.description,
-                    data : {
-                        id: device_data.id
-                    }
+                result.doorbots.forEach((device_data) => {
+                    foundDevices.push({
+                        name : device_data.description,
+                        data : {
+                            id: device_data.id
+                        }
+                    });
                 });
-            });
 
-            result.authorized_doorbots.forEach((device_data) => {
-                foundDevices.push({
-                    name : device_data.description,
-                    data : {
-                        id: device_data.id
-                    }
+                result.authorized_doorbots.forEach((device_data) => {
+                    foundDevices.push({
+                        name : device_data.description,
+                        data : {
+                            id: device_data.id
+                        }
+                    });
                 });
-            });
 
-            Promise.all(foundDevices).then((results) => {
-                callback(null, foundDevices);
+                resolve(foundDevices);
             });
         });
     }
-
 }
 
 module.exports = DriverDoorbell;
