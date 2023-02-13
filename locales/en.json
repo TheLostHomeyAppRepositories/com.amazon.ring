@@ -13,13 +13,13 @@
     },
     "settings": {
         "title": "Your Ring devices in Homey",
-        "intro": "To use your Ring devices in Homey, Homey must be authenticated at Ring. Authentication is done when adding your first Ring device to Homey.",
-        "info": "You can see the authentication state below.You can use the Revoke Authentication button to revoke Homeys authentication at Ring.",
+        "intro": "To use your Ring devices in Homey, Homey must be authenticated at Ring. Authentication is done while adding your first Ring device to Homey.",
+        "info": "The authentication state is shown above.You can use the Revoke Authentication button to revoke Homeys authentication at Ring.",
         "auth": {
             "header": "Homey Authentication State",
             "result": "Authentication result:",
             "error": "Error:",
-            "action": "You need to (re-)authenticate this app from the add device wizard",
+            "action": "You need to (re-)authenticate this app from the device maintenance function or add device wizard",
             "revoke": "Revoke Authentication"
         }
     }
