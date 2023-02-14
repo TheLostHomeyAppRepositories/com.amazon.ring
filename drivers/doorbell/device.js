@@ -55,7 +55,9 @@ class DeviceDoorbell extends Device {
     }
 
     _syncDevice(data) {
-        this.log('_syncDevice', data);
+        if ( data.length > 0 ) {
+            this.log('_syncDevice', data);
+        }
 
         data.forEach((device_data) => {
 

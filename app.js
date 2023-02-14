@@ -3,21 +3,22 @@
 const Homey = require('homey');
 
 const api = require('./lib/Api.js');
-const events = require('events');
+const events = require('events');      
 
 class App extends Homey.App {
 
     async onInit() {
 
-        /*/ Start debuger
-		if (process.env.DEBUG === '1'){
+        /*
+		if (process.env.DEBUG === '1') {
             try{ 
                 require('inspector').waitForDebugger();
             }
             catch(error){
-                require('inspector').open(9225, '0.0.0.0', true);
+                require('inspector').open(9222, '0.0.0.0', false);
             }
-        }
+			process.stdout.write = () => {}
+		}
         */
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
@@ -94,8 +95,6 @@ class App extends Homey.App {
     }
 
     writeToTimeline(message) {
-        //var notification = new Homey.Notification({ excerpt: message });
-        //notification.register().catch(() => {});
         this.homey.notifications.createNotification({ excerpt: message })
     }
 
@@ -192,8 +191,6 @@ class App extends Homey.App {
                 });
             });
     }
-
-
 }
 
 module.exports = App;

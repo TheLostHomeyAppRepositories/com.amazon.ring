@@ -1,0 +1,26 @@
+{
+    "pair": {
+        "intro": "Um ein Ring-Gerät hinzuzufügen, muss Homey bei Ring authentifiziert werden. Bitte melden Sie sich mit Ihrem Ring-Konto an, um dies zu tun.",
+        "auth": {
+            "header": "Melden Sie sich mit Ihrem Ring-Konto an",
+            "warning": "(Zwei-Faktor-Authentifizierung ist obligatorisch, dies muss in Ihrem Ring-Konto aktiviert sein!)",
+            "user": "E-Mail",
+            "pass": "Passwort",
+            "authenticate": "Authentifizieren",
+            "token": "Geben Sie den MFA-Code ein, den Sie erhalten haben",
+            "validatecode": "Autorisieren"
+        }
+    },
+    "settings": {
+        "title": "Ihre Ring-Geräte in Homey",
+        "intro": "Um Ihre Ring-Geräte in Homey zu verwenden, muss Homey bei Ring authentifiziert werden. Die Authentifizierung erfolgt beim Hinzufügen des ersten Ring-Geräts zu Homey.",
+        "info": "Der Authentifizierungsstatus wird oben angezeigt. Sie können die Schaltfläche Authentifizierung widerrufen verwenden, um die Authentifizierung von Homey bei Ring zu widerrufen.",
+        "auth": {
+            "header": "Homey-Authentifizierungsstatus",
+            "result": "Authentifizierungsergebnis:",
+            "error": "Fehler:",
+            "action": "Sie müssen diese App aus der Geräteverwaltungsfunktion oder dem Assistenten zum Hinzufügen von Geräten erneut authentifizieren.",
+            "revoke": "Authentifizierung widerrufen"
+        }
+    }
+}

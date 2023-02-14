@@ -1,0 +1,26 @@
+{
+    "pair": {
+        "intro": "For at tilføje en Ring-enhed skal Homey godkendes hos Ring. Log på med din Ring-konto for at gøre dette.",
+        "auth": {
+            "header": "Log på med din Ring-konto",
+            "warning": "(To-faktor-godkendelse er obligatorisk og skal aktiveres på din Ring-konto!)",
+            "user": "E-mail",
+            "pass": "Adgangskode",
+            "authenticate": "Godkend",
+            "token": "Indtast MFA-kode, du modtog",
+            "validatecode": "Godkend"
+        }
+    },
+    "settings": {
+        "title": "Dine Ring-enheder i Homey",
+        "intro": "For at bruge dine Ring-enheder i Homey skal Homey godkendes hos Ring. Godkendelse udføres ved tilføjelse af din første Ring-enhed til Homey.",
+        "info": "Godkendelsesstatus vises ovenfor. Du kan bruge knappen til tilbagekaldelse af godkendelse for at tilbagekalde Homeys godkendelse hos Ring.",
+        "auth": {
+            "header": "Homeys godkendelsesstatus",
+            "result": "Godkendelsesresultat:",
+            "error": "Fejl:",
+            "action": "Du skal godkende denne app igen fra enhedsvedligeholdelsesfunktionen eller tilføjelsesguiden til enheder",
+            "revoke": "Tilbagekald godkendelse"
+        }
+    }
+}

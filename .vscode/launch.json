@@ -1,7 +1,24 @@
 {
 	"version": "0.2.0",
-	"configurations": [{
-			"name": "Launch app",
+	"configurations": [
+		{
+			"name": "Select Homey Jr.",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "homey",
+			"args": ["select", "-n", "Homey Jr."]
+		},
+		{
+			"name": "Select Homey Pro Early 2023",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "homey",
+			"args": ["select", "-n", "Homey Pro van Danee"]
+		},
+		{
+			"name": "Launch app on Homey Jr.",
 			"type": "node",
 			"request": "launch",
 			"cwd": "${workspaceFolder}",
@@ -15,13 +32,36 @@
 			}
 		},
 		{
-			"name": "Attach to Homey",
+			"name": "Attach to Homey Jr.",
 			"type": "node",
 			"request": "attach",
 			"address": "192.168.1.98",
 			"port": 9222,
 			"localRoot": "${workspaceFolder}",
 			"remoteRoot": "/"
+		},
+		{
+			"name": "Launch app on Homey Pro Early 2023",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "homey",
+			"args": ["app", "run", "--remote"],
+			"outputCapture": "std",
+			"serverReadyAction": {
+				"pattern": "Debugger listening on",
+				"action": "startDebugging",
+				"name": "Attach to Homey"
+			}
+		},
+		{
+			"name": "Attach to Homey Pro Early 2023",
+			"type": "node",
+			"request": "attach",
+			"address": "192.168.1.191",
+			"port": 9222,
+			"localRoot": "${workspaceFolder}",
+			"remoteRoot": "/app/"
 		}
 	]
 }
