@@ -63,14 +63,14 @@
     "en": "Upgrade to SDK3 in preperation for Homey Pro Early 2023"
   },
   "2.3.7": {
-    "en": "• Added several new translations • Added new App Store images • Minor code fixes",
-    "da": "• Tilføjet flere nye oversættelser • Tilføjet nye App Store-billeder • Mindre kode rettelser",
-    "de": "• Hinzugefügt mehrere neue Übersetzungen • Hinzugefügt neue App Store-Bilder • Geringfügige Codekorrekturen",
-    "fr": "• Ajouté plusieurs nouvelles traductions • Ajouté de nouvelles images de l'App Store • Corrections mineures de code",
-    "it": "• Aggiunte diverse nuove traduzioni • Aggiunte nuove immagini App Store • Piccole correzioni del codice",
-    "nl": "• Toegevoegd meerdere nieuwe vertalingen • Toegevoegd nieuwe App Store afbeeldingen • Kleine code fixes",
-    "no": "• Lagt til flere nye oversettelser • Lagt til nye App Store-bilder • Mindre kode rettelser",
-    "es": "• Añadidas varias nuevas traducciones • Añadidas nuevas imágenes de la App Store • Correcciones menores de código",
-    "sv": "• Lagt till flera nya översättningar • Lagt till nya App Store-bilder • Mindre kodfixar"
+    "en": "• Added several new translations • Added new App Store images • Minor code fixes • Improved device repair function",
+    "da": "• Tilføjet flere nye oversættelser • Tilføjet nye App Store-billeder • Mindre kode rettelser • Forbedret enhedsreparationsfunktion",
+    "de": "• Hinzugefügt mehrere neue Übersetzungen • Hinzugefügt neue App Store-Bilder • Geringfügige Codekorrekturen • Verbesserte Gerätereparaturfunktion",
+    "fr": "• Ajouté plusieurs nouvelles traductions • Ajouté de nouvelles images de l'App Store • Corrections mineures de code • Fonction améliorée de réparation d'appareil",
+    "it": "• Aggiunte diverse nuove traduzioni • Aggiunte nuove immagini App Store • Piccole correzioni del codice • Migliorata la funzione di riparazione del dispositivo",
+    "nl": "• Toegevoegd meerdere nieuwe vertalingen • Toegevoegd nieuwe App Store afbeeldingen • Kleine code fixes • Verbeterde apparaat reparatiefunctie",
+    "no": "• Lagt til flere nye oversettelser • Lagt til nye App Store-bilder • Mindre kode rettelser • Forbedret enhetsreparasjonsfunksjon",
+    "es": "• Añadidas varias nuevas traducciones • Añadidas nuevas imágenes de la App Store • Correcciones menores de código • Función mejorada de reparación de dispositivos",
+    "sv": "• Lagt till flera nya översättningar • Lagt till nya App Store-bilder • Mindre kodfixar • Förbättrad enhetsreparationsfunktion"
   }
 }

@@ -8,7 +8,10 @@
             "pass": "Passwort",
             "authenticate": "Authentifizieren",
             "token": "Geben Sie den MFA-Code ein, den Sie erhalten haben",
-            "validatecode": "Autorisieren"
+            "validatecode": "Autorisieren",
+            "state": "Authentifizierungszustand",
+            "success": "Die Ring App für Homey wurde erfolgreich bei Ring authentifiziert",
+            "continue": "Weiter"
         }
     },
     "settings": {
@@ -18,6 +21,7 @@
         "auth": {
             "header": "Homey-Authentifizierungsstatus",
             "result": "Authentifizierungsergebnis:",
+            "success": "Die Ring App für Homey wurde erfolgreich bei Ring authentifiziert",
             "error": "Fehler:",
             "action": "Sie müssen diese App aus der Geräteverwaltungsfunktion oder dem Assistenten zum Hinzufügen von Geräten erneut authentifizieren.",
             "revoke": "Authentifizierung widerrufen"

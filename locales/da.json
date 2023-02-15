@@ -8,7 +8,10 @@
             "pass": "Adgangskode",
             "authenticate": "Godkend",
             "token": "Indtast MFA-kode, du modtog",
-            "validatecode": "Godkend"
+            "validatecode": "Godkend",
+            "state": "Godkendelsestilstand",
+            "success": "Ring App til Homey er blevet godkendt med succes hos Ring",
+            "continue": "Fortsæt"
         }
     },
     "settings": {
@@ -18,6 +21,7 @@
         "auth": {
             "header": "Homeys godkendelsesstatus",
             "result": "Godkendelsesresultat:",
+            "success": "Ring App til Homey er blevet godkendt med succes hos Ring",
             "error": "Fejl:",
             "action": "Du skal godkende denne app igen fra enhedsvedligeholdelsesfunktionen eller tilføjelsesguiden til enheder",
             "revoke": "Tilbagekald godkendelse"

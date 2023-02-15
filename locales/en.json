@@ -8,7 +8,10 @@
             "pass": "Password",
             "authenticate": "Authenticate",
             "token": "Enter MFA code you received",
-            "validatecode": "Authorize"
+            "validatecode": "Authorize",
+            "state": "Authentication state",
+            "success": "The Ring App for Homey is successfully authenticated at Ring",
+            "continue": "Continue"
         }
     },
     "settings": {
@@ -18,6 +21,7 @@
         "auth": {
             "header": "Homey Authentication State",
             "result": "Authentication result:",
+            "success": "The Ring App for Homey is successfully authenticated at Ring",
             "error": "Error:",
             "action": "You need to (re-)authenticate this app from the device maintenance function or add device wizard",
             "revoke": "Revoke Authentication"

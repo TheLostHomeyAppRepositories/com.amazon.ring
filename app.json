@@ -115,11 +115,11 @@
           "id": "start"
         },
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "success"          
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -177,11 +177,11 @@
           "id": "start"
         },
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "success"          
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ]
     },
@@ -227,11 +227,11 @@
           "id": "start"
         },
         {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
+          "id": "success"          
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ]
     }

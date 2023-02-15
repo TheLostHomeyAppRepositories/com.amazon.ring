@@ -39,9 +39,10 @@ async function writeAuthenticationState() {
         .then(async (result) => {
             if (result == "Authenticated") {
                 //this.htmlString = Homey.__("settings.auth.result") + "<br /><span style='color: green;'><b>"
-                this.htmlString = "<span style='color: green;'><b>"
-                this.htmlString += result 
-                this.htmlString += "</b><br /><br />"
+                this.htmlString = "<span style='color: green;'>"
+                //this.htmlString += result 
+                this.htmlString += Homey.__("settings.auth.success")
+                this.htmlString += "<br /><br />"
                 document.getElementById('error').innerHTML = this.htmlString;
                 document.getElementById('settings-auth-revoke').style.display = '';
             } else {

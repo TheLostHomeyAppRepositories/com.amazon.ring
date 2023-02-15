@@ -8,7 +8,10 @@
             "pass": "wachtwoord",
             "authenticate": "Authenticeer",
             "token": "Vul de Twee-Factor code in",
-            "validatecode": "Autoriseer"
+            "validatecode": "Autoriseer",
+            "state": "Authenticatiestatus",
+            "success": "De Ring App voor Homey is met succes geauthenticeerd bij Ring",
+            "continue": "Doorgaan"
         }
     },
     "settings": {
@@ -18,6 +21,7 @@
         "auth": {
             "header": "Homey Authenticatie Status",
             "result": "Authenticatie resultaat:",
+            "success": "De Ring App voor Homey is met succes geauthenticeerd bij Ring",
             "error": "Fout:",
             "action": "Je moet (opnieuw) authenticeren via de apparaat onderhoudsfunctie of wizard om een apparaat toe te voegen",
             "revoke": "Trek authenticatie in"
