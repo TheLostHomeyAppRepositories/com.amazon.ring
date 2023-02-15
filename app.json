@@ -40,8 +40,15 @@
   "source": "https://github.com/daneedk/com.amazon.ring",
   "support": "https://community.athom.com/t/76364",
   "description": {
-    "en": "Ring Doorbell and Camera support for Homey",
-    "nl": "Ring Deurbel en Camera ondersteuning voor Homey"
+      "en": "Ring Doorbell and Camera support for Homey",
+      "da": "Ring Doorbell og kamera-understøttelse til Homey",
+      "de": "Unterstützung von Ring Doorbell und Kamera für Homey",
+      "fr": "Prise en charge de la sonnette et de la caméra Ring pour Homey",
+      "it": "Supporto per la videocamera e il campanello Ring su Homey",
+      "nl": "Ring Doorbell- en Camera-ondersteuning voor Homey",
+      "no": "Ring Doorbell og Camera-støtte for Homey",
+      "es": "Soporte para Ring Doorbell y Camera en Homey",
+      "sv": "Stöd för Ring Doorbell och kamera i Homey"    
   },
   "images": {
     "large": "./assets/images/large.jpg",
@@ -53,7 +60,14 @@
       "type": "boolean",
       "title": {
         "en": "Flood light",
-        "nl": "Schijnwerper"
+        "da": "Flomlys",
+        "de": "Flutlicht",
+        "fr": "Projecteur",
+        "it": "Faro alluvione",
+        "nl": "Schijnwerper",
+        "no": "Flomlys",
+        "es": "Foco de inundación",
+        "sv": "Översvämningsljus"
       },
       "getable": true,
       "setable": true,
@@ -64,7 +78,14 @@
       "type": "boolean",
       "title": {
         "en": "Siren",
-        "nl": "Sirene"
+        "da": "Sirene",
+        "de": "Sirene",
+        "fr": "Sirène",
+        "it": "Sirena",
+        "nl": "Sirene",
+        "no": "Sirene",
+        "es": "Sirena",
+        "sv": "Siren"
       },
       "getable": true,
       "setable": true,
@@ -77,7 +98,14 @@
       "id": "doorbell",
       "name": {
         "en": "Video Doorbell",
-        "nl": "Video Doorbell"
+        "da": "Video dørklokke",
+        "de": "Video Türklingel",
+        "fr": "Sonnette vidéo",
+        "it": "Campanello video",
+        "nl": "Video deurbel",
+        "no": "Videodørklokke",
+        "es": "Videoportero",
+        "sv": "Video dörrklocka"
       },
       "images": {
         "large": "./drivers/doorbell/assets/images/large.jpg",
@@ -126,7 +154,15 @@
         {
           "type": "group",
           "label": {
-            "en": "Homey integration settings"
+            "en": "Homey integration settings",
+            "da": "Homey integrationsindstillinger",
+            "de": "Homey Integrations-Einstellungen",
+            "fr": "Paramètres d'intégration Homey",
+            "it": "Impostazioni di integrazione Homey",
+            "nl": "Homey integratie-instellingen",
+            "no": "Homey integreringsinnstillinger",
+            "es": "Configuración de integración de Homey",
+            "sv": "Homey integrationsinställningar"
           },
           "children": [
             {
@@ -134,11 +170,27 @@
               "type": "checkbox",
               "value": true,
               "label": {
-                "en": "Use Motion Detection"
+                "en": "Use Motion Detection",
+                "da": "Brug bevægelsesregistrering",
+                "de": "Bewegungserkennung verwenden",
+                "fr": "Utiliser la détection de mouvement",
+                "it": "Usa il rilevamento del movimento",
+                "nl": "Bewegingsdetectie gebruiken",
+                "no": "Bruk bevegelsesdeteksjon",
+                "es": "Usar detección de movimiento",
+                "sv": "Använd rörelsedetektering"
               },
               "hint": {
-                "en": "You can use your Ring Doorbell as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically."
-              }
+                "en": "You can use your Ring Doorbell as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
+                "da": "Du kan bruge din Ring Doorbell som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
+                "de": "Sie können Ihre Ring Doorbell als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
+                "fr": "Vous pouvez utiliser votre Ring Doorbell comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
+                "it": "Puoi utilizzare la tua Ring Doorbell come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
+                "nl": "U kunt uw Ring Doorbell gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
+                "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
+                "es": "Puede utilizar su Ring Doorbell como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
+                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
+              }              
             }
           ]
         }
