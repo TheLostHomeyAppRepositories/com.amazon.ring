@@ -1,0 +1,30 @@
+{
+    "pair": {
+        "intro": "For å legge til en Ring-enhet i Homey, må Homey autentiseres hos Ring. Vennligst logg på med Ring-kontoen din for å gjøre dette.",
+        "auth": {
+            "header": "Logg på med Ring-kontoen din",
+            "warning": "(To-faktor autentisering er obligatorisk, dette må være aktivert på Ring-kontoen din!)",
+            "user": "E-post",
+            "pass": "Passord",
+            "authenticate": "Autentiser",
+            "token": "Skriv inn MFA-koden du mottok",
+            "validatecode": "Autoriser",
+            "state": "Autentiseringsstatus",
+            "success": "Ring-appen for Homey er nå autentisert hos Ring.",
+            "continue": "Fortsett"
+        }
+    },
+    "settings": {
+        "title": "Dine Ring-enheter i Homey",
+        "intro": "For å bruke Ring-enhetene dine i Homey, må Homey autentiseres hos Ring. Autentisering gjøres mens du legger til din første Ring-enhet i Homey.",
+        "info": "Autentiseringsstatusen vises ovenfor. Du kan bruke Tilbakekall autentisering-knappen for å tilbakekalle Homeys autentisering hos Ring.",
+        "auth": {
+            "header": "Homeys autentiseringsstatus",
+            "result": "Autentiseringsresultat:",
+            "success": "Ring-appen for Homey er nå autentisert hos Ring.",
+            "error": "Feil:",
+            "action": "Du må (re-)autentisere denne appen fra enhetsvedlikehold-funksjonen eller legge til enhetsveiviseren.",
+            "revoke": "Tilbakekall autentisering"
+        }
+    }
+}

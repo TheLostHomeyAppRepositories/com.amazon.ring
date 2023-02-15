@@ -1,0 +1,30 @@
+{
+    "pair": {
+        "intro": "Pour ajouter un appareil Ring, Homey doit être authentifié chez Ring. Veuillez vous connecter avec votre compte Ring pour procéder à l'authentification.",
+        "auth": {
+            "header": "Connectez-vous avec votre compte Ring",
+            "warning": "(L'authentification à deux facteurs est obligatoire et doit être activée sur votre compte Ring!)",
+            "user": "E-mail",
+            "pass": "Mot de passe",
+            "authenticate": "S'authentifier",
+            "token": "Entrez le code MFA que vous avez reçu",
+            "validatecode": "Autoriser",
+            "state": "État d'authentification",
+            "success": "L'application Ring pour Homey est authentifiée avec succès chez Ring",
+            "continue": "Continuer"
+        }
+    },
+    "settings": {
+        "title": "Vos appareils Ring dans Homey",
+        "intro": "Pour utiliser vos appareils Ring dans Homey, Homey doit être authentifié chez Ring. L'authentification est effectuée lors de l'ajout de votre premier appareil Ring à Homey.",
+        "info": "L'état d'authentification est affiché ci-dessus. Vous pouvez utiliser le bouton Révoquer l'authentification pour révoquer l'authentification de Homey chez Ring.",
+        "auth": {
+            "header": "État d'authentification de Homey",
+            "result": "Résultat de l'authentification :",
+            "success": "L'application Ring pour Homey est authentifiée avec succès chez Ring",
+            "error": "Erreur :",
+            "action": "Vous devez (ré-)authentifier cette application depuis la fonction de maintenance de l'appareil ou l'assistant d'ajout d'appareil",
+            "revoke": "Révoquer l'authentification"
+        }
+    }
+}

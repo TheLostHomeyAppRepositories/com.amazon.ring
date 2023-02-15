@@ -1,0 +1,30 @@
+{
+    "pair": {
+        "intro": "För att lägga till en Ring-enhet i Homey måste Homey autentiseras hos Ring. Vänligen logga in med ditt Ring-konto för att göra detta.",
+        "auth": {
+            "header": "Logga in med ditt Ring-konto",
+            "warning": "(Tvåfaktorsautentisering är obligatoriskt, detta måste vara aktiverat på ditt Ring-konto!)",
+            "user": "E-post",
+            "pass": "Lösenord",
+            "authenticate": "Autentisera",
+            "token": "Ange MFA-kod du har fått",
+            "validatecode": "Godkänn",
+            "state": "Autentiseringsstatus",
+            "success": "Ring-appen för Homey är framgångsrikt autentiserad hos Ring",
+            "continue": "Fortsätt"
+        }
+    },
+    "settings": {
+        "title": "Dina Ring-enheter i Homey",
+        "intro": "För att använda dina Ring-enheter i Homey måste Homey autentiseras hos Ring. Autentisering görs när du lägger till din första Ring-enhet till Homey.",
+        "info": "Autentiseringsstatusen visas ovan. Du kan använda knappen Återkalla autentisering för att återkalla Homeys autentisering hos Ring.",
+        "auth": {
+            "header": "Homeys autentiseringsstatus",
+            "result": "Autentiseringsresultat:",
+            "success": "Ring-appen för Homey är framgångsrikt autentiserad hos Ring",
+            "error": "Fel:",
+            "action": "Du behöver (åter-)autentisera denna app från enhetsunderhållsfunktionen eller lägg till enhetsguiden",
+            "revoke": "Återkalla autentisering"
+        }
+    }
+}
