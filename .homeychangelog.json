@@ -63,14 +63,14 @@
     "en": "Upgrade to SDK3 in preperation for Homey Pro Early 2023"
   },
   "2.3.7": {
-    "en": "• Added several new translations • Added new App Store images • Minor code fixes • Improved device repair function",
-    "da": "• Tilføjet flere nye oversættelser • Tilføjet nye App Store-billeder • Mindre kode rettelser • Forbedret enhedsreparationsfunktion",
-    "de": "• Hinzugefügt mehrere neue Übersetzungen • Hinzugefügt neue App Store-Bilder • Geringfügige Codekorrekturen • Verbesserte Gerätereparaturfunktion",
-    "fr": "• Ajouté plusieurs nouvelles traductions • Ajouté de nouvelles images de l'App Store • Corrections mineures de code • Fonction améliorée de réparation d'appareil",
-    "it": "• Aggiunte diverse nuove traduzioni • Aggiunte nuove immagini App Store • Piccole correzioni del codice • Migliorata la funzione di riparazione del dispositivo",
-    "nl": "• Toegevoegd meerdere nieuwe vertalingen • Toegevoegd nieuwe App Store afbeeldingen • Kleine code fixes • Verbeterde apparaat reparatiefunctie",
-    "no": "• Lagt til flere nye oversettelser • Lagt til nye App Store-bilder • Mindre kode rettelser • Forbedret enhetsreparasjonsfunksjon",
-    "es": "• Añadidas varias nuevas traducciones • Añadidas nuevas imágenes de la App Store • Correcciones menores de código • Función mejorada de reparación de dispositivos",
-    "sv": "• Lagt till flera nya översättningar • Lagt till nya App Store-bilder • Mindre kodfixar • Förbättrad enhetsreparationsfunktion"
+    "en": "• Added several new translations • Added new App Store images • Minor code fixes • Fixed Pair, Repair and Status views",
+    "da": "• Tilføjet flere nye oversættelser • Tilføjet nye App Store-billeder • Mindre kode rettelser • Fast par, reparation og statusvisninger",
+    "de": "• Hinzugefügt mehrere neue Übersetzungen • Hinzugefügt neue App Store-Bilder • Geringfügige Codekorrekturen • Feste Paar-, Reparatur- und Statusansichten",
+    "es": "• Añadidas varias nuevas traducciones • Añadidas nuevas imágenes de la App Store • Correcciones menores de código • Vistas de par fijo, reparación y estado",
+    "fr": "• Ajouté plusieurs nouvelles traductions • Ajouté de nouvelles images de l'App Store • Corrections mineures de code • Vues de paire fixe, de réparation et de statut",
+    "it": "• Aggiunte diverse nuove traduzioni • Aggiunte nuove immagini App Store • Piccole correzioni del codice • Viste di coppia fissa, riparazione e stato",
+    "nl": "• Toegevoegd meerdere nieuwe vertalingen • Toegevoegd nieuwe App Store afbeeldingen • Kleine code fixes • koppel-, reparatie- en statusweergaven gerepareerd",
+    "no": "• Lagt til flere nye oversettelser • Lagt til nye App Store-bilder • Mindre kode rettelser • Fast par, reparasjon og statusvisninger",
+    "sv": "• Lagt till flera nya översättningar • Lagt till nya App Store-bilder • Mindre kodfixar • Fasta par, reparation och statusvisningar"
   }
 }
