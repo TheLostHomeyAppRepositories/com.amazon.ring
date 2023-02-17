@@ -60,9 +60,12 @@
     "en": "Fixed type in error handling"
   },
   "2.3.6": {
-    "en": "Upgrade to SDK3 in preperation for Homey Pro Early 2023"
+    "en": "App transfered. No functional changes"
   },
   "2.3.7": {
+    "en": "Changed App Store links"
+  },
+  "2.3.8": {
     "en": "• Added several new translations • Added new App Store images • Minor code fixes • Fixed Pair, Repair and Status views",
     "da": "• Tilføjet flere nye oversættelser • Tilføjet nye App Store-billeder • Mindre kode rettelser • Fast par, reparation og statusvisninger",
     "de": "• Hinzugefügt mehrere neue Übersetzungen • Hinzugefügt neue App Store-Bilder • Geringfügige Codekorrekturen • Feste Paar-, Reparatur- und Statusansichten",
