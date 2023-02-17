@@ -10,8 +10,12 @@
             "token": "Skriv inn MFA-koden du mottok",
             "validatecode": "Autoriser",
             "state": "Autentiseringsstatus",
-            "success": "Ring-appen for Homey er nå autentisert hos Ring.",
-            "continue": "Fortsett"
+            "authenticating": "Autentiserer...",
+            "success": "Ring-appen for Homey er vellykket godkjent hos Ring",
+            "failed": "Autentisering mislyktes, vennligst sjekk dine påloggingsdetaljer",
+            "continue": "Fortsett",
+            "again": "Prøv igjen",
+            "cancel": "Avbryt"            
         }
     },
     "settings": {

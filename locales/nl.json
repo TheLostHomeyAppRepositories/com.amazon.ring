@@ -10,8 +10,12 @@
             "token": "Vul de Twee-Factor code in",
             "validatecode": "Autoriseer",
             "state": "Authenticatiestatus",
-            "success": "De Ring App voor Homey is met succes geauthenticeerd bij Ring",
-            "continue": "Doorgaan"
+            "authenticating": "Authenticeren...",
+            "success": "De Ring App voor Homey is succesvol geauthenticeerd bij Ring",
+            "failed": "Authenticatie mislukt, controleer uw inloggegevens",
+            "continue": "Doorgaan",
+            "again": "Opnieuw proberen",
+            "cancel": "Annuleren"            
         }
     },
     "settings": {

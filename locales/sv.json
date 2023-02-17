@@ -10,8 +10,12 @@
             "token": "Ange MFA-kod du har fått",
             "validatecode": "Godkänn",
             "state": "Autentiseringsstatus",
+            "authenticating": "Autentiserar...",
             "success": "Ring-appen för Homey är framgångsrikt autentiserad hos Ring",
-            "continue": "Fortsätt"
+            "failed": "Autentisering misslyckades, vänligen kontrollera dina uppgifter",
+            "continue": "Fortsätt",
+            "again": "Försök igen",
+            "cancel": "Avbryt"            
         }
     },
     "settings": {

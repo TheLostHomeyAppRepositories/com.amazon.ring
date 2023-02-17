@@ -10,8 +10,12 @@
             "token": "Indtast MFA-kode, du modtog",
             "validatecode": "Godkend",
             "state": "Godkendelsestilstand",
-            "success": "Ring App til Homey er blevet godkendt med succes hos Ring",
-            "continue": "Fortsæt"
+            "authenticating": "Autentificerer...",
+            "success": "Ring-appen til Homey er blevet godkendt af Ring",
+            "failed": "Godkendelse mislykkedes, tjek venligst dine loginoplysninger",
+            "continue": "Fortsæt",
+            "again": "Prøv igen",
+            "cancel": "Annuller"    
         }
     },
     "settings": {
