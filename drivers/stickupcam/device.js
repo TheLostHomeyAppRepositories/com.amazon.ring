@@ -98,7 +98,9 @@ class DeviceStickUpCam extends Device {
     }
 
     _syncDevice(data) {
-        this.log('_syncDevice', data);
+        if ( data.length > 0 ) {
+            this.log('_syncDevice', data);
+        }
 
         data.forEach((device_data) => {
 
@@ -128,7 +130,7 @@ class DeviceStickUpCam extends Device {
     }
 
     _syncDevices(data) {
-        this.log('_syncDevices', data);
+        //this.log('_syncDevices', data);
 
         data.stickup_cams.forEach((device_data) => {
             if (device_data.id !== this.getData().id)

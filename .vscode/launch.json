@@ -58,7 +58,7 @@
 			"name": "Attach to Homey Pro Early 2023",
 			"type": "node",
 			"request": "attach",
-			"address": "192.168.1.191",
+			"address": "192.168.1.162",
 			"port": 9222,
 			"localRoot": "${workspaceFolder}",
 			"remoteRoot": "/app/"

@@ -118,15 +118,27 @@ class DeviceDoorbell extends Device {
             if (device_data.id !== this.getData().id)
                 return;
 
-            let battery = parseInt(device_data.battery_life);
+            let battery = 100;
+            
+            if (device_data.battery_life != null) {
+                battery = parseInt(device_data.battery_life);
+                
+                if (battery > 100) { battery = 100; }
+                                  
+                if ( this.getCapabilityValue('measure_battery') != battery) {
+                    this.setCapabilityValue('measure_battery', battery).catch(error => {
+                        this.error(error);
+                    });
+                }
+                
+            } else {
+                // battery_life is null, remove measure_battery capability if it exists
+                if ( this.hasCapability('measure_battery') ) {
+                    this.removeCapability('measure_battery');
+                }
+            }
 
-            if (battery > 100)
-                battery = 100;
-
-            this.setCapabilityValue('measure_battery', battery).catch(error => {
-                this.error(error);
-            });
-
+   
             this.setSettings({
                 useMotionDetection: device_data.settings.motion_detection_enabled,
             })

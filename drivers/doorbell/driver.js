@@ -19,7 +19,7 @@ class DriverDoorbell extends Driver {
     }
 
     onPairListDevices(data, callback) {
-        this.log('_onPairListDevices');
+        this.log('onPairListDevices');
 
         return new Promise((resolve, reject) => {
             let foundDevices = [];

@@ -127,6 +127,9 @@
           "id": "start"
         },
         {
+          "id": "status"          
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -143,7 +146,7 @@
           "id": "start"
         },
         {
-          "id": "success"          
+          "id": "status"          
         },
         {
           "id": "done",
@@ -213,6 +216,9 @@
           "id": "start"
         },
         {
+          "id": "status"          
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -229,7 +235,7 @@
           "id": "start"
         },
         {
-          "id": "success"          
+          "id": "status"          
         },
         {
           "id": "done",
@@ -263,6 +269,9 @@
           "id": "start"
         },
         {
+          "id": "status"          
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -279,7 +288,7 @@
           "id": "start"
         },
         {
-          "id": "success"          
+          "id": "status"          
         },
         {
           "id": "done",

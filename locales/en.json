@@ -10,8 +10,12 @@
             "token": "Enter MFA code you received",
             "validatecode": "Authorize",
             "state": "Authentication state",
+            "authenticating": "Authenticating...",
             "success": "The Ring App for Homey is successfully authenticated at Ring",
-            "continue": "Continue"
+            "failed": "Authentication failed, please check your credentials",
+            "continue": "Continue",
+            "again": "Try again",
+            "cancel": "Cancel"
         }
     },
     "settings": {
