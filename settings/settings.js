@@ -17,14 +17,6 @@ function onHomeyReady(Homey) {
         }
     });
 
-    /*
-    Homey.on('settings.set', function (setting) {
-        if ( setting == 'authenticationStatus' || setting == 'authenticationError' ) {
-            writeAuthenticationState()
-        }
-    });
-    */
-
     document.getElementById('settings-auth-revoke').addEventListener('click', function(elem) {
         onRevokeAuth(Homey);
     });

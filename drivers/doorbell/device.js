@@ -72,7 +72,6 @@ class DeviceDoorbell extends Device {
                     });
 
                     this.homey.app.logRealtime('doorbell', 'ding');
-                    console.log('Realtime event emitted for ding');
 
                     clearTimeout(this.device.timer.ding);
 
@@ -89,7 +88,6 @@ class DeviceDoorbell extends Device {
                     });
 
                     this.homey.app.logRealtime('doorbell', 'motion');
-                    console.log('Realtime event emitted for motion');
 
                     clearTimeout(this.device.timer.motion);
 
@@ -106,7 +104,7 @@ class DeviceDoorbell extends Device {
     _syncDevices(data) {
         // this.log('_syncDevices', data);
 
-        data.doorbots.forEach((device_data) => {
+        data.doorbots.forEach( (device_data) => {
             // console.log(device_data.settings);
             // console.log(device_data.settings.motion_detection_enabled);
             // console.log(device_data.settings.lite_24x7.resolution_p); Snapshot size setting?
@@ -121,6 +119,11 @@ class DeviceDoorbell extends Device {
             let battery = 100;
             
             if (device_data.battery_life != null) {
+                // battery_life is niet null, add measure_battery capability if it does not exists
+                if ( !this.hasCapability('measure_battery') ) {
+                    this.addCapability('measure_battery');
+                }
+                
                 battery = parseInt(device_data.battery_life);
                 
                 if (battery > 100) { battery = 100; }

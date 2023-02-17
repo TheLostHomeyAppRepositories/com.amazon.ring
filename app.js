@@ -91,7 +91,7 @@ class App extends Homey.App {
     logRealtime(event, details)
     {
         this.homey.api.realtime(event, details)
-        console.log('Realtime event emitted for ', event, details);
+        console.log('Realtime event emitted for', event, details);
     }
 
     writeToTimeline(message) {
