@@ -11,7 +11,7 @@ class DeviceDoorbell extends Device {
         this.log('_initDevice');
         //this.log('name:', this.getName());
         //this.log('class:', this.getClass());
-        this.log('data:', this.getData());
+        //this.log('data:', this.getData());
 
         this.device = {}
         this.device.timer = {};
@@ -70,6 +70,12 @@ class DeviceDoorbell extends Device {
                     return;
 
                 if (device_data.kind === 'ding') {
+                    /*
+                    if (!this.getCapabilityValue('alarm_generic')) {
+                        this.homey.app.logRealtime('doorbell', 'ding');
+                    }
+                    */
+
                     this.setCapabilityValue('alarm_generic', true).catch(error => {
                         this.error(error);
                     });
@@ -86,11 +92,13 @@ class DeviceDoorbell extends Device {
                 }
 
                 if (device_data.kind === 'motion' || device_data.motion) {
+                    if (!this.getCapabilityValue('alarm_motion')) {
+                        this.homey.app.logRealtime('doorbell', 'motion');
+                    }
+
                     this.setCapabilityValue('alarm_motion', true).catch(error => {
                         this.error(error);
                     });
-
-                    this.homey.app.logRealtime('doorbell', 'motion');
 
                     clearTimeout(this.device.timer.motion);
 

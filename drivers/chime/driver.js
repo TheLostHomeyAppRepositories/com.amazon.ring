@@ -22,7 +22,7 @@ class DriverChime extends Driver {
                 if (error) {
                 return reject(error);
                 }
-        
+
                 result.chimes.forEach((device_data) => {
                     foundDevices.push({
                         name: device_data.description,

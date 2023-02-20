@@ -11,7 +11,7 @@ class DeviceStickUpCam extends Device {
         this.log('_initDevice');
         //this.log('name:', this.getName());
         //this.log('class:', this.getClass());
-        this.log('data:', this.getData());
+        //this.log('data:', this.getData());
 
         this.device = {}
         this.device.timer = {};

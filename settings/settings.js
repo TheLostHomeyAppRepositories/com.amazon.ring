@@ -7,7 +7,7 @@ function onHomeyReady(Homey) {
         if (data.state !== 'authenticated') {
              hideRevoke();
         } else {
-            
+
         }
     });
 
@@ -20,6 +20,11 @@ function onHomeyReady(Homey) {
     document.getElementById('settings-auth-revoke').addEventListener('click', function(elem) {
         onRevokeAuth(Homey);
     });
+
+    document.getElementById('login-credentials-logo').addEventListener('click', function(elem) {
+        getDevices();
+    });
+
 }
 
 async function hideRevoke()
@@ -63,4 +68,15 @@ function onRevokeAuth(Homey) {
     Homey.set('authenticationError', "--");
     writeAuthenticationState();
     hideRevoke();
+}
+
+async function getDevices() {
+    Homey.api('GET', '/devicesinfo')
+    .then((result) => {
+        const mystring = JSON.stringify(result);
+        console.log(mystring);
+    })
+    .catch((error) => {    
+        console.log(error);
+    })
 }

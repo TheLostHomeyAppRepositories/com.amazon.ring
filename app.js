@@ -191,6 +191,21 @@ class App extends Homey.App {
                 });
             });
     }
+
+    async getDevicesInfo() {
+        return new Promise((resolve, reject) => {
+        
+            this.homey.app.getRingDevices((error, result) => {
+                if (error) {
+                return reject(error);
+                }
+
+                resolve(result);
+            });
+
+        });
+    }
+
 }
 
 module.exports = App;
