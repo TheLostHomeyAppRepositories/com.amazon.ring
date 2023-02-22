@@ -167,14 +167,23 @@ class DeviceDoorbell extends Device {
     grabImage(args, state) {  
         if (this._device instanceof Error)
             return Promise.reject(this._device);
-
+        
         let _this = this;    
+_this.log("grabImage");
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-                //new Homey.FlowCardTrigger('ring_snapshot_received').register().trigger({ring_image: _this.device.cameraImage}).catch(error => { _this.error(error); });
+_this.log("grabImage inside update.then()");                
                 var tokens = {ring_image: _this.device.cameraImage};
                 _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens)
-                    .catch(error => { _this.error(error); });
+                    .catch(error => { 
+                        _this.error(error); 
+_this.log("grabImage inside getTriggerCard catch:" + error);
+                    })
+                    .then(result => {
+_this.log("grabImage inside getTriggerCard then");
+                    })
+
+_this.log("grabImage after getTriggerCard");
 
                 return resolve(true);
             });
