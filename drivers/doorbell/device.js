@@ -72,6 +72,9 @@ class DeviceDoorbell extends Device {
                 if (device_data.doorbot_id !== this.getData().id)
                     return;
 
+                let logLine = " doorbell || _syncDevice || " + "Ringing " + device_data.kind;
+                this.homey.app.writeLog(logLine);
+
                 if (device_data.kind === 'ding') {
                     if (!this.getCapabilityValue('alarm_generic')) {
                         this.homey.app.logRealtime('doorbell', 'ding');
