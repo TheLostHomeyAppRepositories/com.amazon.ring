@@ -44,6 +44,8 @@ class DeviceDoorbell extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
+                    let logLine = " doorbell || _setupCameraView || " + "_setupCameraView " + error;
+                    this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(null);
@@ -59,7 +61,8 @@ class DeviceDoorbell extends Device {
 
     _syncDevice(data) {
         if ( data.length > 0 ) {
-            this.log('_syncDevice', data);
+            this.log('_syncDevice data.length:', data.length);
+            this.log('_syncDevice data:', data);
         }
 
         data.forEach((device_data) => {
@@ -70,17 +73,15 @@ class DeviceDoorbell extends Device {
                     return;
 
                 if (device_data.kind === 'ding') {
-                    /*
                     if (!this.getCapabilityValue('alarm_generic')) {
                         this.homey.app.logRealtime('doorbell', 'ding');
                     }
-                    */
-
+                    
                     this.setCapabilityValue('alarm_generic', true).catch(error => {
                         this.error(error);
                     });
 
-                    this.homey.app.logRealtime('doorbell', 'ding');
+                    //this.homey.app.logRealtime('doorbell', 'ding');
 
                     clearTimeout(this.device.timer.ding);
 
@@ -130,7 +131,7 @@ class DeviceDoorbell extends Device {
             let battery = 100;
             
             if (device_data.battery_life != null) {
-                // battery_life is niet null, add measure_battery capability if it does not exists
+                // battery_life is not null, add measure_battery capability if it does not exists
                 if ( !this.hasCapability('measure_battery') ) {
                     this.addCapability('measure_battery');
                 }
@@ -160,7 +161,7 @@ class DeviceDoorbell extends Device {
         });
     }
 
-    grabImage(args, state) {
+    grabImage(args, state) {  
         if (this._device instanceof Error)
             return Promise.reject(this._device);
 
@@ -178,10 +179,6 @@ class DeviceDoorbell extends Device {
     }
 
     async onSettings( settings ) {
-        console.log("settings:", settings);
-        console.log("settings.changedKeys:", settings.changedKeys);
-        console.log("settings.newSettings:", settings.newSettings);
-
         settings.changedKeys.forEach((changedSetting) => {
             if (changedSetting == 'useMotionDetection') {
                 if (settings.newSettings.useMotionDetection) {

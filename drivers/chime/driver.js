@@ -14,13 +14,13 @@ class DriverChime extends Driver {
 
     onPairListDevices() {
         this.log('onPairListDevices');
-      
+
         return new Promise((resolve, reject) => {
             let foundDevices = [];
         
             this.homey.app.getRingDevices((error, result) => {
                 if (error) {
-                return reject(error);
+                    return reject(error);
                 }
 
                 result.chimes.forEach((device_data) => {
