@@ -29,6 +29,10 @@
             "error": "Error:",
             "action": "You need to (re-)authenticate this app from the device maintenance function or add device wizard",
             "revoke": "Revoke Authentication"
+        },
+        "troubleshooting": {
+            "header": "Troubleshooting",
+            "viewlog": "View log"
         }
     }
 }

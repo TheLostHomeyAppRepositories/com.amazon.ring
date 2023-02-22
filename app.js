@@ -42,6 +42,9 @@ class App extends Homey.App {
         this.setLocationMode();
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
+
+        let logLine = " app.js || onInit || " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
+        this.homey.app.writeLog(logLine);
     }
 
     _syncDevice(data) {
@@ -204,6 +207,51 @@ class App extends Homey.App {
             });
 
         });
+    }
+
+    // Write information to the Ring log and cleanup 20% when history above 2000 lines
+    // - Called from multiple functions
+    async writeLog(logLine) {
+        let savedHistory = this.homey.settings.get('myLog');
+        if ( savedHistory != undefined ) { 
+            // cleanup history
+            let lineCount = savedHistory.split(/\r\n|\r|\n/).length;
+            if ( lineCount > 2000 ) {
+                let deleteItems = parseInt( lineCount * 0.2 );
+                let savedHistoryArray = savedHistory.split(/\r\n|\r|\n/);
+                let cleanUp = savedHistoryArray.splice(-1*deleteItems, deleteItems, "" );
+                savedHistory = savedHistoryArray.join('\n'); 
+            }
+            // end cleanup
+            logLine = this.getDateTime() + logLine + "\n" + savedHistory;
+        } else {
+            console.log("savedHistory is undefined!")
+        }
+        this.homey.settings.set('myLog', logLine );
+
+        logLine = "";
+    }
+
+    // Returns a date timestring including milliseconds to be used in loglines
+    // - Called from multiple functions
+    getDateTime() {
+        let timezone = this.homey.clock.getTimezone()
+        let date = new Date(new Date().toLocaleString("en-US", {timeZone: timezone}));
+        let dateMsecs = new Date();
+
+        let hour = date.getHours();
+        hour = (hour < 10 ? "0" : "") + hour;
+        let min  = date.getMinutes();
+        min = (min < 10 ? "0" : "") + min;
+        let sec  = date.getSeconds();
+        sec = (sec < 10 ? "0" : "") + sec;
+        let msec = ("00" + dateMsecs.getMilliseconds()).slice(-3)
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        month = (month < 10 ? "0" : "") + month;
+        let day  = date.getDate();
+        day = (day < 10 ? "0" : "") + day;
+        return day + "-" + month + "-" + year + "  ||  " + hour + ":" + min + ":" + sec + "." + msec + "  ||  ";
     }
 
 }

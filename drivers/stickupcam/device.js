@@ -87,6 +87,8 @@ class DeviceStickUpCam extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
+                    let logLine = " stickupcam || _setupCameraView || " + "_setupCameraView " + error;
+                    this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(null);

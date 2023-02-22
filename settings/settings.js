@@ -25,6 +25,14 @@ function onHomeyReady(Homey) {
         getDevices();
     });
 
+    Homey.get('myLog', function(err, logging){
+        if( err ) {
+            console.error('showHistory: Could not get history', err);
+            return
+        }
+        console.log(logging);
+    });
+
 }
 
 async function hideRevoke()
