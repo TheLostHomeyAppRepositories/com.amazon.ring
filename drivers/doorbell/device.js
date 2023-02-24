@@ -33,7 +33,7 @@ class DeviceDoorbell extends Device {
 
     async _setupCameraView(device_data) {
         this.log('_setupCamera', device_data);
-        //this.device.cameraImage = new Homey.Image();
+        //this.device.cameraImage = new Homey.Image(); <- SDK2
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
             await this.homey.app.grabImage(device_data, (error, result) => {
