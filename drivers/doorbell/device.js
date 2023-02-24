@@ -36,8 +36,9 @@ class DeviceDoorbell extends Device {
         //this.device.cameraImage = new Homey.Image(); <- SDK2
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
+            this.log("setStream: request app.js grabImage (39)");
             await this.homey.app.grabImage(device_data, (error, result) => {
-                this.log("app.js grabImage called from setStream has returned");
+                this.log("setStream: app.js grabImage returned (41)");
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -173,7 +174,7 @@ class DeviceDoorbell extends Device {
         let _this = this;    
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-                _this.log("cameraImage is update is requested");
+                _this.log("grabImage: cameraImage update is requested (177)");
                 var tokens = {ring_image: _this.device.cameraImage};
                 _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens).catch(error => {_this.error(error)})
 

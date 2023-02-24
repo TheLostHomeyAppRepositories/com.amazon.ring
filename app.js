@@ -80,7 +80,7 @@ class App extends Homey.App {
     }
 
     grabImage(data, callback) {
-        this.log("app.js grabImage has been called from setStream");
+        this.log("app.js grabImage has been called from setStream (83)");
         this._api.grabImage(data, callback);
     }
 
