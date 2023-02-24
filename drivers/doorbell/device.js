@@ -52,12 +52,14 @@ class DeviceDoorbell extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                     // This results in invalid_content_type
+                    // To be continued...
                 }
             })
         })
-        //this.device.cameraImage.register().catch(console.error).then(function() {
-            this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage);
-        //}.bind(this));
+
+        this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
+            .then(result =>{this.log(result);})
+            .catch(error =>{this.log(error);})
     }
 
     _syncDevice(data) {
