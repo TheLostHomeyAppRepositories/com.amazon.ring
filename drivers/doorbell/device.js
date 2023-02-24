@@ -37,6 +37,7 @@ class DeviceDoorbell extends Device {
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
             await this.homey.app.grabImage(device_data, (error, result) => {
+                this.log("app.js grabImage called from setStream has returned");
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -61,8 +62,7 @@ class DeviceDoorbell extends Device {
 
     _syncDevice(data) {
         if ( data.length > 0 ) {
-            this.log('_syncDevice data.length:', data.length);
-            this.log('_syncDevice data:', data);
+            //this.log('_syncDevice data:', data);
         }
 
         data.forEach((device_data) => {
@@ -167,23 +167,13 @@ class DeviceDoorbell extends Device {
     grabImage(args, state) {  
         if (this._device instanceof Error)
             return Promise.reject(this._device);
-        
+
         let _this = this;    
-_this.log("grabImage");
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-_this.log("grabImage inside update.then()");                
+                _this.log("cameraImage is update is requested");
                 var tokens = {ring_image: _this.device.cameraImage};
-                _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens)
-                    .catch(error => { 
-                        _this.error(error); 
-_this.log("grabImage inside getTriggerCard catch:" + error);
-                    })
-                    .then(result => {
-_this.log("grabImage inside getTriggerCard then");
-                    })
-
-_this.log("grabImage after getTriggerCard");
+                _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens).catch(error => {_this.error(error)})
 
                 return resolve(true);
             });

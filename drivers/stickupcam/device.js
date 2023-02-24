@@ -188,7 +188,6 @@ class DeviceStickUpCam extends Device {
         let _this = this;
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-                //new Homey.FlowCardTrigger('ring_snapshot_received').register().trigger({ring_image: _this.device.cameraImage}).catch(error => { _this.error(error); });
                 var tokens = {ring_image: _this.device.cameraImage};
                 _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens)
                     .catch(error => { _this.error(error); });
