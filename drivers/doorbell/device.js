@@ -46,7 +46,7 @@ class DeviceDoorbell extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
-                    let logLine = " doorbell || _setupCameraView || " + "_setupCameraView " + error;
+                    let logLine = " doorbell || device.js _setupCameraView || " + this.getName() + " app.js grabImage reported: " + error;
                     this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -59,8 +59,7 @@ class DeviceDoorbell extends Device {
         })
 
         this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
-            .then(result =>{this.log(result);})
-            .catch(error =>{this.log(error);})
+            .catch(error =>{this.log("setCameraImage: ",error);})
     }
 
     _syncDevice(data) {
@@ -75,12 +74,11 @@ class DeviceDoorbell extends Device {
                 if (device_data.doorbot_id !== this.getData().id)
                     return;
 
-                let logLine = " doorbell || _syncDevice || " + "Ringing " + device_data.kind;
-                this.homey.app.writeLog(logLine);
-
                 if (device_data.kind === 'ding') {
                     if (!this.getCapabilityValue('alarm_generic')) {
                         this.homey.app.logRealtime('doorbell', 'ding');
+                        let logLine = " doorbell || _syncDevice || " + this.getName() + " reported ding event";
+                        this.homey.app.writeLog(logLine);
                     }
                     
                     this.setCapabilityValue('alarm_generic', true).catch(error => {
@@ -101,6 +99,8 @@ class DeviceDoorbell extends Device {
                 if (device_data.kind === 'motion' || device_data.motion) {
                     if (!this.getCapabilityValue('alarm_motion')) {
                         this.homey.app.logRealtime('doorbell', 'motion');
+                        let logLine = " doorbell || _syncDevice || " + this.getName() + " reported motion event";
+                        this.homey.app.writeLog(logLine);
                     }
 
                     this.setCapabilityValue('alarm_motion', true).catch(error => {
@@ -174,7 +174,7 @@ class DeviceDoorbell extends Device {
         let _this = this;    
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-                _this.log("grabImage: cameraImage update is requested (177)");
+                _this.log("grabImage: cameraImage update is requested (178)");
                 var tokens = {ring_image: _this.device.cameraImage};
                 _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens).catch(error => {_this.error(error)})
 

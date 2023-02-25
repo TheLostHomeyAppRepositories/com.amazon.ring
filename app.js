@@ -43,7 +43,7 @@ class App extends Homey.App {
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
 
-        let logLine = " app.js || onInit || " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
+        let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
     }
 
