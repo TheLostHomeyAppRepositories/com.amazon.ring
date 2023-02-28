@@ -36,9 +36,9 @@ class DeviceDoorbell extends Device {
         //this.device.cameraImage = new Homey.Image(); <- SDK2
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            this.log("setStream: request app.js grabImage (39)");
+            this.log("setStream: request app.js grabImage (1)");
             await this.homey.app.grabImage(device_data, (error, result) => {
-                this.log("setStream: app.js grabImage returned (41)");
+                this.log("setStream: app.js grabImage returned (4)");
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();

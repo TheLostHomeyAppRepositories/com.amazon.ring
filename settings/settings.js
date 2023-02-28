@@ -22,7 +22,7 @@ function onHomeyReady(Homey) {
 
     // The stuff below is just for troubleshooting in the Developer Tools and will only work in a browser on a computer
     // Will not work on:
-    let regexp = /android|iphone|kindle|ipad/i;
+    let regexp = /android|iphone|ipad/i;
     let isMobileDevice = regexp.test(navigator.userAgent);
     let _this = this;
     if (!isMobileDevice) {
@@ -52,6 +52,7 @@ function onHomeyReady(Homey) {
                     console.error('showHistory: Could not get history', err);
                     return
                 }
+                console.clear();
                 console.log(logging);
             });
         });
@@ -70,7 +71,6 @@ function onHomeyReady(Homey) {
             }
         });
     }
-
 }
 
 async function writeAuthenticationState() {
