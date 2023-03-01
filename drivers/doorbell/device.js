@@ -174,7 +174,7 @@ class DeviceDoorbell extends Device {
         let _this = this;    
         return new Promise(function(resolve, reject) {
             _this.device.cameraImage.update().then(() =>{
-                _this.log("grabImage: cameraImage update is requested (178)");
+                _this.log("device.js grabImage: cameraImage update");
                 var tokens = {ring_image: _this.device.cameraImage};
                 _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens).catch(error => {_this.error(error)})
 
