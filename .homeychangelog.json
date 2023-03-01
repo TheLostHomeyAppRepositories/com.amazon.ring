@@ -75,5 +75,27 @@
     "nl": "• Toegevoegd meerdere nieuwe vertalingen • Toegevoegd nieuwe App Store afbeeldingen • Kleine code fixes • koppel-, reparatie- en statusweergaven gerepareerd",
     "no": "• Lagt til flere nye oversettelser • Lagt til nye App Store-bilder • Mindre kode rettelser • Fast par, reparasjon og statusvisninger",
     "sv": "• Lagt till flera nya översättningar • Lagt till nya App Store-bilder • Mindre kodfixar • Fasta par, reparation och statusvisningar"
+  },
+  "2.10.0": {
+      "en": "First release for Homey Pro Early 2023",
+      "da": "Første udgivelse for Homey Pro Early 2023",
+      "de": "Erste Veröffentlichung für Homey Pro Early 2023",
+      "fr": "Première sortie pour Homey Pro Early 2023",
+      "it": "Primo rilascio per Homey Pro Early 2023",
+      "nl": "Eerste release voor Homey Pro Early 2023",
+      "no": "Første utgivelse for Homey Pro Early 2023",
+      "es": "Primer lanzamiento para Homey Pro Early 2023",
+      "sv": "Första släppet för Homey Pro Early 2023"    
+  },
+  "2.10.1": {
+      "en": "",
+      "da": "",
+      "de": "",
+      "fr": "",
+      "it": "",
+      "nl": "",
+      "no": "",
+      "es": "",
+      "sv": ""    
   }
 }

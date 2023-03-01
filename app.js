@@ -5,25 +5,20 @@ const Homey = require('homey');
 const api = require('./lib/Api.js');
 const events = require('events');      
 
+// !!!! remove next lines before publishing !!!!
+// const LogToFile = require('homey-log-to-file');
+
 class App extends Homey.App {
 
-    async onInit() {
-
-        /*
-		if (process.env.DEBUG === '1') {
-            try{ 
-                require('inspector').waitForDebugger();
-            }
-            catch(error){
-                require('inspector').open(9222, '0.0.0.0', false);
-            }
-			process.stdout.write = () => {}
-		}
-        */
-
+    async onInit() {    
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
         
+        // !!!! remove next lines before publishing !!!!
+        if (process.env.DEBUG === '1') {
+            //await LogToFile();
+        }
+
         this._api = new api(this.homey);
 
         this._api.on('refresh_device', this._syncDevice.bind(this));
@@ -46,6 +41,8 @@ class App extends Homey.App {
         let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
     }
+
+    // async LogToFile(logfile = '/userdata/std.log', port = 8008, flags = 'w')
 
     _syncDevice(data) {
         this.homey.emit('refresh_device', data);
