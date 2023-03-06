@@ -59,7 +59,7 @@ class DeviceDoorbell extends Device {
         })
 
         this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
-            .catch(error =>{this.log("setCameraImage: ",error);})
+        .catch(error =>{this.log("setCameraImage: ",error);})
     }
 
     _syncDevice(data) {
@@ -84,8 +84,6 @@ class DeviceDoorbell extends Device {
                     this.setCapabilityValue('alarm_generic', true).catch(error => {
                         this.error(error);
                     });
-
-                    //this.homey.app.logRealtime('doorbell', 'ding');
 
                     clearTimeout(this.device.timer.ding);
 
@@ -158,12 +156,9 @@ class DeviceDoorbell extends Device {
                     this.removeCapability('measure_battery');
                 }
             }
-
    
-            this.setSettings({
-                useMotionDetection: device_data.settings.motion_detection_enabled,
-            })
-                .catch( this.error )
+            this.setSettings({useMotionDetection: device_data.settings.motion_detection_enabled})
+                .catch((error) => {});
         });
     }
 
@@ -173,13 +168,17 @@ class DeviceDoorbell extends Device {
 
         let _this = this;    
         return new Promise(function(resolve, reject) {
-            _this.device.cameraImage.update().then(() =>{
-                _this.log("device.js grabImage: cameraImage update");
-                var tokens = {ring_image: _this.device.cameraImage};
-                _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens).catch(error => {_this.error(error)})
+            _this.device.cameraImage.update()
+                .then(() => {
+                    _this.log("device.js grabImage: cameraImage.update()");
+                    var tokens = {ring_image: _this.device.cameraImage};
+                    _this.homey.flow.getTriggerCard('ring_snapshot_received')
+                        .trigger(tokens)
+                        .catch(error => {_this.log(error)})
 
-                return resolve(true);
-            });
+                    return resolve(true);
+                })
+                .catch((error) =>{_this.log("grabImage error:",error)})
         });
     }
 

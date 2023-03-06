@@ -7,17 +7,34 @@ const events = require('events');
 
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file');
+// Homey                : curl http://192.168.1.99:8008
+// Homey Jr.            : curl http://192.168.1.99:8008
+// Homey Pro            : curl http://192.168.1.184:8008
+// Homey Pro Early 2023 : curl http://192.168.1.162:8008
 
 class App extends Homey.App {
 
     async onInit() {    
+        // !!!! remove next lines before publishing !!!!
+/*        
+        if (process.env.DEBUG === '1') {
+            await LogToFile();
+        }
+*/        
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
         
-        // !!!! remove next lines before publishing !!!!
-        if (process.env.DEBUG === '1') {
-            //await LogToFile();
-        }
+/*
+		if (process.env.DEBUG === '1') {
+            try{ 
+                require('inspector').waitForDebugger();
+            }
+            catch(error){
+                require('inspector').open(9222, '0.0.0.0', false);
+            }
+			process.stdout.write = () => {}
+		}
+*/
 
         this._api = new api(this.homey);
 
@@ -27,6 +44,7 @@ class App extends Homey.App {
 
         await this._api.init();
 
+        this.log("Initialize flowcards");
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
 
@@ -41,8 +59,6 @@ class App extends Homey.App {
         let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
     }
-
-    // async LogToFile(logfile = '/userdata/std.log', port = 8008, flags = 'w')
 
     _syncDevice(data) {
         this.homey.emit('refresh_device', data);
@@ -92,7 +108,7 @@ class App extends Homey.App {
     logRealtime(event, details)
     {
         this.homey.api.realtime(event, details)
-        console.log('Realtime event emitted for', event, details);
+        this.log('Realtime event emitted for', event, details);
     }
 
     writeToTimeline(message) {
@@ -193,6 +209,7 @@ class App extends Homey.App {
             });
     }
 
+    // Called from settingspages through api.js
     async getDevicesInfo() {
         return new Promise((resolve, reject) => {
         

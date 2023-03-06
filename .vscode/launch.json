@@ -15,7 +15,7 @@
 			"request": "launch",
 			"cwd": "${workspaceFolder}",
 			"runtimeExecutable": "homey",
-			"args": ["select", "-n", "Homey Pro van Danee"]
+			"args": ["select", "-n", "Danee's Homey Pro"]
 		},
 		{
 			"name": "Launch app on Homey Jr.",
@@ -28,7 +28,7 @@
 			"serverReadyAction": {
 				"pattern": "Debugger listening on",
 				"action": "startDebugging",
-				"name": "Attach to Homey"
+				"name": "Attach to Homey Jr."
 			}
 		},
 		{
@@ -51,7 +51,7 @@
 			"serverReadyAction": {
 				"pattern": "Debugger listening on",
 				"action": "startDebugging",
-				"name": "Attach to Homey"
+				"name": "Attach to Homey Pro Early 2023"
 			}
 		},
 		{

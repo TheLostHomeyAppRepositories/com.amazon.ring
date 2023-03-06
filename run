@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+case $1 in
+	jr) 
+		homey select -n "Homey Jr."
+		homey app run
+		;;
+	pro)
+		homey select -n "Homey Pro"
+		homey app run
+		;;
+	old)
+		homey select -n "Homey"
+		homey app run
+		;;
+	new)
+		homey select -n "Danee's Homey Pro"
+		homey app run --remote
+		;;
+	*)
+		echo "Usage: $0 {jr|pro|old|new}"
+		exit 1
+		;;
+esac
