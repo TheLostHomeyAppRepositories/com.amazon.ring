@@ -77,25 +77,25 @@
     "sv": "• Lagt till flera nya översättningar • Lagt till nya App Store-bilder • Mindre kodfixar • Fasta par, reparation och statusvisningar"
   },
   "2.10.0": {
-      "en": "First release for Homey Pro Early 2023",
-      "da": "Første udgivelse for Homey Pro Early 2023",
-      "de": "Erste Veröffentlichung für Homey Pro Early 2023",
-      "fr": "Première sortie pour Homey Pro Early 2023",
-      "it": "Primo rilascio per Homey Pro Early 2023",
-      "nl": "Eerste release voor Homey Pro Early 2023",
-      "no": "Første utgivelse for Homey Pro Early 2023",
-      "es": "Primer lanzamiento para Homey Pro Early 2023",
-      "sv": "Första släppet för Homey Pro Early 2023"    
+    "en": "First release for Homey Pro Early 2023",
+    "da": "Første udgivelse for Homey Pro Early 2023",
+    "de": "Erste Veröffentlichung für Homey Pro Early 2023",
+    "fr": "Première sortie pour Homey Pro Early 2023",
+    "it": "Primo rilascio per Homey Pro Early 2023",
+    "nl": "Eerste release voor Homey Pro Early 2023",
+    "no": "Første utgivelse for Homey Pro Early 2023",
+    "es": "Primer lanzamiento para Homey Pro Early 2023",
+    "sv": "Första släppet för Homey Pro Early 2023"    
   },
   "2.10.1": {
-      "en": "",
-      "da": "",
-      "de": "",
-      "fr": "",
-      "it": "",
-      "nl": "",
-      "no": "",
-      "es": "",
-      "sv": ""    
+    "en": "App upgraded to SDK3",
+    "da": "App opgraderet til SDK3",
+    "de": "App auf SDK3 aktualisiert",
+    "fr": "App mise à niveau vers SDK3",
+    "it": "App aggiornata a SDK3",
+    "nl": "App geüpgraded naar SDK3",
+    "no": "App oppgradert til SDK3",
+    "es": "Aplicación actualizada a SDK3",
+    "sv": "App uppgraderad till SDK3"  
   }
 }
