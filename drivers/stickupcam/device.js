@@ -21,6 +21,9 @@ class DeviceStickUpCam extends Device {
         });
 
         this.setAvailable();
+
+        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+
         this._setupCameraView(this.getData());
 
         this.homey.on('refresh_device', this._syncDevice.bind(this));
@@ -33,6 +36,14 @@ class DeviceStickUpCam extends Device {
         if(this.hasCapability("siren"))
         {
             this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
+        }
+    }
+
+    _setAvailability(status) {
+        if (status == 'authenticated') {
+            this.setAvailable();
+        } else {
+            this.setUnavailable(this.homey.__("devices.unauthenticated"));
         }
     }
 

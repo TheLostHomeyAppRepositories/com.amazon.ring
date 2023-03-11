@@ -10,6 +10,17 @@ class DeviceChime extends Device {
         //this.log('name:', this.getName());
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
+
+        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+
+    }
+
+    _setAvailability(status) {
+        if (status == 'authenticated') {
+            this.setAvailable();
+        } else {
+            this.setUnavailable(this.homey.__("devices.unauthenticated"));
+        }
     }
 
     ringChime() {

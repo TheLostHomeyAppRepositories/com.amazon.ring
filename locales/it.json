@@ -30,5 +30,10 @@
             "action": "Devi autenticare nuovamente questa app tramite la funzione di manutenzione del dispositivo o la procedura guidata per l'aggiunta di dispositivi",
             "revoke": "Revoca autenticazione"
         }
-    }
+    },
+    "devices": {
+        "unauthenticated": {
+            "it": "Homey non è più autenticato su Ring. Utilizza la funzione di riparazione per ri-autenticarti."
+        }
+    }    
 }

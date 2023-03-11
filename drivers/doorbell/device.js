@@ -25,12 +25,23 @@ class DeviceDoorbell extends Device {
         });
 
         this.setAvailable();
+
+        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+
         this._setupCameraView(this.getData());
 
         this.homey.on('refresh_device', this._syncDevice.bind(this));
         this.homey.on('refresh_devices', this._syncDevices.bind(this));
+    }  
+        
+    _setAvailability(status) {
+        if (status == 'authenticated') {
+            this.setAvailable();
+        } else {
+            this.setUnavailable(this.homey.__("devices.unauthenticated"));
+        }
     }
-
+    
     async _setupCameraView(device_data) {
         this.log('_setupCamera', device_data);
         //this.device.cameraImage = new Homey.Image(); <- SDK2
@@ -59,7 +70,7 @@ class DeviceDoorbell extends Device {
         })
 
         this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
-        .catch(error =>{this.log("setCameraImage: ",error);})
+            .catch(error =>{this.log("setCameraImage: ",error);})
     }
 
     _syncDevice(data) {

@@ -3,7 +3,7 @@
         "intro": "To add a Ring device Homey needs to be authenticated at Ring, please logon with your Ring account to do this.",
         "auth": {
             "header": "Log on with your Ring account",
-            "warning": "(Two-Factor Authentication is mandatory, this must enabled at your Ring account!)",
+            "warning": "(Two-Factor Authentication is mandatory, this must be enabled at your Ring account!)",
             "user": "Email",
             "pass": "Password",
             "authenticate": "Authenticate",
@@ -34,5 +34,8 @@
             "header": "Troubleshooting",
             "viewlog": "View log"
         }
+    },
+    "devices": {
+        "unauthenticated": "Homey is no longer authenticated at Ring. Please use the repair function to reauthenticate"
     }
 }

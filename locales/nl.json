@@ -30,5 +30,10 @@
             "action": "Je moet (opnieuw) authenticeren via de apparaat onderhoudsfunctie of wizard om een apparaat toe te voegen",
             "revoke": "Trek authenticatie in"
         }
-    }    
+    },
+    "devices": {
+        "unauthenticated": {
+            "nl": "Homey is niet langer geauthenticeerd bij Ring. Gebruik de reparatiefunctie om opnieuw te authenticeren."
+        }
+    }       
 }

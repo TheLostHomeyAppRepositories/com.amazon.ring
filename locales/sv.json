@@ -30,5 +30,10 @@
             "action": "Du behöver (åter-)autentisera denna app från enhetsunderhållsfunktionen eller lägg till enhetsguiden",
             "revoke": "Återkalla autentisering"
         }
-    }
+    },
+    "devices": {
+        "unauthenticated": {
+            "sv": "Homey är inte längre autentiserad på Ring. Använd reparationsfunktionen för att autentisera igen."
+        }
+    }    
 }

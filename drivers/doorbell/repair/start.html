@@ -31,8 +31,8 @@
                 <input class="form-input" id="settings-auth-token" data-i18n-placeholder="" type="text" value=""/>
             </div>
             <br />
-            <button id="settings-auth-authenticate" data-i18n="pair.auth.authenticate"></button>
-            <button id="settings-auth-validatecode" data-i18n="pair.auth.validatecode" style="display: none;"></button>
+            <button id="settings-auth-authenticate" class="homey-button-primary" data-i18n="pair.auth.authenticate"></button>
+            <button id="settings-auth-validatecode" class="homey-button-primary" data-i18n="pair.auth.validatecode" style="display: none;"></button>
         </div>
 
     </fieldset>
@@ -59,7 +59,6 @@
         document.getElementById('settings-auth-validatecode').addEventListener('click', function(elem) {
             onCode(Homey);
         });
-
 
         function onAuth(Homey) {
             var auth = {};

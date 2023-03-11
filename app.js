@@ -6,11 +6,13 @@ const api = require('./lib/Api.js');
 const events = require('events');      
 
 // !!!! remove next lines before publishing !!!!
-// const LogToFile = require('homey-log-to-file');
+//const LogToFile = require('homey-log-to-file');
 // Homey                : curl http://192.168.1.99:8008
 // Homey Jr.            : curl http://192.168.1.99:8008
 // Homey Pro            : curl http://192.168.1.184:8008
 // Homey Pro Early 2023 : curl http://192.168.1.162:8008
+
+// new: "highlight": true, to highlight flowcards, test
 
 class App extends Homey.App {
 
@@ -272,3 +274,11 @@ class App extends Homey.App {
 }
 
 module.exports = App;
+
+// Translate text in ChatGPT
+/*
+In this code en means English, please add Danish, German, French, Italian, Dutch, Norwegian, Spanish and Swedish. Answer in a code block.
+{
+  "en": "Set devices unavailable when authentication is lost",
+}
+*/

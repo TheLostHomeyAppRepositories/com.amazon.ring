@@ -30,5 +30,10 @@
             "action": "Du skal godkende denne app igen fra enhedsvedligeholdelsesfunktionen eller tilføjelsesguiden til enheder",
             "revoke": "Tilbagekald godkendelse"
         }
-    }
+    },
+    "devices": {
+        "unauthenticated": {
+            "da": "Homey er ikke længere godkendt hos Ring. Brug venligst reparationfunktionen til at godkende igen."
+        }
+    }   
 }

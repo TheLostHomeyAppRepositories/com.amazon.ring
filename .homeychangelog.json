@@ -97,5 +97,16 @@
     "no": "App oppgradert til SDK3",
     "es": "Aplicación actualizada a SDK3",
     "sv": "App uppgraderad till SDK3"  
+  },
+  "2.10.2": {
+    "en": "Set devices unavailable when authentication is lost",
+    "da": "Indstil enheder som utilgængelige, når godkendelse mistes",
+    "de": "Geräte als nicht verfügbar einstellen, wenn die Authentifizierung verloren geht",
+    "fr": "Définir les périphériques comme indisponibles lorsque l'authentification est perdue",
+    "it": "Imposta i dispositivi come non disponibili quando si perde l'autenticazione",
+    "nl": "Zet apparaten op niet beschikbaar wanneer authenticatie verloren gaat",
+    "no": "Sett enheter utilgjengelige når autentisering mistes",
+    "es": "Establecer dispositivos no disponibles cuando se pierde la autenticación",
+    "sv": "Sätt enheter otillgängliga när autentisering går förlorad"
   }
 }

@@ -30,5 +30,10 @@
             "action": "Sie müssen diese App aus der Geräteverwaltungsfunktion oder dem Assistenten zum Hinzufügen von Geräten erneut authentifizieren.",
             "revoke": "Authentifizierung widerrufen"
         }
-    }
+    },
+    "devices": {
+        "unauthenticated": {
+            "de": "Homey ist bei Ring nicht mehr authentifiziert. Bitte verwenden Sie die Reparaturfunktion, um sich erneut zu authentifizieren."
+        }
+    }    
 }
