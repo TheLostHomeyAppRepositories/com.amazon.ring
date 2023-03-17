@@ -6,7 +6,7 @@ const api = require('./lib/Api.js');
 const events = require('events');      
 
 // !!!! remove next lines before publishing !!!!
-//const LogToFile = require('homey-log-to-file');
+// const LogToFile = require('homey-log-to-file');
 // Homey                : curl http://192.168.1.99:8008
 // Homey Jr.            : curl http://192.168.1.99:8008
 // Homey Pro            : curl http://192.168.1.184:8008
@@ -22,7 +22,7 @@ class App extends Homey.App {
         if (process.env.DEBUG === '1') {
             await LogToFile();
         }
-*/        
+*/      
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
         
