@@ -8,15 +8,15 @@ Two-Factor Security Authentication is required, you must enable this on your Rin
 * Ring Video Doorbell (Pro)
 
 ## Supported Languages
-* 🇬🇧English
-* 🇳🇱Nederlands
-* 🇩🇪Deutsch
-* 🇫🇷Français
-* 🇮🇹Italiano
-* 🇸🇪Svenska
-* 🇳🇴Norsk
-* 🇪🇸Español
-* 🇩🇰Dansk
+* 🇬🇧 English
+* 🇳🇱 Dutch
+* 🇩🇰 Danish
+* 🇫🇷 French
+* 🇩🇪 German
+* 🇮🇹 Italian
+* 🇳🇴 Norwegian
+* 🇪🇸 Spanish
+* 🇸🇪 Swedish
 
 ## How do I get it to work?
 * Add a Ring device
