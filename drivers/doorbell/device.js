@@ -176,9 +176,10 @@ class DeviceDoorbell extends Device {
     grabImage(args, state) {  
         if (this._device instanceof Error)
             return Promise.reject(this._device);
-
+        //this.log('device:',this.device);
         let _this = this;    
-        return new Promise(function(resolve, reject) {
+        return new Promise(async function(resolve, reject) {
+            //await _this._setupCameraView(_this.getData());
             _this.device.cameraImage.update()
                 .then(() => {
                     _this.log("device.js grabImage: cameraImage.update()");
