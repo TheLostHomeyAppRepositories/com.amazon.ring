@@ -43,11 +43,12 @@
       "en": "Ring Doorbell and Camera support for Homey",
       "da": "Ring Doorbell og kamera-understøttelse til Homey",
       "de": "Unterstützung von Ring Doorbell und Kamera für Homey",
+      "es": "Soporte para Ring Doorbell y Camera en Homey",
       "fr": "Prise en charge de la sonnette et de la caméra Ring pour Homey",
       "it": "Supporto per la videocamera e il campanello Ring su Homey",
       "nl": "Ring Doorbell- en Camera-ondersteuning voor Homey",
       "no": "Ring Doorbell og Camera-støtte for Homey",
-      "es": "Soporte para Ring Doorbell y Camera en Homey",
+      "pl": "Obsługa dzwonka i kamery Ring dla Homey",
       "sv": "Stöd för Ring Doorbell och kamera i Homey"    
   },
   "images": {
@@ -62,11 +63,12 @@
         "en": "Flood light",
         "da": "Flomlys",
         "de": "Flutlicht",
+        "es": "Foco de inundación",
         "fr": "Projecteur",
         "it": "Faro alluvione",
         "nl": "Schijnwerper",
         "no": "Flomlys",
-        "es": "Foco de inundación",
+        "pl": "Reflektor",
         "sv": "Översvämningsljus"
       },
       "getable": true,
@@ -80,11 +82,12 @@
         "en": "Siren",
         "da": "Sirene",
         "de": "Sirene",
+        "es": "Sirena",
         "fr": "Sirène",
         "it": "Sirena",
         "nl": "Sirene",
         "no": "Sirene",
-        "es": "Sirena",
+        "pl": "Syrena",
         "sv": "Siren"
       },
       "getable": true,
@@ -100,11 +103,12 @@
         "en": "Video Doorbell",
         "da": "Video dørklokke",
         "de": "Video Türklingel",
+        "es": "Videoportero",
         "fr": "Sonnette vidéo",
         "it": "Campanello video",
         "nl": "Video deurbel",
         "no": "Videodørklokke",
-        "es": "Videoportero",
+        "pl": "Wideodomofon",
         "sv": "Video dörrklocka"
       },
       "images": {
@@ -160,11 +164,12 @@
             "en": "Homey integration settings",
             "da": "Homey integrationsindstillinger",
             "de": "Homey Integrations-Einstellungen",
+            "es": "Configuración de integración de Homey",
             "fr": "Paramètres d'intégration Homey",
             "it": "Impostazioni di integrazione Homey",
             "nl": "Homey integratie-instellingen",
             "no": "Homey integreringsinnstillinger",
-            "es": "Configuración de integración de Homey",
+            "pl": "Ustawienia integracji Homey",
             "sv": "Homey integrationsinställningar"
           },
           "children": [
@@ -176,22 +181,24 @@
                 "en": "Use Motion Detection",
                 "da": "Brug bevægelsesregistrering",
                 "de": "Bewegungserkennung verwenden",
+                "es": "Usar detección de movimiento",
                 "fr": "Utiliser la détection de mouvement",
                 "it": "Usa il rilevamento del movimento",
                 "nl": "Bewegingsdetectie gebruiken",
                 "no": "Bruk bevegelsesdeteksjon",
-                "es": "Usar detección de movimiento",
+                "pl": "Użyj wykrywania ruchu",
                 "sv": "Använd rörelsedetektering"
               },
               "hint": {
                 "en": "You can use your Ring Doorbell as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
                 "da": "Du kan bruge din Ring Doorbell som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
                 "de": "Sie können Ihre Ring Doorbell als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
+                "es": "Puede utilizar su Ring Doorbell como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
                 "fr": "Vous pouvez utiliser votre Ring Doorbell comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
                 "it": "Puoi utilizzare la tua Ring Doorbell come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
                 "nl": "U kunt uw Ring Doorbell gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
                 "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
-                "es": "Puede utilizar su Ring Doorbell como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
+                "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
                 "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
               }              
             }
@@ -303,7 +310,15 @@
         "id": "ring_snapshot_received",
         "title": {
           "en": "Snapshot is grabbed",
-          "nl": "Snapshot is opgehaald"
+          "da": "Snapshot er taget",
+          "de": "Snapshot wurde aufgenommen",
+          "es": "Se ha capturado una instantánea",
+          "fr": "La capture d'écran est effectuée",
+          "it": "È stata catturata una istantanea",
+          "nl": "Snapshot is vastgelegd",
+          "no": "Snapshot er tatt",
+          "pl": "Zrobiono zrzut ekranu",
+          "sv": "Snapshot har fångats"
         },
         "tokens": [
           {
@@ -319,23 +334,55 @@
         "id": "ring_location_mode_changed_generic",
         "title": {
           "en": "A location mode changed",
-          "nl": "De status van een locatie is verandert"
+          "da": "En placeringstilstand er ændret",
+          "de": "Ein Standortmodus hat sich geändert",
+          "es": "Se ha cambiado el modo de ubicación",
+          "fr": "Un mode de localisation a été modifié",
+          "it": "È stato cambiato una modalità di posizione",
+          "nl": "Een locatiemodus is gewijzigd",
+          "no": "En plasseringsmodus er endret",
+          "pl": "Zmieniono tryb lokalizacji",
+          "sv": "Ett platsläge har ändrats"
         },
         "titleFormatted": {
           "en": "The mode for [[location]] changed",
-          "nl": "De mode van [[location]] is verandert"
+          "da": "Tilstanden for [[location]] er blevet ændret",
+          "de": "Der Modus für [[location]] hat sich geändert",
+          "es": "El modo de [[location]] ha cambiado",
+          "fr": "Le mode pour [[location]] a changé",
+          "it": "La modalità per [[location]] è cambiata",
+          "nl": "De modus voor [[location]] is gewijzigd",
+          "no": "Modusen for [[location]] har blitt endret",
+          "pl": "Tryb dla [[location]] został zmieniony",
+          "sv": "Läget för [[location]] har ändrats"
         },
         "args": [
           {
             "name": "location",
             "title": {
               "en": "Location",
-              "nl": "Locatie"
+              "da": "Placering",
+              "de": "Ort",
+              "es": "Ubicación",
+              "fr": "Emplacement",
+              "it": "Posizione",
+              "nl": "Locatie",
+              "no": "Plassering",
+              "pl": "Lokalizacja",
+              "sv": "Plats"
             },
             "type": "autocomplete",
             "placeholder": {
               "en": "NOTE: You must have a location setup in Ring",
-              "nl": "LET OP: Er moet een locatie bekend zijn in Ring"
+              "da": "BEMÆRK: Du skal have en placering oprettet i Ring",
+              "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
+              "es": "NOTA: Debe tener una ubicación configurada en Ring",
+              "fr": "REMARQUE: Vous devez avoir configuré un emplacement dans Ring",
+              "it": "NOTA: È necessario avere una posizione configurata in Ring",
+              "nl": "LET OP: U moet een locatie instellen in Ring",
+              "no": "MERK: Du må ha en plassering satt opp i Ring",
+              "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
+              "sv": "OBS: Du måste ha en plats inställd i Ring"
             }
           }
         ],
@@ -343,7 +390,15 @@
           {
             "title": {
               "en": "Previous mode",
-              "nl": "Vorige mode"
+              "da": "Tidligere tilstand",
+              "de": "Vorheriger Modus",
+              "es": "Modo anterior",
+              "fr": "Mode précédent",
+              "it": "Modalità precedente",
+              "nl": "Vorige modus",
+              "no": "Forrige modus",
+              "pl": "Poprzedni tryb",
+              "sv": "Föregående läge"
             },
             "name": "oldmode",
             "type": "string",
@@ -352,7 +407,15 @@
           {
             "title": {
               "en": "New mode",
-              "nl": "Nieuwe mode"
+              "da": "Ny tilstand",
+              "de": "Neuer Modus",
+              "es": "Nuevo modo",
+              "fr": "Nouveau mode",
+              "it": "Nuova modalità",
+              "nl": "Nieuwe modus",
+              "no": "Ny modus",
+              "pl": "Nowy tryb",
+              "sv": "Nytt läge"
             },
             "name": "mode",
             "type": "string",
@@ -380,7 +443,15 @@
         "id": "ring_grab_snapshot",
         "title": {
           "en": "Grab current snapshot",
-          "nl": "Haal huidige snapshot op"
+          "da": "Hent øjebliksbillede",
+          "de": "Aktuellen Schnappschuss erfassen",
+          "es": "Capturar instantánea actual",
+          "fr": "Capturer l'instantané actuel",
+          "it": "Acquisisci istantanea corrente",
+          "nl": "Huidige snapshot pakken",
+          "no": "Ta øyeblikksbilde nå",
+          "pl": "Zrób obecny zrzut ekranu",
+          "sv": "Ta aktuell ögonblicksbild"
         },
         "args": [
           {
@@ -394,7 +465,15 @@
         "id": "doorbell_enable_motion",
         "title": {
           "en": "Enable motion detection",
-          "nl": "Schakel bewegingsdetectie in"
+          "da": "Aktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung aktivieren",
+          "es": "Activar la detección de movimiento",
+          "fr": "Activer la détection de mouvement",
+          "it": "Abilita la rilevazione del movimento",
+          "nl": "Bewegingsdetectie inschakelen",
+          "no": "Aktiver bevegelsesdeteksjon",
+          "pl": "Włącz wykrywanie ruchu",
+          "sv": "Aktivera rörelsedetektering"
         },
         "args": [
           {
@@ -408,7 +487,15 @@
         "id": "doorbell_disable_motion",
         "title": {
           "en": "Disable motion detection",
-          "nl": "Schakel bewegingsdetectie uit"
+          "da": "Deaktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung deaktivieren",
+          "es": "Desactivar la detección de movimiento",
+          "fr": "Désactiver la détection de mouvement",
+          "it": "Disattivare il rilevamento del movimento",
+          "nl": "Bewegingsdetectie uitschakelen",
+          "no": "Deaktiver bevegelsesdeteksjon",
+          "pl": "Wyłącz wykrywanie ruchu",
+          "sv": "Inaktivera rörelsedetektion"
         },
         "args": [
           {
@@ -422,7 +509,15 @@
         "id": "stickupcam_grab_snapshot",
         "title": {
           "en": "Grab current snapshot",
-          "nl": "Haal huidige snapshot op"
+          "da": "Hent øjebliksbillede",
+          "de": "Aktuellen Schnappschuss erfassen",
+          "es": "Capturar instantánea actual",
+          "fr": "Capturer l'instantané actuel",
+          "it": "Acquisisci istantanea corrente",
+          "nl": "Huidige snapshot pakken",
+          "no": "Ta øyeblikksbilde nå",
+          "pl": "Zrób obecny zrzut ekranu",
+          "sv": "Ta aktuell ögonblicksbild"
         },
         "args": [
           {
@@ -436,7 +531,15 @@
         "id": "stickupcam_enable_motion",
         "title": {
           "en": "Enable motion detection",
-          "nl": "Schakel bewegingsdetectie in"
+          "da": "Aktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung aktivieren",
+          "es": "Activar la detección de movimiento",
+          "fr": "Activer la détection de mouvement",
+          "it": "Abilita la rilevazione del movimento",
+          "nl": "Bewegingsdetectie inschakelen",
+          "no": "Aktiver bevegelsesdeteksjon",
+          "pl": "Włącz wykrywanie ruchu",
+          "sv": "Aktivera rörelsedetektering"
         },
         "args": [
           {
@@ -450,7 +553,15 @@
         "id": "stickupcam_disable_motion",
         "title": {
           "en": "Disable motion detection",
-          "nl": "Schakel bewegingsdetectie uit"
+          "da": "Deaktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung deaktivieren",
+          "es": "Desactivar la detección de movimiento",
+          "fr": "Désactiver la détection de mouvement",
+          "it": "Disattivare il rilevamento del movimento",
+          "nl": "Bewegingsdetectie uitschakelen",
+          "no": "Deaktiver bevegelsesdeteksjon",
+          "pl": "Wyłącz wykrywanie ruchu",
+          "sv": "Inaktivera rörelsedetektion"
         },
         "args": [
           {
@@ -464,7 +575,15 @@
         "id": "stickupcam_light_on",
         "title": {
           "en": "Turn the floodlight on",
-          "nl": "Zet de schijnwerper aan"
+          "da": "Tænd oversvømmelseslyset",
+          "de": "Schalte die Flutlichtanlage ein",
+          "es": "Enciende el foco de inundación",
+          "fr": "Allumez le projecteur",
+          "it": "Accendi il faro",
+          "nl": "Zet de schijnwerper aan",
+          "no": "Slå på flomlyset",
+          "pl": "Włącz reflektor",
+          "sv": "Sätt på översvämningsljuset"
         },
         "args": [
           {
@@ -478,7 +597,15 @@
         "id": "stickupcam_light_off",
         "title": {
           "en": "Turn the floodlight off",
-          "nl": "Zet de schijnwerper uit"
+          "da": "Sluk for flomlyset",
+          "de": "Schalte das Flutlichtanlage aus",
+          "es": "Apaga el foco de inundación",
+          "fr": "Éteignez le projecteur",
+          "it": "Spegni i fari da esterno",
+          "nl": "Zet de schijnwerper uit",
+          "no": "Slå av flomlyset",
+          "pl": "Wyłącz reflektor",
+          "sv": "Stäng av översvämningsljuset"
         },
         "args": [
           {
@@ -492,7 +619,15 @@
         "id": "stickupcam_siren_off",
         "title": {
           "en": "Turn the siren off",
-          "nl": "Zet de sirene uit"
+          "da": "Sluk sirenen",
+          "de": "Schalte die Sirene aus",
+          "es": "Apaga la sirena",
+          "fr": "Éteignez la sirène",
+          "it": "Spegni la sirena",
+          "nl": "Zet de sirene uit",
+          "no": "Slå av sirenen",
+          "pl": "Wyłącz syrenę",
+          "sv": "Stäng av siren"        
         },
         "args": [
           {
@@ -506,7 +641,15 @@
         "id": "stickupcam_siren_on",
         "title": {
           "en": "Turn the siren on",
-          "nl": "Zet de siren aan"
+          "da": "Tænd sirenen",
+          "de": "Schalte die Sirene ein",
+          "es": "Enciende la sirena",
+          "fr": "Allumez la sirène",
+          "it": "Accendi la sirena",
+          "nl": "Zet de sirene aan",
+          "no": "Slå på sirenene",
+          "pl": "Włącz syrenę",
+          "sv": "Sätt på sirenen"
         },
         "args": [
           {
@@ -520,11 +663,27 @@
         "id": "change_location_mode",
         "title": {
           "en": "Change the mode for a location",
-          "nl": "Verander modus voor een locatie"
+          "da": "Skift tilstand for en placering",
+          "de": "Ändern Sie den Modus für einen Standort",
+          "es": "Cambiar el modo para una ubicación",
+          "fr": "Changer le mode pour un emplacement",
+          "it": "Cambia la modalità per una posizione",
+          "nl": "Verander de modus voor een locatie",
+          "no": "Endre modus for en plassering",
+          "pl": "Zmień tryb dla lokalizacji",
+          "sv": "Ändra läge för en plats"
         },
         "titleFormatted": {
           "en": "Change the mode for [[location]] to [[mode]]",
-          "nl": "Verander modus voor [[location]] naar [[mode]]"
+          "da": "Skift tilstand for [[location]] til [[mode]]",
+          "de": "Ändere den Modus für [[location]] zu [[mode]]",
+          "es": "Cambiar el modo para [[location]] a [[mode]]",
+          "fr": "Changer le mode pour [[location]] à [[mode]]",
+          "it": "Cambiare la modalità per [[location]] a [[mode]]",
+          "nl": "Verander de modus voor [[location]] naar [[mode]]",
+          "no": "Endre modus for [[location]] til [[mode]]",
+          "pl": "Zmień tryb dla [[location]] na [[mode]]",
+          "sv": "Ändra läget för [[location]] till [[mode]]"
         },
         "args": [
           {
@@ -536,7 +695,15 @@
             "type": "autocomplete",
             "placeholder": {
               "en": "NOTE: You must have a location setup in Ring",
-              "nl": "LET OP: Er moet een locatie bekend zijn in Ring"
+              "da": "BEMÆRK: Du skal have en placering opsat i Ring",
+              "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
+              "es": "NOTA: Debe tener una ubicación configurada en Ring",
+              "fr": "REMARQUE: Vous devez avoir une localisation configurée dans Ring",
+              "it": "NOTA: È necessario avere una posizione impostata in Ring",
+              "nl": "OPMERKING: U moet een locatie instellen in Ring",
+              "no": "MERK: Du må ha en plassering satt opp i Ring",
+              "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
+              "sv": "OBS: Du måste ha en plats inställd i Ring"
             }
           },
           {
@@ -571,7 +738,15 @@
         "id": "stickupcam_floodLight_on",
         "title": {
           "en": "The floodlight {{is|isn't}} on",
-          "nl": "De schijnwerper {{is|is niet}} aan"
+          "da": "Flomlyset {{er|er ikke}} tændt",
+          "de": "Die Flutlichtanlage {{ist|ist nicht}} an",
+          "es": "El foco de inundación {{está|no está}} encendido",
+          "fr": "Le projecteur {{est|n'est pas}} allumé",
+          "it": "Il proiettore {{è|non è}} acceso",
+          "nl": "De schijnwerper {{staat|staat niet}} aan",
+          "no": "Flomlyset {{er|er ikke}} på",
+          "pl": "Reflektor {{jest|nie jest}} włączony",
+          "sv": "Strålkastaren {{är|är inte}} på"
         },
         "args": [
           {
@@ -585,23 +760,55 @@
         "id": "ring_location_mode_active",
         "title": {
           "en": "A location mode is...",
-          "nl": "De status van een locatie is ..."
+          "da": "En placeringstilstand er...",
+          "de": "Ein Standortmodus ist...",
+          "es": "Un modo de ubicación es...",
+          "fr": "Un mode de localisation est...",
+          "it": "Una modalità di posizione è...",
+          "nl": "Een locatiemodus is...",
+          "no": "En plasseringsmodus er...",
+          "pl": "Tryb lokalizacji to...",
+          "sv": "En platslägesfunktion är..."
         },
         "titleFormatted": {
           "en": "The mode for [[location]] !{{is|isn't}} [[mode]]",
-          "nl": "De mode van [[location]] !{{is|is niet}} [[mode]]"
+          "da": "Modus for [[location]] !{{er|er ikke}} [[mode]]",
+          "de": "Der Modus für [[location]] !{{ist|ist nicht}} [[mode]]",
+          "es": "El modo para [[location]] !{{es|no es}} [[mode]]",
+          "fr": "Le mode pour [[location]] !{{est|n'est pas}} [[mode]]",
+          "it": "La modalità per [[location]] !{{è|non è}} [[mode]]",
+          "nl": "De modus voor [[location]] !{{is|is niet}} [[mode]]",
+          "no": "Modusen for [[location]] !{{er|er ikke}} [[mode]]",
+          "pl": "Tryb dla [[location]] !{{jest|nie jest}} [[mode]]",
+          "sv": "Läget för [[location]] !{{är|är inte}} [[mode]]"
         },
         "args": [
           {
             "name": "location",
             "title": {
               "en": "Location",
-              "nl": "Locatie"
+              "da": "Beliggenhed",
+              "de": "Ort",
+              "es": "Ubicación",
+              "fr": "Emplacement",
+              "it": "Posizione",
+              "nl": "Locatie",
+              "no": "Plassering",
+              "pl": "Lokalizacja",
+              "sv": "Plats"
             },
             "type": "autocomplete",
             "placeholder": {
               "en": "NOTE: You must have a location setup in Ring",
-              "nl": "LET OP: Er moet een locatie bekend zijn in Ring"
+              "da": "BEMÆRK: Du skal have en placering opsat i Ring",
+              "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
+              "es": "NOTA: Debe tener una ubicación configurada en Ring",
+              "fr": "REMARQUE: Vous devez avoir une localisation configurée dans Ring",
+              "it": "NOTA: È necessario avere una posizione impostata in Ring",
+              "nl": "OPMERKING: U moet een locatie instellen in Ring",
+              "no": "MERK: Du må ha en plassering satt opp i Ring",
+              "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
+              "sv": "OBS: Du måste ha en plats inställd i Ring"
             }
           },
           {

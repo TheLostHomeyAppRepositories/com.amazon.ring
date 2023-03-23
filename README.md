@@ -9,14 +9,15 @@ Two-Factor Security Authentication is required, you must enable this on your Rin
 
 ## Supported Languages
 * 🇬🇧 English
-* 🇳🇱 Dutch
-* 🇩🇰 Danish
-* 🇫🇷 French
-* 🇩🇪 German
-* 🇮🇹 Italian
-* 🇳🇴 Norwegian
-* 🇪🇸 Spanish
-* 🇸🇪 Swedish
+* 🇩🇰 Dansk
+* 🇩🇪 Deutsch
+* 🇪🇸 Español
+* 🇫🇷 Français
+* 🇮🇹 Italiano
+* 🇳🇱 Nederlands
+* 🇳🇴 Norsk
+* 🇵🇱 Polski
+* 🇸🇪 Svenska
 
 ## How do I get it to work?
 * Add a Ring device

@@ -6,7 +6,7 @@ const api = require('./lib/Api.js');
 const events = require('events');      
 
 // !!!! remove next lines before publishing !!!!
- const LogToFile = require('homey-log-to-file');
+// const LogToFile = require('homey-log-to-file');
 
 // new: "highlight": true, to highlight flowcards, test
 
@@ -14,11 +14,11 @@ class App extends Homey.App {
 
     async onInit() {    
         // !!!! remove next lines before publishing !!!!
-       
+/*       
         if (process.env.DEBUG === '1') {
             await LogToFile();
         }
-     
+*/     
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
         

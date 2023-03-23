@@ -1,0 +1,42 @@
+{
+    "pair": {
+        "intro": "Aby dodać urządzenie Ring do Homey, konieczne jest uwierzytelnienie Homey w Ring. Zaloguj się do swojego konta Ring, aby to zrobić.",
+        "auth": {
+            "header": "Zaloguj się do swojego konta Ring",
+            "warning": "(Wymagana jest autoryzacja dwuskładnikowa, musi być włączona w Twoim koncie Ring!)",
+            "user": "Adres e-mail",
+            "pass": "Hasło",
+            "authenticate": "Uwierzytelnij",
+            "token": "Wprowadź kod MFA, który otrzymałeś",
+            "validatecode": "Autoryzuj",
+            "state": "Stan uwierzytelnienia",
+            "authenticating": "Uwierzytelnianie...",
+            "success": "Aplikacja Ring dla Homey jest pomyślnie uwierzytelniona w Ring",
+            "failed": "Uwierzytelnianie nie powiodło się, sprawdź swoje dane uwierzytelniające",
+            "continue": "Kontynuuj",
+            "again": "Spróbuj ponownie",
+            "cancel": "Anuluj"
+        }
+    },
+    "settings": {
+        "title": "Twoje urządzenia Ring w Homey",
+        "intro": "Aby używać urządzeń Ring w Homey, Homey musi być uwierzytelniony w Ring. Autoryzacja jest wykonywana podczas dodawania pierwszego urządzenia Ring do Homey.",
+        "info": "Stan uwierzytelnienia jest wyświetlony powyżej. Możesz użyć przycisku Wycofaj uwierzytelnienie, aby wycofać uwierzytelnienie Homey w Ring.",
+        "auth": {
+            "header": "Stan uwierzytelnienia Homey",
+            "result": "Wynik uwierzytelnienia:",
+            "success": "Aplikacja Ring dla Homey jest pomyślnie uwierzytelniona w Ring",
+            "error": "Błąd:",
+            "action": "Musisz ponownie uwierzytelnić tę aplikację z funkcji konserwacji urządzenia lub kreatora dodawania urządzenia",
+            "revoke": "Wycofaj uwierzytelnienie"
+        },
+        "troubleshooting": {
+            "header": "Rozwiązywanie problemów",
+            "viewlog": "Wyświetl dziennik"
+        }
+    },
+    "devices": {
+        "unauthenticated": "Homey nie jest już uwierzytelniony w Ring. Skorzystaj z funkcji naprawy, aby ponownie uwierzytelnić"
+    }
+}
+
