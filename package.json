@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ring-client-api": "^11.7.2"
+  }
+}
