@@ -6,7 +6,7 @@ const api = require('./lib/Api.js');
 const events = require('events');      
 
 // !!!! remove next lines before publishing !!!!
-// const LogToFile = require('homey-log-to-file');
+const LogToFile = require('homey-log-to-file');
 
 // new: "highlight": true, to highlight flowcards, test
 
@@ -14,14 +14,15 @@ class App extends Homey.App {
 
     async onInit() {    
         // !!!! remove next lines before publishing !!!!
-/*       
-        if (process.env.DEBUG === '1') {
+       
+        const runningVersion = this.parseVersionString(Homey.manifest.version);
+        if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
         }
-*/     
+    
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
-        
+
 /*
 		if (process.env.DEBUG === '1') {
             try{ 
@@ -245,6 +246,8 @@ class App extends Homey.App {
         logLine = "";
     }
 
+    // Support functions
+
     // Returns a date timestring including milliseconds to be used in loglines
     // - Called from multiple functions
     getDateTime() {
@@ -265,6 +268,21 @@ class App extends Homey.App {
         let day  = date.getDate();
         day = (day < 10 ? "0" : "") + day;
         return day + "-" + month + "-" + year + "  ||  " + hour + ":" + min + ":" + sec + "." + msec + "  ||  ";
+    }
+
+    // returns the supplied version is a usable format; version.major, version.minor, version.path
+    parseVersionString(version) {
+        if (typeof(version) != 'string') { return false; }
+        var x = version.split('.');
+        // parse from string or default to 0 if can't parse
+        var maj = parseInt(x[0]) || 0;
+        var min = parseInt(x[1]) || 0;
+        var pat = parseInt(x[2]) || 0;
+        return {
+            major: maj,
+            minor: min,
+            patch: pat
+        }
     }
 
 }
