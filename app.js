@@ -40,6 +40,10 @@ class App extends Homey.App {
         this._api.on('refresh_device', this._syncDevice.bind(this));
         this._api.on('refresh_devices', this._syncDevices.bind(this));
         this._api.on('refresh_locationMode', this._syncLocationMode.bind(this));
+        
+        // ! rewrite using ring-client-api
+        this._api.on('ringOnNotification',this._ringOnNotification.bind(this));
+        this._api.on('ringOnData',this._ringOnData.bind(this));
 
         await this._api.init();
 
@@ -57,6 +61,16 @@ class App extends Homey.App {
 
         let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
+    }
+
+    // ! rewrite using ring-client-api
+    _ringOnNotification(notification) {
+        this.homey.emit('ringOnNotification', notification);
+    }
+
+    // ! rewrite using ring-client-api
+    _ringOnData(data) {
+        this.homey.emit('ringOnData', data);
     }
 
     _syncDevice(data) {

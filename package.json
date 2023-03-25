@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "ring-client-api": "^11.7.2"
+    "homey-log-to-file": "github:robertklep/homey-log-to-file"
   }
 }

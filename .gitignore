@@ -1,5 +1,6 @@
 .DS_Store
 /_information/
+/__rewrite/
 /.homeybuild/
 /.homeyignore
 node_modules

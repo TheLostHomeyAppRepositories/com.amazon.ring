@@ -32,6 +32,11 @@ class DeviceDoorbell extends Device {
 
         this.homey.on('refresh_device', this._syncDevice.bind(this));
         this.homey.on('refresh_devices', this._syncDevices.bind(this));
+
+        // ! rewrite using ring-client-api
+        this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
+        this.homey.on('ringOnData',this._ringOnData.bind(this));
+
     }  
         
     _setAvailability(status) {
@@ -73,7 +78,63 @@ class DeviceDoorbell extends Device {
             .catch(error =>{this.log("setCameraImage: ",error);})
     }
 
+    // ! rewrite using ring-client-api
+    _ringOnNotification(notification) {
+        //this.log('_ringOnNotification', notification);
+        
+        // Is this notification for me?
+        if (notification.ding.doorbot_id !== this.getData().id)
+            return;
+
+        //this.log('ding',notification.ding);
+        //this.log('subtype',notification.subtype);
+        //this.log('action',notification.action);
+        
+        if (notification.subtype === 'ding') {
+            if (!this.getCapabilityValue('alarm_generic')) {
+                this.homey.app.logRealtime('doorbell', 'ding');
+                let logLine = " doorbell || _syncDevice || " + this.getName() + " reported ding event";
+                this.homey.app.writeLog(logLine);
+            }
+            
+            this.setCapabilityValue('alarm_generic', true).catch(error => {
+                this.error(error);
+            });
+
+            clearTimeout(this.device.timer.ding);
+
+            this.device.timer.ding = setTimeout(() => {
+                this.setCapabilityValue('alarm_generic', false).catch(error => {
+                    this.error(error);
+                });
+            }, statusTimeout);
+
+        } else if (notification.subtype === 'motion') {
+            if (!this.getCapabilityValue('alarm_motion')) {
+                this.homey.app.logRealtime('doorbell', 'motion');
+                let logLine = " doorbell || _syncDevice || " + this.getName() + " reported motion event";
+                this.homey.app.writeLog(logLine);
+            }
+
+            this.setCapabilityValue('alarm_motion', true).catch(error => {
+                this.error(error);
+            });
+
+            clearTimeout(this.device.timer.motion);
+
+            this.device.timer.motion = setTimeout(() => {
+                this.setCapabilityValue('alarm_motion', false).catch(error => {
+                    this.error(error);
+                });
+            }, statusTimeout);
+
+        }
+
+    }
+
     _syncDevice(data) {
+        // This function has been replaced by _ringOnNotification(notification) due to using the ring-client-api
+        return;
         if ( data.length > 0 ) {
             //this.log('_syncDevice data:', data);
         }
@@ -128,8 +189,46 @@ class DeviceDoorbell extends Device {
         });
     }
 
+    // ! rewrite using ring-client-api
+    _ringOnData(data) {
+        //this.log('_ringOnData data',data);
+
+        // Is this data for me?
+        if (data.id !== this.getData().id)
+        return;
+
+        let battery = 100;
+
+        if (data.battery_life != null) {
+            // battery_life is not null, add measure_battery capability if it does not exists
+            if ( !this.hasCapability('measure_battery') ) {
+                this.addCapability('measure_battery');
+            }
+            battery = parseInt(data.battery_life);
+                
+            if (battery > 100) { battery = 100; }
+                              
+            if ( this.getCapabilityValue('measure_battery') != battery) {
+                this.setCapabilityValue('measure_battery', battery).catch(error => {
+                    this.error(error);
+                });
+            }
+        } else {
+            // battery_life is null, remove measure_battery capability if it exists
+            if ( this.hasCapability('measure_battery') ) {
+                this.removeCapability('measure_battery');
+            }
+        }
+
+        this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
+            .catch((error) => {});
+        
+    }
+
     _syncDevices(data) {
-        // this.log('_syncDevices', data);
+        // This function has been replaced by _ringOnData(data) due to using the ring-client-api
+        return;
+        //this.log('_syncDevices', data);
 
         data.doorbots.forEach( (device_data) => {
             // console.log(device_data.settings);

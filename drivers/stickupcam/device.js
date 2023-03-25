@@ -28,6 +28,11 @@ class DeviceStickUpCam extends Device {
 
         this.homey.on('refresh_device', this._syncDevice.bind(this));
         this.homey.on('refresh_devices', this._syncDevices.bind(this));
+
+        // ! rewrite using ring-client-api
+        this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
+        this.homey.on('ringOnData',this._ringOnData.bind(this));
+
         //Hook up the capabilities that are already known.
         if(this.hasCapability("flood_light"))
         {
@@ -54,7 +59,7 @@ class DeviceStickUpCam extends Device {
             //Adding new capabilities
             if(!this.hasCapability("flood_light"))
             {
-                console.log('this stickup camera has light, enable the capabilit');
+                console.log('this stickup camera has light, enable the capability');
                 this.addCapability("flood_light").then(function() {
                     this.registerCapabilityListener('flood_light', this.onCapabilityFloodLight.bind(this));
                 }.bind(this));
@@ -70,7 +75,7 @@ class DeviceStickUpCam extends Device {
             //Adding new capabilities
             if(!this.hasCapability("siren"))
             {
-                console.log('this stickup camera has a siren, enable the capabilit');
+                console.log('this stickup camera has a siren, enable the capability');
                 this.addCapability("siren").then(function() {
                     this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
                 }.bind(this));
@@ -113,7 +118,39 @@ class DeviceStickUpCam extends Device {
         //}.bind(this));
     }
 
+    // ! rewrite using ring-client-api
+    _ringOnNotification(notification) {
+        this.log('_ringOnNotification', notification);
+        
+        // Is this notification for me?
+        if (notification.ding.doorbot_id !== this.getData().id)
+            return;
+
+        //this.log('ding',notification.ding);
+        //this.log('subtype',notification.subtype);
+        //this.log('action',notification.action);
+
+        if (notification.subtype === 'motion') {
+            this.setCapabilityValue('alarm_motion', true).catch(error => {
+                this.error(error);
+            });
+
+            this.homey.app.logRealtime('stickupcam', 'motion');
+
+            clearTimeout(this.device.timer.motion);
+
+            this.device.timer.motion = setTimeout(() => {
+                this.setCapabilityValue('alarm_motion', false).catch(error => {
+                    this.error(error);
+                });
+            }, statusTimeout);
+
+        }
+    }
+
     _syncDevice(data) {
+        // This function has been replaced by _ringOnNotification(notification) due to using the ring-client-api
+        return;        
         if ( data.length > 0 ) {
             this.log('_syncDevice', data);
         }
@@ -144,8 +181,20 @@ class DeviceStickUpCam extends Device {
         });
     }
 
+    // ! rewrite using ring-client-api
+    _ringOnData(data) {
+        this.log('_ringOnData data',data);
+
+        // Is this data for me?
+        if (data.id !== this.getData().id)
+        return;
+
+
+        
+    }
+
     _syncDevices(data) {
-        //this.log('_syncDevices', data);
+        this.log('_syncDevices data', data);
 
         data.stickup_cams.forEach((device_data) => {
             if (device_data.id !== this.getData().id)
