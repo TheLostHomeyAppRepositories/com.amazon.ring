@@ -189,8 +189,6 @@ class DeviceStickUpCam extends Device {
         if (data.id !== this.getData().id)
         return;
 
-
-        
     }
 
     _syncDevices(data) {
