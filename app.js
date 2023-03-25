@@ -101,8 +101,8 @@ class App extends Homey.App {
         this._api.sirenOff(data, callback);
     }
 
-    ringChime(data, callback) {
-        this._api.ringChime(data, callback);
+    ringChime(data, sound, callback) {
+        this._api.ringChime(data, sound, callback);
     }
 
     grabImage(data, callback) {

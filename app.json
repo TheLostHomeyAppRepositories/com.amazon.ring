@@ -428,14 +428,38 @@
       {
         "id": "ring_chime",
         "title": {
-          "en": "Ring Chime",
-          "nl": "Ring Chime"
+          "en": "Ring Chime with",
+          "nl": "Ring Chime met"
+        },
+        "titleFormatted": {
+          "en": "Ring Chime with [[sound]]",
+          "nl": "Ring Chime met [[sound]]"
         },
         "args": [
           {
             "name": "device",
             "type": "device",
             "filter": "driver_id=chime"
+          },
+          {
+            "name": "sound",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "ring",
+                "label": {
+                  "en": "Ring sound",
+                  "nl": "Ring geluid"
+                }
+              },
+              {
+                "id": "motion",
+                "label": {
+                  "en": "Motion sound",
+                  "nl": "Beweging geluid"
+                }
+              }
+            ]
           }
         ]
       },

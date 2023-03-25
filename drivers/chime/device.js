@@ -23,7 +23,7 @@ class DeviceChime extends Device {
         }
     }
 
-    ringChime() {
+    ringChime(args) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
 
@@ -31,7 +31,7 @@ class DeviceChime extends Device {
 
         let _this = this;
         return new Promise(function(resolve, reject) {
-            _this.homey.app.ringChime(device_data, (error, result) => {
+            _this.homey.app.ringChime(device_data, args.sound, (error, result) => {
                 if (error)
                     return reject(error);
 
