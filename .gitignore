@@ -3,5 +3,5 @@
 /__rewrite/
 /.homeybuild/
 /.homeyignore
-/.vscode
+/.vscode/
 node_modules
