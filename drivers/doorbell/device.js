@@ -219,8 +219,13 @@ class DeviceDoorbell extends Device {
                 this.removeCapability('measure_battery');
             }
         }
-
+ 
+        /*
         this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
+            .catch((error) => {});
+        */
+
+        this.setSettings({useMotionDetection: data.subscribed_motions})
             .catch((error) => {});
         
     }

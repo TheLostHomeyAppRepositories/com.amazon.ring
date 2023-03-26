@@ -43,7 +43,7 @@ class App extends Homey.App {
         
         // ! rewrite using ring-client-api
         this._api.on('ringOnNotification',this._ringOnNotification.bind(this));
-        this._api.on('ringOnData',this._ringOnData.bind(this));
+        this._api.on('ringOnData',this._ringOnData.bind(this));        
 
         await this._api.init();
 
@@ -73,12 +73,42 @@ class App extends Homey.App {
         this.homey.emit('ringOnData', data);
     }
 
+    // To be replaced by _ringOnNotification(notification)
     _syncDevice(data) {
         this.homey.emit('refresh_device', data);
     }
 
+    // To be replaced by _ringOnData(data)
     _syncDevices(data) {
         this.homey.emit('refresh_devices', data);
+    }
+
+    _syncLocationMode(newLocationMode)
+    {
+        //this.log('_syncLocationMode',newLocationMode);
+        if(this.lastLocationModes.length>0)
+        {
+            let matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
+                 return lastLocationMode.id==newLocationMode.id;
+            });
+            if(matchedLastLocationMode!=undefined)
+            {
+                //console.log('Check location mode for remembered location '+matchedLastLocationMode.name+' was in mode '+matchedLastLocationMode.mode+' and now is in mode '+newLocationMode.mode);
+                if(matchedLastLocationMode.mode!=newLocationMode.mode)
+                {
+                    //console.log('location mode changed, raise the flow trigger!');
+                    this.triggerLocationModeChanged({oldmode: matchedLastLocationMode.mode, mode: newLocationMode.mode},{location: newLocationMode});
+                }
+                matchedLastLocationMode.mode = newLocationMode.mode;
+            }
+            else {
+                //console.log('recevied new location mode for location '+newLocationMode.name+', there is no old state known for this location');
+                this.lastLocationModes.push(newLocationMode);
+            }
+        } else{
+            //console.log('recevied new location mode for location '+newLocationMode.name+', there is no old state known for this location');
+            this.lastLocationModes.push(newLocationMode);
+        }
     }
 
     getRingDevices(callback) {
@@ -128,33 +158,6 @@ class App extends Homey.App {
         this.homey.notifications.createNotification({ excerpt: message })
     }
 
-    _syncLocationMode(newLocationMode)
-    {
-        if(this.lastLocationModes.length>0)
-        {
-            let matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
-                 return lastLocationMode.id==newLocationMode.id;
-            });
-            if(matchedLastLocationMode!=undefined)
-            {
-                //console.log('Check location mode for remembered location '+matchedLastLocationMode.name+' was in mode '+matchedLastLocationMode.mode+' and now is in mode '+newLocationMode.mode);
-                if(matchedLastLocationMode.mode!=newLocationMode.mode)
-                {
-                    //console.log('location mode changed, raise the flow trigger!');
-                    this.triggerLocationModeChanged({oldmode: matchedLastLocationMode.mode, mode: newLocationMode.mode},{location: newLocationMode});
-                }
-                matchedLastLocationMode.mode = newLocationMode.mode;
-            }
-            else {
-                //console.log('recevied new location mode for location '+newLocationMode.name+', there is no old state known for this location');
-                this.lastLocationModes.push(newLocationMode);
-            }
-        } else{
-            //console.log('recevied new location mode for location '+newLocationMode.name+', there is no old state known for this location');
-            this.lastLocationModes.push(newLocationMode);
-        }
-    }
-
     triggerLocationModeChanged(tokens, state) {
         this._triggerLocationModeChangedTo.trigger(tokens, state);
     }
@@ -167,9 +170,9 @@ class App extends Homey.App {
             .getArgument('location')
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
-                const locations = await this._api.userLocations();
-                console.log(locations);
-                resolve(locations);
+                    const locations = await this._api.userLocations();
+                    //console.log('I found these locations',locations);
+                    resolve(locations);
                 });
             });
     }
@@ -190,7 +193,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                console.log(locations);
+                //console.log('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -216,7 +219,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                console.log(locations);
+                //console.log('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -224,6 +227,7 @@ class App extends Homey.App {
 
     // Called from settingspages through api.js
     async getDevicesInfo() {
+        this.log('getDevicesInfo is called through api.js?')
         return new Promise((resolve, reject) => {
         
             this.homey.app.getRingDevices((error, result) => {

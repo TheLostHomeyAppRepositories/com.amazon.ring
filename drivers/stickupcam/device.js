@@ -54,7 +54,7 @@ class DeviceStickUpCam extends Device {
 
     _enableLightCapability(device_data)
     {
-        if(device_data.hasOwnProperty('led_status'))
+        if(device_data.hasOwnProperty('led_status')) // camera.hasLight?
         {
             //Adding new capabilities
             if(!this.hasCapability("flood_light"))
@@ -69,7 +69,7 @@ class DeviceStickUpCam extends Device {
 
     _enableSirenCapability(device_data)
     {
-        if(device_data.hasOwnProperty('siren_status'))
+        if(device_data.hasOwnProperty('siren_status')) // camera.hasSiren
         {
             console.log("device has a siren, enable siren related features");
             //Adding new capabilities
