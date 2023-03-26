@@ -2,6 +2,6 @@
 /_information/
 /__rewrite/
 /.homeybuild/
-/.homeyignore
 /.vscode/
+/.homeyignore
 node_modules
