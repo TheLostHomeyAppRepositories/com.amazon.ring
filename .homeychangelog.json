@@ -121,17 +121,8 @@
     "pl": "• Aktualizacja aplikacji do SDK3 • Dodano dodatkowe tłumaczenia • Naprawione widoki Pair, Repair i Status",
     "sv": "• App uppgraderad till SDK3 • Lagt till ytterligare översättningar • Fasta par, reparation och statusvisningar"
   },
-  "2.10.4": {
-    "en": "• App upgraded to SDK3 • Added additional translations • Fixed Pair, Repair and Status views",
-    "da": "• App opgraderet til SDK3 • Tilføjet yderligere oversættelser • Fast par, reparation og statusvisninger",
-    "de": "• App auf SDK3 aktualisiert • Weitere Übersetzungen hinzugefügt • Feste Paar-, Reparatur- und Statusansichten",
-    "es": "• Aplicación actualizada a SDK3 • Agregadas traducciones adicionales • Vistas de par fijo, reparación y estado",
-    "fr": "• App mise à niveau vers SDK3 • Ajout de traductions supplémentaires • Vues de paire fixe, de réparation et de statut",
-    "it": "• App aggiornata a SDK3 • Aggiunte traduzioni aggiuntive • Viste di coppia fissa, riparazione e stato",
-    "nl": "• App geüpgraded naar SDK3 • Extra vertalingen toegevoegd • koppel-, reparatie- en statusweergaven gerepareerd",
-    "no": "• App oppgradert til SDK3 • Lagt til flere oversettelser • Fast par, reparasjon og statusvisninger",
-    "pl": "• Aktualizacja aplikacji do SDK3 • Dodano dodatkowe tłumaczenia • Naprawione widoki Pair, Repair i Status",
-    "sv": "• App uppgraderad till SDK3 • Lagt till ytterligare översättningar • Fasta par, reparation och statusvisningar"
+  "2.10.5": {
+    "en": "Testversion for new communication method with Ring API"
   }
 
 }
