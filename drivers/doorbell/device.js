@@ -30,8 +30,8 @@ class DeviceDoorbell extends Device {
 
         this._setupCameraView(this.getData());
 
-        this.homey.on('refresh_device', this._syncDevice.bind(this));
-        this.homey.on('refresh_devices', this._syncDevices.bind(this));
+        // this.homey.on('refresh_device', this._syncDevice.bind(this));
+        // this.homey.on('refresh_devices', this._syncDevices.bind(this));
 
         // ! rewrite using ring-client-api
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
@@ -53,6 +53,7 @@ class DeviceDoorbell extends Device {
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
             this.log("setStream: request app.js grabImage (1)");
+            // todo: grabImage should not be called when motion is disabled
             await this.homey.app.grabImage(device_data, (error, result) => {
                 this.log("setStream: app.js grabImage returned (4)");
                 if (!error) {
@@ -80,11 +81,10 @@ class DeviceDoorbell extends Device {
 
     // ! rewrite using ring-client-api
     _ringOnNotification(notification) {
-        //this.log('_ringOnNotification', notification);
-        
-        // Is this notification for me?
         if (notification.ding.doorbot_id !== this.getData().id)
             return;
+
+        //this.log('_ringOnNotification', notification);
 
         //this.log('ding',notification.ding);
         //this.log('subtype',notification.subtype);
@@ -109,12 +109,15 @@ class DeviceDoorbell extends Device {
                 });
             }, statusTimeout);
 
-        } else if (notification.subtype === 'motion') {
+        //} else if (notification.subtype === 'motion') {
+        } else if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
             if (!this.getCapabilityValue('alarm_motion')) {
                 this.homey.app.logRealtime('doorbell', 'motion');
                 let logLine = " doorbell || _syncDevice || " + this.getName() + " reported motion event";
                 this.homey.app.writeLog(logLine);
             }
+            
+            this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
 
             this.setCapabilityValue('alarm_motion', true).catch(error => {
                 this.error(error);
@@ -132,6 +135,8 @@ class DeviceDoorbell extends Device {
 
     }
 
+    // todo: Cleanup functions is no longer in use
+    /*
     _syncDevice(data) {
         // This function has been replaced by _ringOnNotification(notification) due to using the ring-client-api
         return;
@@ -188,14 +193,14 @@ class DeviceDoorbell extends Device {
             }
         });
     }
+    */
 
     // ! rewrite using ring-client-api
     _ringOnData(data) {
-        //this.log('_ringOnData data',data);
-
-        // Is this data for me?
         if (data.id !== this.getData().id)
-        return;
+            return;
+
+        //this.log('_ringOnData data',data);
 
         let battery = 100;
 
@@ -219,17 +224,14 @@ class DeviceDoorbell extends Device {
                 this.removeCapability('measure_battery');
             }
         }
- 
-        /*
-        this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
-            .catch((error) => {});
-        */
 
         this.setSettings({useMotionDetection: data.subscribed_motions})
             .catch((error) => {});
         
     }
 
+    // todo: Cleanup functions is no longer in use
+    /*
     _syncDevices(data) {
         // This function has been replaced by _ringOnData(data) due to using the ring-client-api
         return;
@@ -276,8 +278,9 @@ class DeviceDoorbell extends Device {
                 .catch((error) => {});
         });
     }
+    */
 
-    grabImage(args, state) {  
+    grabImage(args, state) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
         //this.log('device:',this.device);
