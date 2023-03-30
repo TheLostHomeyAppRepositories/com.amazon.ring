@@ -123,6 +123,16 @@
   },
   "2.10.5": {
     "en": "Testversion for new communication method with Ring API"
+  },
+  "2.10.6": {
+    "en": "• New communication method with Ring API • Minor fix in handling snapshot errors",
+    "da": "• Ny kommunikationsmetode med Ring API • Mindre rettelse i håndteringen af snapshot-fejl",
+    "de": "• Neue Kommunikationsmethode mit Ring API • Kleinere Fehlerbehebung bei der Verarbeitung von Schnappschüssen",
+    "fr": "• Nouvelle méthode de communication avec l'API Ring • Correction mineure dans la gestion des erreurs de capture instantanée",
+    "it": "• Nuovo metodo di comunicazione con Ring API • Piccola correzione nella gestione degli errori di snapshot",
+    "nl": "• Nieuwe communicatiemethode met Ring API • Kleine fix in het afhandelen van snapshot-fouten",
+    "no": "• Ny kommunikasjonsmetode med Ring API • Mindre fiks i håndtering av snapshot-feil",
+    "es": "• Nuevo método de comunicación con Ring API • Corrección menor en el manejo de errores de captura instantánea",
+    "sv": "• Ny kommunikationsmetod med Ring API • Mindre fix i hantering av snapshot-fel"
   }
-
 }

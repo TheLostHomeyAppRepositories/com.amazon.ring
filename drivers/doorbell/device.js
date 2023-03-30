@@ -30,10 +30,6 @@ class DeviceDoorbell extends Device {
 
         this._setupCameraView(this.getData());
 
-        // this.homey.on('refresh_device', this._syncDevice.bind(this));
-        // this.homey.on('refresh_devices', this._syncDevices.bind(this));
-
-        // ! rewrite using ring-client-api
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
         this.homey.on('ringOnData',this._ringOnData.bind(this));
 
@@ -53,7 +49,6 @@ class DeviceDoorbell extends Device {
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
             this.log("setStream: request app.js grabImage (1)");
-            // todo: grabImage should not be called when motion is disabled
             await this.homey.app.grabImage(device_data, (error, result) => {
                 this.log("setStream: app.js grabImage returned (4)");
                 if (!error) {
@@ -63,14 +58,12 @@ class DeviceDoorbell extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
-                    let logLine = " doorbell || device.js _setupCameraView || " + this.getName() + " app.js grabImage reported: " + error;
+                    let logLine = " doorbell || device.js _setupCameraView || " + this.getName() + " grabImage" + error;
                     this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(null);
                     return snapshot.pipe(stream);
-                    // This results in invalid_content_type
-                    // To be continued...
                 }
             })
         })
@@ -79,13 +72,11 @@ class DeviceDoorbell extends Device {
             .catch(error =>{this.log("setCameraImage: ",error);})
     }
 
-    // ! rewrite using ring-client-api
     _ringOnNotification(notification) {
         if (notification.ding.doorbot_id !== this.getData().id)
             return;
 
         //this.log('_ringOnNotification', notification);
-
         //this.log('ding',notification.ding);
         //this.log('subtype',notification.subtype);
         //this.log('action',notification.action);
@@ -109,7 +100,6 @@ class DeviceDoorbell extends Device {
                 });
             }, statusTimeout);
 
-        //} else if (notification.subtype === 'motion') {
         } else if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
             if (!this.getCapabilityValue('alarm_motion')) {
                 this.homey.app.logRealtime('doorbell', 'motion');
@@ -130,72 +120,9 @@ class DeviceDoorbell extends Device {
                     this.error(error);
                 });
             }, statusTimeout);
-
         }
-
     }
 
-    // todo: Cleanup functions is no longer in use
-    /*
-    _syncDevice(data) {
-        // This function has been replaced by _ringOnNotification(notification) due to using the ring-client-api
-        return;
-        if ( data.length > 0 ) {
-            //this.log('_syncDevice data:', data);
-        }
-
-        data.forEach((device_data) => {
-
-            //Check ringing status
-            if (device_data.state === 'ringing') {
-                if (device_data.doorbot_id !== this.getData().id)
-                    return;
-
-                if (device_data.kind === 'ding') {
-                    if (!this.getCapabilityValue('alarm_generic')) {
-                        this.homey.app.logRealtime('doorbell', 'ding');
-                        let logLine = " doorbell || _syncDevice || " + this.getName() + " reported ding event";
-                        this.homey.app.writeLog(logLine);
-                    }
-                    
-                    this.setCapabilityValue('alarm_generic', true).catch(error => {
-                        this.error(error);
-                    });
-
-                    clearTimeout(this.device.timer.ding);
-
-                    this.device.timer.ding = setTimeout(() => {
-                        this.setCapabilityValue('alarm_generic', false).catch(error => {
-                            this.error(error);
-                        });
-                    }, statusTimeout);
-                }
-
-                if (device_data.kind === 'motion' || device_data.motion) {
-                    if (!this.getCapabilityValue('alarm_motion')) {
-                        this.homey.app.logRealtime('doorbell', 'motion');
-                        let logLine = " doorbell || _syncDevice || " + this.getName() + " reported motion event";
-                        this.homey.app.writeLog(logLine);
-                    }
-
-                    this.setCapabilityValue('alarm_motion', true).catch(error => {
-                        this.error(error);
-                    });
-
-                    clearTimeout(this.device.timer.motion);
-
-                    this.device.timer.motion = setTimeout(() => {
-                        this.setCapabilityValue('alarm_motion', false).catch(error => {
-                            this.error(error);
-                        });
-                    }, statusTimeout);
-                }
-            }
-        });
-    }
-    */
-
-    // ! rewrite using ring-client-api
     _ringOnData(data) {
         if (data.id !== this.getData().id)
             return;
@@ -227,58 +154,7 @@ class DeviceDoorbell extends Device {
 
         this.setSettings({useMotionDetection: data.subscribed_motions})
             .catch((error) => {});
-        
     }
-
-    // todo: Cleanup functions is no longer in use
-    /*
-    _syncDevices(data) {
-        // This function has been replaced by _ringOnData(data) due to using the ring-client-api
-        return;
-        //this.log('_syncDevices', data);
-
-        data.doorbots.forEach( (device_data) => {
-            // console.log(device_data.settings);
-            // console.log(device_data.settings.motion_detection_enabled);
-            // console.log(device_data.settings.lite_24x7.resolution_p); Snapshot size setting?
-            // console.log(device_data.features);
-            // console.log(device_data.alerts);
-            // console.log(device_data.health);
-            // console.log(device_data.owner);
-
-            if (device_data.id !== this.getData().id)
-                return;
-
-            let battery = 100;
-            
-            if (device_data.battery_life != null) {
-                // battery_life is not null, add measure_battery capability if it does not exists
-                if ( !this.hasCapability('measure_battery') ) {
-                    this.addCapability('measure_battery');
-                }
-                
-                battery = parseInt(device_data.battery_life);
-                
-                if (battery > 100) { battery = 100; }
-                                  
-                if ( this.getCapabilityValue('measure_battery') != battery) {
-                    this.setCapabilityValue('measure_battery', battery).catch(error => {
-                        this.error(error);
-                    });
-                }
-                
-            } else {
-                // battery_life is null, remove measure_battery capability if it exists
-                if ( this.hasCapability('measure_battery') ) {
-                    this.removeCapability('measure_battery');
-                }
-            }
-   
-            this.setSettings({useMotionDetection: device_data.settings.motion_detection_enabled})
-                .catch((error) => {});
-        });
-    }
-    */
 
     grabImage(args, state) {
         if (this._device instanceof Error)

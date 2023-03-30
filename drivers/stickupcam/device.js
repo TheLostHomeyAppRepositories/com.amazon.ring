@@ -26,10 +26,6 @@ class DeviceStickUpCam extends Device {
 
         this._setupCameraView(this.getData());
 
-        this.homey.on('refresh_device', this._syncDevice.bind(this));
-        this.homey.on('refresh_devices', this._syncDevices.bind(this));
-
-        // ! rewrite using ring-client-api
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
         this.homey.on('ringOnData',this._ringOnData.bind(this));
 
@@ -95,7 +91,6 @@ class DeviceStickUpCam extends Device {
         //this.device.cameraImage = new Homey.Image();
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            // todo: grabImage should not be called when motion is disabled
             await this.homey.app.grabImage(device_data, (error, result) => {
                 if (!error) {
                     let Duplex = require('stream').Duplex;
@@ -104,13 +99,12 @@ class DeviceStickUpCam extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
-                    let logLine = " stickupcam || device.js _setupCameraView || " + this.getName() + " app.js grabImage reported: " + error;
+                    let logLine = " stickupcam || _setupCameraView || " + this.getName() + " grabImage" + error;
                     this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(null);
                     return snapshot.pipe(stream);
-                    // This results in invalid_content_type
                 }
             })
         })
@@ -125,7 +119,6 @@ class DeviceStickUpCam extends Device {
 
         // this.log('_ringOnNotification', notification);
 
-        //if (notification.subtype === 'motion') {
         if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
             this.setCapabilityValue('alarm_motion', true).catch(error => {
                 this.error(error);
@@ -144,40 +137,6 @@ class DeviceStickUpCam extends Device {
             }, statusTimeout);
 
         }
-    }
-
-    // todo: Cleanup functions is no longer in use
-    _syncDevice(data) {
-        // This function has been replaced by _ringOnNotification(notification) due to using the ring-client-api
-        return;        
-        if ( data.length > 0 ) {
-            this.log('_syncDevice', data);
-        }
-
-        data.forEach((device_data) => {
-
-            //Check ringing status
-            if (device_data.state === 'ringing') {
-                if (device_data.doorbot_id !== this.getData().id)
-                    return;
-
-                if (device_data.kind === 'motion' || device_data.motion) {
-                    this.setCapabilityValue('alarm_motion', true).catch(error => {
-                        this.error(error);
-                    });
-
-                    this.homey.app.logRealtime('stickupcam', 'motion');
-
-                    clearTimeout(this.device.timer.motion);
-
-                    this.device.timer.motion = setTimeout(() => {
-                        this.setCapabilityValue('alarm_motion', false).catch(error => {
-                            this.error(error);
-                        });
-                    }, statusTimeout);
-                }
-            }
-        });
     }
 
     // ! rewrite using ring-client-api
@@ -240,56 +199,6 @@ class DeviceStickUpCam extends Device {
                 this.removeCapability('measure_battery');
             }
         }
-
-    }
-
-    // todo: Cleanup functions is no longer in use (?)
-    _syncDevices(data) {
-        this.log('_syncDevices data', data);
-return;
-        data.stickup_cams.forEach((device_data) => {
-            if (device_data.id !== this.getData().id)
-                return;
-
-            //console.log(JSON.stringify(device_data.features));
-            this._enableLightCapability(device_data);
-            this._enableSirenCapability(device_data);
-    
-
-            if(this.hasCapability("flood_light"))
-            {
-                console.log('light status:'+device_data.led_status);
-                let floodLight=false;
-                if(device_data.led_status=='on')
-                    floodLight=true;
-                this.setCapabilityValue('flood_light', floodLight).catch(error => {
-                    this.error(error);
-                });
-            }
-
-            if(this.hasCapability("siren"))
-            {
-                console.log('siren status: '+JSON.stringify(device_data.siren_status));
-                let siren=false;
-                if(device_data.siren_status.seconds_remaining>0)
-                    siren=true;
-                this.setCapabilityValue('siren', siren).catch(error => {
-                    this.error(error);
-                });
-                this.setCapabilityValue('alarm_generic', siren).catch(error => {
-                    this.error(error);
-                });
-            }
-
-            let battery = parseInt(device_data.battery_life);
-
-            if (battery > 100)
-                battery = 100;
-
-            this.setCapabilityValue('measure_battery', battery).catch(error => {
-                this.error(error);
-            });
-        });
     }
 
     grabImage(args, state) {
