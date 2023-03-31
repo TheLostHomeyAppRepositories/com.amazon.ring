@@ -15,6 +15,7 @@ class DeviceDoorbell extends Device {
 
         this.device = {}
         this.device.timer = {};
+        this.motionTimeout = this.getSetting('motionTimeout');
 
         this.setCapabilityValue('alarm_generic', false).catch(error => {
             this.error(error);
@@ -119,7 +120,7 @@ class DeviceDoorbell extends Device {
                 this.setCapabilityValue('alarm_motion', false).catch(error => {
                     this.error(error);
                 });
-            }, statusTimeout);
+            }, (this.motionTimeout  * 1000));
         }
     }
 
@@ -152,7 +153,10 @@ class DeviceDoorbell extends Device {
             }
         }
 
-        this.setSettings({useMotionDetection: data.subscribed_motions})
+        //this.setSettings({subscribeMotionDetection: data.subscribed_motions})
+        //    .catch((error) => {});
+
+        this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
             .catch((error) => {});
     }
 
@@ -185,6 +189,9 @@ class DeviceDoorbell extends Device {
                 } else {
                     this.disableMotion(this._device)
                 }
+            }
+            else if (changedSetting == 'motionTimeout') {
+                this.motionTimeout = settings.newSettings.motionTimeout * 1000;
             }
         })
     }

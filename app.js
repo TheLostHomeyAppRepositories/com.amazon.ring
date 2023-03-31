@@ -309,7 +309,7 @@ module.exports = App;
 
 // Translate text in ChatGPT
 /*
-In this code en means English, please add Danish, German, French, Italian, Dutch, Norwegian, Spanish and Swedish. Answer in a code block.
+In this code en means English, please add Danish, German, French, Italian, Dutch, Norwegian, Spanish and Swedish. Answer in a codeblock.
 {
   "en": "Set devices unavailable when authentication is lost",
 }

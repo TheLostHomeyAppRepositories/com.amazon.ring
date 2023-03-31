@@ -15,6 +15,13 @@ class DeviceStickUpCam extends Device {
 
         this.device = {}
         this.device.timer = {};
+        
+        try {
+            this.motionTimeout = this.getSetting('motionTimeout');
+        } catch (e) {
+            this.motionTimeout = 30;
+        }
+        
 
         this.setCapabilityValue('alarm_motion', false).catch(error => {
             this.error(error);
@@ -134,7 +141,7 @@ class DeviceStickUpCam extends Device {
                 this.setCapabilityValue('alarm_motion', false).catch(error => {
                     this.error(error);
                 });
-            }, statusTimeout);
+            }, (this.motionTimeout  * 1000));
 
         }
     }
@@ -199,6 +206,12 @@ class DeviceStickUpCam extends Device {
                 this.removeCapability('measure_battery');
             }
         }
+
+        //this.setSettings({subscribeMotionDetection: data.subscribed_motions})
+        //    .catch((error) => {});
+
+        this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
+            .catch((error) => {});
     }
 
     grabImage(args, state) {
@@ -312,6 +325,21 @@ class DeviceStickUpCam extends Device {
                 return resolve(true);
             });
         });       
+    }
+
+    async onSettings( settings ) {
+        settings.changedKeys.forEach((changedSetting) => {
+            if (changedSetting == 'useMotionDetection') {
+                if (settings.newSettings.useMotionDetection) {
+                    this.enableMotion(this._device)
+                } else {
+                    this.disableMotion(this._device)
+                }
+            }
+            else if (changedSetting == 'motionTimeout') {
+                this.motionTimeout = settings.newSettings.motionTimeout;
+            }
+        })
     }
 
     enableMotion(args, state) {
