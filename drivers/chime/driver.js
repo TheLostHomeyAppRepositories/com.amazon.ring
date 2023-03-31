@@ -9,7 +9,7 @@ class DriverChime extends Driver {
         this.log('onInit');
 
         this.homey.flow.getActionCard('ring_chime')
-            .registerRunListener(args => args.device.ringChime());
+            .registerRunListener(args => args.device.ringChime(args));
     }
 
     onPairListDevices() {

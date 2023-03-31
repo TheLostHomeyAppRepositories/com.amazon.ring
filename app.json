@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.10.4",
+  "version": "2.10.7",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -201,6 +201,25 @@
                 "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
                 "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
               }              
+            },
+            {
+              "id": "motionTimeout",
+              "type": "number",
+              "value": 30,
+              "attr": {
+                "min": 30,
+                "max": 600
+              },
+              "units": {
+                "en": "sec.",
+                "nl": "sec."
+            },
+              "label": {
+                "en": "Disable motion alarm after"      
+              },
+              "hint": {
+                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds."
+              }
             }
           ]
         }
@@ -300,6 +319,73 @@
         {
           "id": "done",
           "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Homey integration settings",
+            "da": "Homey integrationsindstillinger",
+            "de": "Homey Integrations-Einstellungen",
+            "es": "Configuración de integración de Homey",
+            "fr": "Paramètres d'intégration Homey",
+            "it": "Impostazioni di integrazione Homey",
+            "nl": "Homey integratie-instellingen",
+            "no": "Homey integreringsinnstillinger",
+            "pl": "Ustawienia integracji Homey",
+            "sv": "Homey integrationsinställningar"
+          },
+          "children": [
+            {
+              "id": "useMotionDetection",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Detection",
+                "da": "Brug bevægelsesregistrering",
+                "de": "Bewegungserkennung verwenden",
+                "es": "Usar detección de movimiento",
+                "fr": "Utiliser la détection de mouvement",
+                "it": "Usa il rilevamento del movimento",
+                "nl": "Bewegingsdetectie gebruiken",
+                "no": "Bruk bevegelsesdeteksjon",
+                "pl": "Użyj wykrywania ruchu",
+                "sv": "Använd rörelsedetektering"
+              },
+              "hint": {
+                "en": "You can use your Ring Camera as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
+                "da": "Du kan bruge din Ring Camera som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
+                "de": "Sie können Ihre Ring Camera als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
+                "es": "Puede utilizar su Ring Camera como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
+                "fr": "Vous pouvez utiliser votre Ring Camera comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
+                "it": "Puoi utilizzare la tua Ring Camera come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
+                "nl": "U kunt uw Ring Camera gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
+                "no": "Du kan bruke Ring Camera som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
+                "pl": "Możesz użyć swojego kamery Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
+                "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
+              }              
+            },
+            {
+              "id": "motionTimeout",
+              "type": "number",
+              "value": 30,
+              "attr": {
+                "min": 30,
+                "max": 600
+              },
+              "units": {
+                "en": "sec.",
+                "nl": "sec."
+            },
+              "label": {
+                "en": "Disable motion alarm after"      
+              },
+              "hint": {
+                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds."
+              }
+            }
+          ]
         }
       ]
     }
@@ -428,14 +514,38 @@
       {
         "id": "ring_chime",
         "title": {
-          "en": "Ring Chime",
-          "nl": "Ring Chime"
+          "en": "Ring Chime with",
+          "nl": "Ring Chime met"
+        },
+        "titleFormatted": {
+          "en": "Ring Chime with [[sound]]",
+          "nl": "Ring Chime met [[sound]]"
         },
         "args": [
           {
             "name": "device",
             "type": "device",
             "filter": "driver_id=chime"
+          },
+          {
+            "name": "sound",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "ring",
+                "label": {
+                  "en": "Ring sound",
+                  "nl": "Ring geluid"
+                }
+              },
+              {
+                "id": "motion",
+                "label": {
+                  "en": "Motion sound",
+                  "nl": "Beweging geluid"
+                }
+              }
+            ]
           }
         ]
       },

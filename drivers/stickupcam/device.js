@@ -15,6 +15,13 @@ class DeviceStickUpCam extends Device {
 
         this.device = {}
         this.device.timer = {};
+        
+        try {
+            this.motionTimeout = this.getSetting('motionTimeout');
+        } catch (e) {
+            this.motionTimeout = 30;
+        }
+        
 
         this.setCapabilityValue('alarm_motion', false).catch(error => {
             this.error(error);
@@ -26,8 +33,9 @@ class DeviceStickUpCam extends Device {
 
         this._setupCameraView(this.getData());
 
-        this.homey.on('refresh_device', this._syncDevice.bind(this));
-        this.homey.on('refresh_devices', this._syncDevices.bind(this));
+        this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
+        this.homey.on('ringOnData',this._ringOnData.bind(this));
+
         //Hook up the capabilities that are already known.
         if(this.hasCapability("flood_light"))
         {
@@ -49,12 +57,12 @@ class DeviceStickUpCam extends Device {
 
     _enableLightCapability(device_data)
     {
-        if(device_data.hasOwnProperty('led_status'))
+        if(device_data.hasOwnProperty('led_status')) // camera.hasLight?
         {
             //Adding new capabilities
             if(!this.hasCapability("flood_light"))
             {
-                console.log('this stickup camera has light, enable the capabilit');
+                console.log('this stickup camera has light, enable the capability');
                 this.addCapability("flood_light").then(function() {
                     this.registerCapabilityListener('flood_light', this.onCapabilityFloodLight.bind(this));
                 }.bind(this));
@@ -64,24 +72,24 @@ class DeviceStickUpCam extends Device {
 
     _enableSirenCapability(device_data)
     {
-        if(device_data.hasOwnProperty('siren_status'))
+        if(device_data.hasOwnProperty('siren_status')) // camera.hasSiren
         {
-            console.log("device has a siren, enable siren related features");
+            // this.log("_enableSirenCapability, device has a siren, enable siren related features");
             //Adding new capabilities
             if(!this.hasCapability("siren"))
             {
-                console.log('this stickup camera has a siren, enable the capabilit');
+                this.log('_enableSirenCapability, this stickup camera has a siren, enable the capability');
                 this.addCapability("siren").then(function() {
                     this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
                 }.bind(this));
             }
             if(!this.hasCapability("alarm_generic"))
             {
-                console.log('this stickup camera has a siren, so use it to detect a Alarm');
+                this.log('_enableSirenCapability, this stickup camera has a siren, so use it to detect a Alarm');
                 this.addCapability("alarm_generic");
             } 
         } else {
-            console.log('device has no siren, ignore siren related features');
+            // this.log('_enableSirenCapability, device has no siren, ignore siren related features');
         }
     }
 
@@ -98,98 +106,112 @@ class DeviceStickUpCam extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
-                    let logLine = " stickupcam || _setupCameraView || " + "_setupCameraView " + error;
+                    let logLine = " stickupcam || _setupCameraView || " + this.getName() + " grabImage" + error;
                     this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
                     snapshot.push(null);
                     return snapshot.pipe(stream);
-                    // This results in invalid_content_type
                 }
             })
         })
-        //this.device.cameraImage.register().catch(console.error).then(function() {
-            this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage);
-        //}.bind(this));
+        this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
+            .catch(error =>{this.log("setCameraImage: ",error);}) 
     }
 
-    _syncDevice(data) {
-        if ( data.length > 0 ) {
-            this.log('_syncDevice', data);
-        }
+    // ! rewrite using ring-client-api
+    _ringOnNotification(notification) {
+        if (notification.ding.doorbot_id !== this.getData().id)
+            return;
 
-        data.forEach((device_data) => {
+        // this.log('_ringOnNotification', notification);
 
-            //Check ringing status
-            if (device_data.state === 'ringing') {
-                if (device_data.doorbot_id !== this.getData().id)
-                    return;
-
-                if (device_data.kind === 'motion' || device_data.motion) {
-                    this.setCapabilityValue('alarm_motion', true).catch(error => {
-                        this.error(error);
-                    });
-
-                    this.homey.app.logRealtime('stickupcam', 'motion');
-
-                    clearTimeout(this.device.timer.motion);
-
-                    this.device.timer.motion = setTimeout(() => {
-                        this.setCapabilityValue('alarm_motion', false).catch(error => {
-                            this.error(error);
-                        });
-                    }, statusTimeout);
-                }
-            }
-        });
-    }
-
-    _syncDevices(data) {
-        //this.log('_syncDevices', data);
-
-        data.stickup_cams.forEach((device_data) => {
-            if (device_data.id !== this.getData().id)
-                return;
-
-            //console.log(JSON.stringify(device_data.features));
-            this._enableLightCapability(device_data);
-            this._enableSirenCapability(device_data);
-    
-
-            if(this.hasCapability("flood_light"))
-            {
-                console.log('light status:'+device_data.led_status);
-                let floodLight=false;
-                if(device_data.led_status=='on')
-                    floodLight=true;
-                this.setCapabilityValue('flood_light', floodLight).catch(error => {
-                    this.error(error);
-                });
-            }
-
-            if(this.hasCapability("siren"))
-            {
-                console.log('siren status: '+JSON.stringify(device_data.siren_status));
-                let siren=false;
-                if(device_data.siren_status.seconds_remaining>0)
-                    siren=true;
-                this.setCapabilityValue('siren', siren).catch(error => {
-                    this.error(error);
-                });
-                this.setCapabilityValue('alarm_generic', siren).catch(error => {
-                    this.error(error);
-                });
-            }
-
-            let battery = parseInt(device_data.battery_life);
-
-            if (battery > 100)
-                battery = 100;
-
-            this.setCapabilityValue('measure_battery', battery).catch(error => {
+        if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
+            this.setCapabilityValue('alarm_motion', true).catch(error => {
                 this.error(error);
             });
-        });
+
+            this.homey.app.logRealtime('stickupcam', 'motion');
+
+            this.log('Motion detection Stickup Cam notification.subtype ==',notification.ding.detection_type);
+
+            clearTimeout(this.device.timer.motion);
+
+            this.device.timer.motion = setTimeout(() => {
+                this.setCapabilityValue('alarm_motion', false).catch(error => {
+                    this.error(error);
+                });
+            }, (this.motionTimeout  * 1000));
+
+        }
+    }
+
+    // ! rewrite using ring-client-api
+    _ringOnData(data) {
+        if (data.id !== this.getData().id)
+            return;
+
+        // this.log('_ringOnData data',data);
+
+        this._enableLightCapability(data);
+        this._enableSirenCapability(data);
+
+        // todo: Floodlight code needs testing
+        if(this.hasCapability("flood_light"))
+        {
+            this.log('_ringOnData, light status:'+data.led_status);
+            let floodLight=false;
+            if(data.led_status=='on')
+                floodLight=true;
+            this.setCapabilityValue('flood_light', floodLight).catch(error => {
+                this.error(error);
+            });
+        }
+
+        if(this.hasCapability("siren"))
+        {
+            if (data.siren_status.started_at) {
+                // this.log('_ringOnData, Siren status: '+JSON.stringify(data.siren_status));
+            }
+            let siren=false;
+            if(data.siren_status.seconds_remaining>0)
+                siren=true;
+            this.setCapabilityValue('siren', siren).catch(error => {
+                this.error(error);
+            });
+            this.setCapabilityValue('alarm_generic', siren).catch(error => {
+                this.error(error);
+            });
+        }
+
+        let battery = parseInt(data.battery_life);
+
+        if (data.battery_life != null) {
+            // battery_life is not null, add measure_battery capability if it does not exists
+            if ( !this.hasCapability('measure_battery') ) {
+                this.addCapability('measure_battery');
+            }
+            battery = parseInt(data.battery_life);
+                
+            if (battery > 100) { battery = 100; }
+                              
+            if ( this.getCapabilityValue('measure_battery') != battery) {
+                this.setCapabilityValue('measure_battery', battery).catch(error => {
+                    this.error(error);
+                });
+            }
+        } else {
+            // battery_life is null, remove measure_battery capability if it exists
+            if ( this.hasCapability('measure_battery') ) {
+                this.removeCapability('measure_battery');
+            }
+        }
+
+        //this.setSettings({subscribeMotionDetection: data.subscribed_motions})
+        //    .catch((error) => {});
+
+        this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
+            .catch((error) => {});
     }
 
     grabImage(args, state) {
@@ -234,10 +256,12 @@ class DeviceStickUpCam extends Device {
 	}
 
     lightOn(args, state) {
+
+        let _this = this;
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            this.homey.app.lightOn(device_data, (error, result) => {
+            _this.homey.app.lightOn(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -247,10 +271,12 @@ class DeviceStickUpCam extends Device {
     }
 
     lightOff(args, state) {
+
+        let _this = this;
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            this.homey.app.lightOff(device_data, (error, result) => {
+            _this.homey.app.lightOff(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -272,10 +298,12 @@ class DeviceStickUpCam extends Device {
     }
     
     sirenOn(args, state) {
+
+        let _this = this;
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            this.homey.app.sirenOn(device_data, (error, result) => {
+            _this.homey.app.sirenOn(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -285,16 +313,33 @@ class DeviceStickUpCam extends Device {
     }
 
     sirenOff(args, state) {
+
+        let _this = this;
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            this.homey.app.sirenOff(device_data, (error, result) => {
+            _this.homey.app.sirenOff(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
                 return resolve(true);
             });
         });       
+    }
+
+    async onSettings( settings ) {
+        settings.changedKeys.forEach((changedSetting) => {
+            if (changedSetting == 'useMotionDetection') {
+                if (settings.newSettings.useMotionDetection) {
+                    this.enableMotion(this._device)
+                } else {
+                    this.disableMotion(this._device)
+                }
+            }
+            else if (changedSetting == 'motionTimeout') {
+                this.motionTimeout = settings.newSettings.motionTimeout;
+            }
+        })
     }
 
     enableMotion(args, state) {

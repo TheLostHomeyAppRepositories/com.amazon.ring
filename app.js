@@ -19,7 +19,7 @@ class App extends Homey.App {
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
         }
-    
+
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
 
@@ -40,6 +40,10 @@ class App extends Homey.App {
         this._api.on('refresh_device', this._syncDevice.bind(this));
         this._api.on('refresh_devices', this._syncDevices.bind(this));
         this._api.on('refresh_locationMode', this._syncLocationMode.bind(this));
+        
+        // ! rewrite using ring-client-api
+        this._api.on('ringOnNotification',this._ringOnNotification.bind(this));
+        this._api.on('ringOnData',this._ringOnData.bind(this));        
 
         await this._api.init();
 
@@ -59,63 +63,29 @@ class App extends Homey.App {
         this.homey.app.writeLog(logLine);
     }
 
+    // ! rewrite using ring-client-api
+    _ringOnNotification(notification) {
+        this.homey.emit('ringOnNotification', notification);
+    }
+
+    // ! rewrite using ring-client-api
+    _ringOnData(data) {
+        this.homey.emit('ringOnData', data);
+    }
+
+    // To be replaced by _ringOnNotification(notification)
     _syncDevice(data) {
         this.homey.emit('refresh_device', data);
     }
 
+    // To be replaced by _ringOnData(data)
     _syncDevices(data) {
         this.homey.emit('refresh_devices', data);
     }
 
-    getRingDevices(callback) {
-        this._api.getDevices(callback);
-    }
-
-    lightOn(data, callback) {
-        this._api.lightOn(data, callback);
-    }
-
-    lightOff(data, callback) {
-        this._api.lightOff(data, callback);
-    }
-
-    sirenOn(data, callback) {
-        this._api.sirenOn(data, callback);
-    }
-
-    sirenOff(data, callback) {
-        this._api.sirenOff(data, callback);
-    }
-
-    ringChime(data, callback) {
-        this._api.ringChime(data, callback);
-    }
-
-    grabImage(data, callback) {
-        this.log("app.js grabImage has been called from setStream (2)");
-        this._api.grabImage(data, callback);
-    }
-
-    enableMotion(data, callback) {
-        this._api.enableMotion(data, callback);
-    }
-
-    disableMotion(data, callback) {
-        this._api.disableMotion(data, callback);
-    }
-
-    logRealtime(event, details)
-    {
-        this.homey.api.realtime(event, details)
-        this.log('Realtime event emitted for', event, details);
-    }
-
-    writeToTimeline(message) {
-        this.homey.notifications.createNotification({ excerpt: message })
-    }
-
     _syncLocationMode(newLocationMode)
     {
+        //this.log('_syncLocationMode',newLocationMode);
         if(this.lastLocationModes.length>0)
         {
             let matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
@@ -141,6 +111,53 @@ class App extends Homey.App {
         }
     }
 
+    getRingDevices(callback) {
+        this._api.getDevices(callback);
+    }
+
+    lightOn(data, callback) {
+        this._api.lightOn(data, callback);
+    }
+
+    lightOff(data, callback) {
+        this._api.lightOff(data, callback);
+    }
+
+    sirenOn(data, callback) {
+        this._api.sirenOn(data, callback);
+    }
+
+    sirenOff(data, callback) {
+        this._api.sirenOff(data, callback);
+    }
+
+    ringChime(data, sound, callback) {
+        this._api.ringChime(data, sound, callback);
+    }
+
+    grabImage(data, callback) {
+        this.log("app.js grabImage has been called from setStream (2)");
+        this._api.grabImage(data, callback);
+    }
+
+    enableMotion(data, callback) {
+        this._api.enableMotion(data, callback);
+    }
+
+    disableMotion(data, callback) {
+        this._api.disableMotion(data, callback);
+    }
+
+    logRealtime(event, details)
+    {
+        this.homey.api.realtime(event, details)
+        this.log('Realtime event emitted for', event, details);
+    }
+
+    writeToTimeline(message) {
+        this.homey.notifications.createNotification({ excerpt: message })
+    }
+
     triggerLocationModeChanged(tokens, state) {
         this._triggerLocationModeChangedTo.trigger(tokens, state);
     }
@@ -153,9 +170,9 @@ class App extends Homey.App {
             .getArgument('location')
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
-                const locations = await this._api.userLocations();
-                console.log(locations);
-                resolve(locations);
+                    const locations = await this._api.userLocations();
+                    //console.log('I found these locations',locations);
+                    resolve(locations);
                 });
             });
     }
@@ -176,7 +193,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                console.log(locations);
+                //console.log('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -202,7 +219,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                console.log(locations);
+                //console.log('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -210,6 +227,7 @@ class App extends Homey.App {
 
     // Called from settingspages through api.js
     async getDevicesInfo() {
+        this.log('getDevicesInfo is called through api.js?')
         return new Promise((resolve, reject) => {
         
             this.homey.app.getRingDevices((error, result) => {
@@ -291,7 +309,7 @@ module.exports = App;
 
 // Translate text in ChatGPT
 /*
-In this code en means English, please add Danish, German, French, Italian, Dutch, Norwegian, Spanish and Swedish. Answer in a code block.
+In this code en means English, please add Danish, German, French, Italian, Dutch, Norwegian, Spanish and Swedish. Answer in a codeblock.
 {
   "en": "Set devices unavailable when authentication is lost",
 }

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "homey-log-to-file": "github:robertklep/homey-log-to-file"
+  }
+}
