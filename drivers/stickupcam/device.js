@@ -22,7 +22,6 @@ class DeviceStickUpCam extends Device {
             this.motionTimeout = 30;
         }
         
-
         this.setCapabilityValue('alarm_motion', false).catch(error => {
             this.error(error);
         });
@@ -98,7 +97,9 @@ class DeviceStickUpCam extends Device {
         //this.device.cameraImage = new Homey.Image();
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
+            this.log("setStream: request app.js grabImage (1)");
             await this.homey.app.grabImage(device_data, (error, result) => {
+                this.log("setStream: app.js grabImage returned (4)");
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -106,7 +107,7 @@ class DeviceStickUpCam extends Device {
                     snapshot.push(null);
                     return snapshot.pipe(stream);
                 } else {
-                    let logLine = " stickupcam || _setupCameraView || " + this.getName() + " grabImage" + error;
+                    let logLine = " stickupcam || _setupCameraView || " + this.getName() + " grabImage " + error;
                     this.homey.app.writeLog(logLine);
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -119,7 +120,6 @@ class DeviceStickUpCam extends Device {
             .catch(error =>{this.log("setCameraImage: ",error);}) 
     }
 
-    // ! rewrite using ring-client-api
     _ringOnNotification(notification) {
         if (notification.ding.doorbot_id !== this.getData().id)
             return;
@@ -146,7 +146,6 @@ class DeviceStickUpCam extends Device {
         }
     }
 
-    // ! rewrite using ring-client-api
     _ringOnData(data) {
         if (data.id !== this.getData().id)
             return;
@@ -207,8 +206,8 @@ class DeviceStickUpCam extends Device {
             }
         }
 
-        //this.setSettings({subscribeMotionDetection: data.subscribed_motions})
-        //    .catch((error) => {});
+        this.setSettings({subscribeMotionDetection: data.subscribed_motions})
+            .catch((error) => {});
 
         this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
             .catch((error) => {});
@@ -336,6 +335,13 @@ class DeviceStickUpCam extends Device {
                     this.disableMotion(this._device)
                 }
             }
+            else if (changedSetting == 'subscribeMotionDetection') {
+                if (settings.newSettings.subscribeMotionDetection) {
+                    this.subscribeMotion(this._device)
+                } else {
+                    this.unsubscribeMotion(this._device)
+                }
+            }
             else if (changedSetting == 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout;
             }
@@ -376,6 +382,39 @@ class DeviceStickUpCam extends Device {
         });
     }
 
+    subscribeMotion(args, state) {
+        if (this._device instanceof Error)
+            return Promise.reject(this._device);
+
+        let _this = this;
+        let device_data = this.getData();
+
+        return new Promise(function(resolve, reject) {
+            _this.homey.app.subscribeMotion(device_data, (error, result) => {
+                if (error)
+                    return reject(error);
+
+                return resolve(true);
+            });
+        });
+    }
+
+    unsubscribeMotion(args, state) {
+        if (this._device instanceof Error)
+            return Promise.reject(this._device);
+
+        let _this = this;
+        let device_data = this.getData();
+
+        return new Promise(function(resolve, reject) {
+            _this.homey.app.unsubscribeMotion(device_data, (error, result) => {
+                if (error)
+                    return reject(error);
+
+                return resolve(true);
+            });
+        });
+    }
 }
 
 module.exports = DeviceStickUpCam;

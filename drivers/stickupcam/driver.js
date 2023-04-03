@@ -33,6 +33,15 @@ class DriverStickUpCam extends Driver {
 
         this.homey.flow.getActionCard('stickupcam_disable_motion')
             .registerRunListener((args, state) => args.device.disableMotion());
+        
+        /*
+        this.homey.flow.getActionCard('stickupcamSubscribeMotion')
+            .registerRunListener((args, state) => args.device.subscribeMotion());
+        */
+        /*
+        this.homey.flow.getActionCard('stickupcamUnsubscribeMotion')
+            .registerRunListener((args, state) => args.device.unsubscribeMotion());
+        */
     }
 
     onPairListDevices(data, callback) {

@@ -10,6 +10,15 @@ class DriverChime extends Driver {
 
         this.homey.flow.getActionCard('ring_chime')
             .registerRunListener(args => args.device.ringChime(args));
+
+        /*
+        this.homey.flow.getActionCard('snoozeChime')
+            .registerRunListener(args => args.device.ringChime(args));
+        */
+        /*
+        this.homey.flow.getActionCard('unsnoozeChime')
+            .registerRunListener(args => args.device.ringChime());
+        */
     }
 
     onPairListDevices() {

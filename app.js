@@ -37,13 +37,9 @@ class App extends Homey.App {
 
         this._api = new api(this.homey);
 
-        this._api.on('refresh_device', this._syncDevice.bind(this));
-        this._api.on('refresh_devices', this._syncDevices.bind(this));
-        this._api.on('refresh_locationMode', this._syncLocationMode.bind(this));
-        
-        // ! rewrite using ring-client-api
         this._api.on('ringOnNotification',this._ringOnNotification.bind(this));
-        this._api.on('ringOnData',this._ringOnData.bind(this));        
+        this._api.on('ringOnData',this._ringOnData.bind(this));
+        this._api.on('ringOnLocation', this._ringOnLocation.bind(this));
 
         await this._api.init();
 
@@ -63,29 +59,20 @@ class App extends Homey.App {
         this.homey.app.writeLog(logLine);
     }
 
-    // ! rewrite using ring-client-api
+    // Called from event emitted from _connectRingAPI() in Api.js
     _ringOnNotification(notification) {
         this.homey.emit('ringOnNotification', notification);
     }
 
-    // ! rewrite using ring-client-api
+    // Called from event emitted from _connectRingAPI() in Api.js
     _ringOnData(data) {
         this.homey.emit('ringOnData', data);
     }
 
-    // To be replaced by _ringOnNotification(notification)
-    _syncDevice(data) {
-        this.homey.emit('refresh_device', data);
-    }
-
-    // To be replaced by _ringOnData(data)
-    _syncDevices(data) {
-        this.homey.emit('refresh_devices', data);
-    }
-
-    _syncLocationMode(newLocationMode)
+    // Called from event emitted from _connectRingAPI() in Api.js
+    _ringOnLocation(newLocationMode)
     {
-        //this.log('_syncLocationMode',newLocationMode);
+        //this.log('_ringOnLocation',newLocationMode);
         if(this.lastLocationModes.length>0)
         {
             let matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
@@ -135,6 +122,14 @@ class App extends Homey.App {
         this._api.ringChime(data, sound, callback);
     }
 
+    snoozeChime(data, time, callback) {
+        this._api.snoozeChime(data, time, callback);
+    }
+
+    unsnoozeChime(data, callback) {
+        this._api.unsnoozeChime(data, callback);
+    }
+
     grabImage(data, callback) {
         this.log("app.js grabImage has been called from setStream (2)");
         this._api.grabImage(data, callback);
@@ -146,6 +141,14 @@ class App extends Homey.App {
 
     disableMotion(data, callback) {
         this._api.disableMotion(data, callback);
+    }
+
+    subscribeMotion(data, callback) {
+        this._api.subscribeMotion(data, callback);
+    }
+
+    unsubscribeMotion(data, callback) {
+        this._api.unsubscribeMotion(data, callback);
     }
 
     logRealtime(event, details)
@@ -227,7 +230,7 @@ class App extends Homey.App {
 
     // Called from settingspages through api.js
     async getDevicesInfo() {
-        this.log('getDevicesInfo is called through api.js?')
+        // this.log('getDevicesInfo is called through api.js')
         return new Promise((resolve, reject) => {
         
             this.homey.app.getRingDevices((error, result) => {

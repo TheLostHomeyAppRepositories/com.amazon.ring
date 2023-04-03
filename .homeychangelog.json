@@ -136,14 +136,15 @@
     "sv": "• Ny kommunikationsmetod med Ring API • Mindre fix i hantering av snapshot-fel"
   },  
   "2.10.8": {
-      "en": "• Added setting to Cameras to enable/disable motion detection • Added setting to Cameras and Doorbells to configure the motion timeout",
-      "da": "• Tilføjet indstilling til kameraer for at aktivere/deaktivere bevægelsesregistrering • Tilføjet indstilling til kameraer og dørklokker for at konfigurere tidsgrænsen for bevægelse",
-      "de": "• Hinzufügen von Einstellungen für Kameras zur Aktivierung / Deaktivierung der Bewegungserkennung • Hinzufügen von Einstellungen für Kameras und Türklingeln zur Konfiguration des Bewegungs-Timeouts",
-      "fr": "• Ajout d'un paramètre sur les caméras pour activer/désactiver la détection de mouvement • Ajout d'un paramètre sur les caméras et sonnettes pour configurer la temporisation du mouvement",
-      "it": "• Aggiunta impostazione per le telecamere per abilitare/disabilitare il rilevamento dei movimenti • Aggiunta impostazione per le telecamere e i campanelli per configurare il timeout dei movimenti",
-      "nl": "• Instelling toegevoegd aan camera's om bewegingsdetectie in te schakelen/uitschakelen • Instelling toegevoegd aan camera's en deurbellen om de bewegings-timeout te configureren",
-      "no": "• Lagt til innstilling for kameraer for å aktivere / deaktivere bevegelsesdeteksjon • Lagt til innstilling for kameraer og dørklokker for å konfigurere bevegelsestidsavbruddet",
-      "es": "• Agregada configuración a las cámaras para habilitar/deshabilitar la detección de movimiento • Agregada configuración a las cámaras y timbres para configurar el tiempo de espera de movimiento",
-      "sv": "• Lade till inställning för kameror för att aktivera / inaktivera rörelsedetektion • Lade till inställning för kameror och dörrklockor för att konfigurera rörelse-timeouten"
+      "en": "• Added setting to Cameras to enable/disable motion detection • Added setting to Cameras and Doorbells to configure the motion timeout • Added new App Store images",
+      "da": "• Tilføjet indstilling til kameraer for at aktivere/deaktivere bevægelsesregistrering • Tilføjet indstilling til kameraer og dørklokker for at konfigurere tidsgrænsen for bevægelse• Tilføjet nye App Store-billeder",
+      "de": "• Hinzufügen von Einstellungen für Kameras zur Aktivierung / Deaktivierung der Bewegungserkennung • Hinzufügen von Einstellungen für Kameras und Türklingeln zur Konfiguration des Bewegungs-Timeouts • Hinzugefügt neue App Store-Bilder",
+      "es": "• Agregada configuración a las cámaras para habilitar/deshabilitar la detección de movimiento • Agregada configuración a las cámaras y timbres para configurar el tiempo de espera de movimiento • Añadidas nuevas imágenes de la App Store",
+      "fr": "• Ajout d'un paramètre sur les caméras pour activer/désactiver la détection de mouvement • Ajout d'un paramètre sur les caméras et sonnettes pour configurer la temporisation du mouvement • Ajouté de nouvelles images de l'App Store",
+      "it": "• Aggiunta impostazione per le telecamere per abilitare/disabilitare il rilevamento dei movimenti • Aggiunta impostazione per le telecamere e i campanelli per configurare il timeout dei movimenti • Aggiunte nuove immagini App Store",
+      "nl": "• Instelling toegevoegd aan camera's om bewegingsdetectie in- en uit te schakelen • Instelling toegevoegd aan camera's en deurbellen om de bewegings-timeout te configureren • Nieuwe App Store afbeeldingen toegevoegd",
+      "no": "• Lagt til innstilling for kameraer for å aktivere / deaktivere bevegelsesdeteksjon • Lagt til innstilling for kameraer og dørklokker for å konfigurere bevegelsestidsavbruddet • Lagt til nye App Store-bilder",
+      "pl": "• Dodano ustawienie kamery umożliwiające włączenie/wyłączenie wykrywania ruchu • Dodano ustawienie kamery i dzwonka do drzwi umożliwiające konfigurację czasu oczekiwania na ruch • Dodano nowe obrazy sklepu aplikacji",
+      "sv": "• Lade till inställning för kameror för att aktivera / inaktivera rörelsedetektion • Lade till inställning för kameror och dörrklockor för att konfigurera rörelse-timeouten • Lagt till nya App Store-bilder"
   }
 }
