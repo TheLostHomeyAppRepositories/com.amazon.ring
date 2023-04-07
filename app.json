@@ -550,6 +550,50 @@
         ]
       },
       {
+        "id": "snoozeChime",
+        "title": {
+          "en": "Snooze Chime for "
+        },
+        "titleFormatted": {
+          "en": "Snooze Chime for [[duration]]"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=chime"
+          },
+          {
+            "type": "dropdown",
+            "name": "duration",
+            "title": { "en": "Duration" },
+            "values": [
+              { "id": "1", "label": { "en": "1 hour" } },
+              { "id": "3", "label": { "en": "3 hours" } },
+              { "id": "6", "label": { "en": "6 hours" } },
+              { "id": "9", "label": { "en": "9 hours" } },
+              { "id": "12", "label": { "en": "12 hours" } }
+            ]
+          } 
+        ]
+      },
+      {
+        "id": "unsnoozeChime",
+        "title": {
+          "en": "Unsnooze Chime"
+        },
+        "titleFormatted": {
+          "en": "Unsnooze Chime"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=chime"
+          } 
+        ]
+      },
+      {
         "id": "ring_grab_snapshot",
         "title": {
           "en": "Grab current snapshot",

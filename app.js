@@ -122,8 +122,8 @@ class App extends Homey.App {
         this._api.ringChime(data, sound, callback);
     }
 
-    snoozeChime(data, time, callback) {
-        this._api.snoozeChime(data, time, callback);
+    snoozeChime(data, duration, callback) {
+        this._api.snoozeChime(data, duration, callback);
     }
 
     unsnoozeChime(data, callback) {
@@ -156,11 +156,11 @@ class App extends Homey.App {
         this.homey.api.realtime(event, details)
         this.log('Realtime event emitted for', event, details);
     }
-
+/*
     writeToTimeline(message) {
         this.homey.notifications.createNotification({ excerpt: message })
     }
-
+*/
     triggerLocationModeChanged(tokens, state) {
         this._triggerLocationModeChangedTo.trigger(tokens, state);
     }
@@ -183,7 +183,7 @@ class App extends Homey.App {
     setLocationMode() {
         this._setLocationMode
             .registerRunListener(async (args, state) => {
-                console.log('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
+                this.log('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
                 return new Promise((resolve, reject) => {
                 this._api.setLocationMode(args.location.id,args.mode).then(() => {
                     resolve(true);
@@ -196,7 +196,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                //console.log('I found these locations',locations);
+                this.log('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -205,13 +205,13 @@ class App extends Homey.App {
     conditionLocationMode() {
         this._conditionLocationMode
             .registerRunListener((args, state) => {
-
+                
                 return new Promise((resolve, reject) => {
                     var matchedLocationMode = this.lastLocationModes.find(lastLocationMode =>{
                         return lastLocationMode.id==args.location.id;
                     });
                     if(matchedLocationMode!=undefined) {
-                        console.log('stored location mode found for location '+matchedLocationMode.name);
+                        this.log('stored location mode found for location '+matchedLocationMode.name);
                         resolve(matchedLocationMode.mode === args.mode);
                     } else {
                         reject('unknown location');
@@ -222,7 +222,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                //console.log('I found these locations',locations);
+                this.log('I found these locations',locations);
                 resolve(locations);
                 });
             });

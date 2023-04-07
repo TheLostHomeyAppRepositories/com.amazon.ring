@@ -19,7 +19,12 @@ class DeviceChime extends Device {
         if (status == 'authenticated') {
             this.setAvailable();
         } else {
-            this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            try {
+                this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            }
+            catch(e) {
+                // fail silently, setting a device unavailable will fail when Homey itself failed it already
+            }
         }
     }
 
@@ -45,10 +50,9 @@ class DeviceChime extends Device {
             return Promise.reject(this._device);
 
         let device_data = this.getData();
-
         let _this = this;
         return new Promise(function(resolve, reject) {
-            _this.homey.app.snoozeChime(device_data, args.time, (error, result) => {
+            _this.homey.app.snoozeChime(device_data, args.duration, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -71,7 +75,7 @@ class DeviceChime extends Device {
 
                 return resolve(true);
             });
-        });
+        });   
     }
 }
 

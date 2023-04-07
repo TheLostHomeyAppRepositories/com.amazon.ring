@@ -50,7 +50,12 @@ class DeviceStickUpCam extends Device {
         if (status == 'authenticated') {
             this.setAvailable();
         } else {
-            this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            try {
+                this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            }
+            catch(e) {
+                // fail silently, setting a device unavailable will fail when Homey itself failed it already
+            }
         }
     }
 
@@ -158,7 +163,7 @@ class DeviceStickUpCam extends Device {
         // todo: Floodlight code needs testing
         if(this.hasCapability("flood_light"))
         {
-            this.log('_ringOnData, light status:'+data.led_status);
+            //this.log('_ringOnData, light status:'+data.led_status);
             let floodLight=false;
             if(data.led_status=='on')
                 floodLight=true;

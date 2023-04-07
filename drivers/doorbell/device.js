@@ -40,7 +40,12 @@ class DeviceDoorbell extends Device {
         if (status == 'authenticated') {
             this.setAvailable();
         } else {
-            this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            try {
+                this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            }
+            catch(e) {
+                // fail silently, setting a device unavailable will fail when Homey itself failed it already
+            }
         }
     }
     
