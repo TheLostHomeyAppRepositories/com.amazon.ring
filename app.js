@@ -187,8 +187,8 @@ class App extends Homey.App {
                 return new Promise((resolve, reject) => {
                 this._api.setLocationMode(args.location.id,args.mode).then(() => {
                     resolve(true);
-                }, (_error) => {
-                    resolve(false);
+                }, (error) => {
+                    resolve(error);
                 });
                 });
             })

@@ -115,13 +115,13 @@ function onRevokeAuth(Homey) {
 async function getDevices() {
     if (!this.doubleClicked) {
         Homey.api('GET', '/devicesinfo')
-        .then((result) => {
-            const mystring = JSON.stringify(result);
-            console.log(mystring);
-        })
-        .catch((error) => {    
-            console.log(error);
-        })
+            .then((result) => {
+                const mystring = JSON.stringify(result);
+                console.log(mystring);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
         this.doubleClicked = false;
     }
 }
