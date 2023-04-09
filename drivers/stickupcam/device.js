@@ -78,33 +78,31 @@ class DeviceStickUpCam extends Device {
     {
         if(device_data.hasOwnProperty('siren_status')) // camera.hasSiren
         {
-            // this.log("_enableSirenCapability, device has a siren, enable siren related features");
+            //this.log ("_enableSirenCapability, device has a siren, enable siren related features");
             //Adding new capabilities
             if(!this.hasCapability("siren"))
             {
-                this.log('_enableSirenCapability, this stickup camera has a siren, enable the capability');
+                //this.log ('_enableSirenCapability, this stickup camera has a siren, enable the capability');
                 this.addCapability("siren").then(function() {
                     this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
                 }.bind(this));
             }
             if(!this.hasCapability("alarm_generic"))
             {
-                this.log('_enableSirenCapability, this stickup camera has a siren, so use it to detect a Alarm');
+                //this.log ('_enableSirenCapability, this stickup camera has a siren, so use it to detect a Alarm');
                 this.addCapability("alarm_generic");
             } 
         } else {
-            // this.log('_enableSirenCapability, device has no siren, ignore siren related features');
+            //this.log ('_enableSirenCapability, device has no siren, ignore siren related features');
         }
     }
 
     async _setupCameraView(device_data) {
         this.log('_setupCamera', device_data);
-        //this.device.cameraImage = new Homey.Image();
+
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            this.log("setStream: request app.js grabImage (1)");
             await this.homey.app.grabImage(device_data, (error, result) => {
-                this.log("setStream: app.js grabImage returned (4)");
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -129,7 +127,7 @@ class DeviceStickUpCam extends Device {
         if (notification.ding.doorbot_id !== this.getData().id)
             return;
 
-        // this.log('_ringOnNotification', notification);
+        //this.log('_ringOnNotification', notification);
 
         if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
             this.setCapabilityValue('alarm_motion', true).catch(error => {
@@ -155,7 +153,7 @@ class DeviceStickUpCam extends Device {
         if (data.id !== this.getData().id)
             return;
 
-        // this.log('_ringOnData data',data);
+        //this.log('_ringOnData data',data);
 
         this._enableLightCapability(data);
         this._enableSirenCapability(data);
@@ -175,7 +173,7 @@ class DeviceStickUpCam extends Device {
         if(this.hasCapability("siren"))
         {
             if (data.siren_status.started_at) {
-                // this.log('_ringOnData, Siren status: '+JSON.stringify(data.siren_status));
+                //this.log('_ringOnData, Siren status: '+JSON.stringify(data.siren_status));
             }
             let siren=false;
             if(data.siren_status.seconds_remaining>0)

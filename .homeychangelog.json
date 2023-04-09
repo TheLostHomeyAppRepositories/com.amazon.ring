@@ -146,5 +146,17 @@
       "no": "• Lagt til innstilling for kameraer for å aktivere / deaktivere bevegelsesdeteksjon • Lagt til innstilling for kameraer og dørklokker for å konfigurere bevegelsestidsavbruddet • Lagt til nye App Store-bilder",
       "pl": "• Dodano ustawienie kamery umożliwiające włączenie/wyłączenie wykrywania ruchu • Dodano ustawienie kamery i dzwonka do drzwi umożliwiające konfigurację czasu oczekiwania na ruch • Dodano nowe obrazy sklepu aplikacji",
       "sv": "• Lade till inställning för kameror för att aktivera / inaktivera rörelsedetektion • Lade till inställning för kameror och dörrklockor för att konfigurera rörelse-timeouten • Lagt till nya App Store-bilder"
+  },  
+  "2.10.10": {
+    "en": "• Added setting to snooze and unsnooze a Chime • Added flow cards to snooze and unsnooze a Chime • Adapted to changes in the Ring API",
+    "da": "• Tilføjet mulighed for at snooze og unsnooze en Chime • Tilføjet flowkort til at snooze og unsnooze en Chime • Tilpasset ændringer i Ring API'en",
+    "de": "• Hinzugefügt Einstellung zum Snoozen und Unsnoozen eines Chimes • Hinzugefügt Flow-Karten zum Snoozen und Unsnoozen eines Chimes • Anpassung an Änderungen in der Ring-API",
+    "es": "• Se agregó la opción de posponer y anular la posposición de un timbre • Se agregaron tarjetas de flujo para posponer y anular la posposición de un timbre • Adaptado a cambios en la API de Ring",
+    "fr": "• Ajout d'un paramètre pour mettre en veille et annuler la mise en veille d'une sonnette • Ajout de cartes de flux pour mettre en veille et annuler la mise en veille d'une sonnette • Adapté aux changements de l'API Ring",
+    "it": "• Aggiunta impostazione per mettere in pausa e rimuovere la pausa su un Chime • Aggiunte schede di flusso per mettere in pausa e rimuovere la pausa su un Chime • Adattato alle modifiche dell'API di Ring",
+    "nl": "• Toegevoegd instelling om een Chime te snoozen en unsnoozen • Toegevoegd flowkaarten om een Chime te snoozen en unsnoozen • Aangepast aan veranderingen in de Ring API",
+    "no": "• Lagt til innstilling for å snooze og unsnooze en Chime • Lagt til flowkort for å snooze og unsnooze en Chime • Tilpasset endringer i Ring API",
+    "pl": "• Dodano ustawienie w celu wyciszenia i wyłączenia wyciszenia dźwięku dzwonka • Dodano karty przepływu w celu wyciszenia i wyłączenia wyciszenia dźwięku dzwonka • Dostosowano do zmian w API Ring",
+    "sv": "• Lagt till inställning för att snooza och unsnooza en Chime • Lagt till flödeskort för att snooza och unsnooza en Chime • Anpassat till förändringar i Ring API"
   }
 }

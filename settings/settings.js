@@ -103,13 +103,6 @@ async function writeAuthenticationState() {
 function onRevokeAuth(Homey) {
     document.getElementById('settings-auth-revoke').classList.add('is-loading');
     Homey.set('isRevoked', true);
-    /*
-    Homey.set('ringAccesstoken', null);
-    Homey.set('ringBearer', null);
-    Homey.set('ringRefreshToken', null);
-    Homey.set('authenticationStatus', 'Authentication Revoked');
-    Homey.set('authenticationError', "The authentication has been revoked.");
-    */
 }
 
 async function getDevices() {

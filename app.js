@@ -23,18 +23,6 @@ class App extends Homey.App {
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
 
-/*
-		if (process.env.DEBUG === '1') {
-            try{ 
-                require('inspector').waitForDebugger();
-            }
-            catch(error){
-                require('inspector').open(9222, '0.0.0.0', false);
-            }
-			process.stdout.write = () => {}
-		}
-*/
-
         this._api = new api(this.homey);
 
         this._api.on('ringOnNotification',this._ringOnNotification.bind(this));
@@ -131,7 +119,6 @@ class App extends Homey.App {
     }
 
     grabImage(data, callback) {
-        this.log("app.js grabImage has been called from setStream (2)");
         this._api.grabImage(data, callback);
     }
 
@@ -156,11 +143,7 @@ class App extends Homey.App {
         this.homey.api.realtime(event, details)
         this.log('Realtime event emitted for', event, details);
     }
-/*
-    writeToTimeline(message) {
-        this.homey.notifications.createNotification({ excerpt: message })
-    }
-*/
+
     triggerLocationModeChanged(tokens, state) {
         this._triggerLocationModeChangedTo.trigger(tokens, state);
     }
@@ -174,7 +157,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                     const locations = await this._api.userLocations();
-                    //console.log('I found these locations',locations);
+                    //this.log('I found these locations',locations);
                     resolve(locations);
                 });
             });
@@ -183,7 +166,7 @@ class App extends Homey.App {
     setLocationMode() {
         this._setLocationMode
             .registerRunListener(async (args, state) => {
-                this.log('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
+                this.log ('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
                 return new Promise((resolve, reject) => {
                 this._api.setLocationMode(args.location.id,args.mode).then(() => {
                     resolve(true);
@@ -196,7 +179,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                this.log('I found these locations',locations);
+                //this.log ('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -211,7 +194,7 @@ class App extends Homey.App {
                         return lastLocationMode.id==args.location.id;
                     });
                     if(matchedLocationMode!=undefined) {
-                        this.log('stored location mode found for location '+matchedLocationMode.name);
+                        //this.log ('stored location mode found for location '+ matchedLocationMode.name);
                         resolve(matchedLocationMode.mode === args.mode);
                     } else {
                         reject('unknown location');
@@ -222,7 +205,7 @@ class App extends Homey.App {
             .registerAutocompleteListener((query, args) => {
                 return new Promise(async (resolve) => {
                 const locations = await this._api.userLocations();
-                this.log('I found these locations',locations);
+                //this.log ('I found these locations',locations);
                 resolve(locations);
                 });
             });
@@ -230,7 +213,7 @@ class App extends Homey.App {
 
     // Called from settingspages through api.js
     async getDevicesInfo() {
-        // this.log('getDevicesInfo is called through api.js')
+        //this.log('getDevicesInfo is called through api.js')
         return new Promise((resolve, reject) => {
         
             this.homey.app.getRingDevices((error, result) => {
@@ -312,8 +295,8 @@ module.exports = App;
 
 // Translate text in ChatGPT
 /*
-In this code en means English, please add Danish, German, French, Italian, Dutch, Norwegian, Spanish and Swedish. Answer in a codeblock.
+In this code en means English, please add Danish, German, Spanish, French, Italian, Dutch, Norwegian, Polish and Swedish. Answer in a codeblock.
 {
-  "en": "Set devices unavailable when authentication is lost",
+        "en": "• Added setting to snooze and unsnooze a Chime • Added flow cards to snooze and unsnooze a Chime • Adapted to changes in the Ring API",
 }
 */

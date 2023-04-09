@@ -51,12 +51,10 @@ class DeviceDoorbell extends Device {
     
     async _setupCameraView(device_data) {
         this.log('_setupCamera', device_data);
-        //this.device.cameraImage = new Homey.Image(); <- SDK2
+
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            this.log("setStream: request app.js grabImage (1)");
             await this.homey.app.grabImage(device_data, (error, result) => {
-                this.log("setStream: app.js grabImage returned (4)");
                 if (!error) {
                     let Duplex = require('stream').Duplex;
                     let snapshot = new Duplex();
@@ -113,7 +111,7 @@ class DeviceDoorbell extends Device {
                 this.homey.app.writeLog(logLine);
             }
             
-            // this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
+            //this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
 
             this.setCapabilityValue('alarm_motion', true).catch(error => {
                 this.error(error);
@@ -168,13 +166,11 @@ class DeviceDoorbell extends Device {
     grabImage(args, state) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
-        //this.log('device:',this.device);
+
         let _this = this;    
         return new Promise(async function(resolve, reject) {
-            //await _this._setupCameraView(_this.getData());
             _this.device.cameraImage.update()
                 .then(() => {
-                    _this.log("device.js grabImage: cameraImage.update()");
                     var tokens = {ring_image: _this.device.cameraImage};
                     _this.homey.flow.getTriggerCard('ring_snapshot_received')
                         .trigger(tokens)
