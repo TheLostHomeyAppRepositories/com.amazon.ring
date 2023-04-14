@@ -17,7 +17,7 @@ class App extends Homey.App {
        
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
-            await LogToFile();
+            //await LogToFile();
         }
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
