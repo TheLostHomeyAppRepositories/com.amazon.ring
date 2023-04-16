@@ -17,7 +17,7 @@ class App extends Homey.App {
        
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
-            //await LogToFile();
+            await LogToFile();
         }
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
@@ -174,10 +174,10 @@ class App extends Homey.App {
                         return lastLocationMode.id==args.location.id;
                     });
                     if(matchedLocationMode!=undefined) {
-                        this.log ('stored location mode found for location ' + matchedLocationMode.name);
+                        //this.log ('stored location mode found for location ' + matchedLocationMode.name);
                         resolve(matchedLocationMode.mode === args.mode);
                     } else {
-                        this.log ('stored location mode not found for location ' + args.location.id)
+                        //this.log ('stored location mode not found for location ' + args.location.id)
                         reject('unknown location');
                     }
                 });
