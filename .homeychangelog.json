@@ -161,5 +161,18 @@
   },
   "2.10.11": {
     "en": "Testversion for locations with a Ring Alarm system"
-  }  
+  },
+  "2.10.12": {
+    "en": "Fixed Location Mode flow cards for locations with a Ring Alarm System",
+    "da": "Fast placeringstilstand flow-kort til steder med et Ring Alarm System",
+    "de": "Flow-Karten für den festen Standortmodus für Standorte mit einem Ring Alarm System",
+    "es": "Tarjetas de flujo del modo de ubicación fija para ubicaciones con un sistema de alarma de Ring",
+    "fr": "Cartes de flux de mode d'emplacement fixe pour les emplacements avec un système d'alarme Ring",
+    "it": "Schede di flusso della modalità di posizione fissa per posizioni con un sistema di allarme Ring",
+    "nl": "Flow kaarten voor de Locatie Modus voor locaties met een Ring Alarm System gerepareerd",
+    "no": "Fast plasseringsmodus flytkort for steder med et Ring Alarm System",
+    "pl": "Karty przepływu trybu stałego położenia dla lokalizacji z systemem alarmowym Ring",
+    "sv": "Flytkort för fast platsläge för platser med ett Ring Alarm System"
+}
+  
 }

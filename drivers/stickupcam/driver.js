@@ -55,7 +55,8 @@ class DriverStickUpCam extends Driver {
                     return this.error(error);
                 }
 
-                result.stickup_cams.forEach((device_data) => {
+                //result.stickup_cams.forEach((device_data) => {
+                result.stickupCams.forEach((device_data) => {
                     foundDevices.push({
                         name : device_data.description,
                         data : {
