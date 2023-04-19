@@ -1,6 +1,5 @@
 # Ring Doorbell and Camera support for Homey
 Connect your Ring Doorbell or Camera products with Homey.
-Two-Factor Security Authentication is required, you must enable this on your Ring account!
 
 ## Supported Devices
 * Ring Chime (Pro)
@@ -23,6 +22,8 @@ Two-Factor Security Authentication is required, you must enable this on your Rin
 * Add a Ring device
 
 When adding your first device you will need to log on with your Ring account, any device added after that will be added using the previous logon.
+
+Two-Factor Security Authentication is required, you must enable this on your Ring account!
 
 ## Need Help, Have questions or remarks?
 

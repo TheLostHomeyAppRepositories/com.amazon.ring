@@ -173,6 +173,20 @@
     "no": "Fast plasseringsmodus flytkort for steder med et Ring Alarm System",
     "pl": "Karty przepływu trybu stałego położenia dla lokalizacji z systemem alarmowym Ring",
     "sv": "Flytkort för fast platsläge för platser med ett Ring Alarm System"
-}
+  },
+  "2.10.14": {
+    "en": "Added additional translations",
+    "da": "Tilføjet yderligere oversættelser",
+    "de": "Zusätzliche Übersetzungen hinzugefügt",
+    "es": "Añadidas traducciones adicionales",
+    "fr": "Ajouté des traductions supplémentaires",
+    "it": "Aggiunte traduzioni aggiuntive",
+    "nl": "Extra vertalingen toegevoegd",
+    "no": "Lagt til ekstra oversettelser",
+    "pl": "Dodano dodatkowe tłumaczenia",
+    "sv": "Lagt till ytterligare översättningar"
+  }
+  
+  
   
 }

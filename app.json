@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.10.12",
+  "version": "2.10.14",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -215,11 +215,29 @@
                 "nl": "sec."
             },
               "label": {
-                "en": "Disable motion alarm after"      
-              },
+                "en": "Disable motion alarm after",
+                "da": "Deaktiver bevægelsesalarm efter",
+                "de": "Bewegungsalarm deaktivieren nach",
+                "es": "Desactivar alarma de movimiento después de",
+                "fr": "Désactiver l'alarme de mouvement après",
+                "it": "Disattivare l'allarme di movimento dopo",
+                "nl": "Schakel bewegingsalarm uit na",
+                "no": "Deaktiver bevegelsesalarm etter",
+                "pl": "Wyłącz alarm ruchu po",
+                "sv": "Inaktivera rörelsealarm efter"
+                },
               "hint": {
-                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds."
-              }
+                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
+                "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
+                "de": "Diese Einstellung deaktiviert den Bewegungsalarm nach Ablauf der angegebenen Zeit.\n\nStandardmäßig: 30 Sekunden.",
+                "es": "Esta configuración desactivará la alarma de movimiento después de que expire el tiempo especificado.\n\nPredeterminado: 30 segundos.",
+                "fr": "Ce paramètre désactivera l'alarme de mouvement après que le temps spécifié se soit écoulé.\n\nPar défaut: 30 secondes.",
+                "it": "Questa impostazione disabiliterà l'allarme di movimento dopo che il tempo indicato è scaduto.\n\nDefault: 30 secondi.",
+                "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
+                "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
+                "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
+                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder."
+              }              
             }
           ]
         }
@@ -379,11 +397,29 @@
                 "nl": "sec."
             },
               "label": {
-                "en": "Disable motion alarm after"      
-              },
+                "en": "Disable motion alarm after",
+                "da": "Deaktiver bevægelsesalarm efter",
+                "de": "Bewegungsalarm deaktivieren nach",
+                "es": "Desactivar alarma de movimiento después de",
+                "fr": "Désactiver l'alarme de mouvement après",
+                "it": "Disattivare l'allarme di movimento dopo",
+                "nl": "Schakel bewegingsalarm uit na",
+                "no": "Deaktiver bevegelsesalarm etter",
+                "pl": "Wyłącz alarm ruchu po",
+                "sv": "Inaktivera rörelsealarm efter"
+                },
               "hint": {
-                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds."
-              }
+                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
+                "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
+                "de": "Diese Einstellung deaktiviert den Bewegungsalarm nach Ablauf der angegebenen Zeit.\n\nStandardmäßig: 30 Sekunden.",
+                "es": "Esta configuración desactivará la alarma de movimiento después de que expire el tiempo especificado.\n\nPredeterminado: 30 segundos.",
+                "fr": "Ce paramètre désactivera l'alarme de mouvement après que le temps spécifié se soit écoulé.\n\nPar défaut: 30 secondes.",
+                "it": "Questa impostazione disabiliterà l'allarme di movimento dopo che il tempo indicato è scaduto.\n\nDefault: 30 secondi.",
+                "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
+                "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
+                "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
+                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder."
+              }              
             }
           ]
         }
@@ -411,8 +447,17 @@
             "name": "ring_image",
             "type": "image",
             "title": {
-              "en": "image"
-            }
+              "en": "image",
+              "da": "billede",
+              "de": "Bild",
+              "es": "imagen",
+              "fr": "image",
+              "it": "immagine",
+              "nl": "afbeelding",
+              "no": "bilde",
+              "pl": "obraz",
+              "sv": "bild"
+            }            
           }
         ]
       },
@@ -515,12 +560,29 @@
         "id": "ring_chime",
         "title": {
           "en": "Ring Chime with",
-          "nl": "Ring Chime met"
-        },
+          "da": "Ringeklokke med",
+          "de": "Ring Chime mit",
+          "es": "Ring Chime con",
+          "fr": "Sonnette Ring avec",
+          "it": "Campanello Ring con",
+          "nl": "Ring Chime met",
+          "no": "Ring Chime med",
+          "pl": "Dzwonek Ring z",
+          "sv": "Ring Chime med"
+         },
         "titleFormatted": {
           "en": "Ring Chime with [[sound]]",
-          "nl": "Ring Chime met [[sound]]"
-        },
+          "da": "Ring Chime med [[sound]]",
+          "de": "Ring Chime mit [[sound]]",
+          "es": "Timbre de Ring con [[sound]]",
+          "fr": "Sonnette Ring avec [[sound]]",
+          "it": "Suoneria Ring con [[sound]]",
+          "nl": "Ring Chime met [[sound]]",
+          "no": "Ring Chime med [[sound]]",
+          "pl": "Dzwonek Ring z [[sound]]",
+          "sv": "Ring Chime med [[sound]]"
+        }
+        ,
         "args": [
           {
             "name": "device",
@@ -535,15 +597,31 @@
                 "id": "ring",
                 "label": {
                   "en": "Ring sound",
-                  "nl": "Ring geluid"
-                }
+                  "da": "Ringelyd",
+                  "de": "Klingelton",
+                  "es": "Sonido de timbre",
+                  "fr": "Sonnerie",
+                  "it": "Suoneria",
+                  "nl": "Beltoon",
+                  "no": "Ringetone",
+                  "pl": "Dźwięk dzwonka",
+                  "sv": "Ringljud"
+                }                
               },
               {
                 "id": "motion",
                 "label": {
                   "en": "Motion sound",
-                  "nl": "Beweging geluid"
-                }
+                  "da": "Bevægelseslyd",
+                  "de": "Bewegungsklang",
+                  "es": "Sonido de movimiento",
+                  "fr": "Son de mouvement",
+                  "it": "Suono di movimento",
+                  "nl": "Bewegingsgeluid",
+                  "no": "Bevegelseslyd",
+                  "pl": "Dźwięk ruchu",
+                  "sv": "Rörelseljud"
+                }                
               }
             ]
           }
@@ -552,10 +630,28 @@
       {
         "id": "snoozeChime",
         "title": {
-          "en": "Snooze Chime for "
-        },
+          "en": "Snooze Chime for ",
+          "da": "Slumre-kime for ",
+          "de": "Schlummer-Gong für ",
+          "es": "Tono de aplazamiento para ",
+          "fr": "Sonnerie de répétition pour ",
+          "it": "Snooze Chime per ",
+          "nl": "Snooze Chime gedurende ",
+          "no": "Snooze-klokke for ",
+          "pl": "Dzwonek drzemki dla ",
+          "sv": "Snooze-signal för "
+      },
         "titleFormatted": {
-          "en": "Snooze Chime for [[duration]]"
+          "en": "Snooze Chime for [[duration]]",
+          "da": "Snooze klokkespil i [[duration]]",
+          "de": "Snooze Glockenspiel für [[duration]]",
+          "es": "Snooze campana durante [[duration]]",
+          "fr": "Snooze carillon pendant [[duration]]",
+          "it": "Snooze campana per [[duration]]",
+          "nl": "Snooze Chime gedurende [[duration]]",
+          "no": "Snooze klokkespill i [[duration]]",
+          "pl": "Snooze dzwon w ciągu [[duration]]",
+          "sv": "Snooze klockspel i [[duration]]"
         },
         "args": [
           {
@@ -580,10 +676,28 @@
       {
         "id": "unsnoozeChime",
         "title": {
-          "en": "Unsnooze Chime"
+          "en": "Unsnooze Chime",
+          "da": "Fjern slumre på klokke",
+          "de": "Wecker wiederholen",
+          "es": "Desactivar repetición de alarma",
+          "fr": "Désactiver le répétiteur d'alarme",
+          "it": "Disattiva la ripetizione della sveglia",
+          "nl": "Unsnooze Chime",
+          "no": "Deaktiver snooze på alarm",
+          "pl": "Wyłącz powtarzanie alarmu",
+          "sv": "Stoppa snooze på klocka"
         },
         "titleFormatted": {
-          "en": "Unsnooze Chime"
+          "en": "Unsnooze Chime",
+          "da": "Fjern slumre på klokke",
+          "de": "Wecker wiederholen",
+          "es": "Desactivar repetición de alarma",
+          "fr": "Désactiver le répétiteur d'alarme",
+          "it": "Disattiva la ripetizione della sveglia",
+          "nl": "Unsnooze Chime",
+          "no": "Deaktiver snooze på alarm",
+          "pl": "Wyłącz powtarzanie alarmu",
+          "sv": "Stoppa snooze på klocka"
         },
         "args": [
           {
@@ -891,16 +1005,16 @@
       {
         "id": "stickupcam_floodLight_on",
         "title": {
-          "en": "The floodlight {{is|isn't}} on",
-          "da": "Flomlyset {{er|er ikke}} tændt",
-          "de": "Die Flutlichtanlage {{ist|ist nicht}} an",
-          "es": "El foco de inundación {{está|no está}} encendido",
-          "fr": "Le projecteur {{est|n'est pas}} allumé",
-          "it": "Il proiettore {{è|non è}} acceso",
-          "nl": "De schijnwerper {{staat|staat niet}} aan",
-          "no": "Flomlyset {{er|er ikke}} på",
-          "pl": "Reflektor {{jest|nie jest}} włączony",
-          "sv": "Strålkastaren {{är|är inte}} på"
+          "en": "The floodlight !{{is|isn't}} on",
+          "da": "Flomlyset !{{er|er ikke}} tændt",
+          "de": "Die Flutlichtanlage !{{ist|ist nicht}} an",
+          "es": "El foco de inundación !{{está|no está}} encendido",
+          "fr": "Le projecteur !{{est|n'est pas}} allumé",
+          "it": "Il proiettore !{{è|non è}} acceso",
+          "nl": "De schijnwerper !{{staat|staat niet}} aan",
+          "no": "Flomlyset !{{er|er ikke}} på",
+          "pl": "Reflektor !{{jest|nie jest}} włączony",
+          "sv": "Strålkastaren !{{är|är inte}} på"
         },
         "args": [
           {

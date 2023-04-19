@@ -214,7 +214,7 @@ class DeviceStickUpCam extends Device {
             }
         }
 
-        this.setSettings({subscribeMotionDetection: data.subscribed_motions})
+        this.setSettings({useMotionAlerts: data.subscribed_motions})
             .catch((error) => {});
 
         this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
@@ -343,11 +343,11 @@ class DeviceStickUpCam extends Device {
                     this.disableMotion(this._device)
                 }
             }
-            else if (changedSetting == 'subscribeMotionDetection') {
-                if (settings.newSettings.subscribeMotionDetection) {
-                    this.subscribeMotion(this._device)
+            else if (changedSetting == 'useMotionAlerts') {
+                if (settings.newSettings.useMotionAlerts) {
+                    this.enableMotionAlerts(this._device)
                 } else {
-                    this.unsubscribeMotion(this._device)
+                    this.disableMotionAlerts(this._device)
                 }
             }
             else if (changedSetting == 'motionTimeout') {
@@ -390,7 +390,7 @@ class DeviceStickUpCam extends Device {
         });
     }
 
-    subscribeMotion(args, state) {
+    enableMotionAlerts(args, state) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
 
@@ -398,7 +398,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            _this.homey.app.subscribeMotion(device_data, (error, result) => {
+            _this.homey.app.enableMotionAlerts(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 
@@ -407,7 +407,7 @@ class DeviceStickUpCam extends Device {
         });
     }
 
-    unsubscribeMotion(args, state) {
+    disableMotionAlerts(args, state) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
 
@@ -415,7 +415,7 @@ class DeviceStickUpCam extends Device {
         let device_data = this.getData();
 
         return new Promise(function(resolve, reject) {
-            _this.homey.app.unsubscribeMotion(device_data, (error, result) => {
+            _this.homey.app.disableMotionAlerts(device_data, (error, result) => {
                 if (error)
                     return reject(error);
 

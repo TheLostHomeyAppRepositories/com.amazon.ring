@@ -18,12 +18,11 @@ class DriverDoorbell extends Driver {
             .registerRunListener((args, state) => args.device.disableMotion());
 
         /*
-        this.homey.flow.getActionCard('doorbellSubscribeMotion')
-            .registerRunListener((args, state) => args.device.subscribeMotion());
-        */
-        /*
-        this.homey.flow.getActionCard('doorbellUnsubscribeMotion')
-            .registerRunListener((args, state) => args.device.unsubscribeMotion());
+        this.homey.flow.getActionCard('doorbellEnableMotionAlerts')
+            .registerRunListener((args, state) => args.device.enableMotionAlerts());
+        
+        this.homey.flow.getActionCard('doorbellDisableMotionAlerts')
+            .registerRunListener((args, state) => args.device.disableMotionAlerts());
         */
     }
 

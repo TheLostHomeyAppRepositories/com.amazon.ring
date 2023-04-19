@@ -130,12 +130,12 @@ class App extends Homey.App {
         this._api.disableMotion(data, callback);
     }
 
-    subscribeMotion(data, callback) {
-        this._api.subscribeMotion(data, callback);
+    enableMotionAlerts(data, callback) {
+        this._api.enableMotionAlerts(data, callback);
     }
 
-    unsubscribeMotion(data, callback) {
-        this._api.unsubscribeMotion(data, callback);
+    disableMotionAlerts(data, callback) {
+        this._api.disableMotionAlerts(data, callback);
     }
 
     logRealtime(event, details)
@@ -299,7 +299,7 @@ module.exports = App;
 
 // Translate text in ChatGPT
 /*
-In this code en means English, please add Danish, German, Spanish, French, Italian, Dutch, Norwegian, Polish and Swedish. Answer in a codeblock.
+In this code en means English, please add Danish, German, Spanish, French, Italian, Dutch, Norwegian, Polish and Swedish. Answer in a codeblock, format as json.
 {
         "en": "• Added setting to snooze and unsnooze a Chime • Added flow cards to snooze and unsnooze a Chime • Adapted to changes in the Ring API",
 }
