@@ -48,7 +48,11 @@ class DeviceStickUpCam extends Device {
 
     _setAvailability(status) {
         if (status == 'authenticated') {
-            this.setAvailable();
+            try {
+                this.setAvailable();
+            }
+            catch(e) {
+            }
         } else {
             try {
                 this.setUnavailable(this.homey.__("devices.unauthenticated"));

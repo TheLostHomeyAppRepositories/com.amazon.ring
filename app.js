@@ -8,8 +8,6 @@ const events = require('events');
 // !!!! remove next lines before publishing !!!!
 const LogToFile = require('homey-log-to-file');
 
-// new: "highlight": true, to highlight flowcards, test
-
 class App extends Homey.App {
 
     async onInit() {    

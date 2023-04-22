@@ -38,7 +38,11 @@ class DeviceDoorbell extends Device {
         
     _setAvailability(status) {
         if (status == 'authenticated') {
-            this.setAvailable();
+            try {
+                this.setAvailable();
+            }
+            catch(e) {
+            }
         } else {
             try {
                 this.setUnavailable(this.homey.__("devices.unauthenticated"));
@@ -95,6 +99,7 @@ class DeviceDoorbell extends Device {
                 this.homey.app.logRealtime('doorbell', 'ding');
                 let logLine = " doorbell || _syncDevice || " + this.getName() + " reported ding event";
                 this.homey.app.writeLog(logLine);
+                
             }
             
             this.setCapabilityValue('alarm_generic', true).catch(error => {
@@ -157,7 +162,11 @@ class DeviceDoorbell extends Device {
         } else {
             // battery_life is null, remove measure_battery capability if it exists
             if ( this.hasCapability('measure_battery') ) {
-                this.removeCapability('measure_battery');
+                try {
+                    this.removeCapability('measure_battery');
+                }
+                catch (error) {
+                }
             }
         }
 
