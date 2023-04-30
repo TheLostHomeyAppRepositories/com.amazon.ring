@@ -99,7 +99,7 @@
     "alarm_motion": {
       "type": "boolean",
       "title": {
-        "en": "AMotion alarm",
+        "en": "Motion alarm",
         "nl": "Bewegingsalarm",
         "de": "Bewegungs-Alarm",
         "fr": "Alarme mouvement",
@@ -113,7 +113,7 @@
       },
       "insights": true,
       "insightsTitleTrue": {
-        "en": "AMotion alarm turned on",
+        "en": "Motion alarm turned on",
         "nl": "Bewegingsalarm ging af",
         "de": "Bewegungs-Alarm ist angegangen",
         "fr": "Alarme mouvement s'est déclenchée",
@@ -126,7 +126,7 @@
         "pl": "Czujnik ruchu włączony"
       },
       "insightsTitleFalse": {
-        "en": "AMotion alarm turned off",
+        "en": "Motion alarm turned off",
         "nl": "Bewegingsalarm ging uit",
         "de": "Bewegungs-Alarm ist ausgegangen",
         "fr": "Alarme mouvement s'est désactivée",
@@ -504,7 +504,7 @@
               "en": "Motion type"
             },
             "example": {
-              "en": "Ordinary"
+              "en": "Other"
             }
           }          
         ],
