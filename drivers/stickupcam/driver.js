@@ -8,6 +8,8 @@ class DriverStickUpCam extends Driver {
     onInit() {
         this.log('onInit');
 
+        this._triggerAlarmMotionOn = this.homey.flow.getDeviceTriggerCard('alarm_motion_true');
+
         this.homey.flow.getConditionCard('stickupcam_floodLight_on')
             .registerRunListener(async ( args, state ) => {
                 return args.device.isLightOn(); // Promise<boolean>
@@ -42,6 +44,13 @@ class DriverStickUpCam extends Driver {
         this.homey.flow.getActionCard('stickupcamDisableMotionAlerts')
             .registerRunListener((args, state) => args.device.disableMotionAlerts());
         */
+    }
+
+    // this function is called from driver.js
+    alarmMotionOn(device, tokens) {
+        this._triggerAlarmMotionOn.trigger(device, tokens)
+            .then()
+            .catch(this.error);
     }
 
     onPairListDevices(data, callback) {

@@ -17,13 +17,11 @@ class DeviceDoorbell extends Device {
         this.device.timer = {};
         this.motionTimeout = this.getSetting('motionTimeout');
 
-        this.setCapabilityValue('alarm_generic', false).catch(error => {
-            this.error(error);
-        });
+        this.setCapabilityValue('alarm_generic', false)
+            .catch(error => {this.error(error)});
 
-        this.setCapabilityValue('alarm_motion', false).catch(error => {
-            this.error(error);
-        });
+        this.setCapabilityValue('alarm_motion', false)
+            .catch(error => {this.error(error)});
 
         this.setAvailable();
 
@@ -48,7 +46,6 @@ class DeviceDoorbell extends Device {
                 this.setUnavailable(this.homey.__("devices.unauthenticated"));
             }
             catch(e) {
-                // fail silently, setting a device unavailable will fail when Homey itself failed it already
             }
         }
     }
@@ -97,47 +94,48 @@ class DeviceDoorbell extends Device {
         if (notification.subtype === 'ding') {
             if (!this.getCapabilityValue('alarm_generic')) {
                 this.homey.app.logRealtime('doorbell', 'ding');
-                let logLine = " doorbell || _syncDevice || " + this.getName() + " reported ding event";
-                this.homey.app.writeLog(logLine);
+                //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported ding event";
+                //this.homey.app.writeLog(logLine);
                 
             }
             
-            this.setCapabilityValue('alarm_generic', true).catch(error => {
-                this.error(error);
-            });
+            this.setCapabilityValue('alarm_generic', true)
+                .catch(error => {this.error(error)});
 
             clearTimeout(this.device.timer.ding);
 
             this.device.timer.ding = setTimeout(() => {
-                this.setCapabilityValue('alarm_generic', false).catch(error => {
-                    this.error(error);
-                });
+                this.setCapabilityValue('alarm_generic', false)
+                    .catch(error => {this.error(error)});
             }, statusTimeout);
 
         } else if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
             if (!this.getCapabilityValue('alarm_motion')) {
                 this.homey.app.logRealtime('doorbell', 'motion');
-                let logLine = " doorbell || _syncDevice || " + this.getName() + " reported motion event";
-                this.homey.app.writeLog(logLine);
+                //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported motion event";
+                //this.homey.app.writeLog(logLine);
             }
             
+            const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
+            const tokens = {'motionType': this.motionTypes[type]};
+            this.driver.alarmMotionOn(this, tokens);
+
             //this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
 
-            this.setCapabilityValue('alarm_motion', true).catch(error => {
-                this.error(error);
-            });
+            this.setCapabilityValue('alarm_motion', true)
+                .catch(error => {this.error(error)});
 
             clearTimeout(this.device.timer.motion);
 
             this.device.timer.motion = setTimeout(() => {
-                this.setCapabilityValue('alarm_motion', false).catch(error => {
-                    this.error(error);
-                });
+                this.setCapabilityValue('alarm_motion', false)
+                    .catch(error => {this.error(error)});
+
             }, (this.motionTimeout  * 1000));
         }
     }
 
-    _ringOnData(data) {
+    async _ringOnData(data) {
         if (data.id !== this.getData().id)
             return;
 
@@ -148,16 +146,15 @@ class DeviceDoorbell extends Device {
         if (data.battery_life != null) {
             // battery_life is not null, add measure_battery capability if it does not exists
             if ( !this.hasCapability('measure_battery') ) {
-                this.addCapability('measure_battery');
+                await this.addCapability('measure_battery');
             }
             battery = parseInt(data.battery_life);
                 
             if (battery > 100) { battery = 100; }
                               
             if ( this.getCapabilityValue('measure_battery') != battery) {
-                this.setCapabilityValue('measure_battery', battery).catch(error => {
-                    this.error(error);
-                });
+                this.setCapabilityValue('measure_battery', battery)
+                    .catch(error => {this.error(error)});
             }
         } else {
             // battery_life is null, remove measure_battery capability if it exists

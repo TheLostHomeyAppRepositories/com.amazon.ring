@@ -37,6 +37,12 @@
     },
     "devices": {
         "unauthenticated": "Homey nie jest już uwierzytelniony w Ring. Skorzystaj z funkcji naprawy, aby ponownie uwierzytelnić"
+    },
+    "motiontype": {
+        "null": "Inne",
+        "human": "Człowiek",
+        "package": "Paczka",
+        "other": "Inne"
     }
 }
 

@@ -191,5 +191,8 @@
   },
   "2.10.17": {
     "en": "Additional logging"
+  },
+  "2.10.19": {
+    "en": "Test version for Advanced Motion"
   }
 }

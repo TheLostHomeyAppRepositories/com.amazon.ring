@@ -8,6 +8,8 @@ class DriverDoorbell extends Driver {
     onInit() {
         this.log('onInit');
 
+        this._triggerAlarmMotionOn = this.homey.flow.getDeviceTriggerCard('alarm_motion_true');
+
         this.homey.flow.getActionCard('ring_grab_snapshot')
             .registerRunListener((args, state) => args.device.grabImage());
 
@@ -24,6 +26,13 @@ class DriverDoorbell extends Driver {
         this.homey.flow.getActionCard('doorbellDisableMotionAlerts')
             .registerRunListener((args, state) => args.device.disableMotionAlerts());
         */
+    }
+
+    // this function is called from driver.js
+    alarmMotionOn(device, tokens) {
+        this._triggerAlarmMotionOn.trigger(device, tokens)
+            .then()
+            .catch(this.error);
     }
 
     onPairListDevices(data, callback) {

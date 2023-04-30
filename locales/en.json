@@ -37,5 +37,11 @@
     },
     "devices": {
         "unauthenticated": "Homey is no longer authenticated at Ring. Please use the repair function to reauthenticate"
+    },
+    "motiontype": {
+        "null": "Other",
+        "human": "Human",
+        "package": "Package",
+        "other": "Other"
     }
 }

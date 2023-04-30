@@ -35,5 +35,11 @@
         "unauthenticated": {
             "it": "Homey non è più autenticato su Ring. Utilizza la funzione di riparazione per ri-autenticarti."
         }
-    }    
+    },
+    "motiontype": {
+        "null": "Altro",
+        "human": "Persona",
+        "package": "Pacco",
+        "other": "Altro"
+    }   
 }

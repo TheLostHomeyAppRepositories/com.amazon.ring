@@ -35,5 +35,11 @@
         "unauthenticated": {
             "da": "Homey er ikke længere godkendt hos Ring. Brug venligst reparationfunktionen til at godkende igen."
         }
+    },
+    "motiontype": {
+        "null": "Andet",
+        "human": "Menneske",
+        "package": "Pakke",
+        "other": "Andet"
     }   
 }

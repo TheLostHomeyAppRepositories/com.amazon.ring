@@ -22,9 +22,8 @@ class DeviceStickUpCam extends Device {
             this.motionTimeout = 30;
         }
         
-        this.setCapabilityValue('alarm_motion', false).catch(error => {
-            this.error(error);
-        });
+        this.setCapabilityValue('alarm_motion', false)
+            .catch(error => {this.error(error)});
 
         this.setAvailable();
 
@@ -139,26 +138,28 @@ class DeviceStickUpCam extends Device {
         //this.log('_ringOnNotification', notification);
 
         if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
-            this.setCapabilityValue('alarm_motion', true).catch(error => {
-                this.error(error);
-            });
+            this.setCapabilityValue('alarm_motion', true)
+                .catch(error => {this.error(error)});
 
             this.homey.app.logRealtime('stickupcam', 'motion');
 
-            this.log('Motion detection Stickup Cam notification.subtype ==',notification.ding.detection_type);
+            const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
+            const tokens = {'motionType': this.motionTypes[type]};
+            this.driver.alarmMotionOn(this, tokens);
+
+            //this.log('Motion detection Stickup Cam notification.subtype ==',notification.ding.detection_type);
 
             clearTimeout(this.device.timer.motion);
 
             this.device.timer.motion = setTimeout(() => {
-                this.setCapabilityValue('alarm_motion', false).catch(error => {
-                    this.error(error);
-                });
+                this.setCapabilityValue('alarm_motion', false)
+                    .catch(error => {this.error(error)});
             }, (this.motionTimeout  * 1000));
 
         }
     }
 
-    _ringOnData(data) {
+    async _ringOnData(data) {
         if (data.id !== this.getData().id)
             return;
 
@@ -174,9 +175,8 @@ class DeviceStickUpCam extends Device {
             let floodLight=false;
             if(data.led_status=='on')
                 floodLight=true;
-            this.setCapabilityValue('flood_light', floodLight).catch(error => {
-                this.error(error);
-            });
+            this.setCapabilityValue('flood_light', floodLight)
+                .catch(error => {this.error(error)});
         }
 
         if(this.hasCapability("siren"))
@@ -187,12 +187,11 @@ class DeviceStickUpCam extends Device {
             let siren=false;
             if(data.siren_status.seconds_remaining>0)
                 siren=true;
-            this.setCapabilityValue('siren', siren).catch(error => {
-                this.error(error);
-            });
-            this.setCapabilityValue('alarm_generic', siren).catch(error => {
-                this.error(error);
-            });
+            this.setCapabilityValue('siren', siren)
+                .catch(error => {this.error(error)});
+
+            this.setCapabilityValue('alarm_generic', siren)
+                .catch(error => {this.error(error)});
         }
 
         let battery = parseInt(data.battery_life);
@@ -200,16 +199,15 @@ class DeviceStickUpCam extends Device {
         if (data.battery_life != null) {
             // battery_life is not null, add measure_battery capability if it does not exists
             if ( !this.hasCapability('measure_battery') ) {
-                this.addCapability('measure_battery');
+                await this.addCapability('measure_battery');
             }
             battery = parseInt(data.battery_life);
                 
             if (battery > 100) { battery = 100; }
                               
             if ( this.getCapabilityValue('measure_battery') != battery) {
-                this.setCapabilityValue('measure_battery', battery).catch(error => {
-                    this.error(error);
-                });
+                this.setCapabilityValue('measure_battery', battery)
+                    .catch(error => {this.error(error)});
             }
         } else {
             // battery_life is null, remove measure_battery capability if it exists
@@ -257,9 +255,9 @@ class DeviceStickUpCam extends Device {
     onCapabilityFloodLight(value, opts)
 	{
         console.log('flood light requested ['+value+']');
-        this.setCapabilityValue('flood_light', value).catch(error => {
-            this.error(error);
-        });
+        this.setCapabilityValue('flood_light', value)
+            .catch(error => {this.error(error)});
+
         if(value)
             return this.lightOn();
         else
@@ -299,9 +297,9 @@ class DeviceStickUpCam extends Device {
     onCapabilitySiren(value, opts)
 	{
         console.log('Siren requested ['+value+']');
-        this.setCapabilityValue('siren', value).catch(error => {
-            this.error(error);
-        });
+        this.setCapabilityValue('siren', value)
+            .catch(error => {this.error(error)});
+            
         if(value)
             return this.sirenOn();
         else

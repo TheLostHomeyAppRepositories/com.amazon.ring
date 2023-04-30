@@ -35,5 +35,11 @@
         "unauthenticated": {
             "nl": "Homey is niet langer geauthenticeerd bij Ring. Gebruik de reparatiefunctie om opnieuw te authenticeren."
         }
-    }       
+    },
+    "motiontype": {
+        "null": "Altro",
+        "human": "Persona",
+        "package": "Pakket",
+        "other": "Overig"
+    }      
 }

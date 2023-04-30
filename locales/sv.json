@@ -35,5 +35,11 @@
         "unauthenticated": {
             "sv": "Homey är inte längre autentiserad på Ring. Använd reparationsfunktionen för att autentisera igen."
         }
-    }    
+    },
+    "motiontype": {
+        "null": "Annat",
+        "human": "Människa",
+        "package": "Paket",
+        "other": "Annat"
+    }  
 }
