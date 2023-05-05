@@ -56,6 +56,9 @@
     "small": "./assets/images/small.jpg"
   },
   "category": "appliances",
+  "tags": {
+    "en": [ "Ring", "Doorbell", "Camera", "Chime" ]
+  },
   "capabilities": {
     "flood_light": {
       "type": "boolean",
