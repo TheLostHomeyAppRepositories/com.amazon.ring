@@ -15,7 +15,12 @@ class DeviceDoorbell extends Device {
 
         this.device = {}
         this.device.timer = {};
-        this.motionTimeout = this.getSetting('motionTimeout');
+        
+        try {
+            this.motionTimeout = this.getSetting('motionTimeout');
+        } catch (e) {
+            this.motionTimeout = 30;
+        }
 
         this.setCapabilityValue('alarm_generic', false)
             .catch(error => {this.error(error)});
@@ -159,11 +164,8 @@ class DeviceDoorbell extends Device {
         } else {
             // battery_life is null, remove measure_battery capability if it exists
             if ( this.hasCapability('measure_battery') ) {
-                try {
-                    this.removeCapability('measure_battery');
-                }
-                catch (error) {
-                }
+                this.removeCapability('measure_battery')
+                    .catch(error => {this.error(error)});
             }
         }
 

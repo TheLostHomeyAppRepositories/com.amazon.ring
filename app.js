@@ -56,8 +56,7 @@ class App extends Homey.App {
     }
 
     // Called from event emitted from _connectRingAPI() in Api.js
-    _ringOnLocation(newLocationMode)
-    {
+    _ringOnLocation(newLocationMode) {
         //this.log('_ringOnLocation',newLocationMode);
         if(this.lastLocationModes.length>0)
         {
@@ -136,8 +135,7 @@ class App extends Homey.App {
         this._api.disableMotionAlerts(data, callback);
     }
 
-    logRealtime(event, details)
-    {
+    logRealtime(event, details) {
         this.homey.api.realtime(event, details)
         this.log('Realtime event emitted for', event, details);
     }

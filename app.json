@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.10.19",
+  "version": "2.10.20",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -496,7 +496,6 @@
           "no": "Bevegelsesalarmen aktivert",
           "es": "La alarma de movimiento se ha activado",
           "da": "Bevægelsesalarmen blev aktiveret",
-          "ru": "Сигнал движения включен",
           "pl": "Czujnik ruchu włączony"
         },
         "tokens": [
@@ -507,7 +506,16 @@
               "en": "Motion type"
             },
             "example": {
-              "en": "Other"
+              "da": "Menneske, Pakke, Andet",
+              "de": "Mensch, Paket, Andere",
+              "en": "Human, Package, Other",
+              "es": "Humano, Paquete, Otro",
+              "fr": "Humain, Paquet, Autre",
+              "it": "Persona, Pacco, Altro",
+              "nl": "Mens, Pakker, Overig",
+              "no": "Menneske, Pakke, Annet",
+              "pl": "Człowiek, Paczka, Inne",
+              "sv": "Människa, Paket, Annat"
             }
           }          
         ],
@@ -531,7 +539,6 @@
           "no": "Bevegelsesalarmen deaktivert",
           "es": "La alarma de movimiento se ha desactivado",
           "da": "Bevægelsesalarmen blev deaktiveret",
-          "ru": "Сигнал движения выключен",
           "pl": "Czujnik ruchu wyłączony"
         },
         "args": [

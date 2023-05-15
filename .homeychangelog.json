@@ -194,5 +194,17 @@
   },
   "2.10.19": {
     "en": "Test version for Advanced Motion"
-  }
+  },
+  "2.10.20": {
+    "en": "Added Smart Alerts to Doorbell and Cameras",
+    "da": "Tilføjet Smarte Alarmer til Dørklokker og Kameraer",
+    "de": "Intelligente Benachrichtigungen für Türklingeln und Kameras hinzugefügt",
+    "es": "Agregadas Alertas Inteligentes a Timbres y Cámaras",
+    "fr": "Ajout d'Alertes Intelligentes aux Sonnettes et aux Caméras",
+    "it": "Aggiunti Avvisi Intelligenti a Campanelli e Telecamere",
+    "nl": "Slimme meldingen toegevoegd aan Deurbellen en Camera's",
+    "no": "Lagt til smarte varsler til dørklokker og kameraer",
+    "pl": "Dodano inteligentne alerty do dzwonków i kamer",
+    "sv": "Lade till Smarta varningar till dörrklockor och kameror"
+  }  
 }

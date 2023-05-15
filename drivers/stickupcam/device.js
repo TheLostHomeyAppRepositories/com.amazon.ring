@@ -35,12 +35,10 @@ class DeviceStickUpCam extends Device {
         this.homey.on('ringOnData',this._ringOnData.bind(this));
 
         //Hook up the capabilities that are already known.
-        if(this.hasCapability("flood_light"))
-        {
+        if ( this.hasCapability("flood_light") ) {
             this.registerCapabilityListener('flood_light', this.onCapabilityFloodLight.bind(this));
         }
-        if(this.hasCapability("siren"))
-        {
+        if ( this.hasCapability("siren") ) {
             this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
         }
     }
@@ -212,7 +210,8 @@ class DeviceStickUpCam extends Device {
         } else {
             // battery_life is null, remove measure_battery capability if it exists
             if ( this.hasCapability('measure_battery') ) {
-                this.removeCapability('measure_battery');
+                this.removeCapability('measure_battery')
+                    .catch(error => {this.error(error)});
             }
         }
 

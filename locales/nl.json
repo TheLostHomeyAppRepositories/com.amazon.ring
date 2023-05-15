@@ -37,8 +37,8 @@
         }
     },
     "motiontype": {
-        "null": "Altro",
-        "human": "Persona",
+        "null": "Overig",
+        "human": "Mens",
         "package": "Pakket",
         "other": "Overig"
     }      
