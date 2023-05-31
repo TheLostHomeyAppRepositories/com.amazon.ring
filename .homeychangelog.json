@@ -206,8 +206,12 @@
     "no": "Lagt til smarte varsler til dørklokker og kameraer",
     "pl": "Dodano inteligentne alerty do dzwonków i kamer",
     "sv": "Lade till Smarta varningar till dörrklockor och kameror"
-  } ,
+  },
   "2.10.21": {
     "en": "Test version for new ring-client-api"
+  },
+  "2.10.22": {
+    "en": "Test version for new ring-client-api"
   }
+
 }
