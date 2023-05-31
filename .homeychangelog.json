@@ -212,6 +212,8 @@
   },
   "2.10.22": {
     "en": "Test version for new ring-client-api"
+  },
+  "2.10.24": {
+    "en": "Improved new ring-client-api"
   }
-
 }
