@@ -27,9 +27,6 @@ class App extends Homey.App {
         this._api.on('ringOnData',this._ringOnData.bind(this));
         this._api.on('ringOnLocation', this._ringOnLocation.bind(this));
 
-        await this._api.init();
-
-        this.log("Initialize flowcards");
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
 
@@ -40,6 +37,8 @@ class App extends Homey.App {
         this.setLocationMode();
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
+
+        await this._api.init();
 
         let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
