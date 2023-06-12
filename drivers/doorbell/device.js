@@ -121,7 +121,8 @@ class DeviceDoorbell extends Device {
                 //this.homey.app.writeLog(logLine);
             }
             
-            const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
+            //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
+            const type = notification.ding.detection_type ? notification.ding.detection_type : null;
             const tokens = {'motionType': this.motionTypes[type]};
             this.driver.alarmMotionOn(this, tokens);
 

@@ -215,5 +215,20 @@
   },
   "2.10.24": {
     "en": "Improved new ring-client-api"
+  },
+  "2.10.25": {
+    "en": "Test version for new ring-client-api"
+  },
+  "2.10.26": {
+    "en": "Repaired receiving of notifications after Ring API change.",
+    "da": "Repareret modtagelse af meddelelser efter Ring API ændringen.",
+    "de": "Reparierte den Empfang von Benachrichtigungen nach der Ring-API Änderung.",
+    "es": "Reparada la recepción de notificaciones después del cambio en la API de Ring.",
+    "fr": "Réparation de la réception des notifications après le changement d'API de Ring.",
+    "it": "Riparata la ricezione delle notifiche dopo la modifica dell'API di Ring.",
+    "nl": "Herstel van het ontvangen van meldingen na de Ring API wijziging.",
+    "no": "Gjennopprettet mottak av varsler etter endring i Ring API.",
+    "pl": "Naprawiono odbieranie powiadomień po zmianie interfejsu API Ring.",
+    "sv": "Reparerade mottagande av meddelanden efter Ring API-ändringen."
   }
 }
