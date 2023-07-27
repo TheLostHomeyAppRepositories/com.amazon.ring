@@ -6,17 +6,19 @@ const api = require('./lib/Api.js');
 const events = require('events');      
 
 // !!!! remove next lines before publishing !!!!
-const LogToFile = require('homey-log-to-file');
+// const LogToFile = require('homey-log-to-file');
 
 class App extends Homey.App {
 
     async onInit() {    
         // !!!! remove next lines before publishing !!!!
        
+        /*
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
         }
+        */
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
@@ -193,11 +195,13 @@ class App extends Homey.App {
             .registerRunListener(async (args, state) => {
                 //this.log ('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
                 return new Promise((resolve, reject) => {
-                this._api.setLocationMode(args.location.id,args.mode).then(() => {
-                    resolve(true);
-                }, (error) => {
-                    resolve(error);
-                });
+                    this._api.setLocationMode(args.location.id,args.mode)
+                        .then(() => {
+                            resolve(true);
+                        })
+                        .catch((error) => {
+                            reject(error);
+                        })
                 });
             })
             .getArgument('location')

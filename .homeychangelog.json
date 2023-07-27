@@ -230,5 +230,17 @@
     "no": "Gjennopprettet mottak av varsler etter endring i Ring API.",
     "pl": "Naprawiono odbieranie powiadomień po zmianie interfejsu API Ring.",
     "sv": "Reparerade mottagande av meddelanden efter Ring API-ändringen."
+  },
+  "2.10.27": {
+    "en": "Improved flowcard to set the mode of a location • Fixed problem with Siren Off flow card",
+    "da": "Forbedret flowcard til at indstille placeringens tilstand • Løst problem med Siren Off flowcard",
+    "de": "Verbesserte Flowkarte, um den Modus eines Ortes festzulegen • Problem mit Siren Off-Flowkarte behoben",
+    "es": "Flowcard mejorada para establecer el modo de una ubicación • Problema solucionado con la tarjeta de flujo Siren Off",
+    "fr": "Flowcard améliorée pour définir le mode d'un emplacement • Problème résolu avec la carte de flux Siren Off",
+    "it": "Flowcard migliorata per impostare la modalità di una posizione • Problema risolto con la carta di flusso Siren Off",
+    "nl": "Verbeterde flowcard om de modus van een locatie in te stellen • Probleem met Siren Off-flowcard opgelost",
+    "no": "Forbedret flowcard for å sette modusen for en plassering • Løst problem med Siren Off flowkort",
+    "pl": "Ulepszona karta przepływu do ustawiania trybu lokalizacji • Naprawiony problem z kartą przepływu Siren Off",
+    "sv": "Förbättrad flödeskort för att ställa in läget för en plats • Åtgärdat problem med Siren Off flödeskort"
   }
 }
