@@ -42,7 +42,8 @@
         "null": "Inne",
         "human": "Człowiek",
         "package": "Paczka",
-        "other": "Inne"
+        "other": "Inne",
+        "unknown": "nieznany"
     }
 }
 

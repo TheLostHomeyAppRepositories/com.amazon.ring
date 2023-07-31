@@ -123,7 +123,9 @@ class DeviceDoorbell extends Device {
             
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             const type = notification.ding.detection_type ? notification.ding.detection_type : null;
-            const tokens = {'motionType': this.motionTypes[type]};
+            //const tokens = {'motionType': this.motionTypes[type]};
+            if (!this.motionTypes[type]) { this.log('unknown motionType:', type)}
+            const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
             this.driver.alarmMotionOn(this, tokens);
 
             //this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);

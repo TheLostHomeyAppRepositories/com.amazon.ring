@@ -40,6 +40,7 @@
         "null": "Overig",
         "human": "Mens",
         "package": "Pakket",
-        "other": "Overig"
+        "other": "Overig",
+        "unknown": "onbekend"
     }      
 }

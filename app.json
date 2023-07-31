@@ -506,16 +506,16 @@
               "en": "Motion type"
             },
             "example": {
-              "da": "Menneske, Pakke, Andet",
-              "de": "Mensch, Paket, Andere",
-              "en": "Human, Package, Other",
-              "es": "Humano, Paquete, Otro",
-              "fr": "Humain, Paquet, Autre",
-              "it": "Persona, Pacco, Altro",
-              "nl": "Mens, Pakker, Overig",
-              "no": "Menneske, Pakke, Annet",
-              "pl": "Człowiek, Paczka, Inne",
-              "sv": "Människa, Paket, Annat"
+              "da": "Menneske, Pakke, Andet, Ukendt",
+              "de": "Mensch, Paket, Andere, Unbekannt",
+              "en": "Human, Package, Other, Unknown",
+              "es": "Humano, Paquete, Otro, Desconocido",
+              "fr": "Humain, Paquet, Autre, Inconnu",
+              "it": "Persona, Pacco, Altro, Sconosciuto",
+              "nl": "Mens, Pakker, Overig, Onbekend",
+              "no": "Menneske, Pakke, Annet, Ukjent",
+              "pl": "Człowiek, Paczka, Inne, Nieznany",
+              "sv": "Människa, Paket, Annat, Okänd"
             }
           }          
         ],

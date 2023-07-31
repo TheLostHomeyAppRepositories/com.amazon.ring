@@ -40,6 +40,7 @@
         "null": "Altro",
         "human": "Persona",
         "package": "Pacco",
-        "other": "Altro"
+        "other": "Altro",
+        "unknown": "sconosciuto"
     }   
 }

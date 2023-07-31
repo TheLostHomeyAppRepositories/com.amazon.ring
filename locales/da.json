@@ -40,6 +40,7 @@
         "null": "Andet",
         "human": "Menneske",
         "package": "Pakke",
-        "other": "Andet"
+        "other": "Andet",
+        "unknown": "ukendt"
     }   
 }

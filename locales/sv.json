@@ -40,6 +40,7 @@
         "null": "Annat",
         "human": "Människa",
         "package": "Paket",
-        "other": "Annat"
+        "other": "Annat",
+        "unknown": "okänd"
     }  
 }
