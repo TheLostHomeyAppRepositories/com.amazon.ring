@@ -43,6 +43,7 @@
         "human": "Human",
         "package": "Package",
         "other": "Other",
+        "motion": "Motion",
         "unknown": "unknown"
     }
 }

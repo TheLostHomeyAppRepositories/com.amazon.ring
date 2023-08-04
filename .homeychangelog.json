@@ -242,5 +242,17 @@
     "no": "Forbedret flowcard for å sette modusen for en plassering • Løst problem med Siren Off flowkort",
     "pl": "Ulepszona karta przepływu do ustawiania trybu lokalizacji • Naprawiony problem z kartą przepływu Siren Off",
     "sv": "Förbättrad flödeskort för att ställa in läget för en plats • Åtgärdat problem med Siren Off flödeskort"
+  },
+  "2.10.28": {
+    "en": "Added newly introduced motion type to flow card.",
+    "da": "Tilføjede den nyindførte bevægelsestype til flowkortet.",
+    "de": "Neu eingeführten Bewegungstyp zur Flusskarte hinzugefügt.",
+    "es": "Añadido el nuevo tipo de movimiento introducido a la tarjeta de flujo.",
+    "fr": "Ajout du nouveau type de mouvement introduit à la carte de flux.",
+    "it": "Aggiunto il nuovo tipo di movimento introdotto alla scheda di flusso.",
+    "nl": "Nieuw geïntroduceerd bewegingstype toegevoegd aan de stroomkaart.",
+    "no": "La til nyinnført bevegelsestype til flytkortet.",
+    "pl": "Dodano nowo wprowadzony typ ruchu do karty przepływu.",
+    "sv": "Lade till nyligen introducerad rörelsetyp till flödeskortet."
   }
 }

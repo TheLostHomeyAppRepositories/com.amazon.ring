@@ -41,6 +41,7 @@
         "human": "Persona",
         "package": "Pacco",
         "other": "Altro",
+        "motion": "Movimento",
         "unknown": "sconosciuto"
     }   
 }
