@@ -6,7 +6,7 @@ const api = require('./lib/Api.js');
 const events = require('events');      
 
 // !!!! remove next lines before publishing !!!!
- const LogToFile = require('homey-log-to-file');
+// const LogToFile = require('homey-log-to-file');
 
 class App extends Homey.App {
 
@@ -15,9 +15,11 @@ class App extends Homey.App {
        
         
         const runningVersion = this.parseVersionString(Homey.manifest.version);
+        /*
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
         }
+        */
         
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
