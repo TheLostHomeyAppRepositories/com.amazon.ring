@@ -85,7 +85,7 @@
     "nl": "Eerste release voor Homey Pro Early 2023",
     "no": "Første utgivelse for Homey Pro Early 2023",
     "es": "Primer lanzamiento para Homey Pro Early 2023",
-    "sv": "Första släppet för Homey Pro Early 2023"    
+    "sv": "Första släppet för Homey Pro Early 2023"
   },
   "2.10.1": {
     "en": "App upgraded to SDK3",
@@ -96,7 +96,7 @@
     "nl": "App geüpgraded naar SDK3",
     "no": "App oppgradert til SDK3",
     "es": "Aplicación actualizada a SDK3",
-    "sv": "App uppgraderad till SDK3"  
+    "sv": "App uppgraderad till SDK3"
   },
   "2.10.2": {
     "en": "Set devices unavailable when authentication is lost",
@@ -134,7 +134,7 @@
     "no": "• Ny kommunikasjonsmetode med Ring API • Mindre fiks i håndtering av snapshot-feil",
     "es": "• Nuevo método de comunicación con Ring API • Corrección menor en el manejo de errores de captura instantánea",
     "sv": "• Ny kommunikationsmetod med Ring API • Mindre fix i hantering av snapshot-fel"
-  },  
+  },
   "2.10.8": {
     "en": "• Added setting to Cameras to enable/disable motion detection • Added setting to Cameras and Doorbells to configure the motion timeout • Added new App Store images",
     "da": "• Tilføjet indstilling til kameraer for at aktivere/deaktivere bevægelsesregistrering • Tilføjet indstilling til kameraer og dørklokker for at konfigurere tidsgrænsen for bevægelse• Tilføjet nye App Store-billeder",
@@ -146,7 +146,7 @@
     "no": "• Lagt til innstilling for kameraer for å aktivere / deaktivere bevegelsesdeteksjon • Lagt til innstilling for kameraer og dørklokker for å konfigurere bevegelsestidsavbruddet • Lagt til nye App Store-bilder",
     "pl": "• Dodano ustawienie kamery umożliwiające włączenie/wyłączenie wykrywania ruchu • Dodano ustawienie kamery i dzwonka do drzwi umożliwiające konfigurację czasu oczekiwania na ruch • Dodano nowe obrazy sklepu aplikacji",
     "sv": "• Lade till inställning för kameror för att aktivera / inaktivera rörelsedetektion • Lade till inställning för kameror och dörrklockor för att konfigurera rörelse-timeouten • Lagt till nya App Store-bilder"
-  },  
+  },
   "2.10.10": {
     "en": "• Added flow cards to snooze and unsnooze a Chime • Adapted to changes in the Ring API",
     "da": "• Tilføjet flowkort til at snooze og unsnooze en Chime • Tilpasset ændringer i Ring API'en",
@@ -254,5 +254,17 @@
     "no": "La til nyinnført bevegelsestype til flytkortet.",
     "pl": "Dodano nowo wprowadzony typ ruchu do karty przepływu.",
     "sv": "Lade till nyligen introducerad rörelsetyp till flödeskortet."
+  },
+  "2.11.0": {
+    "en": "Added support for Ring Intercom.",
+    "da": "Tilføjet support til Ring Intercom.",
+    "de": "Unterstützung für Ring Intercom hinzugefügt.",
+    "es": "Añadido soporte para Ring Intercom.",
+    "fr": "Ajout de la prise en charge de Ring Intercom.",
+    "it": "Aggiunto supporto per Ring Intercom.",
+    "nl": "Ondersteuning toegevoegd voor Ring Intercom.",
+    "no": "Lagt til støtte for Ring Intercom.",
+    "pl": "Dodano obsługę dla Ring Intercom.",
+    "sv": "Lade till stöd för Ring Intercom."
   }
 }

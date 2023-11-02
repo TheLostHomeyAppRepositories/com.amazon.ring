@@ -4,6 +4,7 @@ Dispositivos compatibles
 • Ring Chime (Pro)
 • Ring Stick Up Cam / Ring Indoor Cam
 • Ring Video Doorbell (Pro)
+• Ring Intercom
 
 Idiomas compatibles
 🇬🇧 English
