@@ -139,11 +139,18 @@ class DeviceIntercom extends Device {
                     this.log("Reverting back to locked state");
                     this.setCapabilityValue("locked", true)
                         .catch((error) => this.error(error));
+                    this.device.timer.unlock = undefined;
                 }, this.unlockTimeout);
             });
         } else {
-            setTimeout(() => this.setCapabilityValue("locked", false), 10);
-            this.log('Locking not supported. Wait till unlockTimeout.');
+            if (this.device.timer.unlock) {
+                // just revert back to false and wait for the unlockTimeout to lock again
+                setTimeout(() => this.setCapabilityValue("locked", false).catch((error) => this.error(error)), 10);
+            } else {
+                // more or less an error case when the timeout expired but locked was not set correctly
+                this.log('Manually changing state to locked');
+                this.setCapabilityValue("locked", true).catch((error) => this.error(error))
+            }
         }
     }
 
