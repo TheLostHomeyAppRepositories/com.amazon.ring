@@ -5,7 +5,7 @@
   "platforms": ["local"],
   "sdk": 3,
   "brandColor": "#1A98D5",
-  "name": {"en": "Ring"},
+  "name": { "en": "Ring" },
   "author": {
     "name": "Danee de Kruyff",
     "email": "daneedekruyff@outlook.com"
@@ -40,16 +40,16 @@
   "source": "https://github.com/daneedk/com.amazon.ring",
   "support": "https://community.athom.com/t/76364",
   "description": {
-      "en": "Ring Doorbell and Camera support for Homey",
-      "da": "Ring Doorbell og kamera-understøttelse til Homey",
-      "de": "Unterstützung von Ring Doorbell und Kamera für Homey",
-      "es": "Soporte para Ring Doorbell y Camera en Homey",
-      "fr": "Prise en charge de la sonnette et de la caméra Ring pour Homey",
-      "it": "Supporto per la videocamera e il campanello Ring su Homey",
-      "nl": "Ring Doorbell- en Camera-ondersteuning voor Homey",
-      "no": "Ring Doorbell og Camera-støtte for Homey",
-      "pl": "Obsługa dzwonka i kamery Ring dla Homey",
-      "sv": "Stöd för Ring Doorbell och kamera i Homey"    
+    "en": "Ring Doorbell and Camera support for Homey",
+    "da": "Ring Doorbell og kamera-understøttelse til Homey",
+    "de": "Unterstützung von Ring Doorbell und Kamera für Homey",
+    "es": "Soporte para Ring Doorbell y Camera en Homey",
+    "fr": "Prise en charge de la sonnette et de la caméra Ring pour Homey",
+    "it": "Supporto per la videocamera e il campanello Ring su Homey",
+    "nl": "Ring Doorbell- en Camera-ondersteuning voor Homey",
+    "no": "Ring Doorbell og Camera-støtte for Homey",
+    "pl": "Obsługa dzwonka i kamery Ring dla Homey",
+    "sv": "Stöd för Ring Doorbell och kamera i Homey"
   },
   "images": {
     "large": "./assets/images/large.jpg",
@@ -57,7 +57,7 @@
   },
   "category": "appliances",
   "tags": {
-    "en": [ "Ring", "Doorbell", "Camera", "Chime" ]
+    "en": ["Ring", "Doorbell", "Camera", "Chime", "Intercom"]
   },
   "capabilities": {
     "flood_light": {
@@ -148,7 +148,6 @@
         "zoneActivity": true
       }
     }
-    
   },
   "drivers": [
     {
@@ -170,22 +169,16 @@
         "small": "./drivers/doorbell/assets/images/small.jpg"
       },
       "class": "sensor",
-      "capabilities": [
-        "alarm_generic",
-        "alarm_motion",
-        "measure_battery"
-      ],
+      "capabilities": ["alarm_generic", "alarm_motion", "measure_battery"],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "pair": [
         {
           "id": "start"
         },
         {
-          "id": "status"          
+          "id": "status"
         },
         {
           "id": "list_devices",
@@ -204,7 +197,7 @@
           "id": "start"
         },
         {
-          "id": "status"          
+          "id": "status"
         },
         {
           "id": "done",
@@ -254,7 +247,7 @@
                 "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
                 "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
                 "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
-              }              
+              }
             },
             {
               "id": "motionTimeout",
@@ -267,7 +260,7 @@
               "units": {
                 "en": "sec.",
                 "nl": "sec."
-            },
+              },
               "label": {
                 "en": "Disable motion alarm after",
                 "da": "Deaktiver bevægelsesalarm efter",
@@ -279,7 +272,7 @@
                 "no": "Deaktiver bevegelsesalarm etter",
                 "pl": "Wyłącz alarm ruchu po",
                 "sv": "Inaktivera rörelsealarm efter"
-                },
+              },
               "hint": {
                 "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
                 "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
@@ -291,7 +284,7 @@
                 "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
                 "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
                 "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder."
-              }              
+              }
             }
           ]
         }
@@ -314,7 +307,7 @@
           "id": "start"
         },
         {
-          "id": "status"          
+          "id": "status"
         },
         {
           "id": "list_devices",
@@ -333,7 +326,7 @@
           "id": "start"
         },
         {
-          "id": "status"          
+          "id": "status"
         },
         {
           "id": "done",
@@ -352,22 +345,16 @@
         "small": "./drivers/stickupcam/assets/images/small.jpg"
       },
       "class": "sensor",
-      "capabilities": [
-        "alarm_generic",
-        "alarm_motion",
-        "measure_battery"
-      ],
+      "capabilities": ["alarm_generic", "alarm_motion", "measure_battery"],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "pair": [
         {
           "id": "start"
         },
         {
-          "id": "status"          
+          "id": "status"
         },
         {
           "id": "list_devices",
@@ -386,7 +373,7 @@
           "id": "start"
         },
         {
-          "id": "status"          
+          "id": "status"
         },
         {
           "id": "done",
@@ -436,7 +423,7 @@
                 "no": "Du kan bruke Ring Camera som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
                 "pl": "Możesz użyć swojego kamery Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
                 "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
-              }              
+              }
             },
             {
               "id": "motionTimeout",
@@ -449,7 +436,7 @@
               "units": {
                 "en": "sec.",
                 "nl": "sec."
-            },
+              },
               "label": {
                 "en": "Disable motion alarm after",
                 "da": "Deaktiver bevægelsesalarm efter",
@@ -461,7 +448,7 @@
                 "no": "Deaktiver bevegelsesalarm etter",
                 "pl": "Wyłącz alarm ruchu po",
                 "sv": "Inaktivera rörelsealarm efter"
-                },
+              },
               "hint": {
                 "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
                 "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
@@ -473,7 +460,112 @@
                 "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
                 "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
                 "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder."
-              }              
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intercom",
+      "name": {
+        "en": "Intercom",
+        "da": "Samtaleanlæg",
+        "de": "Gegensprechanlage",
+        "es": "Intercomunicador",
+        "fr": "Interphone",
+        "it": "Citofono",
+        "nl": "Intercom",
+        "no": "Intercom",
+        "pl": "Awiofon",
+        "sv": "Intercom"
+      },
+      "images": {
+        "large": "./drivers/intercom/assets/images/large.png",
+        "small": "./drivers/intercom/assets/images/small.png"
+      },
+      "class": "lock",
+      "capabilities": ["alarm_generic", "measure_battery", "locked"],
+      "capabilitiesOptions": {
+        "locked": {
+          "uiQuickAction": true,
+          "uiComponent": "toggle"
+        }
+      },
+      "energy": {
+        "batteries": ["INTERNAL"]
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Homey integration settings",
+            "da": "Homey integrationsindstillinger",
+            "de": "Homey Integrations-Einstellungen",
+            "es": "Configuración de integración de Homey",
+            "fr": "Paramètres d'intégration Homey",
+            "it": "Impostazioni di integrazione Homey",
+            "nl": "Homey integratie-instellingen",
+            "no": "Homey integreringsinnstillinger",
+            "pl": "Ustawienia integracji Homey",
+            "sv": "Homey integrationsinställningar"
+          },
+          "children": [
+            {
+              "id": "unlockTimeout",
+              "type": "number",
+              "value": 5,
+              "attr": {
+                "min": 5,
+                "max": 60
+              },
+              "units": {
+                "en": "sec.",
+                "nl": "sec."
+              },
+              "label": {
+                "en": "Revert back to locked state after",
+                "da": "Gå tilbage til låst tilstand efter",
+                "de": "Zurückkehren in den gesperrten Zustand nach",
+                "es": "Volver al estado de bloqueo después de",
+                "fr": "Retour à l'état verrouillé après",
+                "it": "Torna allo stato di blocco dopo",
+                "nl": "Terugkeren naar vergrendelde status na",
+                "no": "Gå tilbake til låst tilstand etter",
+                "pl": "Powrót do stanu zablokowania po",
+                "sv": "Återgå till låst läge efter"
+              }
             }
           ]
         }
@@ -482,7 +574,6 @@
   ],
   "flow": {
     "triggers": [
-
       {
         "id": "alarm_motion_true",
         "highlight": true,
@@ -517,7 +608,7 @@
               "pl": "Człowiek, Paczka, Inne, Nieznany",
               "sv": "Människa, Paket, Annat, Okänd"
             }
-          }          
+          }
         ],
         "args": [
           {
@@ -550,7 +641,6 @@
         ]
       },
 
-
       {
         "id": "ring_snapshot_received",
         "title": {
@@ -580,7 +670,7 @@
               "no": "bilde",
               "pl": "obraz",
               "sv": "bild"
-            }            
+            }
           }
         ]
       },
@@ -692,7 +782,7 @@
           "no": "Ring Chime med",
           "pl": "Dzwonek Ring z",
           "sv": "Ring Chime med"
-         },
+        },
         "titleFormatted": {
           "en": "Ring Chime with [[sound]]",
           "da": "Ring Chime med [[sound]]",
@@ -704,8 +794,7 @@
           "no": "Ring Chime med [[sound]]",
           "pl": "Dzwonek Ring z [[sound]]",
           "sv": "Ring Chime med [[sound]]"
-        }
-        ,
+        },
         "args": [
           {
             "name": "device",
@@ -729,7 +818,7 @@
                   "no": "Ringetone",
                   "pl": "Dźwięk dzwonka",
                   "sv": "Ringljud"
-                }                
+                }
               },
               {
                 "id": "motion",
@@ -744,7 +833,7 @@
                   "no": "Bevegelseslyd",
                   "pl": "Dźwięk ruchu",
                   "sv": "Rörelseljud"
-                }                
+                }
               }
             ]
           }
@@ -763,7 +852,7 @@
           "no": "Snooze-klokke for ",
           "pl": "Dzwonek drzemki dla ",
           "sv": "Snooze-signal för "
-      },
+        },
         "titleFormatted": {
           "en": "Snooze Chime for [[duration]]",
           "da": "Snooze klokkespil i [[duration]]",
@@ -793,7 +882,7 @@
               { "id": "9", "label": { "en": "9 hours" } },
               { "id": "12", "label": { "en": "12 hours" } }
             ]
-          } 
+          }
         ]
       },
       {
@@ -827,7 +916,7 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=chime"
-          } 
+          }
         ]
       },
       {
@@ -1018,7 +1107,7 @@
           "nl": "Zet de sirene uit",
           "no": "Slå av sirenen",
           "pl": "Wyłącz syrenę",
-          "sv": "Stäng av siren"        
+          "sv": "Stäng av siren"
         },
         "args": [
           {
@@ -1257,7 +1346,7 @@
   "api": {
     "getDevicesInfo": {
       "method": "GET",
-      "path":"/devicesinfo"
+      "path": "/devicesinfo"
     }
   }
 }

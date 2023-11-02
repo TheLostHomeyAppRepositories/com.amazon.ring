@@ -1,0 +1,166 @@
+'use strict';
+
+const Homey = require('homey');
+const Device = require('../../lib/Device.js');
+
+const statusTimeout = 10000;
+
+class DeviceIntercom extends Device {
+
+    _initDevice() {
+        this.log('_initDevice');
+        //this.log('name:', this.getName());
+        //this.log('class:', this.getClass());
+        //this.log('data:', this.getData());
+
+        this.device = {}
+        this.device.timer = {};
+
+        try {
+            this.unlockTimeout = this.getSetting('unlockTimeout') * 1000;
+        } catch (e) {
+            this.unlockTimeout = 5 * 1000;
+        }
+
+        this.setCapabilityValue('alarm_generic', false)
+            .catch(error => {this.error(error)});
+
+        this.setCapabilityValue('locked', true)
+            .catch(error => {this.error(error)});
+
+        this.setAvailable();
+
+        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+
+        this.homey.on('ringOnDing', this._ringOnDing.bind(this));
+        this.homey.on('ringOnData',this._ringOnData.bind(this));
+        if (this.hasCapability("locked")) {
+          this.registerCapabilityListener(
+            "locked",
+            this.onCapabilityLocked.bind(this)
+          );
+        }
+    }
+
+    _setAvailability(status) {
+        if (status == 'authenticated') {
+            try {
+                this.setAvailable();
+            }
+            catch(e) {
+            }
+        } else {
+            try {
+                this.setUnavailable(this.homey.__("devices.unauthenticated"));
+            }
+            catch(e) {
+            }
+        }
+    }
+
+    _ringOnDing(device) {
+        if (device.initialData.id !== this.getData().id)
+            return;
+
+        //this.log('_ringOnDing', device);
+
+        if (!this.getCapabilityValue("alarm_generic")) {
+            this.homey.app.logRealtime("intercom", "ding");
+            //let logLine = " intercom || _ringOnNotification || " + this.getName() + " reported ding event";
+            //this.homey.app.writeLog(logLine);
+        }
+
+        this.setCapabilityValue("alarm_generic", true).catch((error) => {
+            this.error(error);
+        });
+
+        clearTimeout(this.device.timer.ding);
+
+        this.device.timer.ding = setTimeout(() => {
+            this.setCapabilityValue("alarm_generic", false).catch(
+                (error) => {
+                    this.error(error);
+                }
+            );
+        }, statusTimeout);
+    }
+
+    async _ringOnData(data) {
+        if (data.id !== this.getData().id)
+            return;
+
+        //this.log('_ringOnData data',data);
+
+        let battery = 100;
+
+        if (data.battery_life != null) {
+            // battery_life is not null, add measure_battery capability if it does not exists
+            if ( !this.hasCapability('measure_battery') ) {
+                await this.addCapability('measure_battery');
+            }
+            battery = parseInt(data.battery_life);
+
+            if (battery > 100) { battery = 100; }
+
+            if ( this.getCapabilityValue('measure_battery') != battery) {
+                this.setCapabilityValue('measure_battery', battery)
+                    .catch(error => {this.error(error)});
+            }
+        } else {
+            // battery_life is null, remove measure_battery capability if it exists
+            if ( this.hasCapability('measure_battery') ) {
+                this.removeCapability('measure_battery')
+                    .catch(error => {this.error(error)});
+            }
+        }
+    }
+
+    async onSettings( settings ) {
+        settings.changedKeys.forEach((changedSetting) => {
+            if (changedSetting == "unlockTimeout") {
+                this.unlockTimeout = settings.newSettings.unlockTimeout * 1000;
+            }
+        })
+    }
+
+    onCapabilityLocked(value, opts)
+	{
+        if (!value) {
+            this.log("Unlock requested");
+
+            this.unlock().then((unlocked) => {
+                this.setCapabilityValue("locked", !unlocked).catch((error) => this.error(error));
+
+                this.log("Unlocked", unlocked);
+
+                clearTimeout(this.device.timer.unlock);
+
+                this.device.timer.unlock = setTimeout(() => {
+                    this.log("Reverting back to locked state");
+                    this.setCapabilityValue("locked", true)
+                        .catch((error) => this.error(error));
+                }, this.unlockTimeout);
+            });
+        } else {
+            setTimeout(() => this.setCapabilityValue("locked", false), 10);
+            this.log('Locking not supported. Wait till unlockTimeout.');
+        }
+    }
+
+    unlock(args, state) {
+
+        let _this = this;
+        let device_data = this.getData();
+
+        return new Promise(function(resolve, reject) {
+            _this.homey.app.unlock(device_data, (error, result) => {
+                if (error)
+                    return reject(error);
+
+                return resolve(result);
+            });
+        });
+    }
+}
+
+module.exports = DeviceIntercom;

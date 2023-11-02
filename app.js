@@ -3,24 +3,24 @@
 const Homey = require('homey');
 
 const api = require('./lib/Api.js');
-const events = require('events');      
+const events = require('events');
 
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file');
 
 class App extends Homey.App {
 
-    async onInit() {    
+    async onInit() {
         // !!!! remove next lines before publishing !!!!
-       
-        
+
+
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         /*
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
         }
         */
-        
+
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
@@ -28,6 +28,7 @@ class App extends Homey.App {
         this._api = new api(this.homey);
 
         this._api.on('ringOnNotification',this._ringOnNotification.bind(this));
+        this._api.on('ringOnDing',this._ringOnDing.bind(this));
         this._api.on('ringOnData',this._ringOnData.bind(this));
         this._api.on('ringOnLocation', this._ringOnLocation.bind(this));
 
@@ -51,6 +52,11 @@ class App extends Homey.App {
     // Called from event emitted from _connectRingAPI() in Api.js
     _ringOnNotification(notification) {
         this.homey.emit('ringOnNotification', notification);
+    }
+
+    // Called from event emitted from _connectRingAPI() in Api.js
+    _ringOnDing(device) {
+        this.homey.emit("ringOnDing", device);
     }
 
     // Called from event emitted from _connectRingAPI() in Api.js
@@ -118,6 +124,10 @@ class App extends Homey.App {
         this._api.unsnoozeChime(data, callback);
     }
 
+    unlock(data, callback) {
+        this._api.unlock(data, callback);
+    }
+
     grabImage(data, callback) {
         this._api.grabImage(data, callback);
     }
@@ -163,7 +173,7 @@ class App extends Homey.App {
                 });
             });
     }
-    
+
     // flow condition
     conditionLocationMode() {
         this._conditionLocationMode
@@ -214,13 +224,13 @@ class App extends Homey.App {
                 resolve(locations);
                 });
             });
-    }    
+    }
 
     // Called from settingspages through api.js
     async getDevicesInfo() {
         //this.log('getDevicesInfo is called through api.js')
         return new Promise((resolve, reject) => {
-        
+
             this.homey.app.getRingDevices((error, result) => {
                 if (error) {
                 return reject(error);
@@ -236,14 +246,14 @@ class App extends Homey.App {
     // - Called from multiple functions
     async writeLog(logLine) {
         let savedHistory = this.homey.settings.get('myLog');
-        if ( savedHistory != undefined ) { 
+        if ( savedHistory != undefined ) {
             // cleanup history
             let lineCount = savedHistory.split(/\r\n|\r|\n/).length;
             if ( lineCount > 2000 ) {
                 let deleteItems = parseInt( lineCount * 0.2 );
                 let savedHistoryArray = savedHistory.split(/\r\n|\r|\n/);
                 let cleanUp = savedHistoryArray.splice(-1*deleteItems, deleteItems, "" );
-                savedHistory = savedHistoryArray.join('\n'); 
+                savedHistory = savedHistoryArray.join('\n');
             }
             // end cleanup
             logLine = this.getDateTime() + logLine + "\n" + savedHistory;
