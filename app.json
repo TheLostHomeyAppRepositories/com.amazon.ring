@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.10.28",
+  "version": "2.11.00",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -23,6 +23,9 @@
       {
         "name": "tokreutz",
         "email": "tor.kreutzer@gmail.com"
+      },
+      {
+        "name": "Stefan Schweiger"
       }
     ]
   },
@@ -153,16 +156,16 @@
     {
       "id": "doorbell",
       "name": {
-        "en": "Video Doorbell",
-        "da": "Video dørklokke",
-        "de": "Video Türklingel",
-        "es": "Videoportero",
-        "fr": "Sonnette vidéo",
-        "it": "Campanello video",
-        "nl": "Video deurbel",
-        "no": "Videodørklokke",
-        "pl": "Wideodomofon",
-        "sv": "Video dörrklocka"
+        "en": "Doorbell",
+        "da": "Dørklokke",
+        "de": "Türklingel",
+        "es": "Portero",
+        "fr": "Sonnette",
+        "it": "Campanello",
+        "nl": "Deurbel",
+        "no": "Dørklokke",
+        "pl": "Domofon",
+        "sv": "Dörrklocka"
       },
       "images": {
         "large": "./drivers/doorbell/assets/images/large.jpg",
@@ -337,8 +340,8 @@
     {
       "id": "stickupcam",
       "name": {
-        "en": "Stick Up Cam",
-        "nl": "Stick Up Cam"
+        "en": "Camera",
+        "nl": "Camera"
       },
       "images": {
         "large": "./drivers/stickupcam/assets/images/large.jpg",

@@ -13,14 +13,12 @@ class App extends Homey.App {
     async onInit() {
         // !!!! remove next lines before publishing !!!!
 
-
-        const runningVersion = this.parseVersionString(Homey.manifest.version);
         /*
+        const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
         }
         */
-
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         this.lastLocationModes = [];
