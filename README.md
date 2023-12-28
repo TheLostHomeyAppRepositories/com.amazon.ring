@@ -5,6 +5,7 @@ Connect your Ring Doorbell or Camera products with Homey.
 * Ring Chime (Pro)
 * Ring Stick Up Cam
 * Ring Video Doorbell (Pro)
+* Ring Intercom
 
 ## Supported Languages
 * 🇬🇧 English
@@ -32,7 +33,7 @@ Please post your questions/remarks in the [Ring Doorbell and Camera support for 
 An extensive changelog is available [here](https://community.homey.app/t/76364/3)
 
 ## Donate
-If you like the app, consider buying me a beer!  
+If you like the app, consider buying me a beer!
 [![Paypal donate][pp-donate-image]][pp-donate-link]
 
 [pp-donate-link]: https://www.paypal.me/daneedekruyff

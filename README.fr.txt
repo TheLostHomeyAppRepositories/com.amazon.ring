@@ -4,6 +4,7 @@ Appareils pris en charge
 • Ring Chime (Pro)
 • Ring Stick Up Cam / Ring Indoor Cam
 • Ring Video Doorbell (Pro)
+• Ring Intercom
 
 Langues prises en charge
 🇬🇧 English

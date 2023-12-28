@@ -4,6 +4,7 @@ Stödda enheter
 • Ring Chime (Pro)
 • Ring Stick Up Cam / Ring Indoor Cam
 • Ring Video Doorbell (Pro)
+• Ring Intercom
 
 Stödda språk
 🇬🇧 English
