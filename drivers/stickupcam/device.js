@@ -52,7 +52,9 @@ class DeviceStickUpCam extends Device {
             }
         } else {
             try {
-                this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                if ( this.getAvailable() ) {
+                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                }
             }
             catch(e) {
                 // fail silently, setting a device unavailable will fail when Homey itself failed it already
@@ -67,7 +69,7 @@ class DeviceStickUpCam extends Device {
             //Adding new capabilities
             if(!this.hasCapability("flood_light"))
             {
-                console.log('this stickup camera has light, enable the capability');
+                //this.log('_enableLightCapability, this stickup camera has light, enable the capability');
                 this.addCapability("flood_light").then(function() {
                     this.registerCapabilityListener('flood_light', this.onCapabilityFloodLight.bind(this));
                 }.bind(this));
@@ -84,9 +86,11 @@ class DeviceStickUpCam extends Device {
             if(!this.hasCapability("siren"))
             {
                 //this.log ('_enableSirenCapability, this stickup camera has a siren, enable the capability');
-                this.addCapability("siren").then(function() {
-                    this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
-                }.bind(this));
+                if ( this.getAvailable() ) {
+                    this.addCapability("siren").then(function() {
+                        this.registerCapabilityListener('siren', this.onCapabilitySiren.bind(this));
+                    }.bind(this));
+                }
             }
             if(!this.hasCapability("alarm_generic"))
             {

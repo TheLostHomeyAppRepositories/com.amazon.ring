@@ -24,7 +24,9 @@ class DeviceChime extends Device {
             }
         } else {
             try {
-                this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                if ( this.getAvailable() ) {
+                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                }
             }
             catch(e) {
                 // fail silently, setting a device unavailable will fail when Homey itself failed it already
