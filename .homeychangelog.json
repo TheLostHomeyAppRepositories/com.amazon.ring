@@ -267,16 +267,16 @@
     "pl": "Dodano obsługę dla Ring Intercom.",
     "sv": "Lade till stöd för Ring Intercom."
   },
-    "2.11.1": {
-      "en": "Improved error handling.",
-      "da": "Forbedret fejlhåndtering.",
-      "de": "Verbesserte Fehlerbehandlung.",
-      "es": "Mejora en el manejo de errores.",
-      "fr": "Amélioration de la gestion des erreurs.",
-      "it": "Migliorata gestione degli errori.",
-      "nl": "Verbeterde foutafhandeling.",
-      "no": "Forbedret feilhåndtering.",
-      "pl": "Udoskonalone zarządzanie błędami.",
-      "sv": "Förbättrad felhantering."
-    }
+  "2.11.1": {
+    "en": "Improved error handling.",
+    "da": "Forbedret fejlhåndtering.",
+    "de": "Verbesserte Fehlerbehandlung.",
+    "es": "Mejora en el manejo de errores.",
+    "fr": "Amélioration de la gestion des erreurs.",
+    "it": "Migliorata gestione degli errori.",
+    "nl": "Verbeterde foutafhandeling.",
+    "no": "Forbedret feilhåndtering.",
+    "pl": "Udoskonalone zarządzanie błędami.",
+    "sv": "Förbättrad felhantering."
+  }
 }
