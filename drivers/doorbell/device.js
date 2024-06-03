@@ -174,6 +174,11 @@ class DeviceDoorbell extends Device {
             }
         }
 
+        if ( data.id == "xxx" ) {
+            this.log("useMotionAlerts",this.getSetting("useMotionAlerts"))
+            this.log('_ringOnData data.subscribed_motions',data.subscribed_motions);
+        }
+        
         this.setSettings({useMotionAlerts: data.subscribed_motions})
             .catch((error) => {});
 
