@@ -133,14 +133,15 @@ class DeviceStickUpCam extends Device {
             .catch(error =>{this.log("setCameraImage: ",error);}) 
     }
 
-    _ringOnNotification(notification) {
+    async _ringOnNotification(notification) {
         if (notification.ding.doorbot_id !== this.getData().id)
             return;
 
-        //this.log('_ringOnNotification', notification);
+        //! Additional code for testing with Douwe */
+        this.log('stickupcam_ringOnNotification', notification);
 
         if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
-            this.setCapabilityValue('alarm_motion', true)
+            await this.setCapabilityValue('alarm_motion', true)
                 .catch(error => {this.error(error)});
 
             this.homey.app.logRealtime('stickupcam', 'motion');
@@ -150,7 +151,8 @@ class DeviceStickUpCam extends Device {
             const tokens = {'motionType': this.motionTypes[type]};
             this.driver.alarmMotionOn(this, tokens);
 
-            //this.log('Motion detection Stickup Cam notification.subtype ==',notification.ding.detection_type);
+            //!  Additional code for testing with Douwe */
+            this.log('Motion detection Stickup Cam notification.subtype ==',notification.ding.detection_type);
 
             clearTimeout(this.device.timer.motion);
 
