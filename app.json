@@ -101,7 +101,6 @@
       "uiComponent": "toggle",
       "uiQuickAction": false
     },
-
     "alarm_motion": {
       "type": "boolean",
       "title": {

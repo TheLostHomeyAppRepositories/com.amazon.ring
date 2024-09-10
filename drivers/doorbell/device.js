@@ -90,7 +90,7 @@ class DeviceDoorbell extends Device {
             .catch(error =>{this.log("setCameraImage: ",error);})
     }
 
-    _ringOnNotification(notification) {
+    async _ringOnNotification(notification) {
         if (notification.ding.doorbot_id !== this.getData().id)
             return;
 
@@ -124,6 +124,9 @@ class DeviceDoorbell extends Device {
                 //this.homey.app.writeLog(logLine);
             }
             
+            await this.setCapabilityValue('alarm_motion', true)
+                .catch(error => {this.error(error)});
+
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             const type = notification.ding.detection_type ? notification.ding.detection_type : null;
             //if (!this.motionTypes[type]) { this.log('unknown motionType:', type)}
@@ -131,9 +134,6 @@ class DeviceDoorbell extends Device {
             this.driver.alarmMotionOn(this, tokens);
 
             //this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
-
-            this.setCapabilityValue('alarm_motion', true)
-                .catch(error => {this.error(error)});
 
             clearTimeout(this.device.timer.motion);
 
@@ -173,6 +173,14 @@ class DeviceDoorbell extends Device {
                     .catch(error => {this.error(error)});
             }
         }
+
+        //!  Additional code for testing with Jamie 
+        /*
+        if ( data.id == "xxx" ) {
+            this.log("useMotionAlerts",this.getSetting("useMotionAlerts"))
+            this.log('_ringOnData data.subscribed_motions',data.subscribed_motions);
+        }
+        */ 
 
         this.setSettings({useMotionAlerts: data.subscribed_motions})
             .catch((error) => {});

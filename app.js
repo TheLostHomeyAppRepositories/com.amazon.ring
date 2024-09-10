@@ -148,7 +148,7 @@ class App extends Homey.App {
 
     logRealtime(event, details) {
         this.homey.api.realtime(event, details)
-        this.log('Realtime event emitted for', event, details);
+        // this.log('Realtime event emitted for', event, details);
     }
 
     // flowcard functions
