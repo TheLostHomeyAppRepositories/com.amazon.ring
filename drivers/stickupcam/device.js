@@ -134,25 +134,29 @@ class DeviceStickUpCam extends Device {
     }
 
     async _ringOnNotification(notification) {
-        if (notification.ding.doorbot_id !== this.getData().id)
+        //if (notification.ding.doorbot_id !== this.getData().id)
+        if (notification.data.device.id !== this.getData().id)
             return;
 
-        //! Additional code for testing with Douwe */
-        this.log('stickupcam_ringOnNotification', notification);
+this.log('------------------------------------------------------------------');
+this.log('notification.android_config.category',notification.android_config.category)
+this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
+this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+this.log('notification.analytics.subcategory:',notification.analytics.subcategory)
 
-        if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
+
+        //if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
+        if (notification.android_config.category === 'com.ring.pn.live-event.motion') {
             await this.setCapabilityValue('alarm_motion', true)
                 .catch(error => {this.error(error)});
 
             this.homey.app.logRealtime('stickupcam', 'motion');
 
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
-            const type = notification.ding.detection_type ? notification.ding.detection_type : null;
+            //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
+            const type = notification.analytics.subcategory ? notification.analytics.subcategory : null;
             const tokens = {'motionType': this.motionTypes[type]};
             this.driver.alarmMotionOn(this, tokens);
-
-            //!  Additional code for testing with Douwe */
-            this.log('Motion detection Stickup Cam notification.subtype ==',notification.ding.detection_type);
 
             clearTimeout(this.device.timer.motion);
 
@@ -222,8 +226,10 @@ class DeviceStickUpCam extends Device {
             }
         }
 
+        /*
         this.setSettings({useMotionAlerts: data.subscribed_motions})
             .catch((error) => {});
+        */
 
         this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
             .catch((error) => {});
@@ -351,6 +357,7 @@ class DeviceStickUpCam extends Device {
                     this.disableMotion(this._device)
                 }
             }
+            /*
             else if (changedSetting == 'useMotionAlerts') {
                 if (settings.newSettings.useMotionAlerts) {
                     this.enableMotionAlerts(this._device)
@@ -358,6 +365,7 @@ class DeviceStickUpCam extends Device {
                     this.disableMotionAlerts(this._device)
                 }
             }
+            */
             else if (changedSetting == 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout;
             }
@@ -398,6 +406,7 @@ class DeviceStickUpCam extends Device {
         });
     }
 
+    /*
     enableMotionAlerts(args, state) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
@@ -431,6 +440,7 @@ class DeviceStickUpCam extends Device {
             });
         });
     }
+    */
 }
 
 module.exports = DeviceStickUpCam;

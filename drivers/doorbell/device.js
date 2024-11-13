@@ -91,15 +91,22 @@ class DeviceDoorbell extends Device {
     }
 
     async _ringOnNotification(notification) {
-        if (notification.ding.doorbot_id !== this.getData().id)
+        //if (notification.ding.doorbot_id !== this.getData().id)
+        if (notification.data.device.id !== this.getData().id)
             return;
 
         //this.log('_ringOnNotification', notification);
-        //this.log('ding',notification.ding);
-        //this.log('subtype',notification.subtype);
-        //this.log('action',notification.action);
-        
-        if (notification.subtype === 'ding') {
+
+this.log('------------------------------------------------------------------');
+this.log('notification.android_config.category',notification.android_config.category)
+this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
+this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+this.log('notification.analytics.subcategory:',notification.analytics.subcategory)
+
+        // need new evaluation for next line
+        //if (notification.subtype === 'ding') {
+        if ( notification.data.event.ding.subtype === 'button_press') {
+
             if (!this.getCapabilityValue('alarm_generic')) {
                 this.homey.app.logRealtime('doorbell', 'ding');
                 //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported ding event";
@@ -117,7 +124,8 @@ class DeviceDoorbell extends Device {
                     .catch(error => {this.error(error)});
             }, statusTimeout);
 
-        } else if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
+        //} else if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
+        } else if (notification.android_config.category === 'com.ring.pn.live-event.motion') {
             if (!this.getCapabilityValue('alarm_motion')) {
                 this.homey.app.logRealtime('doorbell', 'motion');
                 //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported motion event";
@@ -128,7 +136,8 @@ class DeviceDoorbell extends Device {
                 .catch(error => {this.error(error)});
 
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
-            const type = notification.ding.detection_type ? notification.ding.detection_type : null;
+            //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
+            const type = notification.analytics.subcategory ? notification.analytics.subcategory : null;
             //if (!this.motionTypes[type]) { this.log('unknown motionType:', type)}
             const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
             this.driver.alarmMotionOn(this, tokens);
@@ -174,16 +183,10 @@ class DeviceDoorbell extends Device {
             }
         }
 
-        //!  Additional code for testing with Jamie 
         /*
-        if ( data.id == "xxx" ) {
-            this.log("useMotionAlerts",this.getSetting("useMotionAlerts"))
-            this.log('_ringOnData data.subscribed_motions',data.subscribed_motions);
-        }
-        */ 
-
         this.setSettings({useMotionAlerts: data.subscribed_motions})
             .catch((error) => {});
+        */
 
         this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
             .catch((error) => {});
@@ -217,6 +220,7 @@ class DeviceDoorbell extends Device {
                     this.disableMotion(this._device)
                 }
             }
+            /*
             else if (changedSetting == 'useMotionAlerts') {
                 if (settings.newSettings.useMotionAlerts) {
                     this.enableMotionAlerts(this._device)
@@ -224,6 +228,7 @@ class DeviceDoorbell extends Device {
                     this.disableMotionAlerts(this._device)
                 }
             }
+            */
             else if (changedSetting == 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout * 1000;
             }
@@ -264,6 +269,7 @@ class DeviceDoorbell extends Device {
         });
     }
 
+    /*
     enableMotionAlerts(args, state) {
         if (this._device instanceof Error)
             return Promise.reject(this._device);
@@ -297,6 +303,7 @@ class DeviceDoorbell extends Device {
             });
         });
     }
+    */
 }
 
 module.exports = DeviceDoorbell;

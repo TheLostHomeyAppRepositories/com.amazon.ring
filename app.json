@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.11.1",
+  "version": "2.11.4",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -577,6 +577,74 @@
   "flow": {
     "triggers": [
       {
+        "id": "alarm_motion_true_default",
+        "highlight": true,
+        "title": {
+          "en": "The motion alarm turned on",
+          "nl": "De bewegingsmelder gaat aan",
+          "de": "Der Bewegungs-Alarm ist angegangen",
+          "fr": "L'alarme mouvement s'est activée",
+          "it": "L'allarme di movimento è stato attivato",
+          "sv": "Rörelselarmet aktiverat",
+          "no": "Bevegelsesalarmen aktivert",
+          "es": "La alarma de movimiento se ha activado",
+          "da": "Bevægelsesalarmen blev aktiveret",
+          "pl": "Czujnik ruchu włączony"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motiondetector"
+          }
+        ]
+      },
+      {
+        "id": "alarm_generic_true",
+        "highlight": true,
+        "title": {
+          "en": "The doorbell rings",
+          "nl": "De deurbel gaat",
+          "de": "Die Türklingel läutet",
+          "fr": "La sonnette retentit",
+          "it": "Il campanello suona",
+          "sv": "Dörrklockan ringer",
+          "no": "Dørklokken ringer",
+          "es": "El timbre suena",
+          "da": "Dørklokken ringer",
+          "pl": "Dzwonek do drzwi dzwoni"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell|intercom"
+          }
+        ]
+      },
+      {
+        "id": "alarm_generic_false",
+        "title": {
+          "en": "The doorbell stops ringing",
+          "nl": "De deurbel stopt met rinkelen",
+          "de": "Die Türklingel hört auf zu läuten",
+          "fr": "La sonnette cesse de retentir",
+          "it": "Il campanello smette di suonare",
+          "sv": "Dörrklockan slutar ringa",
+          "no": "Dørklokken slutter å ringe",
+          "es": "El timbre deja de sonar",
+          "da": "Dørklokken holder op med at ringe",
+          "pl": "Dzwonek do drzwi przestaje dzwonić"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell|intercom"
+          }
+        ]
+      },
+      {
         "id": "alarm_motion_true",
         "highlight": true,
         "title": {
@@ -605,7 +673,7 @@
               "es": "Humano, Paquete, Otro, Desconocido",
               "fr": "Humain, Paquet, Autre, Inconnu",
               "it": "Persona, Pacco, Altro, Sconosciuto",
-              "nl": "Mens, Pakker, Overig, Onbekend",
+              "nl": "Mens, Pakket, Overig, Onbekend",
               "no": "Menneske, Pakke, Annet, Ukjent",
               "pl": "Człowiek, Paczka, Inne, Nieznany",
               "sv": "Människa, Paket, Annat, Okänd"
@@ -638,11 +706,10 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=doorbell|stickupcam"
+            "filter": "driver_id=doorbell|stickupcam|motiondetector"
           }
         ]
       },
-
       {
         "id": "ring_snapshot_received",
         "title": {
@@ -1235,7 +1302,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=doorbell|stickupcam"
+            "filter": "driver_id=doorbell|stickupcam|motiondetector"
           }
         ]
       },

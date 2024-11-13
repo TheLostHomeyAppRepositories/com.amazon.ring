@@ -33,7 +33,7 @@ class DriverDoorbell extends Driver {
         */
     }
 
-    // this function is called from driver.js
+    // this function is called from device.js
     alarmMotionOn(device, tokens) {
         this._triggerAlarmMotionOn.trigger(device, tokens)
             .then()

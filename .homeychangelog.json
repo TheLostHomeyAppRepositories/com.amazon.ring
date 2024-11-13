@@ -278,5 +278,11 @@
     "no": "Forbedret feilhåndtering.",
     "pl": "Udoskonalone zarządzanie błędami.",
     "sv": "Förbättrad felhantering."
+  },
+  "2.11.2": {
+    "en": "Test version for new ring-client-api"
+  },
+  "2.11.4": {
+    "en": "Test version for new ring-client-api"
   }
 }
