@@ -327,11 +327,3 @@ class App extends Homey.App {
 }
 
 module.exports = App;
-
-// Translate text in ChatGPT
-/*
-In this code en means English, please add Danish, German, Spanish, French, Italian, Dutch, Norwegian, Polish and Swedish. Answer in a codeblock, format as json.
-{
-        "en": "• Added setting to snooze and unsnooze a Chime • Added flow cards to snooze and unsnooze a Chime • Adapted to changes in the Ring API",
-}
-*/

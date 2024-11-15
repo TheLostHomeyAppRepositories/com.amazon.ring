@@ -140,10 +140,7 @@ class DeviceStickUpCam extends Device {
 
 this.log('------------------------------------------------------------------');
 this.log('notification.android_config.category',notification.android_config.category)
-this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
 this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
-this.log('notification.analytics.subcategory:',notification.analytics.subcategory)
-
 
         //if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
         if (notification.android_config.category === 'com.ring.pn.live-event.motion') {
@@ -154,7 +151,7 @@ this.log('notification.analytics.subcategory:',notification.analytics.subcategor
 
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
-            const type = notification.analytics.subcategory ? notification.analytics.subcategory : null;
+            const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null;
             const tokens = {'motionType': this.motionTypes[type]};
             this.driver.alarmMotionOn(this, tokens);
 
