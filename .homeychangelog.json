@@ -284,5 +284,8 @@
   },
   "2.11.4": {
     "en": "Test version for new ring-client-api"
+  },
+  "2.11.6": {
+    "en": "Test version for new ring-client-api, differentiated API per platform version"
   }
 }
