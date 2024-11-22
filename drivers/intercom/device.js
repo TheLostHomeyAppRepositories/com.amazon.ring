@@ -62,11 +62,9 @@ class DeviceIntercom extends Device {
     }
 
     _ringOnDing(device) {
-        // Please check the condition below, does device.initialData.id still exist?
+        this.log('_ringOnDing (Intercom):',device)
         if (device.initialData.id !== this.getData().id)
             return;
-
-        this.log('_ringOnDing', device); // Please send me the result of this line
 
         if (!this.getCapabilityValue("alarm_generic")) {
             this.homey.app.logRealtime("intercom", "ding");
