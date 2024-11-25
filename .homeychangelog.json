@@ -287,5 +287,8 @@
   },
   "2.11.6": {
     "en": "Test version for new ring-client-api, differentiated API per platform version"
+  },
+  "2.11.8": {
+    "en": "Test version for new ring-client-api, intercom fix"
   }
 }

@@ -51,6 +51,9 @@ class DeviceIntercom extends Device {
             }
         } else {
             try {
+                if (this.device) {
+                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                }
                 if ( this.getAvailable() ) {
                     this.setUnavailable(this.homey.__("devices.unauthenticated"));
                 }
