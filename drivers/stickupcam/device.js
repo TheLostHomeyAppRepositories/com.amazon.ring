@@ -226,11 +226,6 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
             }
         }
 
-        /*
-        this.setSettings({useMotionAlerts: data.subscribed_motions})
-            .catch((error) => {});
-        */
-
         this.setSettings({useMotionDetection: data.settings.motion_detection_enabled})
             .catch((error) => {});
     }
@@ -356,17 +351,7 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
                 } else {
                     this.disableMotion(this._device)
                 }
-            }
-            /*
-            else if (changedSetting == 'useMotionAlerts') {
-                if (settings.newSettings.useMotionAlerts) {
-                    this.enableMotionAlerts(this._device)
-                } else {
-                    this.disableMotionAlerts(this._device)
-                }
-            }
-            */
-            else if (changedSetting == 'motionTimeout') {
+            } else if (changedSetting == 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout;
             }
         })
@@ -405,42 +390,6 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
             });
         });
     }
-
-    /*
-    enableMotionAlerts(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
-
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.enableMotionAlerts(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
-    }
-
-    disableMotionAlerts(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
-
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.disableMotionAlerts(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
-    }
-    */
 }
 
 module.exports = DeviceStickUpCam;
