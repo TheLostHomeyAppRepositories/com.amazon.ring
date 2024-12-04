@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.11.8",
+  "version": "2.11.10",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -79,7 +79,7 @@
       },
       "getable": true,
       "setable": true,
-      "uiComponent": "toggle",
+      "uiComponent": "button",
       "uiQuickAction": true
     },
     "siren": {
@@ -98,7 +98,7 @@
       },
       "getable": true,
       "setable": true,
-      "uiComponent": "toggle",
+      "uiComponent": "button",
       "uiQuickAction": false
     },
     "alarm_motion": {
@@ -149,6 +149,61 @@
       "options": {
         "zoneActivity": true
       }
+    },
+    "alarm_generic": {
+      "type": "boolean",
+      "title": {
+        "en": "Doorbell",
+        "nl": "Deurbel",
+        "de": "Türklingel",
+        "fr": "Sonnette",
+        "it": "Campanello",
+        "sv": "Dörrklocka",
+        "no": "Dørklokke",
+        "es": "Timbre",
+        "da": "Dørklokke",
+        "pl": "Dzwonek do drzwi"
+      },
+      "desc": {
+        "en": "Doorbell",
+        "nl": "Deurbel",
+        "de": "Türklingel",
+        "fr": "Sonnette",
+        "it": "Campanello",
+        "sv": "Dörrklocka",
+        "no": "Dørklokke",
+        "es": "Timbre",
+        "da": "Dørklokke",
+        "pl": "Dzwonek do drzwi"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+          "en": "Doorbell turned on",
+          "nl": "Deurbel aangezet",
+          "de": "Türklingel eingeschaltet",
+          "fr": "Sonnette activée",
+          "it": "Campanello acceso",
+          "sv": "Dörrklocka aktiverad",
+          "no": "Dørklokke slått på",
+          "es": "Timbre encendido",
+          "da": "Dørklokke tændt",
+          "pl": "Dzwonek do drzwi włączony"      
+      },
+      "insightsTitleFalse": {
+        "en": "Doorbell turned off",
+        "nl": "Deurbel uitgezet",
+        "de": "Türklingel ausgeschaltet",
+        "fr": "Sonnette désactivée",
+        "it": "Campanello spento",
+        "sv": "Dörrklocka avstängd",
+        "no": "Dørklokke slått av",
+        "es": "Timbre apagado",
+        "da": "Dørklokke slukket",
+        "pl": "Dzwonek do drzwi wyłączony"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
     }
   },
   "drivers": [
@@ -171,7 +226,7 @@
         "small": "./drivers/doorbell/assets/images/small.jpg"
       },
       "class": "sensor",
-      "capabilities": ["alarm_generic", "alarm_motion", "measure_battery"],
+      "capabilities": ["alarm_motion", "measure_battery"],
       "energy": {
         "batteries": ["INTERNAL"]
       },
@@ -347,7 +402,7 @@
         "small": "./drivers/stickupcam/assets/images/small.jpg"
       },
       "class": "sensor",
-      "capabilities": ["alarm_generic", "alarm_motion", "measure_battery"],
+      "capabilities": ["alarm_motion", "measure_battery"],
       "energy": {
         "batteries": ["INTERNAL"]
       },

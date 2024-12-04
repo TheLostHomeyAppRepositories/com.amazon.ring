@@ -290,5 +290,8 @@
   },
   "2.11.8": {
     "en": "Test version for new ring-client-api, intercom testing"
+  },
+  "2.11.10": {
+    "en": "Test version for new ring-client-api"
   }
 }

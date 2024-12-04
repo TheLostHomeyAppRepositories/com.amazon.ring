@@ -52,11 +52,9 @@ class DeviceStickUpCam extends Device {
             }
         } else {
             try {
-                if (this.device) {
-                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
-                }
                 if ( this.getAvailable() ) {
-                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                    // this.getAvailable() always returns true, need other condition
+                    // this.setUnavailable(this.homey.__("devices.unauthenticated"));
                 }
             }
             catch(e) {
@@ -95,11 +93,17 @@ class DeviceStickUpCam extends Device {
                     }.bind(this));
                 }
             }
+            /*
             if(!this.hasCapability("alarm_generic"))
             {
                 //this.log ('_enableSirenCapability, this stickup camera has a siren, so use it to detect a Alarm');
                 this.addCapability("alarm_generic");
-            } 
+            }
+            */
+            if(this.hasCapability("alarm_generic"))
+                {
+                    this.removeCapability("alarm_generic");
+                }
         } else {
             //this.log ('_enableSirenCapability, device has no siren, ignore siren related features');
         }
@@ -199,8 +203,10 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
             this.setCapabilityValue('siren', siren)
                 .catch(error => {this.error(error)});
 
+            /*
             this.setCapabilityValue('alarm_generic', siren)
                 .catch(error => {this.error(error)});
+            */
         }
 
         let battery = parseInt(data.battery_life);

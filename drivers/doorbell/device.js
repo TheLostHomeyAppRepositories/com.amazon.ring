@@ -48,11 +48,9 @@ class DeviceDoorbell extends Device {
             }
         } else {
             try {
-                if (this.device) {
-                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
-                }
                 if ( this.getAvailable() ) {
-                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                    // this.getAvailable() always returns true, need other condition
+                    // this.setUnavailable(this.homey.__("devices.unauthenticated"));
                 }
             }
             catch(e) {
