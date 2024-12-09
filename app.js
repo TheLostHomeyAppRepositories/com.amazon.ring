@@ -21,6 +21,22 @@ class App extends Homey.App {
         */
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
+
+        this.log('app.js                     preparing Node environment')
+        if (! global.fetch) {
+            global.fetch = require('node-fetch');
+        }
+        if (! global.AbortSignal.timeout) {
+            global.AbortSignal.timeout = timeout => {
+                const controller = new AbortController();
+                const abort = setTimeout(() => {
+                controller.abort();
+                }, timeout);
+                return controller.signal;
+            }
+        }
+        this.log('app.js                     preparing Node environment done')
+
         this.lastLocationModes = [];
         this.alarmSystem = {};
         this.alarmSystem.location = {}

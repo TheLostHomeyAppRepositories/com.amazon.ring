@@ -2,7 +2,9 @@
 /__rewrite/
 /_Advanced Motion/
 /_information/
+/_transpiled/
 /.homeybuild/
 /.vscode/
 /.editorconfig
 /.homeyignore
+/node_modules/

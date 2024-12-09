@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "homey-log-to-file": "github:robertklep/homey-log-to-file"
+    "homey-log-to-file": "github:robertklep/homey-log-to-file",
+    "node-fetch": "^2.7.0"
   }
 }
