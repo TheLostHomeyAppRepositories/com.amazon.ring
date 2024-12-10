@@ -296,5 +296,8 @@
   },
   "2.11.12": {
     "en": "Test version for new ring-client-api, fix for Homey Pro 2016"
+  },
+  "2.11.14": {
+    "en": "Test version for new ring-client-api, fix for Homey Pro 2016, code cleanup"
   }
 }

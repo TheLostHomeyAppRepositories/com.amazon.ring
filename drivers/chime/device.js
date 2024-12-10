@@ -11,7 +11,11 @@ class DeviceChime extends Device {
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
 
-        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+        // fix?
+        this._onAuthenticationChanged = this._setAvailability.bind(this);
+        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
+
+        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
 
     }
 

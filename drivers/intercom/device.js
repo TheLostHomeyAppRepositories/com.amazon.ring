@@ -30,10 +30,14 @@ class DeviceIntercom extends Device {
 
         this.setAvailable();
 
-        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+        // fix?
+        this._onAuthenticationChanged = this._setAvailability.bind(this);
+        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
+
+        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
 
         this.homey.on('ringOnDing', this._ringOnDing.bind(this));
-        this.homey.on('ringOnData',this._ringOnData.bind(this));
+        this.homey.on('ringOnData', this._ringOnData.bind(this));
         if (this.hasCapability("locked")) {
           this.registerCapabilityListener(
             "locked",

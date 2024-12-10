@@ -27,12 +27,16 @@ class DeviceStickUpCam extends Device {
 
         this.setAvailable();
 
-        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+        // fix?
+        this._onAuthenticationChanged = this._setAvailability.bind(this);
+        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
+
+        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
 
         this._setupCameraView(this.getData());
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
-        this.homey.on('ringOnData',this._ringOnData.bind(this));
+        this.homey.on('ringOnData', this._ringOnData.bind(this));
 
         //Hook up the capabilities that are already known.
         if ( this.hasCapability("flood_light") ) {
