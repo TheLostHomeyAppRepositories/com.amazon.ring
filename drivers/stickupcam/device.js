@@ -245,14 +245,19 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
             return Promise.reject(this._device);
 
         let _this = this;
-        return new Promise(function(resolve, reject) {
-            _this.device.cameraImage.update().then(() =>{
-                var tokens = {ring_image: _this.device.cameraImage};
-                _this.homey.flow.getTriggerCard('ring_snapshot_received').trigger(tokens)
-                    .catch(error => { _this.error(error); });
-                
+        return new Promise(async function(resolve, reject) {
+            _this.device.cameraImage.update()
+                .then(() => {
+                    var tokens = {ring_image: _this.device.cameraImage};
+                    _this.homey.flow.getTriggerCard('ring_snapshot_received')
+                        .trigger(tokens)
+                        .catch(error => {_this.log(error)})
+
+                    _this.driver.sendSnapshot(_this, tokens);
+
                 return resolve(true);
-            });
+                })
+                .catch((error) =>{_this.log("grabImage error:",error)})
         });
     }
 

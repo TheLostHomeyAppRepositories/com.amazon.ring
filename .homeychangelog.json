@@ -299,5 +299,18 @@
   },
   "2.11.14": {
     "en": "Test version for new ring-client-api, fix for Homey Pro 2016, code cleanup"
-  }
+  },
+  "2.11.16": {
+  "en": "Made 'Snapshot is grabbed' flowcard available on Camera and Doorbell",
+  "da": "Gjorde 'Snapshot er taget' flowkort tilgængeligt på Kamera og Dørklokke",
+  "de": "Das Flow-Karten-Element 'Snapshot wird aufgenommen' für Kamera und Türklingel verfügbar gemacht",
+  "es": "Se hizo disponible la tarjeta de flujo 'Snapshot se ha tomado' en Cámara y Timbre",
+  "fr": "Rendu la carte de flux 'Instantané capturé' disponible sur Caméra et Sonnette",
+  "it": "Reso disponibile il flowcard 'Snapshot acquisito' su Telecamera e Campanello",
+  "nl": "Het flowcard 'Snapshot is vastgelegd' beschikbaar gemaakt op Camera en Deurbel",
+  "no": "Gjorde 'Snapshot er tatt' flytkort tilgjengelig på Kamera og Dørklokke",
+  "pl": "Umożliwiono dostęp do karty przepływu 'Wykonano migawkę' na Kamerze i Dzwonku",
+  "sv": "Gjorde flowkortet 'Snapshot är tagen' tillgängligt på Kamera och Dörrklocka"
+}
+
 }

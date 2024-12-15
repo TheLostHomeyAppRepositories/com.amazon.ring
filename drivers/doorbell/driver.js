@@ -9,6 +9,7 @@ class DriverDoorbell extends Driver {
         this.log('onInit');
 
         this._triggerAlarmMotionOn = this.homey.flow.getDeviceTriggerCard('alarm_motion_true');
+        this._triggerSendSnapshot = this.homey.flow.getDeviceTriggerCard('ring_snapshot_received_device');
 
         this.homey.flow.getConditionCard('alarm_motion')
             .registerRunListener(async ( args, state ) => {
@@ -32,6 +33,13 @@ class DriverDoorbell extends Driver {
             .then()
             .catch(this.error);
     }
+
+    sendSnapshot(device, tokens) {
+        this._triggerSendSnapshot.trigger(device, tokens)
+            .then(this.log('sendSnapshot triggered'))
+            .catch(error => {_this.log('grabImage trigger device:',error)})
+    }
+
 
     onPairListDevices(data, callback) {
         this.log('onPairListDevices');

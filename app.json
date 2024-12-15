@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.11.14",
+  "version": "2.11.16",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -766,7 +766,48 @@
         ]
       },
       {
+        "id": "ring_snapshot_received_device",
+        "title": {
+          "en": "Snapshot is grabbed",
+          "da": "Snapshot er taget",
+          "de": "Snapshot wurde aufgenommen",
+          "es": "Se ha capturado una instantánea",
+          "fr": "La capture d'écran est effectuée",
+          "it": "È stata catturata una istantanea",
+          "nl": "Snapshot is vastgelegd",
+          "no": "Snapshot er tatt",
+          "pl": "Zrobiono zrzut ekranu",
+          "sv": "Snapshot har fångats"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell|stickupcam"
+          }
+        ],        
+        "tokens": [
+          {
+            "name": "ring_image",
+            "type": "image",
+            "title": {
+              "en": "image",
+              "da": "billede",
+              "de": "Bild",
+              "es": "imagen",
+              "fr": "image",
+              "it": "immagine",
+              "nl": "afbeelding",
+              "no": "bilde",
+              "pl": "obraz",
+              "sv": "bild"
+            }
+          }
+        ]
+      },
+      {
         "id": "ring_snapshot_received",
+        "deprecated": true,
         "title": {
           "en": "Snapshot is grabbed",
           "da": "Snapshot er taget",

@@ -19,7 +19,6 @@ class App extends Homey.App {
             // log at: http://<homey IP>:8008
         }
 
-
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
 
         this.log('app.js                     preparing Node environment')

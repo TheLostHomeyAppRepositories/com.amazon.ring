@@ -195,16 +195,18 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
         if (this._device instanceof Error)
             return Promise.reject(this._device);
 
-        let _this = this;    
+        let _this = this;
         return new Promise(async function(resolve, reject) {
             _this.device.cameraImage.update()
                 .then(() => {
                     var tokens = {ring_image: _this.device.cameraImage};
                     _this.homey.flow.getTriggerCard('ring_snapshot_received')
                         .trigger(tokens)
-                        .catch(error => {_this.log(error)})
+                        .catch(error => {_this.log('grabImage trigger app',error)})
 
-                    return resolve(true);
+                    _this.driver.sendSnapshot(_this, tokens);
+
+                return resolve(true);
                 })
                 .catch((error) =>{_this.log("grabImage error:",error)})
         });
