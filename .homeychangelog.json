@@ -325,6 +325,6 @@
     "sv": "Bytte namn på Generiskt Larm till Dörrklocka • Gjorde flowkortet 'Snapshot är tagen' tillgängligt på Kamera och Dörrklocka"
   },
   "2.12.1": {
-    "en": "test for Ring Alarm sensor"
+    "en": "First version to connect to the Ring Alarm syste, Ring Alarm sensor available"
   }
 }
