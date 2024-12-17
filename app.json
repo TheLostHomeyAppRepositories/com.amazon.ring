@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.11.17",
+  "version": "2.12.1",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -43,16 +43,16 @@
   "source": "https://github.com/daneedk/com.amazon.ring",
   "support": "https://community.athom.com/t/76364",
   "description": {
-    "en": "Ring Doorbell and Camera support for Homey",
-    "da": "Ring Doorbell og kamera-understøttelse til Homey",
-    "de": "Unterstützung von Ring Doorbell und Kamera für Homey",
-    "es": "Soporte para Ring Doorbell y Camera en Homey",
-    "fr": "Prise en charge de la sonnette et de la caméra Ring pour Homey",
-    "it": "Supporto per la videocamera e il campanello Ring su Homey",
-    "nl": "Ring Doorbell- en Camera-ondersteuning voor Homey",
-    "no": "Ring Doorbell og Camera-støtte for Homey",
-    "pl": "Obsługa dzwonka i kamery Ring dla Homey",
-    "sv": "Stöd för Ring Doorbell och kamera i Homey"
+    "en": "Ring Doorbell, Camera and Alarm support for Homey",
+    "da": "Ring Doorbell, kamera og alarm-understøttelse til Homey",
+    "de": "Unterstützung von Ring Doorbell, Kamera und Alarm für Homey",
+    "es": "Soporte para Ring Doorbell, Cámara y Alarma en Homey",
+    "fr": "Prise en charge de la sonnette, de la caméra et de l'alarme Ring pour Homey",
+    "it": "Supporto per la videocamera, il campanello e l'allarme Ring su Homey",
+    "nl": "Ring Deurbell-, Camera- en Alarm-ondersteuning voor Homey",
+    "no": "Ring Doorbell, Camera og Alarm-støtte for Homey",
+    "pl": "Obsługa dzwonka, kamery i alarmu Ring dla Homey",
+    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey"
   },
   "images": {
     "large": "./assets/images/large.jpg",
@@ -60,7 +60,7 @@
   },
   "category": "appliances",
   "tags": {
-    "en": ["Ring", "Doorbell", "Camera", "Chime", "Intercom"]
+    "en": ["Ring", "Doorbell", "Camera", "Chime", "Intercom", "Alarm"]
   },
   "capabilities": {
     "flood_light": {
@@ -627,6 +627,57 @@
           ]
         }
       ]
+    },
+    {
+      "id": "contactsensor",
+        "name": {
+          "en": "Contact Sensor",
+          "nl": "Contactsensor"
+        },
+        "class": "sensor",
+        "capabilities": [
+          "alarm_contact",
+          "alarm_tamper",
+          "measure_battery"
+        ],
+        "energy": {
+          "batteries": [ "CR2032", "CR2032" ]
+        },
+        "images": {
+          "large": "{{driverAssetsPath}}/images/large.jpg",
+          "small": "{{driverAssetsPath}}/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "start"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ],
+        "repair": [
+          {
+            "id": "start"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "done",
+            "template": "done"
+          }
+        ]
     }
   ],
   "flow": {

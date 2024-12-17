@@ -301,27 +301,30 @@
     "en": "Test version for new ring-client-api, fix for Homey Pro 2016, code cleanup"
   },
   "2.11.16": {
-  "en": "Made 'Snapshot is grabbed' flowcard available on Camera and Doorbell",
-  "da": "Gjorde 'Snapshot er taget' flowkort tilgængeligt på Kamera og Dørklokke",
-  "de": "Das Flow-Karten-Element 'Snapshot wird aufgenommen' für Kamera und Türklingel verfügbar gemacht",
-  "es": "Se hizo disponible la tarjeta de flujo 'Snapshot se ha tomado' en Cámara y Timbre",
-  "fr": "Rendu la carte de flux 'Instantané capturé' disponible sur Caméra et Sonnette",
-  "it": "Reso disponibile il flowcard 'Snapshot acquisito' su Telecamera e Campanello",
-  "nl": "Het flowcard 'Snapshot is vastgelegd' beschikbaar gemaakt op Camera en Deurbel",
-  "no": "Gjorde 'Snapshot er tatt' flytkort tilgjengelig på Kamera og Dørklokke",
-  "pl": "Umożliwiono dostęp do karty przepływu 'Wykonano migawkę' na Kamerze i Dzwonku",
-  "sv": "Gjorde flowkortet 'Snapshot är tagen' tillgängligt på Kamera och Dörrklocka"
+    "en": "Made 'Snapshot is grabbed' flowcard available on Camera and Doorbell",
+    "da": "Gjorde 'Snapshot er taget' flowkort tilgængeligt på Kamera og Dørklokke",
+    "de": "Das Flow-Karten-Element 'Snapshot wird aufgenommen' für Kamera und Türklingel verfügbar gemacht",
+    "es": "Se hizo disponible la tarjeta de flujo 'Snapshot se ha tomado' en Cámara y Timbre",
+    "fr": "Rendu la carte de flux 'Instantané capturé' disponible sur Caméra et Sonnette",
+    "it": "Reso disponibile il flowcard 'Snapshot acquisito' su Telecamera e Campanello",
+    "nl": "Het flowcard 'Snapshot is vastgelegd' beschikbaar gemaakt op Camera en Deurbel",
+    "no": "Gjorde 'Snapshot er tatt' flytkort tilgjengelig på Kamera og Dørklokke",
+    "pl": "Umożliwiono dostęp do karty przepływu 'Wykonano migawkę' na Kamerze i Dzwonku",
+    "sv": "Gjorde flowkortet 'Snapshot är tagen' tillgängligt på Kamera och Dörrklocka"
   },
   "2.11.17": {
-  "en": "Renamed Generic Alarm to Doorbell • Made 'Snapshot is grabbed' flowcard available on Camera and Doorbell",
-  "da": "Omdøbte Generisk Alarm til Dørklokke • Gjorde 'Snapshot er taget' flowkort tilgængeligt på Kamera og Dørklokke",
-  "de": "Generischen Alarm in Türklingel umbenannt • Das Flow-Karten-Element 'Snapshot wird aufgenommen' für Kamera und Türklingel verfügbar gemacht",
-  "es": "Se renombró Alarma Genérica a Timbre • Se hizo disponible la tarjeta de flujo 'Snapshot se ha tomado' en Cámara y Timbre",
-  "fr": "Renommé Alarme Générique en Sonnette • Rendu la carte de flux 'Instantané capturé' disponible sur Caméra et Sonnette",
-  "it": "Rinominato Allarme Generico in Campanello • Reso disponibile il flowcard 'Snapshot acquisito' su Telecamera e Campanello",
-  "nl": "Generieke Alarm hernoemd naar Deurbel • Het flowcard 'Snapshot is vastgelegd' beschikbaar gemaakt op Camera en Deurbel",
-  "no": "Omdøpte Generisk Alarm til Dørklokke • Gjorde 'Snapshot er tatt' flytkort tilgjengelig på Kamera og Dørklokke",
-  "pl": "Zmieniono nazwę Alarm Ogólny na Dzwonek • Umożliwiono dostęp do karty przepływu 'Wykonano migawkę' na Kamerze i Dzwonku",
-  "sv": "Bytte namn på Generiskt Larm till Dörrklocka • Gjorde flowkortet 'Snapshot är tagen' tillgängligt på Kamera och Dörrklocka"
+    "en": "Renamed Generic Alarm to Doorbell • Made 'Snapshot is grabbed' flowcard available on Camera and Doorbell",
+    "da": "Omdøbte Generisk Alarm til Dørklokke • Gjorde 'Snapshot er taget' flowkort tilgængeligt på Kamera og Dørklokke",
+    "de": "Generischen Alarm in Türklingel umbenannt • Das Flow-Karten-Element 'Snapshot wird aufgenommen' für Kamera und Türklingel verfügbar gemacht",
+    "es": "Se renombró Alarma Genérica a Timbre • Se hizo disponible la tarjeta de flujo 'Snapshot se ha tomado' en Cámara y Timbre",
+    "fr": "Renommé Alarme Générique en Sonnette • Rendu la carte de flux 'Instantané capturé' disponible sur Caméra et Sonnette",
+    "it": "Rinominato Allarme Generico in Campanello • Reso disponibile il flowcard 'Snapshot acquisito' su Telecamera e Campanello",
+    "nl": "Generieke Alarm hernoemd naar Deurbel • Het flowcard 'Snapshot is vastgelegd' beschikbaar gemaakt op Camera en Deurbel",
+    "no": "Omdøpte Generisk Alarm til Dørklokke • Gjorde 'Snapshot er tatt' flytkort tilgjengelig på Kamera og Dørklokke",
+    "pl": "Zmieniono nazwę Alarm Ogólny na Dzwonek • Umożliwiono dostęp do karty przepływu 'Wykonano migawkę' na Kamerze i Dzwonku",
+    "sv": "Bytte namn på Generiskt Larm till Dörrklocka • Gjorde flowkortet 'Snapshot är tagen' tillgängligt på Kamera och Dörrklocka"
+  },
+  "2.12.1": {
+    "en": "test for Ring Alarm sensor"
   }
 }

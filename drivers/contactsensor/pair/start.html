@@ -1,0 +1,108 @@
+
+    
+<div id="login-credentials-logo" class="logo" style='position: relative; width: 66%; height: 100px; margin-left: auto; margin-right: auto; background-position: center center; background-repeat: no-repeat; background-size: contain; background-image: url("../../../assets/images/small.jpg");'>
+</div>
+
+<br />
+    
+    <p data-i18n="pair.intro"></p>
+    <p data-i18n="pair.auth.warning"></legend>
+
+    <fieldset>
+        <legend data-i18n="pair.auth.header"></legend>
+
+        <div id="settings-auth">
+            <div class="field row" id="status-failed" style="display: none;">
+                <span data-i18n="pair.auth.failed" style='color: red;'>Authentication failed, please check your credentials</span>
+            </div>
+
+            <div class="field row" id="auth-row-user">
+                <label class="form-label" for="settings-auth-user" data-i18n="pair.auth.user"></label>
+                <input class="form-input" id="settings-auth-user" data-i18n-placeholder="" type="text" value=""/>
+            </div>
+
+            <div class="field row" id="auth-row-pass">
+                <label class="form-label" for="settings-auth-pass" data-i18n="pair.auth.pass"></label>
+                <input class="form-input" id="settings-auth-pass" data-i18n-placeholder="" type="password" value=""/>
+            </div>
+
+            <div class="field row" id="auth-row-code" style="display: none;">
+                <label class="form-label" for="settings-auth-token" data-i18n="pair.auth.token"></label>
+                <input class="form-input" id="settings-auth-token" data-i18n-placeholder="" type="text" value=""/>
+            </div>
+            <br />
+            <button id="settings-auth-authenticate" class="homey-button-primary" data-i18n="pair.auth.authenticate"></button>
+            <button id="settings-auth-validatecode" class="homey-button-primary" data-i18n="pair.auth.validatecode" style="display: none;"></button>
+        </div>
+
+    </fieldset>
+
+    <script type="text/javascript">
+
+        // Listen to authentication state events
+        Homey.on("authentication", function (message) {
+            if ( message == "Failed") {
+                console.log("Recieved: authentication is Failed");
+                document.getElementById('auth-row-user').style.display = 'block';
+                document.getElementById('auth-row-pass').style.display = 'block';
+                document.getElementById('settings-auth-authenticate').style.display = 'block';
+                document.getElementById('status-failed').style.display = 'block';
+                document.getElementById('auth-row-code').style.display = 'none';
+                document.getElementById('settings-auth-validatecode').style.display = 'none';
+            }
+        });
+
+        document.getElementById('settings-auth-authenticate').addEventListener('click', function(elem) {
+            onAuth(Homey);
+        });
+
+        document.getElementById('settings-auth-validatecode').addEventListener('click', function(elem) {
+            onCode(Homey);
+        });
+
+        function onAuth(Homey) {
+            var auth = {};
+            auth.user = document.getElementById('settings-auth-user').value;
+            auth.pass = document.getElementById('settings-auth-pass').value;
+
+            Homey.emit( 'triggerMFA', auth, function(err, result)
+            {
+                alert(result);
+                if(err)
+                    document.getElementById('status-failed').innerHTML = 'Error: ' + err;
+                else
+                    showToken();
+            });
+        }
+
+        function onCode(Homey) {
+            var auth = {};
+            auth.user = document.getElementById('settings-auth-user').value;
+            auth.pass = document.getElementById('settings-auth-pass').value;
+            auth.token = document.getElementById('settings-auth-token').value;
+
+            Homey.emit( 'validateMFA', auth, function(err, result)
+            {
+                if(err)
+                    document.getElementById('status-failed').innerHTML = 'Error: ' + err;
+                else
+                    Homey.nextView();
+            });
+        }
+
+        function onPasteMFACode() {
+            navigator.clipboard
+            .readText()
+            .then((clipText) => (document.getElementById("settings-auth-token").value = clipText));
+        }
+
+        function showToken() {
+            document.getElementById('auth-row-user').style.display = 'none';
+            document.getElementById('auth-row-pass').style.display = 'none';
+            document.getElementById('settings-auth-authenticate').style.display = 'none';
+            document.getElementById('status-failed').style.display = 'none';
+            document.getElementById('auth-row-code').style.display = 'block';
+            document.getElementById('settings-auth-validatecode').style.display = 'block';
+        }
+
+    </script>
