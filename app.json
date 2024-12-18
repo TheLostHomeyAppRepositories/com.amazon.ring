@@ -644,8 +644,8 @@
           "batteries": [ "CR2032", "CR2032" ]
         },
         "images": {
-          "large": "{{driverAssetsPath}}/images/large.jpg",
-          "small": "{{driverAssetsPath}}/images/small.jpg"
+          "large": "./drivers/contactsensor/assets/images/large.jpg",
+          "small": "./drivers/contactsensor/assets/images/small.jpg"
         },
         "pair": [
           {
