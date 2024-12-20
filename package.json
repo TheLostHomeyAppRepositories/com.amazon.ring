@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "homey-log-to-file": "github:robertklep/homey-log-to-file",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "ring-client-api": "^13.1.0"
   }
 }
