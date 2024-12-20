@@ -8,6 +8,10 @@ const events = require('events');
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
+let capturedStderr = '';
+const originalStderrWrite = process.stderr.write;
+process.env.DEBUG = '*'
+
 class App extends Homey.App {
 
     async onInit() {
@@ -36,6 +40,18 @@ class App extends Homey.App {
             }
         }
         this.log('app.js                     preparing Node environment done')
+
+        this.log('app.js                     preparing logging environment')
+            // Override the default stderr.write function
+            process.stderr.write = (chunk, encoding, callback) => {
+                // Append the stderr output to the variable
+                capturedStderr += chunk; 
+                console.log('Error written:', capturedStderr)
+
+                // Optionally, write to the original stderr
+                originalStderrWrite.call(process.stderr, chunk, encoding, callback); 
+            };
+        this.log('app.js                     preparing logging environment done')
 
         this.lastLocationModes = [];
         this.alarmSystem = {};
@@ -285,7 +301,7 @@ class App extends Homey.App {
             // end cleanup
             logLine = this.getDateTime() + logLine + "\n" + savedHistory;
         } else {
-            console.log("savedHistory is undefined!")
+            this.log("writeLog: savedHistory is undefined!")
         }
         this.homey.settings.set('myLog', logLine );
 
