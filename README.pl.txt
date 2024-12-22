@@ -5,6 +5,7 @@ Obsługiwane urządzenia
 • Ring Stick Up Cam / Ring Indoor Cam
 • Ring Video Doorbell (Pro)
 • Ring Intercom
+• Ring Contact Sensor (Wymaga Ring Alarm)
 
 Obsługiwane języki
 🇬🇧 English
@@ -24,6 +25,8 @@ Jak to uruchomić?
 Podczas dodawania pierwszego urządzenia będziesz musiał się zalogować na swoim koncie Ring, a każde kolejne urządzenie będzie dodawane za pomocą poprzedniego logowania.
 
 Wymagana jest autoryzacja dwuskładnikowa, którą musisz włączyć na swoim koncie Ring!
+
+Uwaga: Ring Contact Sensor wymaga systemu Ring Alarm.
 
 Aby uzyskać więcej informacji, odwiedź temat Ring Doorbell i Camera na forum społeczności Athom, klikając przycisk "Odwiedź forum >>" w szarym bloku poniżej w sekcji "Społeczność".
 (Lub skopiuj ten link i wklej go w pasek adresu przeglądarki: https://community.athom.com/t/76364)

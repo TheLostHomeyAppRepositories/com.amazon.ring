@@ -1,29 +1,31 @@
-Collega i tuoi prodotti Ring Doorbell o Camera con Homey.
+Collega i tuoi dispositivi Ring Doorbell, Camera e Alarm a Homey.
 
-Dispositivi supportati
-• Ring Chime (Pro)
-• Ring Stick Up Cam / Ring Indoor Cam
-• Ring Video Doorbell (Pro)
-• Ring Intercom
+Dispositivi supportati:  
+• Ring Chime (Pro)  
+• Ring Stick Up Cam / Ring Indoor Cam  
+• Ring Video Doorbell (Pro)  
+• Ring Intercom  
+• Ring Contact Sensor (Richiede Ring Alarm)  
 
-Lingue supportate
-🇬🇧 English
-🇩🇰 Dansk
-🇩🇪 Deutsch
-🇪🇸 Español
-🇫🇷 Français
-🇮🇹 Italiano
-🇳🇱 Nederlands
-🇳🇴 Norsk
-🇵🇱 Polski
-🇸🇪 Svenska
+Lingue supportate:  
+🇬🇧 English  
+🇩🇰 Dansk  
+🇩🇪 Deutsch  
+🇪🇸 Español  
+🇫🇷 Français  
+🇮🇹 Italiano  
+🇳🇱 Nederlands  
+🇳🇴 Norsk  
+🇵🇱 Polski  
+🇸🇪 Svenska  
 
-Come si fa ad utilizzarlo?
-• Aggiungi un dispositivo Ring
+Come farlo funzionare?  
+• Aggiungi un dispositivo Ring  
 
-Quando si aggiunge il primo dispositivo, è necessario effettuare l'accesso con il proprio account Ring. Tutti i dispositivi successivi verranno aggiunti utilizzando l'accesso precedente.
+Quando aggiungi il tuo primo dispositivo, dovrai accedere con il tuo account Ring. Tutti i dispositivi aggiuntivi saranno aggiunti utilizzando la sessione di accesso precedente.  
 
-L'autenticazione di sicurezza a due fattori è obbligatoria, devi abilitarla sul tuo account Ring!
+È richiesta l’autenticazione a due fattori. Devi abilitarla nel tuo account Ring!  
 
-Per maggiori informazioni, si prega di visitare l'argomento Ring Doorbell and Camera sul Forum della Comunità Athom, cliccando su Visita forum >> sotto Comunità nel blocco grigio sottostante.
-(O copia questo link e incollalo nella barra degli indirizzi del tuo browser: https://community.athom.com/t/76364)
+Nota: Il Ring Contact Sensor richiede un sistema Ring Alarm.  
+
+Visita il thread su Ring Doorbell e Camera sul forum della community di Athom per ulteriori informazioni. Fai clic su "Visita il forum" nella sezione Community del blocco grigio qui sotto oppure copia questo link e incollalo nella barra degli indirizzi del tuo browser: https://community.athom.com/t/76364

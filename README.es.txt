@@ -1,29 +1,31 @@
-Conecta tus productos Ring Doorbell o Camera con Homey.
+Conecta tus dispositivos Ring Doorbell, Camera y Alarm con Homey.
 
-Dispositivos compatibles
-• Ring Chime (Pro)
-• Ring Stick Up Cam / Ring Indoor Cam
-• Ring Video Doorbell (Pro)
-• Ring Intercom
+Dispositivos compatibles:  
+• Ring Chime (Pro)  
+• Ring Stick Up Cam / Ring Indoor Cam  
+• Ring Video Doorbell (Pro)  
+• Ring Intercom  
+• Ring Contact Sensor (Requiere Ring Alarm)  
 
-Idiomas compatibles
-🇬🇧 English
-🇩🇰 Dansk
-🇩🇪 Deutsch
-🇪🇸 Español
-🇫🇷 Français
-🇮🇹 Italiano
-🇳🇱 Nederlands
-🇳🇴 Norsk
-🇵🇱 Polski
-🇸🇪 Svenska
+Idiomas compatibles:  
+🇬🇧 English  
+🇩🇰 Dansk  
+🇩🇪 Deutsch  
+🇪🇸 Español  
+🇫🇷 Français  
+🇮🇹 Italiano  
+🇳🇱 Nederlands  
+🇳🇴 Norsk  
+🇵🇱 Polski  
+🇸🇪 Svenska  
 
-¿Cómo lo hago funcionar?
-• Añade un dispositivo Ring
+¿Cómo hacerlo funcionar?  
+• Añade un dispositivo Ring  
 
-Al agregar tu primer dispositivo necesitarás iniciar sesión con tu cuenta de Ring, cualquier dispositivo agregado después se agregará usando el inicio de sesión anterior.
+Al agregar tu primer dispositivo, deberás iniciar sesión con tu cuenta de Ring. Cualquier dispositivo adicional se agregará utilizando la sesión de inicio de sesión anterior.  
 
-¡Se requiere autenticación de seguridad de dos factores, debes habilitar esto en tu cuenta de Ring!
+Se requiere verificación en dos pasos. ¡Debes habilitar esta opción en tu cuenta de Ring!  
 
-Por favor, visita el tema de Ring Doorbell y Camera en el foro de la comunidad de Athom para obtener más información, haz clic en Visitar foro >> debajo de Comunidad en el bloque gris de abajo.
-(O copia este enlace y pégalo en la barra de direcciones de tu navegador: https://community.athom.com/t/76364)
+Nota: El Ring Contact Sensor requiere un sistema Ring Alarm.  
+
+Visita el hilo sobre Ring Doorbell y Camera en el foro de la comunidad de Athom para obtener más información. Haz clic en "Visitar foro" en la sección Comunidad en el bloque gris de abajo o copia este enlace y pégalo en la barra de direcciones de tu navegador: https://community.athom.com/t/76364

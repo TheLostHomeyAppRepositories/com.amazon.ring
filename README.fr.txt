@@ -1,30 +1,31 @@
-Connectez vos produits Ring Doorbell ou Camera à Homey.
+Connectez vos appareils Ring Doorbell, Camera et Alarm à Homey.
 
-Appareils pris en charge
-• Ring Chime (Pro)
-• Ring Stick Up Cam / Ring Indoor Cam
-• Ring Video Doorbell (Pro)
-• Ring Intercom
+Appareils compatibles :  
+• Ring Chime (Pro)  
+• Ring Stick Up Cam / Ring Indoor Cam  
+• Ring Video Doorbell (Pro)  
+• Ring Intercom  
+• Ring Contact Sensor (Nécessite Ring Alarm)  
 
-Langues prises en charge
-🇬🇧 English
-🇩🇰 Dansk
-🇩🇪 Deutsch
-🇪🇸 Español
-🇫🇷 Français
-🇮🇹 Italiano
-🇳🇱 Nederlands
-🇳🇴 Norsk
-🇵🇱 Polski
-🇸🇪 Svenska
+Langues prises en charge :  
+🇬🇧 English  
+🇩🇰 Dansk  
+🇩🇪 Deutsch  
+🇪🇸 Español  
+🇫🇷 Français  
+🇮🇹 Italiano  
+🇳🇱 Nederlands  
+🇳🇴 Norsk  
+🇵🇱 Polski  
+🇸🇪 Svenska  
 
-Comment faire pour que cela fonctionne?
-• Ajoutez un appareil Ring
+Comment le faire fonctionner ?  
+• Ajoutez un appareil Ring  
 
-Lors de l'ajout de votre premier appareil, vous devrez vous connecter avec votre compte Ring. Tout appareil ajouté après cela sera ajouté en utilisant la connexion précédente.
+Lors de l'ajout de votre premier appareil, vous devrez vous connecter avec votre compte Ring. Tous les appareils ajoutés par la suite utiliseront cette session de connexion.  
 
-L'authentification de sécurité à deux facteurs est requise. Vous devez l'activer sur votre compte Ring!
+La vérification en deux étapes est requise. Vous devez l’activer dans votre compte Ring !  
 
-Veuillez visiter le sujet Sonnette Ring et Caméra sur le forum de la communauté Athom pour plus d'informations, cliquez sur Visiter le forum >> sous la communauté dans le bloc gris ci-dessous.
-(Ou copiez ce lien et collez-le dans la barre d'adresse de votre navigateur: https://community.athom.com/t/76364)
+Remarque : Le Ring Contact Sensor nécessite un système Ring Alarm.  
 
+Visitez le fil de discussion sur Ring Doorbell et Camera sur le forum communautaire d'Athom pour plus d'informations. Cliquez sur "Visiter le forum" dans la section Communauté du bloc gris ci-dessous ou copiez ce lien et collez-le dans la barre d'adresse de votre navigateur : https://community.athom.com/t/76364

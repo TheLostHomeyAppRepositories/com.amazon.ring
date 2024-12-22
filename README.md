@@ -6,6 +6,7 @@ Connect your Ring Doorbell or Camera products with Homey.
 * Ring Stick Up Cam
 * Ring Video Doorbell (Pro)
 * Ring Intercom
+* Ring Contact Sensor (Requires Ring Alarm)
 
 ## Supported Languages
 * 🇬🇧 English

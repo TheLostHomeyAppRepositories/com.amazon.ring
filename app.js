@@ -10,7 +10,7 @@ const events = require('events');
 
 let capturedStderr = '';
 const originalStderrWrite = process.stderr.write;
-process.env.DEBUG = '*'
+// process.env.DEBUG = '*'
 
 class App extends Homey.App {
 
@@ -46,9 +46,11 @@ class App extends Homey.App {
             process.stderr.write = (chunk, encoding, callback) => {
                 // Append the stderr output to the variable
                 capturedStderr += chunk; 
-                console.log('Error written:', capturedStderr)
+                
+                // Process error here
+                This.log('Error captured:', capturedStderr)
 
-                // Optionally, write to the original stderr
+                // Write to the original stderr
                 originalStderrWrite.call(process.stderr, chunk, encoding, callback); 
             };
         this.log('app.js                     preparing logging environment done')
