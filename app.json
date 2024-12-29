@@ -678,7 +678,58 @@
             "template": "done"
           }
         ]
-    }
+    },
+    {
+      "id": "motiondetector",
+        "name": {
+          "en": "Motion Detector",
+          "nl": "Bewegingsdetector"
+        },
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "alarm_tamper",
+          "measure_battery"
+        ],
+        "energy": {
+          "batteries": [ "AA", "AA" ]
+        },
+        "images": {
+          "large": "./drivers/motiondetector/assets/images/large.jpg",
+          "small": "./drivers/motiondetector/assets/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "start"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ],
+        "repair": [
+          {
+            "id": "start"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "done",
+            "template": "done"
+          }
+        ]
+    }    
   ],
   "flow": {
     "triggers": [

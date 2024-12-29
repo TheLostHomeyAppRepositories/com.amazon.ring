@@ -328,6 +328,6 @@
     "en": "First version to connect to the Ring Alarm system, Ring Alarm Contact Sensor available"
   },
   "2.12.2": {
-    "en": "First version to connect to the Ring Alarm system, Ring Alarm Contact Sensor available"
+    "en": "Added Ring Alarm System support, now supporting Ring Contact Sensor and Ring Alarm Motion Detector"
   }
 }
