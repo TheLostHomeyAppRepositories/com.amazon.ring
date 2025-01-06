@@ -745,8 +745,8 @@
         "batteries": [ "INTERNAL" ]
       },
       "images": {
-        "large": "{{driverAssetsPath}}/images/large.jpg",
-        "small": "{{driverAssetsPath}}/images/small.jpg"
+        "large": "./drivers/keypad/assets/images/large.jpg",
+        "small": "./drivers/keypad/assets/images/small.jpg"
       },
       "pair": [
         {
