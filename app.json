@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.12.2",
+  "version": "2.12.4",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -729,7 +729,57 @@
             "template": "done"
           }
         ]
-    }    
+    },
+    {
+      "id": "keypad",
+      "name": {
+        "en": "Keypad",
+        "nl": "Bedieningspaneel"
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [ "INTERNAL" ]
+      },
+      "images": {
+        "large": "{{driverAssetsPath}}/images/large.jpg",
+        "small": "{{driverAssetsPath}}/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ]
+    }  
   ],
   "flow": {
     "triggers": [

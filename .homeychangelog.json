@@ -329,5 +329,8 @@
   },
   "2.12.2": {
     "en": "Added Ring Alarm System support, now supporting Ring Contact Sensor and Ring Alarm Motion Detector"
+  },
+  "2.12.4": {
+    "en": "Added Ring Alarm System support, now supporting Ring Contact Sensor, Ring Alarm Motion Detector and Ring Keypad"
   }
 }
