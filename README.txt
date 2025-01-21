@@ -5,6 +5,9 @@ Supported Devices
 • Ring Stick Up Cam / Ring Indoor Cam
 • Ring Video Doorbell (Pro)
 • Ring Intercom
+• Ring Contact Sensor (Requires Ring Alarm)
+• Ring Motion Detector (Requires Ring Alarm)
+• Ring Alarm Keypad (Requires Ring Alarm)
 
 Supported Languages
 🇬🇧 English

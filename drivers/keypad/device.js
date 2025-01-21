@@ -74,6 +74,19 @@ class DeviceKeypad extends Device {
 
     }
 
+    /*
+    https://github.com/tsightler/ring-mqtt/blob/b4fcec47a962f1249c9b659f298fef8a3f4bf712/devices/keypad.js#L38C1-L48C11
+        this.device.location.onDataUpdate.subscribe((message) => {
+            if (this.isOnline() &&
+                message.datatype === 'DeviceInfoDocType' &&
+                message.body?.[0]?.general?.v2?.zid === this.deviceId &&
+                message.body[0].impulse?.v1?.[0]?.impulseType === 'keypad.motion'
+            ) {
+                this.processMotion()
+            }
+        })
+    */
+
 }
 
 module.exports = DeviceKeypad;

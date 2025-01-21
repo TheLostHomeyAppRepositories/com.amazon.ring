@@ -6,6 +6,8 @@ Støttede enheter
 • Ring Video Doorbell (Pro)
 • Ring Intercom
 • Ring Contact Sensor (Krever Ring Alarm)
+• Ring Motion Detector (Krever Ring Alarm)
+• Ring Alarm Keypad (Krever Ring Alarm)
 
 Støttede språk
 🇬🇧 English
@@ -25,8 +27,6 @@ Hvordan får jeg det til å fungere?
 Når du legger til den første enheten din, må du logge på med Ring-kontoen din. Enhver enhet som legges til etter det, vil bli lagt til ved hjelp av den forrige påloggingen.
 
 To-faktor sikkerhetsautentisering er påkrevd, du må aktivere dette på Ring-kontoen din!
-
-Merk: Ring Contact Sensor krever et Ring Alarm-system.
 
 Besøk Ring Doorbell- og Camera-emnet på Athom Community Forum for mer informasjon. Klikk på "Besøk forum >>" under Fellesskap i den grå blokken nedenfor.
 (Alternativt kan du kopiere denne lenken og lime den inn i nettleserens adressefelt: https://community.athom.com/t/76364)

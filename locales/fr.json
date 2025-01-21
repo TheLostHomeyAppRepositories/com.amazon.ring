@@ -42,6 +42,7 @@
         "package": "Paquet",
         "other": "Autre",
         "motion": "Mouvement",
+        "vehicle": "Véhicule",
         "unknown": "inconnu"
     }    
 }

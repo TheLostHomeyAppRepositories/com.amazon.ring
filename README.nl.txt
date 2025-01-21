@@ -6,6 +6,8 @@ Ondersteunde apparaten
 • Ring Video Doorbell (Pro)
 • Ring Intercom
 • Ring Contact Sensor (Vereist Ring Alarm)
+• Ring Motion Detector (Vereist Ring Alarm)
+• Ring Alarm Keypad (Vereist Ring Alarm)
 
 Ondersteunde talen
 🇬🇧 English
@@ -25,8 +27,6 @@ Hoe krijg ik het aan de praat?
 Bij het toevoegen van uw eerste apparaat moet u inloggen met uw Ring-account. Elk apparaat dat daarna wordt toegevoegd, wordt toegevoegd met behulp van de vorige aanmelding.
 
 Tweestapsverificatie is vereist. U moet dit inschakelen in uw Ring-account!
-
-Let op, de Ring Contact Sensor vereist een Ring Alarm systeem
 
 Bezoek het Ring Doorbell- en Cameradraadje op het Athom Community Forum voor meer informatie. Klik op Bezoek forum >> onder Community in het grijze blok hieronder.
 (Of kopieer deze link en plak hem in de adresbalk van uw browser: https://community.athom.com/t/76364)

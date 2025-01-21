@@ -163,7 +163,7 @@ this.log('notification.data.event.ding.detection_type:',notification.data.event.
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
             const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null;
-            const tokens = {'motionType': this.motionTypes[type]};
+            const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
             this.driver.alarmMotionOn(this, tokens);
 
             clearTimeout(this.device.timer.motion);
