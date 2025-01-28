@@ -1,13 +1,16 @@
-Collega i tuoi dispositivi Ring Doorbell, Camera e Alarm a Homey.
+Collega i tuoi prodotti Ring Doorbell, Camera e Alarm con Homey.  
 
-Dispositivi supportati:  
-• Ring Chime (Pro)  
-• Ring Stick Up Cam / Ring Indoor Cam  
-• Ring Video Doorbell (Pro)  
-• Ring Intercom  
-• Ring Contact Sensor (Richiede Ring Alarm)
-• Ring Motion Detector (Richiede Ring Alarm)
-• Ring Alarm Keypad (Richiede Ring Alarm)
+Integrare i dispositivi Ring con Homey consente un controllo fluido e un'automazione per la tua casa intelligente. Con il supporto per Ring Doorbells, telecamere e sistemi di allarme, puoi migliorare la sicurezza e la comodità della tua casa centralizzando la gestione dei dispositivi nell'ecosistema Homey. Ecco cosa puoi fare:  
+
+- Doorbell Notifications: Ricevi notifiche istantanee quando qualcuno suona al tuo Ring Doorbell e invia uno snapshot dalla tua campanella.  
+- Camera Monitoring: Usa gli eventi di rilevamento del movimento per attivare automazioni, come accendere le luci o inviare notifiche, inclusi gli snapshot.  
+- Alarm Integration: Arma o disarma il tuo sistema Ring Alarm da Homey e collegalo ad altri dispositivi, come bloccare le porte o attivare sirene quando viene rilevata una minaccia.  
+- Custom Automations: Crea flussi personalizzati utilizzando la funzione Flow di Homey. Ad esempio, accendi automaticamente le luci esterne quando la tua Ring Camera o il Ring Outdoor Motion Detector rilevano movimento dopo il tramonto.  
+
+Con Ring e Homey che lavorano insieme, puoi creare una casa più intelligente e reattiva che ti tiene informato e sotto controllo, ovunque tu sia.  
+
+Visita il tema di supporto Ring Doorbell, Camera And Alarm nel forum della community di Homey per maggiori informazioni. Clicca su Visit Forum >> nella sezione Community nel blocco grigio qui sotto.  
+(O copia questo link e incollalo nella barra degli indirizzi del tuo browser: https://community.homey.app/t/76364)  
 
 Lingue supportate:  
 🇬🇧 English  
@@ -20,12 +23,3 @@ Lingue supportate:
 🇳🇴 Norsk  
 🇵🇱 Polski  
 🇸🇪 Svenska  
-
-Come farlo funzionare?  
-• Aggiungi un dispositivo Ring  
-
-Quando aggiungi il tuo primo dispositivo, dovrai accedere con il tuo account Ring. Tutti i dispositivi aggiuntivi saranno aggiunti utilizzando la sessione di accesso precedente.  
-
-È richiesta l’autenticazione a due fattori. Devi abilitarla nel tuo account Ring!  
-
-Visita il thread su Ring Doorbell e Camera sul forum della community di Athom per ulteriori informazioni. Fai clic su "Visita il forum" nella sezione Community del blocco grigio qui sotto oppure copia questo link e incollalo nella barra degli indirizzi del tuo browser: https://community.athom.com/t/76364

@@ -344,5 +344,17 @@
     "no": "Lagt til støtte for Ring Alarm System, støtter nå Ring Kontakt Sensor, Ring Alarm Bevegelsesdetektor og Ring Alarm Tastatur • Lagt til bevegelsestype kjøretøy til kameraer",
     "pl": "Dodano wsparcie dla systemu alarmowego Ring, obsługuje teraz czujnik kontaktu Ring, detektor ruchu Ring Alarm i klawiaturę Ring Alarm • Dodano typ ruchu pojazd do kamer",
     "sv": "Lagt till stöd för Ring Alarmsystem, stöder nu Ring Kontaktsensor, Ring Alarm Rörelsedetektor och Ring Alarm Knappsats • Lade till rörelsetyp fordon till kameror"
-  }
+  },
+  "2.13.0": {
+    "en": "Added Ring Alarm System support, now supporting Ring Contact Sensor, Ring Alarm Motion Detector and Ring Alarm Keypad • Added motiontype vehicle to cameras",
+    "da": "Tilføjet understøttelse af Ring Alarm System, understøtter nu Ring Kontakt Sensor, Ring Alarm Bevægelsesdetektor og Ring Alarm Tastatur • Tilføjet bevægelsestype køretøj til kameraer",
+    "de": "Unterstützung für das Ring-Alarm-System hinzugefügt, unterstützt jetzt Ring-Kontaktsensor, Ring-Alarm-Bewegungsmelder und Ring-Alarm-Tastatur • Bewegungstyp Fahrzeug zu Kameras hinzugefügt",
+    "es": "Añadido soporte para el sistema de alarma Ring, ahora compatible con el sensor de contacto Ring, el detector de movimiento Ring Alarm y el teclado Ring Alarm • Añadido el tipo de movimiento vehículo a las cámaras",
+    "fr": "Ajout du support du système d'alarme Ring, prenant désormais en charge le capteur de contact Ring, le détecteur de mouvement Ring Alarm et le clavier Ring Alarm • Ajout du type de mouvement véhicule aux caméras",
+    "it": "Aggiunto supporto per il sistema di allarme Ring, ora compatibile con il sensore di contatto Ring, il rilevatore di movimento Ring Alarm e la tastiera Ring Alarm • Aggiunto il tipo di movimento veicolo alle telecamere",
+    "nl": "Ondersteuning toegevoegd voor het Ring Alarm Systeem, ondersteunt nu Ring Contactsensor, Ring Alarm Bewegingsdetector en Ring Alarm Toetsenbord • Bewegingssoort voertuig toegevoegd aan camera's",
+    "no": "Lagt til støtte for Ring Alarm System, støtter nå Ring Kontakt Sensor, Ring Alarm Bevegelsesdetektor og Ring Alarm Tastatur • Lagt til bevegelsestype kjøretøy til kameraer",
+    "pl": "Dodano wsparcie dla systemu alarmowego Ring, obsługuje teraz czujnik kontaktu Ring, detektor ruchu Ring Alarm i klawiaturę Ring Alarm • Dodano typ ruchu pojazd do kamer",
+    "sv": "Lagt till stöd för Ring Alarmsystem, stöder nu Ring Kontaktsensor, Ring Alarm Rörelsedetektor och Ring Alarm Knappsats • Lade till rörelsetyp fordon till kameror"
+  }  
 }

@@ -1,13 +1,16 @@
-Koble Ring Doorbell- eller Camera-produktene dine til Homey.
+Koble Ring Doorbell-, Kamera- og Alarm-produktene dine med Homey.  
 
-Støttede enheter
-• Ring Chime (Pro)
-• Ring Stick Up Cam / Ring Indoor Cam
-• Ring Video Doorbell (Pro)
-• Ring Intercom
-• Ring Contact Sensor (Krever Ring Alarm)
-• Ring Motion Detector (Krever Ring Alarm)
-• Ring Alarm Keypad (Krever Ring Alarm)
+Integrering av Ring-enheter med Homey gir sømløs kontroll og automatisering for ditt smarte hjem. Med støtte for Ring Doorbells, Kameraer og Alarmsystemer kan du forbedre sikkerheten og bekvemmeligheten i hjemmet ditt ved å sentralisere enhetsstyring i Homey-økosystemet. Her er hva du kan gjøre:  
+
+- Doorbell Notifications: Motta umiddelbare varsler når noen ringer på Ring Doorbell-enheten din, og send et snapshot fra dørklokken.  
+- Camera Monitoring: Bruk bevegelsesdeteksjon for å utløse automatiseringer, som å slå på lys eller sende varsler, inkludert snapshots.  
+- Alarm Integration: Aktiver eller deaktiver Ring Alarm-systemet ditt fra Homey, og koble det til andre enheter, som å låse dører eller aktivere sirener når en trussel blir oppdaget.  
+- Custom Automations: Lag kraftige flows med Homeys Flow-funksjon. For eksempel, slå automatisk på utendørsbelysning når Ring-kameraet ditt eller Ring Outdoor Motion Detector oppdager bevegelse etter solnedgang.  
+
+Med Ring og Homey som samarbeider, kan du skape et smartere og mer responsivt hjem som holder deg informert og under kontroll, uansett hvor du er.  
+
+Besøk Ring Doorbell, Camera And Alarm support-emnet på Homey Community Forum for mer informasjon. Klikk på Visit Forum >> under Community-seksjonen i den grå blokken nedenfor.  
+(Eller kopier denne lenken og lim den inn i nettleserens adresselinje: https://community.homey.app/t/76364)  
 
 Støttede språk
 🇬🇧 English
@@ -20,13 +23,3 @@ Støttede språk
 🇳🇴 Norsk
 🇵🇱 Polski
 🇸🇪 Svenska
-
-Hvordan får jeg det til å fungere?
-• Legg til en Ring-enhet
-
-Når du legger til den første enheten din, må du logge på med Ring-kontoen din. Enhver enhet som legges til etter det, vil bli lagt til ved hjelp av den forrige påloggingen.
-
-To-faktor sikkerhetsautentisering er påkrevd, du må aktivere dette på Ring-kontoen din!
-
-Besøk Ring Doorbell- og Camera-emnet på Athom Community Forum for mer informasjon. Klikk på "Besøk forum >>" under Fellesskap i den grå blokken nedenfor.
-(Alternativt kan du kopiere denne lenken og lime den inn i nettleserens adressefelt: https://community.athom.com/t/76364)
