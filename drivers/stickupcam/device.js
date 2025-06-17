@@ -148,10 +148,12 @@ class DeviceStickUpCam extends Device {
         //if (notification.ding.doorbot_id !== this.getData().id)
         if (notification.data.device.id !== this.getData().id)
             return;
-
-this.log('------------------------------------------------------------------');
-this.log('notification.android_config.category',notification.android_config.category)
-this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+        
+        /*
+        this.log('------------------------------------------------------------------');
+        this.log('notification.android_config.category',notification.android_config.category)
+        this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+        */
 
         //if (notification.action === 'com.ring.push.HANDLE_NEW_motion') {
         if (notification.android_config.category === 'com.ring.pn.live-event.motion') {

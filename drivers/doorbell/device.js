@@ -102,10 +102,12 @@ class DeviceDoorbell extends Device {
 
         //this.log('_ringOnNotification', notification);
 
-this.log('------------------------------------------------------------------');
-this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
-this.log('notification.android_config.category',notification.android_config.category)
-this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+        /*
+        this.log('------------------------------------------------------------------');
+        this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
+        this.log('notification.android_config.category',notification.android_config.category)
+        this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+        */
 
         // need new evaluation for next line
         //if (notification.subtype === 'ding') {
