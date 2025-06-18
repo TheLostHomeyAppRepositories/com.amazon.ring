@@ -383,5 +383,17 @@
     "no": "Fiks for endringer i Ring API",
     "pl": "Poprawka dla zmian w API Ring",
     "sv": "Fix för ändringar i Ring API"
+  },
+  "2.14.1": {
+    "en": "Fix for changes in Ring api",
+    "da": "Rettet ændringer i Ring API",
+    "de": "Fehlerbehebung für Änderungen in der Ring-API",
+    "es": "Corrección por cambios en la API de Ring",
+    "fr": "Correction pour les changements dans l'API Ring",
+    "it": "Correzione per le modifiche nell'API di Ring",
+    "nl": "Oplossing voor wijzigingen in de Ring API",
+    "no": "Fiks for endringer i Ring API",
+    "pl": "Poprawka dla zmian w API Ring",
+    "sv": "Fix för ändringar i Ring API"
   }
 }
