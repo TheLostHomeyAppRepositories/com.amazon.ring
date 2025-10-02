@@ -36,7 +36,7 @@ class DeviceDoorbell extends Device {
 
         // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
 
-        this._setupCameraView(this.getData());
+        this._setupCameraImage(this.getData());
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
         this.homey.on('ringOnData', this._ringOnData.bind(this));
@@ -63,7 +63,7 @@ class DeviceDoorbell extends Device {
         }
     }
     
-    async _setupCameraView(device_data) {
+    async _setupCameraImage(device_data) {
         this.log('_setupCamera', device_data);
 
         this.device.cameraImage = await this.homey.images.createImage();
@@ -77,7 +77,7 @@ class DeviceDoorbell extends Device {
                         snapshot.push(null);
                         return snapshot.pipe(stream);
                     } else {
-                        let logLine = " doorbell || device.js _setupCameraView || " + this.getName() + " grabImage " + error;
+                        let logLine = " doorbell || device.js _setupCameraImage || " + this.getName() + " grabImage " + error;
                         this.homey.app.writeLog(logLine);
                         let Duplex = require('stream').Duplex;
                         let snapshot = new Duplex();
@@ -91,7 +91,7 @@ class DeviceDoorbell extends Device {
             })
         })
 
-        this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
+        this.setCameraImage(this.getName(),'Snapshot',this.device.cameraImage)
             .catch(error =>{this.log("setCameraImage: ",error);})
     }
 

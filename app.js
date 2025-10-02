@@ -186,6 +186,11 @@ class App extends Homey.App {
         this._api.grabImage(data, callback);
     }
 
+    grabVideo(data, callback) {
+        this.log('app.js grabVideo called')
+        this._api.grabVideo(data, callback);
+    }
+
     enableMotion(data, callback) {
         this._api.enableMotion(data, callback);
     }

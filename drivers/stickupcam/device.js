@@ -33,7 +33,9 @@ class DeviceStickUpCam extends Device {
 
         // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
 
-        this._setupCameraView(this.getData());
+        this._setupCameraImage(this.getData());
+
+        this._setupCameraVideo(this.getData());
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
         this.homey.on('ringOnData', this._ringOnData.bind(this));
@@ -113,8 +115,8 @@ class DeviceStickUpCam extends Device {
         }
     }
 
-    async _setupCameraView(device_data) {
-        this.log('_setupCamera', device_data);
+    async _setupCameraImage(device_data) {
+        this.log('_setupCameraImage', device_data);
 
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
@@ -127,7 +129,7 @@ class DeviceStickUpCam extends Device {
                         snapshot.push(null);
                         return snapshot.pipe(stream);
                     } else {
-                        let logLine = " stickupcam || _setupCameraView || " + this.getName() + " grabImage " + error;
+                        let logLine = " stickupcam || _setupCameraImage || " + this.getName() + " grabImage " + error;
                         this.homey.app.writeLog(logLine);
                         let Duplex = require('stream').Duplex;
                         let snapshot = new Duplex();
@@ -140,9 +142,181 @@ class DeviceStickUpCam extends Device {
                 }
             })
         })
-        this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
-            .catch(error =>{this.log("setCameraImage: ",error);}) 
+        this.setCameraImage(this.getName(),'Snapshot',this.device.cameraImage)
+            .catch(error =>{this.log("setCameraImage: ",error);})
     }
+
+    async _setupCameraVideo(device_data) {
+        this.log('_setupCameraVideo', device_data);
+
+        try {
+            this.device.cameraVideo = await this.homey.videos.createVideoWebRTC();
+            // This gets called when a client (mobile app) wants to start viewing
+            this.device.cameraVideo.registerOfferListener(async (offerSdp) => {
+                let camera = '';
+                this.log('Received SDP offer from Homey front-end');
+                await this.homey.app.grabVideo(device_data, (error, result) => {
+                    try {
+                        if (!error) {
+                            camera = result;
+                        } else {
+                        }
+                    }
+                    catch (error) {
+                        this.log('device.js grabVideo',error.toString())
+                    }
+                })
+
+                const session = camera.createSimpleWebRtcSession();
+                let answerSdp = await session.start(offerSdp);
+
+                // run the fixer
+                answerSdp = this._reorderAndFixSdp(offerSdp, answerSdp);
+
+                return {
+                    answerSdp
+                };
+
+            });
+
+            await this.setCameraVideo(this.getName(), 'Live view', this.device.cameraVideo);
+        }
+        catch (error) {
+            this.error('_setupCameraVideo: Error creating camera:', error);
+        }
+
+    }
+
+    _reorderAndFixSdp(offerSdp, answerSdp) {
+        // normalize line endings
+        offerSdp = offerSdp.replace(/\r\n/g, '\n');
+        answerSdp = answerSdp.replace(/\r\n/g, '\n');
+
+        // split into header and media blocks
+        const splitMedia = s => {
+            const parts = s.split(/\n(?=m=)/); // keep "m=" at start of blocks
+            return {
+            header: parts[0].trim(),
+            blocks: parts.slice(1).map(b => b.trim())
+            };
+        };
+
+        const offer = splitMedia(offerSdp);
+        const answer = splitMedia(answerSdp);
+
+        // map answer blocks by mid
+        const mapByMid = (blocks) => {
+            const map = {};
+            for (const b of blocks) {
+            const m = b.match(/\na=mid:([^\s\r\n]+)/) || b.match(/^a=mid:([^\s\r\n]+)/m);
+            const mid = m ? m[1] : null;
+            if (mid) map[mid] = b;
+            else {
+                // try to extract mid from m= line index if no a=mid present
+                const midFromMline = b.match(/^m=\w+\s+\d+\s+[^\s]+\s.*$/m);
+                // skip if unknown
+            }
+            }
+            return map;
+        };
+
+        const answerMap = mapByMid(answer.blocks);
+        const offerMap = mapByMid(offer.blocks);
+
+        // get offer order of mids
+        const offerMids = [];
+        for (const b of offer.blocks) {
+            const m = b.match(/\na=mid:([^\s\r\n]+)/) || b.match(/^a=mid:([^\s\r\n]+)/m);
+            if (m) offerMids.push(m[1]);
+        }
+
+        // helper to detect offer direction for a given mid
+        const getOfferDirection = (mid) => {
+            const block = offerMap[mid];
+            if (!block) return null;
+            if (/\brecvonly\b/.test(block)) return 'recvonly';
+            if (/\bsendonly\b/.test(block)) return 'sendonly';
+            if (/\bsendrecv\b/.test(block)) return 'sendrecv';
+            return null;
+        };
+
+        // synthesize a minimal application block from offer if answer lacks it
+        const synthesizeApplicationBlock = (offerBlock, mid) => {
+            // try to extract sctp-port from offer block
+            const sctpMatch = (offerBlock && offerBlock.match(/a=sctp-port:(\d+)/));
+            const sctpPort = sctpMatch ? sctpMatch[1] : '5000';
+            return [
+            `m=application 0 UDP/DTLS/SCTP webrtc-datachannel`,
+            `c=IN IP4 0.0.0.0`,
+            `a=mid:${mid}`,
+            `a=inactive`,
+            `a=sctp-port:${sctpPort}`,
+            `a=max-message-size:262144`
+            ].join('\n');
+        };
+
+        // build reordered blocks in offer order
+        const reordered = [];
+        for (const mid of offerMids) {
+            let block = answerMap[mid];
+
+            if (block) {
+            // fix audio direction: if offer had recvonly -> answer must be sendonly
+            const offerDir = getOfferDirection(mid);
+            if (offerDir === 'recvonly') {
+                // only change if answer does not have sendonly already
+                if (!/^\s*a=sendonly\b/m.test(block) && !/^\s*a=sendrecv\b/m.test(block)) {
+                // nothing
+                }
+                // replace sendrecv with sendonly, or ensure sendonly present
+                block = block.replace(/\b(sendrecv|recvonly|sendonly)\b/, 'sendonly');
+            }
+            // ensure end-of-candidates present after candidates in each block (if candidates exist)
+            if (/^a=candidate:/m.test(block) && !/a=end-of-candidates/m.test(block)) {
+                // add end-of-candidates before first rtpmap or end of block
+                block = block.replace(/(\n(?=(a=rtpmap|a=rtcp-fb|a=fmtp|a=ssrc|$)))/m, '\na=end-of-candidates$1');
+            }
+            } else {
+            // missing in answer: synthesize minimal (mostly for application m-line)
+            const offerBlock = offerMap[mid];
+            if (offerBlock && /^m=application\b/m.test(offerBlock)) {
+                block = synthesizeApplicationBlock(offerBlock, mid);
+            } else if (offerBlock) {
+                // synthesize a minimal media m-line with inactive
+                const mline = offerBlock.split('\n')[0]; // m=... line from offer
+                const mediaType = mline.split(' ')[0].replace(/^m=/, '');
+                block = [
+                `${mline.split(' ')[0]} 0 ${mline.split(' ')[2]} ${mline.split(' ').slice(3).join(' ')}`, // keep payload types
+                `c=IN IP4 0.0.0.0`,
+                `a=mid:${mid}`,
+                `a=inactive`
+                ].join('\n');
+            } else {
+                // fallback: blank inactive mid
+                block = `m=application 0 UDP/DTLS/SCTP webrtc-datachannel\nc=IN IP4 0.0.0.0\na=mid:${mid}\na=inactive`;
+            }
+            }
+
+            // ensure block lines are trimmed and appended
+            reordered.push(block.trim());
+        }
+
+        // make bundle group match offer
+        const offerBundle = (offer.header.match(/^a=group:BUNDLE (.+)$/m) || [])[1] || offerMids.join(' ');
+        const headerLines = offer.header.split('\n').filter(Boolean).map(l => l.trim());
+        // replace or add a=group:BUNDLE line in answer header
+        let answerHeader = answer.header;
+        if (/^a=group:BUNDLE /m.test(answerHeader)) {
+            answerHeader = answerHeader.replace(/^a=group:BUNDLE .*/m, `a=group:BUNDLE ${offerBundle}`);
+        } else {
+            answerHeader = `${answerHeader}\n a=group:BUNDLE ${offerBundle}`;
+        }
+
+        // join everything with CRLF as SDP expects
+        const final = [answerHeader, ...reordered].join('\r\n') + '\r\n';
+        return final;
+    }
+
 
     async _ringOnNotification(notification) {
         //if (notification.ding.doorbot_id !== this.getData().id)
