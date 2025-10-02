@@ -23,7 +23,6 @@ class App extends Homey.App {
             await LogToFile();
             // log at: http://<homey IP>:8008
         }
-        
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
 
@@ -182,13 +181,18 @@ class App extends Homey.App {
         this._api.unlock(data, callback);
     }
 
+    /*
     grabImage(data, callback) {
         this._api.grabImage(data, callback);
     }
+    */
 
-    grabVideo(data, callback) {
-        this.log('app.js grabVideo called')
-        this._api.grabVideo(data, callback);
+    grabImage(data) {
+        return this._api.grabImage(data);
+    }
+
+    grabVideo(data,offerSdp) {
+        return this._api.grabVideo(data,offerSdp);
     }
 
     enableMotion(data, callback) {
