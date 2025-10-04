@@ -8,7 +8,7 @@ const events = require('events');
 // !!!! remove next lines before publishing !!!!
  const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
-let capturedStderr = '';
+//let capturedStderr = '';
 const originalStderrWrite = process.stderr.write;
 // process.env.DEBUG = '*'
 
@@ -43,6 +43,7 @@ class App extends Homey.App {
 
         this.log('app.js                     preparing logging environment')
             // Override the default stderr.write function
+            /*
             process.stderr.write = (chunk, encoding, callback) => {
                 // Append the stderr output to the variable
                 capturedStderr += chunk; 
@@ -53,6 +54,7 @@ class App extends Homey.App {
                 // Write to the original stderr
                 originalStderrWrite.call(process.stderr, chunk, encoding, callback); 
             };
+            */
         this.log('app.js                     preparing logging environment done')
 
         this.lastLocationModes = [];
@@ -66,6 +68,7 @@ class App extends Homey.App {
         this._api.on('ringOnData',this._ringOnData.bind(this));
         this._api.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
         this._api.on('ringOnLocation', this._ringOnLocation.bind(this));
+        this.supportsModern = this._api.supportsModern;
 
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
@@ -180,12 +183,6 @@ class App extends Homey.App {
     unlock(data, callback) {
         this._api.unlock(data, callback);
     }
-
-    /*
-    grabImage(data, callback) {
-        this._api.grabImage(data, callback);
-    }
-    */
 
     grabImage(data) {
         return this._api.grabImage(data);

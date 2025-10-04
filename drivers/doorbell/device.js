@@ -38,7 +38,10 @@ class DeviceDoorbell extends Device {
 
         this._setupCameraImage(this.getData());
 
-        this._setupCameraVideo(this.getData());
+        if ( this.homey.app.supportsModern ) {
+            this.log('device.js _initDevice supportsModern',this.homey.app.supportsModern)
+            this._setupCameraVideo(this.getData())
+        }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
         this.homey.on('ringOnData', this._ringOnData.bind(this));
