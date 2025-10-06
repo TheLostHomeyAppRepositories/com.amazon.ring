@@ -1,30 +1,25 @@
-Connectez vos produits Ring Doorbell ou Camera à Homey.
+Connectez vos produits Ring Doorbell, Camera et Alarm à Homey.  
 
-Appareils pris en charge
-• Ring Chime (Pro)
-• Ring Stick Up Cam / Ring Indoor Cam
-• Ring Video Doorbell (Pro)
-• Ring Intercom
+Intégrer les appareils Ring à Homey offre un contrôle fluide et une automatisation pour votre maison intelligente. Avec la prise en charge des sonnettes, caméras et systèmes d'alarme Ring, vous pouvez améliorer la sécurité et le confort de votre maison en centralisant la gestion des appareils dans l'écosystème Homey. Voici ce que vous pouvez faire :  
 
-Langues prises en charge
-🇬🇧 English
-🇩🇰 Dansk
-🇩🇪 Deutsch
-🇪🇸 Español
-🇫🇷 Français
-🇮🇹 Italiano
-🇳🇱 Nederlands
-🇳🇴 Norsk
-🇵🇱 Polski
-🇸🇪 Svenska
+- Doorbell Notifications : Recevez des alertes instantanées lorsque quelqu’un sonne à votre Ring Doorbell et envoyez une capture d'écran de votre sonnette.  
+- Camera Monitoring : Utilisez les événements de détection de mouvement pour déclencher des automatisations, comme allumer les lumières ou envoyer des notifications, y compris des captures d'écran.  
+- Alarm Integration : Activez ou désactivez votre système d'alarme Ring depuis Homey et connectez-le à d'autres appareils, comme verrouiller des portes ou activer des sirènes en cas de menace détectée.  
+- Custom Automations : Créez des flux puissants grâce à la fonction Flow de Homey. Par exemple, allumez automatiquement les lumières extérieures lorsque votre caméra Ring ou le Ring Outdoor Motion Detector détecte un mouvement après le coucher du soleil.  
 
-Comment faire pour que cela fonctionne?
-• Ajoutez un appareil Ring
+Avec Ring et Homey travaillant ensemble, vous pouvez créer une maison plus intelligente et réactive qui vous tient informé et sous contrôle, où que vous soyez.  
 
-Lors de l'ajout de votre premier appareil, vous devrez vous connecter avec votre compte Ring. Tout appareil ajouté après cela sera ajouté en utilisant la connexion précédente.
+Visitez le sujet de support Ring Doorbell, Camera And Alarm sur le forum communautaire de Homey pour plus d'informations. Cliquez sur "Visit Forum >>" dans la section Communauté dans le bloc gris ci-dessous.  
+(Ou copiez ce lien et collez-le dans la barre d'adresse de votre navigateur : https://community.homey.app/t/76364)  
 
-L'authentification de sécurité à deux facteurs est requise. Vous devez l'activer sur votre compte Ring!
-
-Veuillez visiter le sujet Sonnette Ring et Caméra sur le forum de la communauté Athom pour plus d'informations, cliquez sur Visiter le forum >> sous la communauté dans le bloc gris ci-dessous.
-(Ou copiez ce lien et collez-le dans la barre d'adresse de votre navigateur: https://community.athom.com/t/76364)
-
+Langues prises en charge :  
+🇬🇧 English  
+🇩🇰 Dansk  
+🇩🇪 Deutsch  
+🇪🇸 Español  
+🇫🇷 Français  
+🇮🇹 Italiano  
+🇳🇱 Nederlands  
+🇳🇴 Norsk  
+🇵🇱 Polski  
+🇸🇪 Svenska  

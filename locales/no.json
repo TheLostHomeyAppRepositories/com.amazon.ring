@@ -42,6 +42,7 @@
         "package": "Pakke",
         "other": "Annet",
         "motion": "Bevegelse",
+        "vehicle": "Kjøretøy",
         "unknown": "ukjent"
     }    
 }

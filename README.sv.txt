@@ -1,10 +1,16 @@
-Anslut dina Ring Doorbell- eller Camera-produkter med Homey.
+Anslut dina Ring Doorbell-, Kamera- och Alarmprodukter till Homey.  
 
-Stödda enheter
-• Ring Chime (Pro)
-• Ring Stick Up Cam / Ring Indoor Cam
-• Ring Video Doorbell (Pro)
-• Ring Intercom
+Genom att integrera Ring-enheter med Homey får du sömlös kontroll och automatisering för ditt smarta hem. Med stöd för Ring Doorbells, Kameror och Alarmsystem kan du förbättra säkerheten och bekvämligheten i ditt hem genom att centralisera enhetshantering i Homey-ekosystemet. Här är vad du kan göra:  
+
+- Doorbell Notifications: Ta emot omedelbara aviseringar när någon ringer på din Ring Doorbell och skicka en snapshot från din dörrklocka.  
+- Camera Monitoring: Använd rörelsedetektering för att utlösa automationer, som att tända lampor eller skicka aviseringar, inklusive snapshots.  
+- Alarm Integration: Armera eller avväpna ditt Ring Alarm-system från Homey och koppla det till andra enheter, som att låsa dörrar eller aktivera sirener när ett hot upptäcks.  
+- Custom Automations: Skapa kraftfulla flöden med Homeys Flow-funktion. Till exempel, tänd automatiskt utomhusbelysning när din Ring Camera eller Ring Outdoor Motion Detector upptäcker rörelse efter solnedgången.  
+
+Med Ring och Homey som samarbetar kan du skapa ett smartare och mer responsivt hem som håller dig informerad och under kontroll, oavsett var du är.  
+
+Besök ämnet Ring Doorbell, Camera And Alarm support på Homey Community Forum för mer information. Klicka på Visit Forum >> under Community-sektionen i den grå blocken nedan.  
+(Eller kopiera denna länk och klistra in den i adressfältet i din webbläsare: https://community.homey.app/t/76364)  
 
 Stödda språk
 🇬🇧 English
@@ -17,13 +23,3 @@ Stödda språk
 🇳🇴 Norsk
 🇵🇱 Polski
 🇸🇪 Svenska
-
-Hur får jag det att fungera?
-• Lägg till en Ring-enhet
-
-När du lägger till din första enhet behöver du logga in med ditt Ring-konto, alla enheter som läggs till efter det kommer att läggas till med den tidigare inloggningen.
-
-Tvåfaktors säkerhetsautentisering krävs, du måste aktivera detta på ditt Ring-konto!
-
-Besök gärna ämnet om Ring Doorbell och Camera på Athom Community Forum för mer information, klicka på Besök forum >> under Community i det grå blocket nedan.
-(eller kopiera den här länken och klistra in den i adressfältet i din webbläsare: https://community.athom.com/t/76364)

@@ -1,5 +1,3 @@
-'use strict';
-
 const Homey = require('homey');
 const Device = require('../../lib/Device.js');
 
@@ -88,6 +86,24 @@ class DeviceChime extends Device {
             });
         });   
     }
+
+    /*
+    https://github.com/tsightler/ring-mqtt/blob/b4fcec47a962f1249c9b659f298fef8a3f4bf712/devices/chime.js#L261C1-L265C19
+    await this.setDeviceSettings({
+        "night_light_settings": {
+            "light_sensor_enabled": Boolean(command === 'on')
+        }
+    })
+
+        async setDeviceSettings(settings) {
+        const response = await this.device.restClient.request({
+            method: 'PATCH',
+            url: `https://api.ring.com/devices/v1/devices/${this.device.id}/settings`,
+            json: settings
+        })
+        return response
+    }
+    */
 }
 
 module.exports = DeviceChime;

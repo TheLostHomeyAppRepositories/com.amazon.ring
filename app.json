@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.12.1",
+  "version": "2.14.2",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -41,7 +41,7 @@
   },
   "homeyCommunityTopicId": 76364,
   "source": "https://github.com/daneedk/com.amazon.ring",
-  "support": "https://community.athom.com/t/76364",
+  "support": "https://community.homey.app/t/76364",
   "description": {
     "en": "Ring Doorbell, Camera and Alarm support for Homey",
     "da": "Ring Doorbell, kamera og alarm-understøttelse til Homey",
@@ -166,28 +166,28 @@
       },
       "desc": {
         "en": "Doorbell",
-        "nl": "Deurbel",
+        "da": "Dørklokke",
         "de": "Türklingel",
+        "es": "Portero",
         "fr": "Sonnette",
         "it": "Campanello",
-        "sv": "Dörrklocka",
+        "nl": "Deurbel",
         "no": "Dørklokke",
-        "es": "Timbre",
-        "da": "Dørklokke",
-        "pl": "Dzwonek do drzwi"
+        "pl": "Domofon",
+        "sv": "Dörrklocka"
       },
       "insights": true,
       "insightsTitleTrue": {
-          "en": "Doorbell turned on",
-          "nl": "Deurbel aangezet",
-          "de": "Türklingel eingeschaltet",
-          "fr": "Sonnette activée",
-          "it": "Campanello acceso",
-          "sv": "Dörrklocka aktiverad",
-          "no": "Dørklokke slått på",
-          "es": "Timbre encendido",
-          "da": "Dørklokke tændt",
-          "pl": "Dzwonek do drzwi włączony"      
+        "en": "Doorbell turned on",
+        "nl": "Deurbel aangezet",
+        "de": "Türklingel eingeschaltet",
+        "fr": "Sonnette activée",
+        "it": "Campanello acceso",
+        "sv": "Dörrklocka aktiverad",
+        "no": "Dørklokke slått på",
+        "es": "Timbre encendido",
+        "da": "Dørklokke tændt",
+        "pl": "Dzwonek do drzwi włączony"    
       },
       "insightsTitleFalse": {
         "en": "Doorbell turned off",
@@ -303,7 +303,7 @@
                 "nl": "U kunt uw Ring Doorbell gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
                 "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
                 "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
-                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
+                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."            
               }
             },
             {
@@ -678,7 +678,108 @@
             "template": "done"
           }
         ]
-    }
+    },
+    {
+      "id": "motiondetector",
+        "name": {
+          "en": "Motion Detector",
+          "nl": "Bewegingsdetector"
+        },
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "alarm_tamper",
+          "measure_battery"
+        ],
+        "energy": {
+          "batteries": [ "AA", "AA" ]
+        },
+        "images": {
+          "large": "./drivers/motiondetector/assets/images/large.jpg",
+          "small": "./drivers/motiondetector/assets/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "start"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ],
+        "repair": [
+          {
+            "id": "start"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "done",
+            "template": "done"
+          }
+        ]
+    },
+    {
+      "id": "keypad",
+      "name": {
+        "en": "Keypad",
+        "nl": "Bedieningspaneel"
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [ "INTERNAL" ]
+      },
+      "images": {
+        "large": "./drivers/keypad/assets/images/large.jpg",
+        "small": "./drivers/keypad/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ]
+    }  
   ],
   "flow": {
     "triggers": [
@@ -773,16 +874,16 @@
               "en": "Motion type"
             },
             "example": {
-              "da": "Menneske, Pakke, Andet, Ukendt",
-              "de": "Mensch, Paket, Andere, Unbekannt",
-              "en": "Human, Package, Other, Unknown",
-              "es": "Humano, Paquete, Otro, Desconocido",
-              "fr": "Humain, Paquet, Autre, Inconnu",
-              "it": "Persona, Pacco, Altro, Sconosciuto",
-              "nl": "Mens, Pakket, Overig, Onbekend",
-              "no": "Menneske, Pakke, Annet, Ukjent",
-              "pl": "Człowiek, Paczka, Inne, Nieznany",
-              "sv": "Människa, Paket, Annat, Okänd"
+                "da": "Menneske, Pakke, Køretøj, Andet, Ukendt",
+                "de": "Mensch, Paket, Fahrzeug, Andere, Unbekannt",
+                "en": "Human, Package, Vehicle, Other, Unknown",
+                "es": "Humano, Paquete, Vehículo, Otro, Desconocido",
+                "fr": "Humain, Paquet, Véhicule, Autre, Inconnu",
+                "it": "Persona, Pacco, Veicolo, Altro, Sconosciuto",
+                "nl": "Mens, Pakket, Voertuig, Overig, Onbekend",
+                "no": "Menneske, Pakke, Kjøretøy, Annet, Ukjent",
+                "pl": "Człowiek, Paczka, Pojazd, Inne, Nieznany",
+                "sv": "Människa, Paket, Fordon, Annat, Okänd"
             }
           }
         ],

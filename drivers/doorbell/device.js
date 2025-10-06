@@ -1,5 +1,3 @@
-'use strict';
-
 const Homey = require('homey');
 const Device = require('../../lib/Device.js');
 
@@ -34,9 +32,11 @@ class DeviceDoorbell extends Device {
         this._onAuthenticationChanged = this._setAvailability.bind(this);
         this.homey.on('authenticationChanged', this._onAuthenticationChanged);
 
-        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+        this._setupCameraImage(this.getData());
 
-        this._setupCameraView(this.getData());
+        if (this.homey.hasFeature?.('camera-streaming')) {
+            this._setupCameraVideo(this.getData());
+        }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
         this.homey.on('ringOnData', this._ringOnData.bind(this));
@@ -63,36 +63,55 @@ class DeviceDoorbell extends Device {
         }
     }
     
-    async _setupCameraView(device_data) {
+    async _setupCameraImage(device_data) {
         this.log('_setupCamera', device_data);
 
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
-            await this.homey.app.grabImage(device_data, (error, result) => {
-                try {
-                    if (!error) {
-                        let Duplex = require('stream').Duplex;
-                        let snapshot = new Duplex();
-                        snapshot.push(Buffer.from(result, 'binary'));
-                        snapshot.push(null);
-                        return snapshot.pipe(stream);
-                    } else {
-                        let logLine = " doorbell || device.js _setupCameraView || " + this.getName() + " grabImage " + error;
-                        this.homey.app.writeLog(logLine);
-                        let Duplex = require('stream').Duplex;
-                        let snapshot = new Duplex();
-                        snapshot.push(null);
-                        return snapshot.pipe(stream);
-                    }
-                }
-                catch (error) {
-                    this.log('device.js grabImage',error.toString())
-                }
-            })
-        })
+            try {
+                const result = await this.homey.app.grabImage(device_data);
 
-        this.setCameraImage(this.getName(),'snapshot',this.device.cameraImage)
+                const { Duplex } = require('stream');
+                const snapshot = new Duplex();
+                snapshot.push(Buffer.from(result, 'binary'));
+                snapshot.push(null);
+                return snapshot.pipe(stream);
+            } catch (error) {
+                this.log('device.js grabImage', error.toString());
+
+                const { Duplex } = require('stream');
+                const snapshot = new Duplex();
+                snapshot.push(null);
+                return snapshot.pipe(stream);
+            }
+        });
+
+        this.setCameraImage(this.getName(),'Snapshot',this.device.cameraImage)
             .catch(error =>{this.log("setCameraImage: ",error);})
+    }
+
+    async _setupCameraVideo(device_data) {
+        this.log('_setupCameraVideo', device_data);
+
+        try {
+            this.device.cameraVideo = await this.homey.videos.createVideoWebRTC();
+            // This gets called when a client (mobile app) wants to start viewing
+            this.device.cameraVideo.registerOfferListener(async (offerSdp) => {
+              
+                let answerSdp = await this.homey.app.grabVideo(device_data,offerSdp);                
+
+                return {
+                    answerSdp
+                };
+
+            });
+
+            await this.setCameraVideo(this.getName(), 'Live view', this.device.cameraVideo);
+        }
+        catch (error) {
+            this.error('_setupCameraVideo: Error creating camera:', error);
+        }
+
     }
 
     async _ringOnNotification(notification) {
@@ -102,10 +121,12 @@ class DeviceDoorbell extends Device {
 
         //this.log('_ringOnNotification', notification);
 
-this.log('------------------------------------------------------------------');
-this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
-this.log('notification.android_config.category',notification.android_config.category)
-this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+        /*
+        this.log('------------------------------------------------------------------');
+        this.log('notification.data.event.ding.subtype:',notification.data.event.ding.subtype)
+        this.log('notification.android_config.category',notification.android_config.category)
+        this.log('notification.data.event.ding.detection_type:',notification.data.event.ding.detection_type)
+        */
 
         // need new evaluation for next line
         //if (notification.subtype === 'ding') {

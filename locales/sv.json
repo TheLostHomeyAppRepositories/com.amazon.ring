@@ -42,6 +42,7 @@
         "package": "Paket",
         "other": "Annat",
         "motion": "Rörelse",
+        "vehicle": "Fordon",
         "unknown": "okänd"
     }  
 }
