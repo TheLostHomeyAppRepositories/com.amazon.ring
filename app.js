@@ -1,64 +1,28 @@
-'use strict';
-
+require('./lib/polyfills');
 const Homey = require('homey');
+const api   = require('./lib/Api.js');
+//const events = require('events');
 
-const api = require('./lib/Api.js');
-const events = require('events');
 
 // !!!! remove next lines before publishing !!!!
- const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
-
-let capturedStderr = '';
-const originalStderrWrite = process.stderr.write;
-// process.env.DEBUG = '*'
+// const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
 class App extends Homey.App {
 
-    
     async onInit() {
         // !!!! remove next lines before publishing !!!!
-        
+        /*
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
             // log at: http://<homey IP>:8008
         }
-        
+        */
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
 
-        this.log('app.js                     preparing Node environment')
-        if (! global.fetch) {
-            global.fetch = require('node-fetch');
-        }
-        if (! global.AbortSignal.timeout) {
-            global.AbortSignal.timeout = timeout => {
-                const controller = new AbortController();
-                const abort = setTimeout(() => {
-                controller.abort();
-                }, timeout);
-                return controller.signal;
-            }
-        }
-        this.log('app.js                     preparing Node environment done')
-
-        this.log('app.js                     preparing logging environment')
-            // Override the default stderr.write function
-            process.stderr.write = (chunk, encoding, callback) => {
-                // Append the stderr output to the variable
-                capturedStderr += chunk; 
-                
-                // Process error here
-                This.log('Error captured:', capturedStderr)
-
-                // Write to the original stderr
-                originalStderrWrite.call(process.stderr, chunk, encoding, callback); 
-            };
-        this.log('app.js                     preparing logging environment done')
-
         this.lastLocationModes = [];
-        this.alarmSystem = {};
-        this.alarmSystem.location = {}
+        this.alarmSystem = { location: {} };
 
         this._api = new api(this.homey);
 
@@ -67,6 +31,7 @@ class App extends Homey.App {
         this._api.on('ringOnData',this._ringOnData.bind(this));
         this._api.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
         this._api.on('ringOnLocation', this._ringOnLocation.bind(this));
+        this.supportsModern = this._api.supportsModern;
 
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
@@ -79,10 +44,13 @@ class App extends Homey.App {
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
 
+        // Purge the logfile
+        this.homey.settings.set('myLog', '' );
+
         await this._api.init();
 
-        let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
-        this.homey.app.writeLog(logLine);
+        //let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
+        //this.homey.app.writeLog(logLine);
     }
 
     // Called from event emitted from _connectRingAPI() in Api.js
@@ -182,8 +150,12 @@ class App extends Homey.App {
         this._api.unlock(data, callback);
     }
 
-    grabImage(data, callback) {
-        this._api.grabImage(data, callback);
+    grabImage(data) {
+        return this._api.grabImage(data);
+    }
+
+    grabVideo(data,offerSdp) {
+        return this._api.grabVideo(data,offerSdp);
     }
 
     enableMotion(data, callback) {
@@ -295,7 +267,7 @@ class App extends Homey.App {
         if ( savedHistory != undefined ) {
             // cleanup history
             let lineCount = savedHistory.split(/\r\n|\r|\n/).length;
-            if ( lineCount > 2000 ) {
+            if ( lineCount > 200 ) {
                 let deleteItems = parseInt( lineCount * 0.2 );
                 let savedHistoryArray = savedHistory.split(/\r\n|\r|\n/);
                 let cleanUp = savedHistoryArray.splice(-1*deleteItems, deleteItems, "" );
@@ -335,7 +307,7 @@ class App extends Homey.App {
         return day + "-" + month + "-" + year + "  ||  " + hour + ":" + min + ":" + sec + "." + msec + "  ||  ";
     }
 
-    // returns the supplied version is a usable format; version.major, version.minor, version.path
+    // returns the supplied version in a usable format; version.major, version.minor, version.path
     parseVersionString(version) {
         if (typeof(version) != 'string') { return false; }
         var x = version.split('.');

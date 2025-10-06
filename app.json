@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.14.1",
+  "version": "2.14.2",
   "compatibility": ">=8.0.0",
   "platforms": ["local"],
   "sdk": 3,
@@ -41,7 +41,7 @@
   },
   "homeyCommunityTopicId": 76364,
   "source": "https://github.com/daneedk/com.amazon.ring",
-  "support": "https://community.athom.com/t/76364",
+  "support": "https://community.homey.app/t/76364",
   "description": {
     "en": "Ring Doorbell, Camera and Alarm support for Homey",
     "da": "Ring Doorbell, kamera og alarm-understøttelse til Homey",
