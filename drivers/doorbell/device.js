@@ -36,9 +36,13 @@ class DeviceDoorbell extends Device {
 
         this._setupCameraImage(this.getData());
 
-        if ( this.homey.app.supportsModern ) {
-            this.log('device.js _initDevice supportsModern',this.homey.app.supportsModern)
-            this._setupCameraVideo(this.getData())
+        try {
+            if (this.homey.hasFeature('camera-streaming')) {
+                this._setupCameraVideo(this.getData())
+            }
+        }
+        catch (e) {
+            // Camera streaming is not supported, do nothing
         }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
