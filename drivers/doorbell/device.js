@@ -32,17 +32,10 @@ class DeviceDoorbell extends Device {
         this._onAuthenticationChanged = this._setAvailability.bind(this);
         this.homey.on('authenticationChanged', this._onAuthenticationChanged);
 
-        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
-
         this._setupCameraImage(this.getData());
 
-        try {
-            if (this.homey.hasFeature('camera-streaming')) {
-                this._setupCameraVideo(this.getData())
-            }
-        }
-        catch (e) {
-            // Camera streaming is not supported, do nothing
+        if (this.homey.hasFeature?.('camera-streaming')) {
+            this._setupCameraVideo(this.getData());
         }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
