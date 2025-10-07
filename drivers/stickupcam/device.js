@@ -6,8 +6,7 @@ const statusTimeout = 10000;
 class DeviceStickUpCam extends Device {
 
     _initDevice() {
-        this.log('_initDevice');
-        //this.log('name:', this.getName());
+        this.log('_initDevice for', this.getName());
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
 
@@ -22,12 +21,13 @@ class DeviceStickUpCam extends Device {
         
         this.setCapabilityValue('alarm_motion', false)
             .catch(error => {this.error(error)});
+         
+        // Add this device to the app registry
+        this.homey.app._devices.push(this);
 
-        this.setAvailable();
-
-        // fix?
-        this._onAuthenticationChanged = this._setAvailability.bind(this);
-        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
+        // Set initial availability based on app authentication
+        const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
+        this._setAvailability(initialStatus);
 
         this._setupCameraImage(this.getData());
         
@@ -299,7 +299,7 @@ class DeviceStickUpCam extends Device {
 
     onCapabilityFloodLight(value, opts)
 	{
-        console.log('flood light requested ['+value+']');
+        // this.log('flood light requested ['+value+']');
         this.setCapabilityValue('flood_light', value)
             .catch(error => {this.error(error)});
 
@@ -341,7 +341,7 @@ class DeviceStickUpCam extends Device {
 
     onCapabilitySiren(value, opts)
 	{
-        console.log('Siren requested ['+value+']');
+        // this.log('Siren requested ['+value+']');
         this.setCapabilityValue('siren', value)
             .catch(error => {this.error(error)});
             

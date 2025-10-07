@@ -21,6 +21,9 @@ class App extends Homey.App {
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
 
+        // Registry for all devices
+        this._devices = []; // deviceId -> device instance
+
         this.lastLocationModes = [];
         this.alarmSystem = { location: {} };
 
@@ -49,8 +52,28 @@ class App extends Homey.App {
 
         await this._api.init();
 
+        // new code for authentication
+        this.homey.on('authenticationChanged', this._onAuthenticationChanged.bind(this));
+
         //let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         //this.homey.app.writeLog(logLine);
+      
+    }
+
+    // make the authentication status available to devices by retrieving this.homey.app.isAuthenticated()
+    // new code for authentication
+    isAuthenticated() {
+        return !!this._api._authenticated;
+    }
+
+    // new code for authentication
+    _onAuthenticationChanged(status) {
+        this._api._authenticated = status === 'authenticated';
+        Object.values(this._devices).forEach(device => {
+            if (typeof device._setAvailability === 'function') {
+                device._setAvailability(status);
+            }
+        });
     }
 
     // Called from event emitted from _connectRingAPI() in Api.js

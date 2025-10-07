@@ -6,8 +6,7 @@ const statusTimeout = 10000;
 class DeviceDoorbell extends Device {
 
     _initDevice() {
-        this.log('_initDevice');
-        //this.log('name:', this.getName());
+        this.log('_initDevice for', this.getName());
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
 
@@ -26,11 +25,12 @@ class DeviceDoorbell extends Device {
         this.setCapabilityValue('alarm_motion', false)
             .catch(error => {this.error(error)});
 
-        this.setAvailable();
+        // Add this device to the app registry
+        this.homey.app._devices.push(this);
 
-        // fix?
-        this._onAuthenticationChanged = this._setAvailability.bind(this);
-        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
+        // Set initial availability based on app authentication
+        const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
+        this._setAvailability(initialStatus);
 
         this._setupCameraImage(this.getData());
 

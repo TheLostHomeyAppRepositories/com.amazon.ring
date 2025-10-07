@@ -52,8 +52,7 @@
     "nl": "Ring Deurbell-, Camera- en Alarm-ondersteuning voor Homey",
     "no": "Ring Doorbell, Camera og Alarm-støtte for Homey",
     "pl": "Obsługa dzwonka, kamery i alarmu Ring dla Homey",
-    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey",
-    "ko": "Homey에서 Ring 초인종, 카메라 및 알람을 편리하게 사용할 수 있습니다."
+    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey"
   },
   "images": {
     "large": "./assets/images/large.jpg",
@@ -76,8 +75,7 @@
         "nl": "Schijnwerper",
         "no": "Flomlys",
         "pl": "Reflektor",
-        "sv": "Översvämningsljus",
-        "ko": "투광등"
+        "sv": "Översvämningsljus"
       },
       "getable": true,
       "setable": true,
@@ -96,8 +94,7 @@
         "nl": "Sirene",
         "no": "Sirene",
         "pl": "Syrena",
-        "sv": "Siren",
-        "ko": "사이렌"
+        "sv": "Siren"
       },
       "getable": true,
       "setable": true,
@@ -117,8 +114,7 @@
         "es": "Alarma de movimiento",
         "da": "Bevægelsesalarm",
         "ru": "Сигнал движения",
-        "pl": "Czujnik ruchu",
-        "ko": "움직임 알람"
+        "pl": "Czujnik ruchu"
       },
       "insights": true,
       "insightsTitleTrue": {
@@ -132,8 +128,7 @@
         "es": "Alarma de movimiento activada",
         "da": "Bevægelsesalarm blev aktiveret",
         "ru": "Сигнал движения включен",
-        "pl": "Czujnik ruchu włączony",
-        "ko": "움직임 알람이 켜졌습니다"
+        "pl": "Czujnik ruchu włączony"
       },
       "insightsTitleFalse": {
         "en": "Motion alarm turned off",
@@ -146,8 +141,7 @@
         "es": "Alarma de movimiento desactivada",
         "da": "Bevægelsesalarm blev deaktiveret",
         "ru": "Сигнал движения выключен",
-        "pl": "Czujnik ruchu wyłączony",
-        "ko": "움직임 알람이 꺼졌습니다"
+        "pl": "Czujnik ruchu wyłączony"
       },
       "getable": true,
       "setable": false,
@@ -168,8 +162,7 @@
         "no": "Dørklokke",
         "es": "Timbre",
         "da": "Dørklokke",
-        "pl": "Dzwonek do drzwi",
-        "ko": "초인종"
+        "pl": "Dzwonek do drzwi"
       },
       "desc": {
         "en": "Doorbell",
@@ -181,8 +174,7 @@
         "nl": "Deurbel",
         "no": "Dørklokke",
         "pl": "Domofon",
-        "sv": "Dörrklocka",
-        "ko": "초인종"
+        "sv": "Dörrklocka"
       },
       "insights": true,
       "insightsTitleTrue": {
@@ -195,8 +187,7 @@
         "no": "Dørklokke slått på",
         "es": "Timbre encendido",
         "da": "Dørklokke tændt",
-        "pl": "Dzwonek do drzwi włączony",
-        "ko": "초인종이 울리기 시작했습니다"
+        "pl": "Dzwonek do drzwi włączony"    
       },
       "insightsTitleFalse": {
         "en": "Doorbell turned off",
@@ -208,8 +199,7 @@
         "no": "Dørklokke slått av",
         "es": "Timbre apagado",
         "da": "Dørklokke slukket",
-        "pl": "Dzwonek do drzwi wyłączony",
-        "ko": "초인종이 꺼졌습니다"
+        "pl": "Dzwonek do drzwi wyłączony"
       },
       "getable": true,
       "setable": false,
@@ -229,8 +219,7 @@
         "nl": "Deurbel",
         "no": "Dørklokke",
         "pl": "Domofon",
-        "sv": "Dörrklocka",
-        "ko": "초인종"
+        "sv": "Dörrklocka"
       },
       "images": {
         "large": "./drivers/doorbell/assets/images/large.jpg",
@@ -285,8 +274,7 @@
             "nl": "Homey integratie-instellingen",
             "no": "Homey integreringsinnstillinger",
             "pl": "Ustawienia integracji Homey",
-            "sv": "Homey integrationsinställningar",
-            "ko": "Homey 연동 설정"
+            "sv": "Homey integrationsinställningar"
           },
           "children": [
             {
@@ -303,8 +291,7 @@
                 "nl": "Bewegingsdetectie gebruiken",
                 "no": "Bruk bevegelsesdeteksjon",
                 "pl": "Użyj wykrywania ruchu",
-                "sv": "Använd rörelsedetektering",
-                "ko": "움직임 감지 사용"
+                "sv": "Använd rörelsedetektering"
               },
               "hint": {
                 "en": "You can use your Ring Doorbell as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
@@ -316,8 +303,7 @@
                 "nl": "U kunt uw Ring Doorbell gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
                 "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
                 "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
-                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
-                "ko": "이 옵션을 켜면 Ring 초인종을 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용해 움직임 감지를 동적으로 켜거나 끌 수도 있습니다."
+                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."            
               }
             },
             {
@@ -342,8 +328,7 @@
                 "nl": "Schakel bewegingsalarm uit na",
                 "no": "Deaktiver bevegelsesalarm etter",
                 "pl": "Wyłącz alarm ruchu po",
-                "sv": "Inaktivera rörelsealarm efter",
-                "ko": "다음 시간 이후 움직임 알람 끄기"
+                "sv": "Inaktivera rörelsealarm efter"
               },
               "hint": {
                 "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
@@ -355,8 +340,7 @@
                 "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
                 "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
                 "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
-                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder.",
-                "ko": "지정된 시간이 지나면 움직임 알람이 자동으로 꺼집니다.\n\n기본값: 30초"
+                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder."
               }
             }
           ]
@@ -367,8 +351,7 @@
       "id": "chime",
       "name": {
         "en": "Chime",
-        "nl": "Chime",
-        "ko": "차임"
+        "nl": "Chime"
       },
       "images": {
         "large": "./drivers/chime/assets/images/large.jpg",
@@ -412,8 +395,7 @@
       "id": "stickupcam",
       "name": {
         "en": "Camera",
-        "nl": "Camera",
-        "ko": "카메라"
+        "nl": "Camera"
       },
       "images": {
         "large": "./drivers/stickupcam/assets/images/large.jpg",
@@ -468,8 +450,7 @@
             "nl": "Homey integratie-instellingen",
             "no": "Homey integreringsinnstillinger",
             "pl": "Ustawienia integracji Homey",
-            "sv": "Homey integrationsinställningar",
-            "ko": "Homey 연동 설정"
+            "sv": "Homey integrationsinställningar"
           },
           "children": [
             {
@@ -486,8 +467,7 @@
                 "nl": "Bewegingsdetectie gebruiken",
                 "no": "Bruk bevegelsesdeteksjon",
                 "pl": "Użyj wykrywania ruchu",
-                "sv": "Använd rörelsedetektering",
-                "ko": "움직임 감지 사용"
+                "sv": "Använd rörelsedetektering"
               },
               "hint": {
                 "en": "You can use your Ring Camera as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
@@ -499,8 +479,7 @@
                 "nl": "U kunt uw Ring Camera gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
                 "no": "Du kan bruke Ring Camera som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
                 "pl": "Możesz użyć swojego kamery Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
-                "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
-                "ko": "이 설정을 켜면 Ring 카메라를 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용하여 움직임 감지를 동적으로 켜거나 끌 수 있습니다."
+                "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen."
               }
             },
             {
@@ -525,8 +504,7 @@
                 "nl": "Schakel bewegingsalarm uit na",
                 "no": "Deaktiver bevegelsesalarm etter",
                 "pl": "Wyłącz alarm ruchu po",
-                "sv": "Inaktivera rörelsealarm efter",
-                "ko": "다음 시간 이후 움직임 알람 끄기"
+                "sv": "Inaktivera rörelsealarm efter"
               },
               "hint": {
                 "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
@@ -538,8 +516,7 @@
                 "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
                 "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
                 "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
-                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder.",
-                "ko": "지정된 시간이 지나면 움직임 알람이 자동으로 꺼집니다.\n\n기본값: 30초"
+                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder."
               }
             }
           ]
@@ -558,8 +535,7 @@
         "nl": "Intercom",
         "no": "Intercom",
         "pl": "Awiofon",
-        "sv": "Intercom",
-        "ko": "인터폰"
+        "sv": "Intercom"
       },
       "images": {
         "large": "./drivers/intercom/assets/images/large.png",
@@ -620,8 +596,7 @@
             "nl": "Homey integratie-instellingen",
             "no": "Homey integreringsinnstillinger",
             "pl": "Ustawienia integracji Homey",
-            "sv": "Homey integrationsinställningar",
-            "ko": "Homey 연동 설정"
+            "sv": "Homey integrationsinställningar"
           },
           "children": [
             {
@@ -646,8 +621,7 @@
                 "nl": "Terugkeren naar vergrendelde status na",
                 "no": "Gå tilbake til låst tilstand etter",
                 "pl": "Powrót do stanu zablokowania po",
-                "sv": "Återgå till låst läge efter",
-                "ko": "다음 시간 이후 잠금 상태로 복귀"
+                "sv": "Återgå till låst läge efter"
               }
             }
           ]
@@ -658,8 +632,7 @@
       "id": "contactsensor",
         "name": {
           "en": "Contact Sensor",
-          "nl": "Contactsensor",
-          "ko": "접촉 센서"
+          "nl": "Contactsensor"
         },
         "class": "sensor",
         "capabilities": [
@@ -668,7 +641,7 @@
           "measure_battery"
         ],
         "energy": {
-          "batteries": ["CR2032", "CR2032"]
+          "batteries": [ "CR2032", "CR2032" ]
         },
         "images": {
           "large": "./drivers/contactsensor/assets/images/large.jpg",
@@ -710,8 +683,7 @@
       "id": "motiondetector",
         "name": {
           "en": "Motion Detector",
-          "nl": "Bewegingsdetector",
-          "ko": "모션 감지기"
+          "nl": "Bewegingsdetector"
         },
         "class": "sensor",
         "capabilities": [
@@ -720,7 +692,7 @@
           "measure_battery"
         ],
         "energy": {
-          "batteries": ["AA", "AA"]
+          "batteries": [ "AA", "AA" ]
         },
         "images": {
           "large": "./drivers/motiondetector/assets/images/large.jpg",
@@ -762,8 +734,7 @@
       "id": "keypad",
       "name": {
         "en": "Keypad",
-        "nl": "Bedieningspaneel",
-        "ko": "키패드"
+        "nl": "Bedieningspaneel"
       },
       "class": "homealarm",
       "capabilities": [
@@ -771,7 +742,7 @@
         "measure_battery"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [ "INTERNAL" ]
       },
       "images": {
         "large": "./drivers/keypad/assets/images/large.jpg",
@@ -825,8 +796,7 @@
           "no": "Bevegelsesalarmen aktivert",
           "es": "La alarma de movimiento se ha activado",
           "da": "Bevægelsesalarmen blev aktiveret",
-          "pl": "Czujnik ruchu włączony",
-          "ko": "모션 경보가 켜졌습니다"
+          "pl": "Czujnik ruchu włączony"
         },
         "args": [
           {
@@ -849,8 +819,7 @@
           "no": "Dørklokken ringer",
           "es": "El timbre suena",
           "da": "Dørklokken ringer",
-          "pl": "Dzwonek do drzwi dzwoni",
-          "ko": "초인종이 울립니다"
+          "pl": "Dzwonek do drzwi dzwoni"
         },
         "args": [
           {
@@ -872,8 +841,7 @@
           "no": "Dørklokken slutter å ringe",
           "es": "El timbre deja de sonar",
           "da": "Dørklokken holder op med at ringe",
-          "pl": "Dzwonek do drzwi przestaje dzwonić",
-          "ko": "초인종이 멈춥니다"
+          "pl": "Dzwonek do drzwi przestaje dzwonić"
         },
         "args": [
           {
@@ -896,16 +864,14 @@
           "no": "Bevegelsesalarmen aktivert",
           "es": "La alarma de movimiento se ha activado",
           "da": "Bevægelsesalarmen blev aktiveret",
-          "pl": "Czujnik ruchu włączony",
-          "ko": "모션 경보가 켜졌습니다"
+          "pl": "Czujnik ruchu włączony"
         },
         "tokens": [
           {
             "name": "motionType",
             "type": "string",
             "title": {
-              "en": "Motion type",
-              "ko": "모션 종류"
+              "en": "Motion type"
             },
             "example": {
               "da": "Menneske, Pakke, Køretøj, Andet, Ukendt",
@@ -917,8 +883,7 @@
               "nl": "Mens, Pakket, Voertuig, Overig, Onbekend",
               "no": "Menneske, Pakke, Kjøretøy, Annet, Ukjent",
               "pl": "Człowiek, Paczka, Pojazd, Inne, Nieznany",
-              "sv": "Människa, Paket, Fordon, Annat, Okänd",
-              "ko": "사람, 소포, 차량, 기타, 알 수 없음"
+              "sv": "Människa, Paket, Fordon, Annat, Okänd"
             }
           }
         ],
@@ -942,8 +907,7 @@
           "no": "Bevegelsesalarmen deaktivert",
           "es": "La alarma de movimiento se ha desactivado",
           "da": "Bevægelsesalarmen blev deaktiveret",
-          "pl": "Czujnik ruchu wyłączony",
-          "ko": "모션 경보가 꺼졌습니다"
+          "pl": "Czujnik ruchu wyłączony"
         },
         "args": [
           {
@@ -965,8 +929,7 @@
           "nl": "Snapshot is vastgelegd",
           "no": "Snapshot er tatt",
           "pl": "Zrobiono zrzut ekranu",
-          "sv": "Snapshot har fångats",
-          "ko": "스냅샷이 캡처되었습니다"
+          "sv": "Snapshot har fångats"
         },
         "args": [
           {
@@ -989,8 +952,7 @@
               "nl": "afbeelding",
               "no": "bilde",
               "pl": "obraz",
-              "sv": "bild",
-              "ko": "이미지"
+              "sv": "bild"
             }
           }
         ]
@@ -1008,8 +970,7 @@
           "nl": "Snapshot is vastgelegd",
           "no": "Snapshot er tatt",
           "pl": "Zrobiono zrzut ekranu",
-          "sv": "Snapshot har fångats",
-          "ko": "스냅샷이 캡처되었습니다"
+          "sv": "Snapshot har fångats"
         },
         "tokens": [
           {
@@ -1025,8 +986,7 @@
               "nl": "afbeelding",
               "no": "bilde",
               "pl": "obraz",
-              "sv": "bild",
-              "ko": "이미지"
+              "sv": "bild"
             }
           }
         ]
@@ -1043,8 +1003,7 @@
           "nl": "Een locatiemodus is gewijzigd",
           "no": "En plasseringsmodus er endret",
           "pl": "Zmieniono tryb lokalizacji",
-          "sv": "Ett platsläge har ändrats",
-          "ko": "위치 모드가 변경되었습니다"
+          "sv": "Ett platsläge har ändrats"
         },
         "titleFormatted": {
           "en": "The mode for [[location]] changed",
@@ -1056,8 +1015,7 @@
           "nl": "De modus voor [[location]] is gewijzigd",
           "no": "Modusen for [[location]] har blitt endret",
           "pl": "Tryb dla [[location]] został zmieniony",
-          "sv": "Läget för [[location]] har ändrats",
-          "ko": "[[location]] 위치 모드가 변경되었습니다"
+          "sv": "Läget för [[location]] har ändrats"
         },
         "args": [
           {
@@ -1072,8 +1030,7 @@
               "nl": "Locatie",
               "no": "Plassering",
               "pl": "Lokalizacja",
-              "sv": "Plats",
-              "ko": "위치"
+              "sv": "Plats"
             },
             "type": "autocomplete",
             "placeholder": {
@@ -1086,8 +1043,7 @@
               "nl": "LET OP: U moet een locatie instellen in Ring",
               "no": "MERK: Du må ha en plassering satt opp i Ring",
               "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
-              "sv": "OBS: Du måste ha en plats inställd i Ring",
-              "ko": "참고: Ring에서 위치가 설정되어 있어야 합니다"
+              "sv": "OBS: Du måste ha en plats inställd i Ring"
             }
           }
         ],
@@ -1103,8 +1059,7 @@
               "nl": "Vorige modus",
               "no": "Forrige modus",
               "pl": "Poprzedni tryb",
-              "sv": "Föregående läge",
-              "ko": "이전 모드"
+              "sv": "Föregående läge"
             },
             "name": "oldmode",
             "type": "string",
@@ -1121,8 +1076,7 @@
               "nl": "Nieuwe modus",
               "no": "Ny modus",
               "pl": "Nowy tryb",
-              "sv": "Nytt läge",
-              "ko": "새 모드"
+              "sv": "Nytt läge"
             },
             "name": "mode",
             "type": "string",
@@ -1144,8 +1098,7 @@
           "nl": "Ring Chime met",
           "no": "Ring Chime med",
           "pl": "Dzwonek Ring z",
-          "sv": "Ring Chime med",
-          "ko": "Ring Chime 소리"
+          "sv": "Ring Chime med"
         },
         "titleFormatted": {
           "en": "Ring Chime with [[sound]]",
@@ -1157,8 +1110,7 @@
           "nl": "Ring Chime met [[sound]]",
           "no": "Ring Chime med [[sound]]",
           "pl": "Dzwonek Ring z [[sound]]",
-          "sv": "Ring Chime med [[sound]]",
-          "ko": "[[sound]] 소리로 Ring Chime"
+          "sv": "Ring Chime med [[sound]]"
         },
         "args": [
           {
@@ -1182,8 +1134,7 @@
                   "nl": "Beltoon",
                   "no": "Ringetone",
                   "pl": "Dźwięk dzwonka",
-                  "sv": "Ringljud",
-                  "ko": "벨 소리"
+                  "sv": "Ringljud"
                 }
               },
               {
@@ -1198,8 +1149,7 @@
                   "nl": "Bewegingsgeluid",
                   "no": "Bevegelseslyd",
                   "pl": "Dźwięk ruchu",
-                  "sv": "Rörelseljud",
-                  "ko": "모션 소리"
+                  "sv": "Rörelseljud"
                 }
               }
             ]
@@ -1218,8 +1168,7 @@
           "nl": "Snooze Chime gedurende ",
           "no": "Snooze-klokke for ",
           "pl": "Dzwonek drzemki dla ",
-          "sv": "Snooze-signal för ",
-          "ko": "스누즈 알람: "
+          "sv": "Snooze-signal för "
         },
         "titleFormatted": {
           "en": "Snooze Chime for [[duration]]",
@@ -1231,8 +1180,7 @@
           "nl": "Snooze Chime gedurende [[duration]]",
           "no": "Snooze klokkespill i [[duration]]",
           "pl": "Snooze dzwon w ciągu [[duration]]",
-          "sv": "Snooze klockspel i [[duration]]",
-          "ko": "[[duration]] 동안 스누즈 알람"
+          "sv": "Snooze klockspel i [[duration]]"
         },
         "args": [
           {
@@ -1243,13 +1191,13 @@
           {
             "type": "dropdown",
             "name": "duration",
-            "title": { "en": "Duration", "ko": "기간" },
+            "title": { "en": "Duration" },
             "values": [
-              { "id": "1", "label": { "en": "1 hour", "ko": "1시간" } },
-              { "id": "3", "label": { "en": "3 hours", "ko": "3시간" } },
-              { "id": "6", "label": { "en": "6 hours", "ko": "6시간" } },
-              { "id": "9", "label": { "en": "9 hours", "ko": "9시간" } },
-              { "id": "12", "label": { "en": "12 hours", "ko": "12시간" } }
+              { "id": "1", "label": { "en": "1 hour" } },
+              { "id": "3", "label": { "en": "3 hours" } },
+              { "id": "6", "label": { "en": "6 hours" } },
+              { "id": "9", "label": { "en": "9 hours" } },
+              { "id": "12", "label": { "en": "12 hours" } }
             ]
           }
         ]
@@ -1266,12 +1214,10 @@
           "nl": "Unsnooze Chime",
           "no": "Deaktiver snooze på alarm",
           "pl": "Wyłącz powtarzanie alarmu",
-          "sv": "Stoppa snooze på klocka",
-          "ko": "스누즈 알람 해제"
+          "sv": "Stoppa snooze på klocka"
         },
         "titleFormatted": {
           "en": "Unsnooze Chime",
-          "ko": "스누즈 알람 해제",
           "da": "Fjern slumre på klokke",
           "de": "Wecker wiederholen",
           "es": "Desactivar repetición de alarma",
@@ -1294,7 +1240,6 @@
         "id": "ring_grab_snapshot",
         "title": {
           "en": "Grab current snapshot",
-          "ko": "현재 스냅샷 캡처",
           "da": "Hent øjebliksbillede",
           "de": "Aktuellen Schnappschuss erfassen",
           "es": "Capturar instantánea actual",
@@ -1317,7 +1262,6 @@
         "id": "doorbell_enable_motion",
         "title": {
           "en": "Enable motion detection",
-          "ko": "모션 감지 활성화",
           "da": "Aktiver bevægelsesregistrering",
           "de": "Bewegungserkennung aktivieren",
           "es": "Activar la detección de movimiento",
@@ -1340,7 +1284,6 @@
         "id": "doorbell_disable_motion",
         "title": {
           "en": "Disable motion detection",
-          "ko": "모션 감지 비활성화",
           "da": "Deaktiver bevægelsesregistrering",
           "de": "Bewegungserkennung deaktivieren",
           "es": "Desactivar la detección de movimiento",
@@ -1363,7 +1306,6 @@
         "id": "stickupcam_grab_snapshot",
         "title": {
           "en": "Grab current snapshot",
-          "ko": "현재 스냅샷 캡처",
           "da": "Hent øjebliksbillede",
           "de": "Aktuellen Schnappschuss erfassen",
           "es": "Capturar instantánea actual",
@@ -1386,7 +1328,6 @@
         "id": "stickupcam_enable_motion",
         "title": {
           "en": "Enable motion detection",
-          "ko": "모션 감지 활성화",
           "da": "Aktiver bevægelsesregistrering",
           "de": "Bewegungserkennung aktivieren",
           "es": "Activar la detección de movimiento",
@@ -1409,7 +1350,6 @@
         "id": "stickupcam_disable_motion",
         "title": {
           "en": "Disable motion detection",
-          "ko": "모션 감지 비활성화",
           "da": "Deaktiver bevægelsesregistrering",
           "de": "Bewegungserkennung deaktivieren",
           "es": "Desactivar la detección de movimiento",
@@ -1432,7 +1372,6 @@
         "id": "stickupcam_light_on",
         "title": {
           "en": "Turn the floodlight on",
-          "ko": "홍수등 켜기",
           "da": "Tænd oversvømmelseslyset",
           "de": "Schalte die Flutlichtanlage ein",
           "es": "Enciende el foco de inundación",
@@ -1455,7 +1394,6 @@
         "id": "stickupcam_light_off",
         "title": {
           "en": "Turn the floodlight off",
-          "ko": "홍수등 끄기",
           "da": "Sluk for flomlyset",
           "de": "Schalte das Flutlichtanlage aus",
           "es": "Apaga el foco de inundación",
@@ -1478,7 +1416,6 @@
         "id": "stickupcam_siren_off",
         "title": {
           "en": "Turn the siren off",
-          "ko": "사이렌 끄기",
           "da": "Sluk sirenen",
           "de": "Schalte die Sirene aus",
           "es": "Apaga la sirena",
@@ -1501,14 +1438,13 @@
         "id": "stickupcam_siren_on",
         "title": {
           "en": "Turn the siren on",
-          "ko": "사이렌 켜기",
           "da": "Tænd sirenen",
           "de": "Schalte die Sirene ein",
           "es": "Enciende la sirena",
           "fr": "Allumez la sirène",
           "it": "Accendi la sirena",
           "nl": "Zet de sirene aan",
-          "no": "Slå på sirenen",
+          "no": "Slå på sirenene",
           "pl": "Włącz syrenę",
           "sv": "Sätt på sirenen"
         },
@@ -1524,7 +1460,6 @@
         "id": "change_location_mode",
         "title": {
           "en": "Change the mode for a location",
-          "ko": "위치 모드 변경",
           "da": "Skift tilstand for en placering",
           "de": "Ändern Sie den Modus für einen Standort",
           "es": "Cambiar el modo para una ubicación",
@@ -1537,7 +1472,6 @@
         },
         "titleFormatted": {
           "en": "Change the mode for [[location]] to [[mode]]",
-          "ko": "[[location]] 위치 모드를 [[mode]]로 변경",
           "da": "Skift tilstand for [[location]] til [[mode]]",
           "de": "Ändere den Modus für [[location]] zu [[mode]]",
           "es": "Cambiar el modo para [[location]] a [[mode]]",
@@ -1552,14 +1486,12 @@
           {
             "title": {
               "en": "Location",
-              "nl": "Locatie",
-              "ko": "위치"
+              "nl": "Locatie"
             },
             "name": "location",
             "type": "autocomplete",
             "placeholder": {
               "en": "NOTE: You must have a location setup in Ring",
-              "ko": "참고: Ring에서 위치를 설정해야 합니다",
               "da": "BEMÆRK: Du skal have en placering opsat i Ring",
               "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
               "es": "NOTA: Debe tener una ubicación configurada en Ring",
@@ -1578,22 +1510,19 @@
               {
                 "id": "home",
                 "label": {
-                  "en": "Home", 
-                  "ko": "집" 
-                  } 
+                  "en": "Home"
+                }
               },
               {
                 "id": "disarmed",
                 "label": {
-                  "en": "Disarmed",
-                  "ko": "해제" 
+                  "en": "Disarmed"
                 }
               },
               {
                 "id": "away",
                 "label": {
-                  "en": "Away",
-                  "ko": "외출"
+                  "en": "Away"
                 }
               }
             ]
@@ -1606,7 +1535,6 @@
         "id": "alarm_generic",
         "title": {
           "en": "The doorbell is !{{ |not }}ringing",
-          "ko": "초인종이 !{{울림|멈춤}} 상태입니다",
           "nl": "De bewegingsmelder is !{{aan|uit}}",
           "de": "Der Bewegungs-Alarm ist !{{an|aus}}",
           "fr": "L'alarme mouvement est !{{en marche|arrêtée}}",
@@ -1630,7 +1558,6 @@
         "id": "alarm_motion",
         "title": {
           "en": "The motion alarm is !{{on|off}}",
-          "ko": "모션 알람이 !{{켜짐|꺼짐}} 상태입니다",
           "nl": "De bewegingsmelder is !{{aan|uit}}",
           "de": "Der Bewegungs-Alarm ist !{{an|aus}}",
           "fr": "L'alarme mouvement est !{{en marche|arrêtée}}",
@@ -1654,7 +1581,6 @@
         "id": "stickupcam_floodLight_on",
         "title": {
           "en": "The floodlight !{{is|isn't}} on",
-          "ko": "조명이 !{{켜짐|꺼짐}} 상태입니다",
           "da": "Flomlyset !{{er|er ikke}} tændt",
           "de": "Die Flutlichtanlage !{{ist|ist nicht}} an",
           "es": "El foco de inundación !{{está|no está}} encendido",
@@ -1677,7 +1603,6 @@
         "id": "ring_location_mode_active",
         "title": {
           "en": "A location mode is...",
-          "ko": "위치 모드가...",
           "da": "En placeringstilstand er...",
           "de": "Ein Standortmodus ist...",
           "es": "Un modo de ubicación es...",
@@ -1690,7 +1615,6 @@
         },
         "titleFormatted": {
           "en": "The mode for [[location]] !{{is|isn't}} [[mode]]",
-          "ko": "[[location]] 위치 모드가 !{{[[mode]]|아님}} 상태입니다",
           "da": "Modus for [[location]] !{{er|er ikke}} [[mode]]",
           "de": "Der Modus für [[location]] !{{ist|ist nicht}} [[mode]]",
           "es": "El modo para [[location]] !{{es|no es}} [[mode]]",
@@ -1706,7 +1630,6 @@
             "name": "location",
             "title": {
               "en": "Location",
-              "ko": "위치",
               "da": "Beliggenhed",
               "de": "Ort",
               "es": "Ubicación",
@@ -1720,7 +1643,6 @@
             "type": "autocomplete",
             "placeholder": {
               "en": "NOTE: You must have a location setup in Ring",
-              "ko": "참고: Ring에 위치가 설정되어 있어야 합니다",
               "da": "BEMÆRK: Du skal have en placering opsat i Ring",
               "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
               "es": "NOTA: Debe tener una ubicación configurada en Ring",
@@ -1739,22 +1661,19 @@
               {
                 "id": "home",
                 "label": {
-                  "en": "Home",
-                  "ko": "집"
+                  "en": "Home"
                 }
               },
               {
                 "id": "disarmed",
                 "label": {
-                  "en": "Disarmed",
-                  "ko": "해제됨"
+                  "en": "Disarmed"
                 }
               },
               {
                 "id": "away",
                 "label": {
-                  "en": "Away",
-                  "ko": "외출"
+                  "en": "Away"
                 }
               }
             ]

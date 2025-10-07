@@ -6,8 +6,7 @@ const statusTimeout = 10000;
 class DeviceIntercom extends Device {
 
     _initDevice() {
-        this.log('_initDevice');
-        //this.log('name:', this.getName());
+        this.log('_initDevice for', this.getName());
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
 
@@ -26,13 +25,12 @@ class DeviceIntercom extends Device {
         this.setCapabilityValue('locked', true)
             .catch(error => {this.error(error)});
 
-        this.setAvailable();
+        // Add this device to the app registry
+        this.homey.app._devices.push(this);
 
-        // fix?
-        this._onAuthenticationChanged = this._setAvailability.bind(this);
-        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
-
-        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+        // Set initial availability based on app authentication
+        const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
+        this._setAvailability(initialStatus);
 
         this.homey.on('ringOnDing', this._ringOnDing.bind(this));
         this.homey.on('ringOnData', this._ringOnData.bind(this));
