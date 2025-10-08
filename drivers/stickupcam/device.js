@@ -114,7 +114,7 @@ class DeviceStickUpCam extends Device {
     }
 
     async _setupCameraImage(device_data) {
-        this.log('_setupCameraImage', device_data);
+        this.log('_setupCameraImage for', this.getName());
 
         this.device.cameraImage = await this.homey.images.createImage();
         this.device.cameraImage.setStream(async (stream) => {
@@ -142,7 +142,7 @@ class DeviceStickUpCam extends Device {
     }
 
     async _setupCameraVideo(device_data) {
-        this.log('_setupCameraVideo', device_data);
+        this.log('_setupCameraVideo for', this.getName());
 
         try {
             this.device.cameraVideo = await this.homey.videos.createVideoWebRTC();
