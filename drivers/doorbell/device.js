@@ -6,7 +6,7 @@ const statusTimeout = 10000;
 class DeviceDoorbell extends Device {
 
     _initDevice() {
-        this.log('_initDevice for', this.getName());
+        this.log('_initDevice for', this.getName(), this.getData());
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
 

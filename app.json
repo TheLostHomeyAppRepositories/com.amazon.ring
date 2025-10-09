@@ -1,7 +1,7 @@
 {
   "id": "com.amazon.ring",
   "version": "2.14.3",
-  "compatibility": ">=8.0.0",
+  "compatibility": ">=12.7.1",
   "platforms": ["local"],
   "sdk": 3,
   "brandColor": "#1A98D5",

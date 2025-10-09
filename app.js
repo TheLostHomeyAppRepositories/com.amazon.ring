@@ -3,7 +3,6 @@ const Homey = require('homey');
 const api   = require('./lib/Api.js');
 //const events = require('events');
 
-
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
@@ -132,6 +131,27 @@ class App extends Homey.App {
         }
     }
 
+    ringChime(data, sound) {
+        return this._api.ringChime(data, sound);
+    }
+
+    snoozeChime(data, duration) {
+        return this._api.snoozeChime(data, duration);
+    }
+
+    unsnoozeChime(data) {
+        return this._api.unsnoozeChime(data);
+    }
+
+    grabImage(data) {
+        return this._api.grabImage(data);
+    }
+
+    grabVideo(data,offerSdp) {
+        return this._api.grabVideo(data,offerSdp);
+    }
+
+
     getRingDevices(callback) {
         this._api.getDevices(callback);
     }
@@ -156,28 +176,8 @@ class App extends Homey.App {
         this._api.sirenOff(data, callback);
     }
 
-    ringChime(data, sound, callback) {
-        this._api.ringChime(data, sound, callback);
-    }
-
-    snoozeChime(data, duration, callback) {
-        this._api.snoozeChime(data, duration, callback);
-    }
-
-    unsnoozeChime(data, callback) {
-        this._api.unsnoozeChime(data, callback);
-    }
-
     unlock(data, callback) {
         this._api.unlock(data, callback);
-    }
-
-    grabImage(data) {
-        return this._api.grabImage(data);
-    }
-
-    grabVideo(data,offerSdp) {
-        return this._api.grabVideo(data,offerSdp);
     }
 
     enableMotion(data, callback) {
