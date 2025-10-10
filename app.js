@@ -108,7 +108,7 @@ class App extends Homey.App {
         //this.log('_ringOnLocation',newLocationMode);
         if(this.lastLocationModes.length>0)
         {
-            let matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
+            const matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
                  return lastLocationMode.id==newLocationMode.id;
             });
             if(matchedLastLocationMode!=undefined)
