@@ -143,6 +143,26 @@ class App extends Homey.App {
         return this._api.unsnoozeChime(data);
     }
 
+    lightOn(data) {
+        return this._api.lightOn(data);
+    }
+
+    lightOff(data) {
+        return this._api.lightOff(data);
+    }
+
+    sirenOn(data) {
+        return this._api.sirenOn(data);
+    }
+
+    sirenOff(data) {
+        return this._api.sirenOff(data);
+    }
+
+    unlock(data) {
+        return this._api.unlock(data);
+    }
+
     grabImage(data) {
         return this._api.grabImage(data);
     }
@@ -151,33 +171,12 @@ class App extends Homey.App {
         return this._api.grabVideo(data,offerSdp);
     }
 
-
     getRingDevices(callback) {
         this._api.getDevices(callback);
     }
 
     getRingAlarmDevices(callback) {
         this._api.getAlarmDevices(callback);
-    }
-
-    lightOn(data, callback) {
-        this._api.lightOn(data, callback);
-    }
-
-    lightOff(data, callback) {
-        this._api.lightOff(data, callback);
-    }
-
-    sirenOn(data, callback) {
-        this._api.sirenOn(data, callback);
-    }
-
-    sirenOff(data, callback) {
-        this._api.sirenOff(data, callback);
-    }
-
-    unlock(data, callback) {
-        this._api.unlock(data, callback);
     }
 
     enableMotion(data, callback) {

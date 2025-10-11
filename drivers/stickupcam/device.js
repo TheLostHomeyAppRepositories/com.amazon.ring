@@ -309,34 +309,20 @@ class DeviceStickUpCam extends Device {
             return this.lightOff();
 	}
 
-    lightOn(args, state) {
+    async lightOn(args) {
+        if (this._device instanceof Error)
+            throw this._device;
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.lightOn(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });       
+        const device_data = this.getData();
+        return this.homey.app.lightOn(device_data);
     }
 
-    lightOff(args, state) {
+    async lightOff(args) {
+        if (this._device instanceof Error)
+            throw this._device;
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.lightOff(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });       
+        const device_data = this.getData();
+        return this.homey.app.lightOff(device_data);
     }
 
     onCapabilitySiren(value, opts)
@@ -351,34 +337,20 @@ class DeviceStickUpCam extends Device {
             return this.sirenOff();
     }
     
-    sirenOn(args, state) {
+    async sirenOn(args) {
+        if (this._device instanceof Error)
+            throw this._device;
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.sirenOn(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });       
+        const device_data = this.getData();
+        return this.homey.app.sirenOn(device_data);
     }
 
-    sirenOff(args, state) {
+    async sirenOff(args) {
+        if (this._device instanceof Error)
+            throw this._device;
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.sirenOff(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });       
+        const device_data = this.getData();
+        return this.homey.app.sirenOff(device_data);
     }
 
     async onSettings( settings ) {
