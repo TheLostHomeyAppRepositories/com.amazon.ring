@@ -24,7 +24,8 @@ class App extends Homey.App {
         this._devices = []; // deviceId -> device instance
 
         this.lastLocationModes = [];
-        this.alarmSystem = { location: {} };
+        // this.alarmSystem = { location: {} };
+        this.homey.app.alarmSystems = [];
 
         this._api = new api(this.homey);
 
@@ -91,15 +92,17 @@ class App extends Homey.App {
 
     // Called from event emitted from _connectRingAPI() in Api.js for Ring Alarm devices
     _ringOnAlarmData(data) {
-        if ( data.catalogId == this.alarmSystem.catalogId ) {
-            if ( this.alarmSystem.mode != data.mode ) {
-                // Mode changed
-                this.log('this.alarmSystem: ', this.alarmSystem);
-                
-                this.alarmSystem.mode = data.mode
-            }
+        // Find the alarm system matching this zid
+        const system = this.homey.app.alarmSystems.find(s => s.zid === data.zid);
+        if (!system) return; // no matching system, ignore
+
+        // Check if mode changed
+        if (system.mode !== data.mode) {
+            this.log('Alarm system mode changed:', system);
+            system.mode = data.mode;
         }
 
+        // Emit event for this data
         this.homey.emit('ringOnAlarmData', data);
     }
 

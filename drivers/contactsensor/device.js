@@ -1,10 +1,7 @@
 const Homey = require('homey');
 const Device = require('../../lib/Device.js');
 
-const statusMapping = {
-    "ok": false,
-    "tamper": true
-  };
+const statusMapping = (status) => status !== "ok";
 
 class DeviceContactSensor extends Device {
 
@@ -66,7 +63,7 @@ class DeviceContactSensor extends Device {
 
         // Set Alarm Tamper capability
         try {
-            this.setCapabilityValue('alarm_tamper', statusMapping[data.tamperStatus]);
+            this.setCapabilityValue('alarm_tamper', statusMapping(data.tamperStatus));
         }
         catch(e) {
             this.error(error)
