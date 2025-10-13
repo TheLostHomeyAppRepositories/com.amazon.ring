@@ -94,15 +94,14 @@ class App extends Homey.App {
     _ringOnAlarmData(data) {
         // Find the alarm system matching this zid
         const system = this.homey.app.alarmSystems.find(s => s.zid === data.zid);
-        if (!system) return; // no matching system, ignore
 
-        // Check if mode changed
-        if (system.mode !== data.mode) {
+        // Update system mode only if a matching system is found
+        if (system && system.mode !== data.mode) {
             this.log('Alarm system mode changed:', system);
             system.mode = data.mode;
         }
 
-        // Emit event for this data
+        // Always emit the event
         this.homey.emit('ringOnAlarmData', data);
     }
 
