@@ -11,7 +11,7 @@ class App extends Homey.App {
 
     async onInit() {
         // !!!! remove next lines before publishing !!!!
-             
+
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
@@ -20,8 +20,7 @@ class App extends Homey.App {
                
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
-const locale = this.homey.i18n.getLanguage();
-console.log(locale)   
+        
         // Registry for all devices
         this._devices = []; // deviceId -> device instance
 
@@ -112,7 +111,7 @@ console.log(locale)
         //this.log('_ringOnLocation',newLocationMode);
         if(this.lastLocationModes.length>0)
         {
-            let matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
+            const matchedLastLocationMode = this.lastLocationModes.find(lastLocationMode =>{
                  return lastLocationMode.id==newLocationMode.id;
             });
             if(matchedLastLocationMode!=undefined)
@@ -135,44 +134,36 @@ console.log(locale)
         }
     }
 
-    getRingDevices(callback) {
-        this._api.getDevices(callback);
+    ringChime(data, sound) {
+        return this._api.ringChime(data, sound);
     }
 
-    getRingAlarmDevices(callback) {
-        this._api.getAlarmDevices(callback);
+    snoozeChime(data, duration) {
+        return this._api.snoozeChime(data, duration);
     }
 
-    lightOn(data, callback) {
-        this._api.lightOn(data, callback);
+    unsnoozeChime(data) {
+        return this._api.unsnoozeChime(data);
     }
 
-    lightOff(data, callback) {
-        this._api.lightOff(data, callback);
+    lightOn(data) {
+        return this._api.lightOn(data);
     }
 
-    sirenOn(data, callback) {
-        this._api.sirenOn(data, callback);
+    lightOff(data) {
+        return this._api.lightOff(data);
     }
 
-    sirenOff(data, callback) {
-        this._api.sirenOff(data, callback);
+    sirenOn(data) {
+        return this._api.sirenOn(data);
     }
 
-    ringChime(data, sound, callback) {
-        this._api.ringChime(data, sound, callback);
+    sirenOff(data) {
+        return this._api.sirenOff(data);
     }
 
-    snoozeChime(data, duration, callback) {
-        this._api.snoozeChime(data, duration, callback);
-    }
-
-    unsnoozeChime(data, callback) {
-        this._api.unsnoozeChime(data, callback);
-    }
-
-    unlock(data, callback) {
-        this._api.unlock(data, callback);
+    unlock(data) {
+        return this._api.unlock(data);
     }
 
     grabImage(data) {
@@ -181,6 +172,14 @@ console.log(locale)
 
     grabVideo(data,offerSdp) {
         return this._api.grabVideo(data,offerSdp);
+    }
+
+    getRingDevices(callback) {
+        this._api.getDevices(callback);
+    }
+
+    getRingAlarmDevices(callback) {
+        this._api.getAlarmDevices(callback);
     }
 
     enableMotion(data, callback) {

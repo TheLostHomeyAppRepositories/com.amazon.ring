@@ -157,20 +157,14 @@ class DeviceIntercom extends Device {
         }
     }
 
-    unlock(args, state) {
+    async unlock(args) {
+        if (this._device instanceof Error)
+            throw this._device;
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.unlock(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(result);
-            });
-        });
+        const device_data = this.getData();
+        return this.homey.app.unlock(device_data);
     }
+
 }
 
 module.exports = DeviceIntercom;
