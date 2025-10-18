@@ -1,25 +1,25 @@
 const Homey = require('homey');
 const Device = require('../../lib/Device.js');
 
-const statusMapping = {
-    "ok": false,
-    "tamper": true
-  };
+const statusMapping = (status) => status !== "ok";
 
 class DeviceKeypad extends Device {
 
     _initDevice() {
-        this.log('_initDevice');
-        // this.log('name:', this.getName());
+        this.log('_initDevice for', this.getName());
         // this.log('class:', this.getClass());
         // this.log('data:', this.getData());      
 
         this.setCapabilityValue('alarm_tamper', false)
             .catch(error => {this.error(error)});
 
-        this.setAvailable();
+        // Add this device to the app registry
+        this.homey.app._devices.push(this);
 
-        this.homey.on('authenticationChanged', this._setAvailability.bind(this));
+        // Set initial availability based on app authentication
+        const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
+        this._setAvailability(initialStatus);
+    
 
         this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
 
@@ -52,7 +52,7 @@ class DeviceKeypad extends Device {
 
         // Set Alarm Tamper capability
         try {
-            this.setCapabilityValue('alarm_tamper', statusMapping[data.tamperStatus]);
+            this.setCapabilityValue('alarm_tamper', statusMapping(data.tamperStatus));
         }
         catch(e) {
             this.error(error)

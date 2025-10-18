@@ -6,14 +6,18 @@ class DriverMotionDetector extends Driver {
     onInit() {
         this.log('onInit');
         
-        // This needs to be done because the alarm_motion is overridded for doorbells and camera's
+        // This needs to be done because the alarm_motion is overriden for doorbells and camera's
         this._triggerAlarmMotionOn = this.homey.flow.getDeviceTriggerCard('alarm_motion_true_default');
         
-        // This needs to be done because the alarm_motion is overridded for doorbells and camera's
-        this.homey.flow.getConditionCard('alarm_motion')
-            .registerRunListener(async ( args, state ) => {
-                return args.device.getCapabilityValue('alarm_motion');
-            })
+        if (!this.homey.__alarmMotionListenerRegistered) {
+            this.homey.__alarmMotionListenerRegistered = true;
+
+            // This needs to be done because the alarm_motion is overriden for doorbells and camera's
+            this.homey.flow.getConditionCard('alarm_motion')
+                .registerRunListener(async ( args, state ) => {
+                    return args.device.getCapabilityValue('alarm_motion');
+                })
+        }
     }
 
     // this function is called from device.js

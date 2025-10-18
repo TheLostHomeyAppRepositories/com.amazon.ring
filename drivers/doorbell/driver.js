@@ -9,10 +9,14 @@ class DriverDoorbell extends Driver {
         this._triggerAlarmMotionOn = this.homey.flow.getDeviceTriggerCard('alarm_motion_true');
         this._triggerSendSnapshot = this.homey.flow.getDeviceTriggerCard('ring_snapshot_received_device');
 
-        this.homey.flow.getConditionCard('alarm_motion')
-            .registerRunListener(async ( args, state ) => {
-                return args.device.getCapabilityValue('alarm_motion');
-            })
+        if (!this.homey.__alarmMotionListenerRegistered) {
+            this.homey.__alarmMotionListenerRegistered = true;
+    
+            this.homey.flow.getConditionCard('alarm_motion')
+                .registerRunListener(async ( args, state ) => {
+                    return args.device.getCapabilityValue('alarm_motion');
+                })
+        }
 
         this.homey.flow.getActionCard('ring_grab_snapshot')
             .registerRunListener((args, state) => args.device.grabImage());

@@ -4,14 +4,15 @@ const Device = require('../../lib/Device.js');
 class DeviceChime extends Device {
 
     _initDevice() {
-        this.log('_initDevice');
-        //this.log('name:', this.getName());
+        this.log('_initDevice for', this.getName());
         //this.log('class:', this.getClass());
         //this.log('data:', this.getData());
 
-        // fix?
-        this._onAuthenticationChanged = this._setAvailability.bind(this);
-        this.homey.on('authenticationChanged', this._onAuthenticationChanged);
+        this.homey.app._devices.push(this);
+
+        // Set initial availability based on app authentication
+        const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
+        this._setAvailability(initialStatus);
 
         // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
 
@@ -39,52 +40,26 @@ class DeviceChime extends Device {
 
     ringChime(args) {
         if (this._device instanceof Error)
-            return Promise.reject(this._device);
+            throw this._device;
 
-        let device_data = this.getData();
-
-        let _this = this;
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.ringChime(device_data, args.sound, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+            const device_data = this.getData();
+            return this.homey.app.ringChime(device_data, args.sound);
     }
 
     snoozeChime(args) {
         if (this._device instanceof Error)
-            return Promise.reject(this._device);
+            throw this._device;
 
-        let device_data = this.getData();
-        let _this = this;
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.snoozeChime(device_data, args.duration, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        return  this.homey.app.snoozeChime(device_data, args.duration);
     }
 
     unsnoozeChime() {
         if (this._device instanceof Error)
-            return Promise.reject(this._device);
+            throw this._device;
 
-        let device_data = this.getData();
-
-        let _this = this;
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.unsnoozeChime(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });   
+        const device_data = this.getData();
+        return this.homey.app.unsnoozeChime(device_data);
     }
 
     /*
