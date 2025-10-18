@@ -1,6 +1,6 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.14.4",
+  "version": "2.14.5",
   "compatibility": ">=12.7.1",
   "platforms": ["local"],
   "sdk": 3,

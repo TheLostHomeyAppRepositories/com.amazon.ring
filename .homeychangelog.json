@@ -434,5 +434,18 @@
     "no": "La til Live-visning for kameraer og ringeklokker, la til støtte for flere lokasjoner",
     "pl": "Dodano podgląd na żywo do kamer i dzwonków, dodano obsługę wielu lokalizacji",
     "sv": "Lade till Live-vy för kameror och dörrklockor, lade till stöd för flera platser"
+  },
+  "2.14.5": {
+    "en": "Added Live view to cameras and doorbells, added multiple location support",
+    "da": "Tilføjet Live-visning til kameraer og dørklokker, tilføjet understøttelse af flere lokationer",
+    "de": "Live-Ansicht zu Kameras und Türklingeln hinzugefügt, Unterstützung für mehrere Standorte hinzugefügt",
+    "es": "Se agregó vista en vivo a cámaras y timbres, se agregó compatibilidad con múltiples ubicaciones",
+    "fr": "Ajout de la vue en direct aux caméras et sonnettes, ajout de la prise en charge de plusieurs emplacements",
+    "it": "Aggiunta visualizzazione Live a telecamere e campanelli, aggiunto supporto per più sedi",
+    "ko": "카메라와 도어벨에 라이브 뷰를 추가하고, 다중 위치 지원을 추가했습니다",
+    "nl": "Live-weergave toegevoegd aan camera's en deurbellen, ondersteuning voor meerdere locaties toegevoegd",
+    "no": "La til Live-visning for kameraer og ringeklokker, la til støtte for flere lokasjoner",
+    "pl": "Dodano podgląd na żywo do kamer i dzwonków, dodano obsługę wielu lokalizacji",
+    "sv": "Lade till Live-vy för kameror och dörrklockor, lade till stöd för flera platser"
   }
 }
