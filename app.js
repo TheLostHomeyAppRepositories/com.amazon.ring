@@ -5,27 +5,29 @@ const api   = require('./lib/Api.js');
 
 
 // !!!! remove next lines before publishing !!!!
-// const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
+ const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
 class App extends Homey.App {
 
     async onInit() {
         // !!!! remove next lines before publishing !!!!
-        /*
+             
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
             // log at: http://<homey IP>:8008
         }
-        */
+               
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
-
+const locale = this.homey.i18n.getLanguage();
+console.log(locale)   
         // Registry for all devices
         this._devices = []; // deviceId -> device instance
 
         this.lastLocationModes = [];
-        this.alarmSystem = { location: {} };
+        // this.alarmSystem = { location: {} };
+        this.homey.app.alarmSystems = [];
 
         this._api = new api(this.homey);
 
@@ -34,7 +36,6 @@ class App extends Homey.App {
         this._api.on('ringOnData',this._ringOnData.bind(this));
         this._api.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
         this._api.on('ringOnLocation', this._ringOnLocation.bind(this));
-        this.supportsModern = this._api.supportsModern;
 
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
@@ -93,15 +94,16 @@ class App extends Homey.App {
 
     // Called from event emitted from _connectRingAPI() in Api.js for Ring Alarm devices
     _ringOnAlarmData(data) {
-        if ( data.catalogId == this.alarmSystem.catalogId ) {
-            if ( this.alarmSystem.mode != data.mode ) {
-                // Mode changed
-                this.log('this.alarmSystem: ', this.alarmSystem);
-                
-                this.alarmSystem.mode = data.mode
-            }
+        // Find the alarm system matching this zid
+        const system = this.homey.app.alarmSystems.find(s => s.zid === data.zid);
+
+        // Update system mode only if a matching system is found
+        if (system && system.mode !== data.mode) {
+            this.log('Alarm system mode changed for', system.location.name,'to',data.mode);
+            system.mode = data.mode;
         }
 
+        // Always emit the event
         this.homey.emit('ringOnAlarmData', data);
     }
 

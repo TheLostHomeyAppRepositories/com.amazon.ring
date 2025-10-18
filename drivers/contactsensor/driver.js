@@ -24,7 +24,8 @@ class DriverContactSensor extends Driver {
                             name : device.data.name,
                             data : {
                                 id: device.data.serialNumber,
-                                catalogId: device.data.catalogId
+                                catalogId: device.data.catalogId,
+                                zid: device.data.zid
                             }
                         });    
 

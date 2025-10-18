@@ -1,7 +1,7 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.14.3",
-  "compatibility": ">=8.0.0",
+  "version": "2.14.6",
+  "compatibility": ">=12.7.1",
   "platforms": ["local"],
   "sdk": 3,
   "brandColor": "#1A98D5",
@@ -64,6 +64,90 @@
     "en": ["Ring", "Doorbell", "Camera", "Chime", "Intercom", "Alarm"]
   },
   "capabilities": {
+    "ring_alarm_state": {
+      "type": "enum",
+      "title": {
+        "en": "Home Alarm state",
+        "nl": "Thuisalarm status",
+        "de": "Heim Alarm Status",
+        "fr": "État d'alarme à la maison",
+        "it": "Stato di Allarme Casa",
+        "no": "Alarmstatus for hjemmet",
+        "sv": "Alarmstatus för hemmet",
+        "da": "Alarm status for hjemmet",
+        "es": "Estado de alarma de casa"
+      },
+      "values": [
+        {
+          "id": "armed",
+          "title": {
+            "en": "Away",
+            "nl": "Weg",
+            "de": "",
+            "fr": "",
+            "it": "",
+            "ko": "",
+            "no": "",
+            "sv": "",
+            "da": "",
+            "es": ""
+          }
+        },
+        {
+          "id": "disarmed",
+          "title": {
+            "en": "Disarmed",
+            "nl": "Uitgeschakeld",
+            "de": "Entsichert",
+            "fr": "Desactivée",
+            "it": "Disarmato",
+            "ko": "",
+            "no": "Frakoblet",
+            "sv": "Frånkopplad",
+            "da": "Frakoblet",
+            "es": "Desarmada"
+          }
+        },
+        {
+          "id": "partially_armed",
+          "title": {
+            "en": "Home",
+            "nl": "Thuis",
+            "de": "",
+            "fr": "",
+            "it": "",
+            "ko": "",
+            "no": "",
+            "sv": "",
+            "da": "",
+            "es": ""
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
+    "alarm_panic": {
+      "type": "boolean",
+      "title": {
+        "en": "Panic Alarm",
+        "da": "Panikalarm",
+        "de": "Panikalarm",
+        "es": "Alarma de pánico",
+        "fr": "Alarme panique",
+        "it": "Allarme antipanico",
+        "nl": "Paniekalarm",
+        "no": "Panikkalarm",
+        "pl": "Alarm paniki",
+        "sv": "Paniklarm",
+        "ko": "패닉 경보"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false
+    },
     "flood_light": {
       "type": "boolean",
       "title": {
@@ -214,6 +298,245 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor"
+    },
+    "power_source": {
+      "type": "enum",
+      "title": {
+        "en": "Power Source",
+        "da": "Strømkilde",
+        "de": "Stromquelle",
+        "fr": "Source d'énergie",
+        "it": "Fonte di alimentazione",
+        "nl": "Stroombron",
+        "no": "Strømkilde",
+        "es": "Fuente de energía",
+        "sv": "Strömkälla",
+        "ko": "전원 공급 방식"
+      },
+      "values": [
+        {
+          "id": "ac",
+          "title": {
+            "en": "Mains Power",
+            "da": "Nettet",
+            "de": "Stromnetz",
+            "fr": "Réseau électrique",
+            "it": "Rete elettrica",
+            "nl": "Netstroom",
+            "no": "Nettstrøm",
+            "es": "Red eléctrica",
+            "sv": "Nätström",
+            "ko": "가정용 전원"
+          }
+        },
+        {
+          "id": "battery.internal",
+          "title": {
+            "en": "Internal Battery",
+            "da": "Intern batteri",
+            "de": "Internes Akku",
+            "fr": "Batterie interne",
+            "it": "Batteria interna",
+            "nl": "Interne batterij",
+            "no": "Intern batteri",
+            "es": "Batería interna",
+            "sv": "Interna batteri",
+            "ko": "내장 배터리"
+          }      
+        }
+      ],
+      "desc": "The Power Source",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/power_source.svg"
+    },
+    "connection_source": {
+      "type": "enum",
+      "title": {
+        "en": "Communication",
+        "da": "Kommunikation",
+        "de": "Kommunikation",
+        "fr": "Communication",
+        "it": "Comunicazione",
+        "nl": "Communicatie",
+        "no": "Kommunikasjon",
+        "es": "Comunicación",
+        "sv": "Kommunikation",
+        "ko": "통신 방식"
+      },
+      "values": [
+        {
+          "id": "eth0",
+          "title": {
+            "en": "Wired",
+            "da": "Kablet",
+            "de": "Kabelgebunden",
+            "fr": "Câblé",
+            "it": "Cablaggio",
+            "nl": "Bekabeld",
+            "no": "Kablet",
+            "es": "Con cable",
+            "sv": "Kabelansluten",
+            "ko": "유선 연결"
+          }        
+        },
+        {
+          "id": "ppp0",
+          "title": {
+            "en": "Cellular",
+            "da": "Mobilnetværk",
+            "de": "Mobilfunk",
+            "fr": "Cellulaire",
+            "it": "Cellulare",
+            "nl": "Mobiel netwerk",
+            "no": "Mobilnettverk",
+            "es": "Celular",
+            "sv": "Mobilnät",
+            "ko": "셀룰러"
+          }
+        },
+        {
+          "id": "wlan0",
+          "title": {
+            "en": "Wireless",
+            "da": "Trådløs",
+            "de": "Drahtlos",
+            "fr": "Sans fil",
+            "it": "Wireless",
+            "nl": "Draadloos",
+            "no": "Trådløs",
+            "es": "Inalámbrico",
+            "sv": "Trådlös",
+            "ko": "무선 연결"
+          }   
+        }
+      ],
+      "desc": "The Communication type",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/connection_source.svg"
+    },
+    "alarm_burglar": {
+      "type": "boolean",
+      "title": {
+        "en": "Burglar alarm",
+        "nl": "Inbraakalarm",
+        "de": "Einbruch-Alarm",
+        "fr": "Alarme anti-intrusion",
+        "it": "Allarme antifurto",
+        "sv": "Inbrottslarm",
+        "no": "Innbruddsalarm",
+        "es": "Alarma antirrobo",
+        "da": "Indbrudsalarm",
+        "pl": "Alarm antywłamaniowy",
+        "ko": "침입 경보"
+      },
+      "desc": {
+        "en": "True when a burglary has been detected",
+        "nl": "Gaat af als er een inbraak gedetecteerd wordt",
+        "de": "True, wenn ein Einbruch erkannt wurde",
+        "fr": "Vrai si une intrusion a été détectée",
+        "it": "Vero quando è stato rilevato un furto",
+        "sv": "Sant när inbrott upptäckts",
+        "no": "Sann når innbrudd har blitt påvist",
+        "es": "Activado cuando se detecta un robo",
+        "da": "Sandt, når et indbrud er blevet opdaget",
+        "pl": "Alarm antywłamaniowy",
+        "ko": "침입이 감지되면 '참'으로 표시됩니다"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Burglar alarm turned on",
+        "nl": "Inbraakalarm ging af",
+        "de": "Einbruch-Alarm ist angegangen",
+        "fr": "Alarme anti-intrusion s'est activée",
+        "it": "Allarme antifurto attivato",
+        "sv": "Inbrottslarm aktiverat",
+        "no": "Innbruddsalarmen ble aktivert",
+        "es": "Alarma antirrobo activada",
+        "da": "Indbrudsalarm blev aktiveret",
+        "pl": "Adekwatny, kiedy wykryto włamanie",
+        "ko": "침입 경보가 켜졌습니다"
+      },
+      "insightsTitleFalse": {
+        "en": "Burglar alarm turned off",
+        "nl": "Inbraakalarm ging uit",
+        "de": "Einbruch-Alarm ist ausgegangen",
+        "fr": "Alarme anti-intrusion s'est désactivée",
+        "it": "Allarme antifurto disattivato",
+        "sv": "Inbrottslarm inaktiverat",
+        "no": "Innbruddsalarm deaktivert",
+        "es": "Alarma antirrobo desactivada",
+        "da": "Indbrudsalarm blev deaktiveret",
+        "pl": "Alarm antywłamaniowy wyłączony",
+        "ko": "침입 경보가 꺼졌습니다"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/alarm_burglar.svg"
+    },
+    "alarm_medical": {
+      "type": "boolean",
+      "title": {
+        "en": "Medical alarm",
+        "nl": "Medisch alarm",
+        "de": "Medizinischer Alarm",
+        "fr": "Alarme médicale",
+        "it": "Allarme medico",
+        "sv": "Medicinskt larm",
+        "no": "Medisinsk alarm",
+        "es": "Alarma médica",
+        "da": "Medicinsk alarm",
+        "pl": "Alarm medyczny",
+        "ko": "의료 경보"
+      },
+      "desc": {
+        "en": "True when a medical emergency has been detected",
+        "nl": "Gaat af als er een medisch noodgeval gedetecteerd wordt",
+        "de": "True, wenn ein medizinischer Notfall erkannt wurde",
+        "fr": "Vrai si une urgence médicale a été détectée",
+        "it": "Vero quando è stata rilevata un'emergenza medica",
+        "sv": "Sant när medicinsk nödsituation upptäckts",
+        "no": "Sann når en medisinsk nødsituasjon har blitt påvist",
+        "es": "Activado cuando se detecta una emergencia médica",
+        "da": "Sandt, når en medicinsk nødsituation er blevet opdaget",
+        "pl": "Alarm medyczny",
+        "ko": "의료 비상 상황이 감지되면 '참'으로 표시됩니다"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Medical alarm turned on",
+        "nl": "Medisch alarm ging af",
+        "de": "Medizinischer Alarm ist angegangen",
+        "fr": "Alarme médicale s'est activée",
+        "it": "Allarme medico attivato",
+        "sv": "Medicinskt larm aktiverat",
+        "no": "Medisinsk alarm ble aktivert",
+        "es": "Alarma médica activada",
+        "da": "Medicinsk alarm blev aktiveret",
+        "pl": "Adekwatny, kiedy wykryto nagły przypadek medyczny",
+        "ko": "의료 경보가 켜졌습니다"
+      },
+      "insightsTitleFalse": {
+        "en": "Medical alarm turned off",
+        "nl": "Medisch alarm ging uit",
+        "de": "Medizinischer Alarm ist ausgegangen",
+        "fr": "Alarme médicale s'est désactivée",
+        "it": "Allarme medico disattivato",
+        "sv": "Medicinskt larm inaktiverat",
+        "no": "Medisinsk alarm deaktivert",
+        "es": "Alarma médica desactivada",
+        "da": "Medicinsk alarm blev deaktiveret",
+        "pl": "Alarm medyczny wyłączony",
+        "ko": "의료 경보가 꺼졌습니다"
+      },      
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/alarm_medical.svg"
     }
   },
   "drivers": [
@@ -808,6 +1131,65 @@
           "template": "done"
         }
       ]
+    },
+    {
+      "id": "basestation",
+      "name": {
+        "en": "Basestation",
+        "nl": "Basisstation",
+        "ko": "베이스스테이션"
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "alarm_burglar",
+        "alarm_fire",
+        "alarm_medical", 
+        "alarm_panic",  
+        "alarm_tamper",
+        "power_source",
+        "connection_source",
+        "measure_battery",
+        "ring_alarm_state"
+      ],
+      "energy": {
+        "batteries": [ "INTERNAL" ]
+      },
+      "images": {
+        "xlarge": "{{driverAssetsPath}}/images/xlarge.png",
+        "large": "{{driverAssetsPath}}/images/large.png",
+        "small": "{{driverAssetsPath}}/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ]
     }
   ],
   "flow": {
@@ -1118,16 +1500,469 @@
               "es": "Nuevo modo",
               "fr": "Nouveau mode",
               "it": "Nuova modalità",
+              "ko": "새 모드",
               "nl": "Nieuwe modus",
               "no": "Ny modus",
               "pl": "Nowy tryb",
-              "sv": "Nytt läge",
-              "ko": "새 모드"
+              "sv": "Nytt läge"
             },
             "name": "mode",
             "type": "string",
             "example": "armed"
           }
+        ]
+      },
+      {
+        "id": "ring_alarm_mode_changed",
+        "title": {
+          "en": "Mode changed.",
+          "nl": "Toezicht modus is gewijzigd.",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "ko": "",
+          "no": "",
+          "sv": "",
+          "da": "",
+          "es": ""
+        },
+        "hint": {
+          "en": "This card is triggered when the Surveillance Mode is changed, the new Mode is available in the Surveillance Mode tag."
+        },
+        "tokens": [
+          {
+            "name": "oldmode",
+            "type": "string",
+            "example": "home",
+            "title": {
+              "en": "Previous mode",
+              "da": "Tidligere tilstand",
+              "de": "Vorheriger Modus",
+              "es": "Modo anterior",
+              "fr": "Mode précédent",
+              "it": "Modalità precedente",
+              "nl": "Vorige modus",
+              "no": "Forrige modus",
+              "pl": "Poprzedni tryb",
+              "sv": "Föregående läge",
+              "ko": "이전 모드"
+            }
+          },
+          {
+            "name": "mode",
+            "type": "string",
+            "example": "Disarmed",
+            "title": {
+              "en": "New mode",
+              "da": "Ny tilstand",
+              "de": "Neuer Modus",
+              "es": "Nuevo modo",
+              "fr": "Nouveau mode",
+              "it": "Nuova modalità",
+              "ko": "새 모드",
+              "nl": "Nieuwe modus",
+              "no": "Ny modus",
+              "pl": "Nowy tryb",
+              "sv": "Nytt läge"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "entry_delay",
+        "title": {
+          "en": "Entry delay activated",
+          "nl": "Inloopvertraging geactiveerd",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "ko": "",
+          "no": "",
+          "sv": "",
+          "da": "",
+          "es": ""
+        },
+        "tokens": [
+          {
+            "name": "faultedDevices",
+            "type": "string",
+            "example": "home",
+            "title": {
+              "en": "Device",
+              "da": "",
+              "de": "",
+              "es": "",
+              "fr": "",
+              "it": "",
+              "nl": "",
+              "no": "",
+              "pl": "",
+              "sv": "",
+              "ko": ""
+            }
+          }          
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_burglar_true",
+        "highlight": true,
+        "title": {
+          "en": "The burglar alarm turned on",
+          "nl": "Het inbraakalarm gaat aan",
+          "de": "Der Einbruch-Alarm ist angegangen",
+          "fr": "L'alarme anti-intrusion s'est activée",
+          "it": "L'allarme antifurto è stato attivato",
+          "sv": "Inbrottslarmet aktiverat",
+          "no": "Innbruddsalarmen ble aktivert",
+          "es": "La alarma antirrobo se ha activado",
+          "da": "Indbrudsalarmen blev aktiveret",
+          "pl": "Alarm antywłamaniowy włączony",
+          "ko": "침입 경보가 켜졌습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]
+      },
+      {
+        "id": "alarm_burglar_false",
+        "title": {
+          "en": "The burglar alarm turned off",
+          "nl": "Het inbraakalarm gaat uit",
+          "de": "Der Einbruch-Alarm ist ausgegangen",
+          "fr": "L'alarme anti-intrusion s'est désactivée",
+          "it": "L'allarme antifurto è stato disattivato",
+          "sv": "Inbrottslarmet inaktiverat",
+          "no": "Innbruddsalarmen ble deaktivert",
+          "es": "La alarma antirrobo se ha desactivado",
+          "da": "Indbrudsalarmen blev deaktiveret",
+          "pl": "Alarm antywłamaniowy wyłączony",
+          "ko": "침입 경보가 꺼졌습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]
+      },
+      {
+        "id": "alarm_medical_true",
+        "highlight": true,
+        "title": {
+          "en": "The medical alarm turned on",
+          "nl": "Het medisch alarm gaat aan",
+          "de": "Der medizinische Alarm ist angegangen",
+          "fr": "L'alarme médicale s'est activée",
+          "it": "L'allarme medico è stato attivato",
+          "sv": "Medicinskt larm aktiverat",
+          "no": "Medisinsk alarm ble aktivert",
+          "es": "La alarma médica se ha activado",
+          "da": "Den medicinske alarm blev aktiveret",
+          "pl": "Alarm medyczny włączony",
+          "ko": "의료 경보가 켜졌습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]        
+      },
+      {
+        "id": "alarm_medical_false",
+        "title": {
+          "en": "The medical alarm turned off",
+          "nl": "Het medisch alarm gaat uit",
+          "de": "Der medizinische Alarm ist ausgegangen",
+          "fr": "L'alarme médicale s'est désactivée",
+          "it": "L'allarme medico è stato disattivato",
+          "sv": "Medicinskt larm inaktiverat",
+          "no": "Medisinsk alarm ble deaktivert",
+          "es": "La alarma médica se ha desactivado",
+          "da": "Den medicinske alarm blev deaktiveret",
+          "pl": "Alarm medyczny wyłączony",
+          "ko": "의료 경보가 꺼졌습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]
+      },
+      {
+        "id": "alarm_fire_true",
+        "highlight": true,
+        "title": {
+          "en": "The fire alarm turned on",
+          "nl": "Het brandalarm gaat aan",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "sv": "",
+          "no": "",
+          "es": "",
+          "da": "",
+          "pl": "",
+          "ko": ""
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]
+      },
+      {
+        "id": "alarm_fire_false",
+        "title": {
+          "en": "The fire alarm turned off",
+          "nl": "Het brandalarm gaat uit",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "sv": "",
+          "no": "",
+          "es": "",
+          "da": "",
+          "pl": "",
+          "ko": ""
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]
+      },
+      {
+        "id": "alarm_panic_true",
+        "highlight": true,
+        "title": {
+          "en": "The panic alarm turned on",
+          "nl": "Het paniekalarm gaat aan",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "sv": "",
+          "no": "",
+          "es": "",
+          "da": "",
+          "pl": "",
+          "ko": ""
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
+        ]
+      },
+      {
+        "id": "alarm_panic_false",
+        "title": {
+          "en": "The panic alarm turned off",
+          "nl": "Het paniekalarm gaat uit",
+          "de": "",
+          "fr": "",
+          "it": "",
+          "sv": "",
+          "no": "",
+          "es": "",
+          "da": "",
+          "pl": "",
+          "ko": ""
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+            {
+                "title": {
+                    "en": "Time triggered",
+                    "da": "Tid udløst",
+                    "de": "Zeit ausgelöst",
+                    "es": "Hora activada",
+                    "fr": "Heure déclenchée",
+                    "it": "Ora attivata",
+                    "nl": "Tijd geactiveerd",
+                    "no": "Tid utløst",
+                    "pl": "Czas wyzwolenia",
+                    "sv": "Tid utlöst",
+                    "ko": "트리거된 시간"
+                },
+                "name": "timestamp",
+                "type": "string",
+                "example": "2025-10-18T14:30:00.000Z"
+            }
         ]
       }
     ],
@@ -1758,6 +2593,98 @@
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "alarm_burglar",
+        "title": {
+          "en": "The burglar alarm is !{{on|off}}",
+          "nl": "Het inbraakalarm is !{{aan|uit}}",
+          "de": "Der Einbruch-Alarm ist !{{an|aus}}",
+          "fr": "L'alarme anti-intrusion est !{{en marche|arrêtée}}",
+          "it": "L'allarme antifurto è !{{acceso|spento}}",
+          "sv": "Inbrottslarmet är !{{på|av}}",
+          "no": "Innbruddsalarmen er !{{på|av}}",
+          "es": "La alarma antirrobo está !{{activada|desactivada}}",
+          "da": "Indbrudsalarmen er !{{tændt|slukket}}",
+          "pl": "Alarm antywłamaniowy jest !{{włączony|wyłączony}}",
+          "ko": "침입 경보가 !{{켜짐|꺼짐}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_fire",
+        "title": {
+          "en": "The fire alarm is !{{on|off}}",
+          "nl": "Het brandalarm is !{{aan|uit}}",
+          "de": "Der Feueralarm ist !{{an|aus}}",
+          "fr": "L'alarme incendie est !{{en marche|arrêtée}}",
+          "it": "L'allarme antincendio è !{{acceso|spento}}",
+          "sv": "Brandlarmet är !{{på|av}}",
+          "no": "Brannalarmen er !{{på|av}}",
+          "es": "La alarma de incendio está !{{activada|desactivada}}",
+          "da": "Brandalarmen er !{{tændt|slukket}}",
+          "pl": "Alarm przeciwpożarowy jest !{{włączony|wyłączony}}",
+          "ko": "화재 경보가 !{{켜짐|꺼짐}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_medical",
+        "title": {
+          "en": "The medical alarm is !{{on|off}}",
+          "nl": "Het medisch alarm is !{{aan|uit}}",
+          "de": "Der medizinische Alarm ist !{{an|aus}}",
+          "fr": "L'alarme médicale est !{{en marche|arrêtée}}",
+          "it": "L'allarme medico è !{{acceso|spento}}",
+          "sv": "Medicinskt larm är !{{på|av}}",
+          "no": "Medisinsk alarm er !{{på|av}}",
+          "es": "La alarma médica está !{{activada|desactivada}}",
+          "da": "Den medicinske alarm er !{{tændt|slukket}}",
+          "pl": "Alarm medyczny jest !{{włączony|wyłączony}}",
+          "ko": "의료 경보가 !{{켜짐|꺼짐}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_panic",
+        "title": {
+          "en": "The panic alarm is !{{on|off}}",
+          "nl": "Het paniekalarm is !{{aan|uit}}",
+          "de": "Der Panikalarm ist !{{an|aus}}",
+          "fr": "L'alarme panique est !{{en marche|arrêtée}}",
+          "it": "L'allarme antipanico è !{{acceso|spento}}",
+          "sv": "Paniklarmet är !{{på|av}}",
+          "no": "Panikkalarmen er !{{på|av}}",
+          "es": "La alarma de pánico está !{{activada|desactivada}}",
+          "da": "Panikalarmen er !{{tændt|slukket}}",
+          "pl": "Alarm paniki jest !{{włączony|wyłączony}}",
+          "ko": "패닉 경보가 !{{켜짐|꺼짐}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=basestation"
           }
         ]
       }
