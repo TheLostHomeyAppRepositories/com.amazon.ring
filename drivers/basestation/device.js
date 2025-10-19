@@ -51,7 +51,7 @@ class DeviceBasestation extends Device {
         const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
         this._setAvailability(initialStatus);
 
-        this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
+        //this.homey.on('ringOnAlardemData',this._ringOnAlarmData.bind(this));
 
         this.registerCapabilityListener('ring_alarm_state', this._onCapabilityHomealarmState.bind(this))
 
@@ -113,7 +113,8 @@ class DeviceBasestation extends Device {
         }
     }
 
-    async _ringOnAlarmData(data) {
+    // Method called from app.js
+    async ringOnAlarmData(data) {
 
         const isMyDevice = data.serialNumber === this.getData().id;
         const system = this.homey.app.alarmSystems.find(sys => sys.zid === data.zid);

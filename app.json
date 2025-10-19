@@ -49,11 +49,11 @@
     "es": "Soporte para Ring Doorbell, Cámara y Alarma en Homey",
     "fr": "Prise en charge de la sonnette, de la caméra et de l'alarme Ring pour Homey",
     "it": "Supporto per la videocamera, il campanello e l'allarme Ring su Homey",
+    "ko": "Homey에서 Ring 초인종, 카메라 및 알람을 편리하게 사용할 수 있습니다.",
     "nl": "Ring Deurbell-, Camera- en Alarm-ondersteuning voor Homey",
     "no": "Ring Doorbell, Camera og Alarm-støtte for Homey",
     "pl": "Obsługa dzwonka, kamery i alarmu Ring dla Homey",
-    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey",
-    "ko": "Homey에서 Ring 초인종, 카메라 및 알람을 편리하게 사용할 수 있습니다."
+    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey"
   },
   "images": {
     "large": "./assets/images/large.jpg",
@@ -67,60 +67,61 @@
     "ring_alarm_state": {
       "type": "enum",
       "title": {
-        "en": "Home Alarm state",
-        "nl": "Thuisalarm status",
+        "da": "Alarm status for hjemmet",
         "de": "Heim Alarm Status",
+        "en": "Home Alarm state",
+        "es": "Estado de alarma de casa",
         "fr": "État d'alarme à la maison",
         "it": "Stato di Allarme Casa",
+        "ko": "가정용 알람 상태",
+        "nl": "Thuisalarm status",
         "no": "Alarmstatus for hjemmet",
-        "sv": "Alarmstatus för hemmet",
-        "da": "Alarm status for hjemmet",
-        "es": "Estado de alarma de casa"
+        "sv": "Alarmstatus för hemmet"
       },
       "values": [
         {
           "id": "armed",
           "title": {
+            "da": "Væk",
+            "de": "Abwesend",
             "en": "Away",
+            "es": "Ausente",
+            "fr": "Absent",
+            "it": "Assente",
+            "ko": "외출",
             "nl": "Weg",
-            "de": "",
-            "fr": "",
-            "it": "",
-            "ko": "",
-            "no": "",
-            "sv": "",
-            "da": "",
-            "es": ""
+            "no": "Borte",
+            "sv": "Borta"
           }
         },
         {
           "id": "disarmed",
           "title": {
-            "en": "Disarmed",
-            "nl": "Uitgeschakeld",
-            "de": "Entsichert",
-            "fr": "Desactivée",
-            "it": "Disarmato",
-            "ko": "",
-            "no": "Frakoblet",
-            "sv": "Frånkopplad",
             "da": "Frakoblet",
-            "es": "Desarmada"
+            "de": "Entsichert",
+            "en": "Disarmed",
+            "es": "Desarmada",
+            "fr": "Désactivée",
+            "it": "Disarmato",
+            "ko": "해제",
+            "nl": "Uitgeschakeld",
+            "no": "Frakoblet",
+            "sv": "Frånkopplad"
           }
         },
         {
           "id": "partially_armed",
           "title": {
+            "da": "Hjemme",
+            "de": "Zuhause",
             "en": "Home",
+            "es": "En casa",
+            "fr": "À la maison",
+            "it": "Casa",
+            "ko": "집",
             "nl": "Thuis",
-            "de": "",
-            "fr": "",
-            "it": "",
-            "ko": "",
-            "no": "",
-            "sv": "",
-            "da": "",
-            "es": ""
+            "no": "Hjemme",
+            "sv": "Hemma"
           }
         }
       ],
@@ -137,11 +138,11 @@
         "es": "Alarma de pánico",
         "fr": "Alarme panique",
         "it": "Allarme antipanico",
+        "ko": "패닉 경보",
         "nl": "Paniekalarm",
         "no": "Panikkalarm",
         "pl": "Alarm paniki",
-        "sv": "Paniklarm",
-        "ko": "패닉 경보"
+        "sv": "Paniklarm"
       },
       "getable": true,
       "setable": true,
@@ -157,11 +158,11 @@
         "es": "Foco de inundación",
         "fr": "Projecteur",
         "it": "Faro alluvione",
+        "ko": "투광등",
         "nl": "Schijnwerper",
         "no": "Flomlys",
         "pl": "Reflektor",
-        "sv": "Översvämningsljus",
-        "ko": "투광등"
+        "sv": "Översvämningsljus"
       },
       "getable": true,
       "setable": true,
@@ -177,11 +178,11 @@
         "es": "Sirena",
         "fr": "Sirène",
         "it": "Sirena",
+        "ko": "사이렌",
         "nl": "Sirene",
         "no": "Sirene",
         "pl": "Syrena",
-        "sv": "Siren",
-        "ko": "사이렌"
+        "sv": "Siren"
       },
       "getable": true,
       "setable": true,
@@ -196,13 +197,13 @@
         "de": "Bewegungs-Alarm",
         "fr": "Alarme mouvement",
         "it": "Allarme di movimento",
+        "ko": "움직임 알람",
         "sv": "Rörelselarm",
         "no": "Bevegelsesalarm",
         "es": "Alarma de movimiento",
         "da": "Bevægelsesalarm",
         "ru": "Сигнал движения",
-        "pl": "Czujnik ruchu",
-        "ko": "움직임 알람"
+        "pl": "Czujnik ruchu"
       },
       "insights": true,
       "insightsTitleTrue": {
@@ -211,13 +212,13 @@
         "de": "Bewegungs-Alarm ist angegangen",
         "fr": "Alarme mouvement s'est déclenchée",
         "it": "Allarme di movimento attivato",
+        "ko": "움직임 알람이 켜졌습니다",
         "sv": "Rörelselarm aktiverat",
         "no": "Bevegelsesalarm aktivert",
         "es": "Alarma de movimiento activada",
         "da": "Bevægelsesalarm blev aktiveret",
         "ru": "Сигнал движения включен",
-        "pl": "Czujnik ruchu włączony",
-        "ko": "움직임 알람이 켜졌습니다"
+        "pl": "Czujnik ruchu włączony"
       },
       "insightsTitleFalse": {
         "en": "Motion alarm turned off",
@@ -225,13 +226,13 @@
         "de": "Bewegungs-Alarm ist ausgegangen",
         "fr": "Alarme mouvement s'est désactivée",
         "it": "Allarme di movimento disattivato",
+        "ko": "움직임 알람이 꺼졌습니다",
         "sv": "Rörelselarm inaktiverat",
         "no": "Bevegelsesalarm deaktivert",
         "es": "Alarma de movimiento desactivada",
         "da": "Bevægelsesalarm blev deaktiveret",
         "ru": "Сигнал движения выключен",
-        "pl": "Czujnik ruchu wyłączony",
-        "ko": "움직임 알람이 꺼졌습니다"
+        "pl": "Czujnik ruchu wyłączony"
       },
       "getable": true,
       "setable": false,
@@ -248,12 +249,12 @@
         "de": "Türklingel",
         "fr": "Sonnette",
         "it": "Campanello",
+        "ko": "초인종",
         "sv": "Dörrklocka",
         "no": "Dørklokke",
         "es": "Timbre",
         "da": "Dørklokke",
-        "pl": "Dzwonek do drzwi",
-        "ko": "초인종"
+        "pl": "Dzwonek do drzwi"
       },
       "desc": {
         "en": "Doorbell",
@@ -262,11 +263,11 @@
         "es": "Portero",
         "fr": "Sonnette",
         "it": "Campanello",
+        "ko": "초인종",
         "nl": "Deurbel",
         "no": "Dørklokke",
         "pl": "Domofon",
-        "sv": "Dörrklocka",
-        "ko": "초인종"
+        "sv": "Dörrklocka"
       },
       "insights": true,
       "insightsTitleTrue": {
@@ -275,12 +276,12 @@
         "de": "Türklingel eingeschaltet",
         "fr": "Sonnette activée",
         "it": "Campanello acceso",
+        "ko": "초인종이 울리기 시작했습니다",
         "sv": "Dörrklocka aktiverad",
         "no": "Dørklokke slått på",
         "es": "Timbre encendido",
         "da": "Dørklokke tændt",
-        "pl": "Dzwonek do drzwi włączony",
-        "ko": "초인종이 울리기 시작했습니다"
+        "pl": "Dzwonek do drzwi włączony"
       },
       "insightsTitleFalse": {
         "en": "Doorbell turned off",
@@ -288,12 +289,12 @@
         "de": "Türklingel ausgeschaltet",
         "fr": "Sonnette désactivée",
         "it": "Campanello spento",
+        "ko": "초인종이 꺼졌습니다",
         "sv": "Dörrklocka avstängd",
         "no": "Dørklokke slått av",
         "es": "Timbre apagado",
         "da": "Dørklokke slukket",
-        "pl": "Dzwonek do drzwi wyłączony",
-        "ko": "초인종이 꺼졌습니다"
+        "pl": "Dzwonek do drzwi wyłączony"
       },
       "getable": true,
       "setable": false,
@@ -307,11 +308,11 @@
         "de": "Stromquelle",
         "fr": "Source d'énergie",
         "it": "Fonte di alimentazione",
+        "ko": "전원 공급 방식",
         "nl": "Stroombron",
         "no": "Strømkilde",
         "es": "Fuente de energía",
-        "sv": "Strömkälla",
-        "ko": "전원 공급 방식"
+        "sv": "Strömkälla"
       },
       "values": [
         {
@@ -322,11 +323,11 @@
             "de": "Stromnetz",
             "fr": "Réseau électrique",
             "it": "Rete elettrica",
+            "ko": "가정용 전원",
             "nl": "Netstroom",
             "no": "Nettstrøm",
             "es": "Red eléctrica",
-            "sv": "Nätström",
-            "ko": "가정용 전원"
+            "sv": "Nätström"
           }
         },
         {
@@ -337,11 +338,11 @@
             "de": "Internes Akku",
             "fr": "Batterie interne",
             "it": "Batteria interna",
+            "ko": "내장 배터리",
             "nl": "Interne batterij",
             "no": "Intern batteri",
             "es": "Batería interna",
-            "sv": "Interna batteri",
-            "ko": "내장 배터리"
+            "sv": "Interna batteri"
           }      
         }
       ],
@@ -359,11 +360,11 @@
         "de": "Kommunikation",
         "fr": "Communication",
         "it": "Comunicazione",
+        "ko": "통신 방식",
         "nl": "Communicatie",
         "no": "Kommunikasjon",
         "es": "Comunicación",
-        "sv": "Kommunikation",
-        "ko": "통신 방식"
+        "sv": "Kommunikation"
       },
       "values": [
         {
@@ -374,11 +375,11 @@
             "de": "Kabelgebunden",
             "fr": "Câblé",
             "it": "Cablaggio",
+            "ko": "유선 연결",
             "nl": "Bekabeld",
             "no": "Kablet",
             "es": "Con cable",
-            "sv": "Kabelansluten",
-            "ko": "유선 연결"
+            "sv": "Kabelansluten"
           }        
         },
         {
@@ -389,11 +390,11 @@
             "de": "Mobilfunk",
             "fr": "Cellulaire",
             "it": "Cellulare",
+            "ko": "셀룰러",
             "nl": "Mobiel netwerk",
             "no": "Mobilnettverk",
             "es": "Celular",
-            "sv": "Mobilnät",
-            "ko": "셀룰러"
+            "sv": "Mobilnät"
           }
         },
         {
@@ -404,11 +405,11 @@
             "de": "Drahtlos",
             "fr": "Sans fil",
             "it": "Wireless",
+            "ko": "무선 연결",
             "nl": "Draadloos",
             "no": "Trådløs",
             "es": "Inalámbrico",
-            "sv": "Trådlös",
-            "ko": "무선 연결"
+            "sv": "Trådlös"
           }   
         }
       ],
@@ -426,12 +427,12 @@
         "de": "Einbruch-Alarm",
         "fr": "Alarme anti-intrusion",
         "it": "Allarme antifurto",
+        "ko": "침입 경보",
         "sv": "Inbrottslarm",
         "no": "Innbruddsalarm",
         "es": "Alarma antirrobo",
         "da": "Indbrudsalarm",
-        "pl": "Alarm antywłamaniowy",
-        "ko": "침입 경보"
+        "pl": "Alarm antywłamaniowy"
       },
       "desc": {
         "en": "True when a burglary has been detected",
@@ -439,12 +440,12 @@
         "de": "True, wenn ein Einbruch erkannt wurde",
         "fr": "Vrai si une intrusion a été détectée",
         "it": "Vero quando è stato rilevato un furto",
+        "ko": "침입이 감지되면 '참'으로 표시됩니다",
         "sv": "Sant när inbrott upptäckts",
         "no": "Sann når innbrudd har blitt påvist",
         "es": "Activado cuando se detecta un robo",
         "da": "Sandt, når et indbrud er blevet opdaget",
-        "pl": "Alarm antywłamaniowy",
-        "ko": "침입이 감지되면 '참'으로 표시됩니다"
+        "pl": "Alarm antywłamaniowy"
       },
       "insights": true,
       "insightsTitleTrue": {
@@ -453,12 +454,12 @@
         "de": "Einbruch-Alarm ist angegangen",
         "fr": "Alarme anti-intrusion s'est activée",
         "it": "Allarme antifurto attivato",
+        "ko": "침입 경보가 켜졌습니다",
         "sv": "Inbrottslarm aktiverat",
         "no": "Innbruddsalarmen ble aktivert",
         "es": "Alarma antirrobo activada",
         "da": "Indbrudsalarm blev aktiveret",
-        "pl": "Adekwatny, kiedy wykryto włamanie",
-        "ko": "침입 경보가 켜졌습니다"
+        "pl": "Adekwatny, kiedy wykryto włamanie"
       },
       "insightsTitleFalse": {
         "en": "Burglar alarm turned off",
@@ -466,12 +467,12 @@
         "de": "Einbruch-Alarm ist ausgegangen",
         "fr": "Alarme anti-intrusion s'est désactivée",
         "it": "Allarme antifurto disattivato",
+        "ko": "침입 경보가 꺼졌습니다",
         "sv": "Inbrottslarm inaktiverat",
         "no": "Innbruddsalarm deaktivert",
         "es": "Alarma antirrobo desactivada",
         "da": "Indbrudsalarm blev deaktiveret",
-        "pl": "Alarm antywłamaniowy wyłączony",
-        "ko": "침입 경보가 꺼졌습니다"
+        "pl": "Alarm antywłamaniowy wyłączony"
       },
       "getable": true,
       "setable": false,
@@ -486,12 +487,12 @@
         "de": "Medizinischer Alarm",
         "fr": "Alarme médicale",
         "it": "Allarme medico",
+        "ko": "의료 경보",
         "sv": "Medicinskt larm",
         "no": "Medisinsk alarm",
         "es": "Alarma médica",
         "da": "Medicinsk alarm",
-        "pl": "Alarm medyczny",
-        "ko": "의료 경보"
+        "pl": "Alarm medyczny"
       },
       "desc": {
         "en": "True when a medical emergency has been detected",
@@ -499,12 +500,12 @@
         "de": "True, wenn ein medizinischer Notfall erkannt wurde",
         "fr": "Vrai si une urgence médicale a été détectée",
         "it": "Vero quando è stata rilevata un'emergenza medica",
+        "ko": "의료 비상 상황이 감지되면 '참'으로 표시됩니다",
         "sv": "Sant när medicinsk nödsituation upptäckts",
         "no": "Sann når en medisinsk nødsituasjon har blitt påvist",
         "es": "Activado cuando se detecta una emergencia médica",
         "da": "Sandt, når en medicinsk nødsituation er blevet opdaget",
-        "pl": "Alarm medyczny",
-        "ko": "의료 비상 상황이 감지되면 '참'으로 표시됩니다"
+        "pl": "Alarm medyczny"
       },
       "insights": true,
       "insightsTitleTrue": {
@@ -513,12 +514,12 @@
         "de": "Medizinischer Alarm ist angegangen",
         "fr": "Alarme médicale s'est activée",
         "it": "Allarme medico attivato",
+        "ko": "의료 경보가 켜졌습니다",
         "sv": "Medicinskt larm aktiverat",
         "no": "Medisinsk alarm ble aktivert",
         "es": "Alarma médica activada",
         "da": "Medicinsk alarm blev aktiveret",
-        "pl": "Adekwatny, kiedy wykryto nagły przypadek medyczny",
-        "ko": "의료 경보가 켜졌습니다"
+        "pl": "Adekwatny, kiedy wykryto nagły przypadek medyczny"
       },
       "insightsTitleFalse": {
         "en": "Medical alarm turned off",
@@ -526,12 +527,12 @@
         "de": "Medizinischer Alarm ist ausgegangen",
         "fr": "Alarme médicale s'est désactivée",
         "it": "Allarme medico disattivato",
+        "ko": "의료 경보가 꺼졌습니다",
         "sv": "Medicinskt larm inaktiverat",
         "no": "Medisinsk alarm deaktivert",
         "es": "Alarma médica desactivada",
         "da": "Medicinsk alarm blev deaktiveret",
-        "pl": "Alarm medyczny wyłączony",
-        "ko": "의료 경보가 꺼졌습니다"
+        "pl": "Alarm medyczny wyłączony"
       },      
       "getable": true,
       "setable": false,

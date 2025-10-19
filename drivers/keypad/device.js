@@ -21,7 +21,7 @@ class DeviceKeypad extends Device {
         this._setAvailability(initialStatus);
     
 
-        this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
+        //this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
 
     }  
         
@@ -45,8 +45,9 @@ class DeviceKeypad extends Device {
         }
     }
 
-    async _ringOnAlarmData(data) {
-        // this.log('_ringOnAlarmData data',data);
+    // Method called from app.js
+    async ringOnAlarmData(data) {
+        // this.log('ringOnAlarmData data',data);
         if (data.serialNumber !== this.getData().id)
             return;
 
