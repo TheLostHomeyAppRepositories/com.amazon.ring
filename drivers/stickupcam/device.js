@@ -199,6 +199,10 @@ class DeviceStickUpCam extends Device {
         }
     }
 
+    async testringOnData(data) {
+        this.log('Ring onData called from app.js for: ',data.name)
+    }
+
     async _ringOnData(data) {
         if (data.id !== this.getData().id)
             return;
