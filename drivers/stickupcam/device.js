@@ -36,7 +36,7 @@ class DeviceStickUpCam extends Device {
         }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
-        this.homey.on('ringOnData', this._ringOnData.bind(this));
+        //this.homey.on('ringOnData', this._ringOnData.bind(this));
 
         // Hook up the capabilities that are already known.
         if ( this.hasCapability("flood_light") ) {
@@ -127,7 +127,7 @@ class DeviceStickUpCam extends Device {
                 snapshot.push(null);
                 return snapshot.pipe(stream);
             } catch (error) {
-                this.log('device.js grabImage', error.toString());
+                this.log('device.js grabImage', error);
 
                 const { Duplex } = require('stream');
                 const snapshot = new Duplex();
@@ -199,20 +199,12 @@ class DeviceStickUpCam extends Device {
         }
     }
 
-    async testringOnData(data) {
-        this.log('Ring onData called from app.js for: ',data.name)
-    }
-
-    async _ringOnData(data) {
-        if (data.id !== this.getData().id)
-            return;
-
+    async ringOnData(data) {
         //this.log('_ringOnData data',data);
 
         this._enableLightCapability(data);
         this._enableSirenCapability(data);
 
-        // todo: Floodlight code needs testing
         if(this.hasCapability("flood_light"))
         {
             //this.log('_ringOnData, light status:'+data.led_status);

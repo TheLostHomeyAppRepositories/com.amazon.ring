@@ -39,7 +39,7 @@ class DeviceDoorbell extends Device {
         }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
-        this.homey.on('ringOnData', this._ringOnData.bind(this));
+        //this.homey.on('ringOnData', this._ringOnData.bind(this));
 
     }  
         
@@ -77,7 +77,7 @@ class DeviceDoorbell extends Device {
                 snapshot.push(null);
                 return snapshot.pipe(stream);
             } catch (error) {
-                this.log('device.js grabImage', error.toString());
+                this.log('device.js grabImage', error);
 
                 const { Duplex } = require('stream');
                 const snapshot = new Duplex();
@@ -179,14 +179,7 @@ class DeviceDoorbell extends Device {
         }
     }
 
-    async testringOnData(data) {
-        this.log('Ring onData called from app.js for: ',data.name)
-    }
-
-    async _ringOnData(data) {
-        if (data.id !== this.getData().id)
-            return;
-
+    async ringOnData(data) {
         //this.log('_ringOnData data',data);
 
         let battery = 100;

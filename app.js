@@ -5,20 +5,19 @@ const api   = require('./lib/Api.js');
 
 
 // !!!! remove next lines before publishing !!!!
- const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
+// const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
 class App extends Homey.App {
 
     async onInit() {
         // !!!! remove next lines before publishing !!!!
-        
+        /*    
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
             // log at: http://<homey IP>:8008
         }
-        
-               
+        */           
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         
@@ -89,13 +88,13 @@ class App extends Homey.App {
 
     // Called from event emitted from _connectRingAPI() in Api.js
     _ringOnData(data) {
-        // todo: fase out emitter
-        this.homey.emit('ringOnData', data);
+        // Always emit the event, DEPRECATED
+        // this.homey.emit('ringOnData', data.name);
 
         // find the device for which this message is and call its function to act on it
         Object.values(this._devices).forEach(device => {
-            if ( data.serialNumber === device.getData().id) {
-                device.testringOnData?.(data);
+            if ( data.id === device.getData().id) {
+                device.ringOnData?.(data);
             }
         });        
     }

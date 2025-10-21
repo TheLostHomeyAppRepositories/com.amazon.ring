@@ -33,7 +33,7 @@ class DeviceIntercom extends Device {
         this._setAvailability(initialStatus);
 
         this.homey.on('ringOnDing', this._ringOnDing.bind(this));
-        this.homey.on('ringOnData', this._ringOnData.bind(this));
+        //this.homey.on('ringOnData', this._ringOnData.bind(this));
         if (this.hasCapability("locked")) {
           this.registerCapabilityListener(
             "locked",
@@ -90,9 +90,9 @@ class DeviceIntercom extends Device {
 
     async testringOnData(data) {
         this.log('Ring onData called from app.js for: ',data.name)
-    }
+    
 
-    async _ringOnData(data) {
+    // async _ringOnData(data) {
         if (data.id !== this.getData().id)
             return;
 
