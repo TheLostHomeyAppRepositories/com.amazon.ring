@@ -51,9 +51,9 @@ class DeviceBasestation extends Device {
         const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
         this._setAvailability(initialStatus);
 
-        //this.homey.on('ringOnAlardemData',this._ringOnAlarmData.bind(this));
+        //this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
 
-        this.registerCapabilityListener('ring_alarm_state', this._onCapabilityHomealarmState.bind(this))
+        this.registerCapabilityListener('ring_alarm_state', this._onCapabilityRingAlarmState.bind(this))
 
     }
     
@@ -220,7 +220,9 @@ class DeviceBasestation extends Device {
             if ( data.mode != system.oldmode ) {
                 const tokens = { mode: modeMapping[data.mode], oldmode: modeMapping[system.oldmode] }
                 this.driver.modeChangeOn(this,tokens);
+                this.log('Basestation', data.name, 'in', system.location.name ,'changed from',system.oldmode ,'to',data.mode);
                 system.oldmode = data.mode;
+                
             }
 
             // alarm modes
@@ -272,12 +274,13 @@ class DeviceBasestation extends Device {
         }
     }
 
-    _onCapabilityHomealarmState( newState, opts ) {
-        /*
-        this.log('onCapabilityHomealarmState:', newState)
+    /*
+    _onCapabilityRingAlarmState( newState, opts ) {
+        
+        this.log('onCapabilityRingAlarmState:', newState)
         this.log('Selected mode:',locationModesAlarm[newState])
         this.log('Basestation location:',this.getData().location)
-        */
+        
 
         this.homey.app._api.setLocationMode(this.getData().location,locationModesAlarm[newState])
             .then(result => {})
@@ -288,6 +291,22 @@ class DeviceBasestation extends Device {
         return Promise.resolve( true );
 
     }
+    */
+    
+    _onCapabilityRingAlarmState(newState, opts) {
+
+        this.log('onCapabilityRingAlarmState:', newState)
+        this.log('Selected mode:',locationModesAlarm[newState])
+        this.log('Basestation location:',this.getData().location)
+
+        return this.homey.app._api.setLocationMode(this.getData().location, locationModesAlarm[newState])
+            .then(result => true)
+            .catch(error => {
+                this.error(error);
+                throw error; // ensures Homey knows it failed
+            });
+    }
+
 }
 
 module.exports = DeviceBasestation;

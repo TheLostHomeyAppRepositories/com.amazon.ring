@@ -1,8 +1,5 @@
-require('./lib/polyfills');
 const Homey = require('homey');
 const api   = require('./lib/Api.js');
-//const events = require('events');
-
 
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
@@ -115,7 +112,7 @@ class App extends Homey.App {
 
         // find the device for which this message is and call its function to act on it
         Object.values(this._devices).forEach(device => {
-            if ( data.serialNumber === device.getData().id) {
+            if ( data.serialNumber === device.getData().id || system ) {
                 device.ringOnAlarmData?.(data);
             }
         });
