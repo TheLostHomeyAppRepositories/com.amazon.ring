@@ -1,0 +1,36 @@
+{
+  "id": "ring_snapshot_received",
+  "deprecated": true,
+  "title": {
+    "en": "Snapshot is grabbed",
+    "da": "Snapshot er taget",
+    "de": "Snapshot wurde aufgenommen",
+    "es": "Se ha capturado una instantánea",
+    "fr": "La capture d'écran est effectuée",
+    "it": "È stata catturata una istantanea",
+    "nl": "Snapshot is vastgelegd",
+    "no": "Snapshot er tatt",
+    "pl": "Zrobiono zrzut ekranu",
+    "sv": "Snapshot har fångats",
+    "ko": "스냅샷이 캡처되었습니다"
+  },
+  "tokens": [
+    {
+      "name": "ring_image",
+      "type": "image",
+      "title": {
+        "en": "image",
+        "da": "billede",
+        "de": "Bild",
+        "es": "imagen",
+        "fr": "image",
+        "it": "immagine",
+        "nl": "afbeelding",
+        "no": "bilde",
+        "pl": "obraz",
+        "sv": "bild",
+        "ko": "이미지"
+      }
+    }
+  ]
+}

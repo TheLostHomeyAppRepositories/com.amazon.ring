@@ -1,0 +1,179 @@
+{
+  "actions": [
+    {
+      "id": "ring_chime",
+      "title": {
+        "en": "Ring Chime with",
+        "da": "Ringeklokke med",
+        "de": "Ring Chime mit",
+        "es": "Ring Chime con",
+        "fr": "Sonnette Ring avec",
+        "it": "Campanello Ring con",
+        "nl": "Ring Chime met",
+        "no": "Ring Chime med",
+        "pl": "Dzwonek Ring z",
+        "sv": "Ring Chime med",
+        "ko": "Ring Chime 소리"
+      },
+      "titleFormatted": {
+        "en": "Ring Chime with [[sound]]",
+        "da": "Ring Chime med [[sound]]",
+        "de": "Ring Chime mit [[sound]]",
+        "es": "Timbre de Ring con [[sound]]",
+        "fr": "Sonnette Ring avec [[sound]]",
+        "it": "Suoneria Ring con [[sound]]",
+        "nl": "Ring Chime met [[sound]]",
+        "no": "Ring Chime med [[sound]]",
+        "pl": "Dzwonek Ring z [[sound]]",
+        "sv": "Ring Chime med [[sound]]",
+        "ko": "[[sound]] 소리로 Ring Chime"
+      },
+      "args": [
+        {
+          "name": "sound",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "ring",
+              "label": {
+                "en": "Ring sound",
+                "da": "Ringelyd",
+                "de": "Klingelton",
+                "es": "Sonido de timbre",
+                "fr": "Sonnerie",
+                "it": "Suoneria",
+                "nl": "Beltoon",
+                "no": "Ringetone",
+                "pl": "Dźwięk dzwonka",
+                "sv": "Ringljud",
+                "ko": "벨 소리"
+              }
+            },
+            {
+              "id": "motion",
+              "label": {
+                "en": "Motion sound",
+                "da": "Bevægelseslyd",
+                "de": "Bewegungsklang",
+                "es": "Sonido de movimiento",
+                "fr": "Son de mouvement",
+                "it": "Suono di movimento",
+                "nl": "Bewegingsgeluid",
+                "no": "Bevegelseslyd",
+                "pl": "Dźwięk ruchu",
+                "sv": "Rörelseljud",
+                "ko": "모션 소리"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snoozeChime",
+      "title": {
+        "en": "Snooze Chime for ",
+        "da": "Slumre-kime for ",
+        "de": "Schlummer-Gong für ",
+        "es": "Tono de aplazamiento para ",
+        "fr": "Sonnerie de répétition pour ",
+        "it": "Snooze Chime per ",
+        "nl": "Snooze Chime gedurende ",
+        "no": "Snooze-klokke for ",
+        "pl": "Dzwonek drzemki dla ",
+        "sv": "Snooze-signal för ",
+        "ko": "스누즈 알람: "
+      },
+      "titleFormatted": {
+        "en": "Snooze Chime for [[duration]]",
+        "da": "Snooze klokkespil i [[duration]]",
+        "de": "Snooze Glockenspiel für [[duration]]",
+        "es": "Snooze campana durante [[duration]]",
+        "fr": "Snooze carillon pendant [[duration]]",
+        "it": "Snooze campana per [[duration]]",
+        "nl": "Snooze Chime gedurende [[duration]]",
+        "no": "Snooze klokkespill i [[duration]]",
+        "pl": "Snooze dzwon w ciągu [[duration]]",
+        "sv": "Snooze klockspel i [[duration]]",
+        "ko": "[[duration]] 동안 스누즈 알람"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "duration",
+          "title": {
+            "en": "Duration",
+            "ko": "기간"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1 hour",
+                "ko": "1시간"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "3 hours",
+                "ko": "3시간"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "6 hours",
+                "ko": "6시간"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "9 hours",
+                "ko": "9시간"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "12 hours",
+                "ko": "12시간"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unsnoozeChime",
+      "title": {
+        "en": "Unsnooze Chime",
+        "da": "Fjern slumre på klokke",
+        "de": "Wecker wiederholen",
+        "es": "Desactivar repetición de alarma",
+        "fr": "Désactiver le répétiteur d'alarme",
+        "it": "Disattiva la ripetizione della sveglia",
+        "nl": "Unsnooze Chime",
+        "no": "Deaktiver snooze på alarm",
+        "pl": "Wyłącz powtarzanie alarmu",
+        "sv": "Stoppa snooze på klocka",
+        "ko": "스누즈 알람 해제"
+      },
+      "titleFormatted": {
+        "en": "Unsnooze Chime",
+        "ko": "스누즈 알람 해제",
+        "da": "Fjern slumre på klokke",
+        "de": "Wecker wiederholen",
+        "es": "Desactivar repetición de alarma",
+        "fr": "Désactiver le répétiteur d'alarme",
+        "it": "Disattiva la ripetizione della sveglia",
+        "nl": "Unsnooze Chime",
+        "no": "Deaktiver snooze på alarm",
+        "pl": "Wyłącz powtarzanie alarmu",
+        "sv": "Stoppa snooze på klocka"
+      },
+      "args": []
+    }
+  ]
+}

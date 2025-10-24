@@ -1,0 +1,52 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Motion alarm",
+    "nl": "Bewegingsalarm",
+    "de": "Bewegungs-Alarm",
+    "fr": "Alarme mouvement",
+    "it": "Allarme di movimento",
+    "ko": "움직임 알람",
+    "sv": "Rörelselarm",
+    "no": "Bevegelsesalarm",
+    "es": "Alarma de movimiento",
+    "da": "Bevægelsesalarm",
+    "ru": "Сигнал движения",
+    "pl": "Czujnik ruchu"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Motion alarm turned on",
+    "nl": "Bewegingsalarm ging af",
+    "de": "Bewegungs-Alarm ist angegangen",
+    "fr": "Alarme mouvement s'est déclenchée",
+    "it": "Allarme di movimento attivato",
+    "ko": "움직임 알람이 켜졌습니다",
+    "sv": "Rörelselarm aktiverat",
+    "no": "Bevegelsesalarm aktivert",
+    "es": "Alarma de movimiento activada",
+    "da": "Bevægelsesalarm blev aktiveret",
+    "ru": "Сигнал движения включен",
+    "pl": "Czujnik ruchu włączony"
+  },
+  "insightsTitleFalse": {
+    "en": "Motion alarm turned off",
+    "nl": "Bewegingsalarm ging uit",
+    "de": "Bewegungs-Alarm ist ausgegangen",
+    "fr": "Alarme mouvement s'est désactivée",
+    "it": "Allarme di movimento disattivato",
+    "ko": "움직임 알람이 꺼졌습니다",
+    "sv": "Rörelselarm inaktiverat",
+    "no": "Bevegelsesalarm deaktivert",
+    "es": "Alarma de movimiento desactivada",
+    "da": "Bevægelsesalarm blev deaktiveret",
+    "ru": "Сигнал движения выключен",
+    "pl": "Czujnik ruchu wyłączony"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "options": {
+    "zoneActivity": true
+  }
+}

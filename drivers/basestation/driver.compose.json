@@ -1,0 +1,60 @@
+{
+  "name": {
+    "en": "Basestation",
+    "nl": "Basisstation",
+    "ko": "베이스스테이션"
+  },
+  "class": "homealarm",
+  "capabilities": [
+    "alarm_burglar",
+    "alarm_fire",
+    "alarm_medical",
+    "alarm_panic",
+    "alarm_tamper",
+    "power_source",
+    "connection_source",
+    "measure_battery",
+    "ring_alarm_state"
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "images": {
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "done",
+      "template": "done"
+    }
+  ]
+}

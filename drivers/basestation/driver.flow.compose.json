@@ -1,0 +1,467 @@
+{
+  "triggers": [
+    {
+      "id": "ring_alarm_mode_changed",
+      "title": {
+        "en": "Mode changed.",
+        "nl": "Toezicht modus is gewijzigd.",
+        "de": "",
+        "fr": "",
+        "it": "",
+        "ko": "",
+        "no": "",
+        "sv": "",
+        "da": "",
+        "es": ""
+      },
+      "hint": {
+        "en": "This card is triggered when the Surveillance Mode is changed, the new Mode is available in the Surveillance Mode tag."
+      },
+      "tokens": [
+        {
+          "name": "oldmode",
+          "type": "string",
+          "example": "home",
+          "title": {
+            "en": "Previous mode",
+            "da": "Tidligere tilstand",
+            "de": "Vorheriger Modus",
+            "es": "Modo anterior",
+            "fr": "Mode précédent",
+            "it": "Modalità precedente",
+            "nl": "Vorige modus",
+            "no": "Forrige modus",
+            "pl": "Poprzedni tryb",
+            "sv": "Föregående läge",
+            "ko": "이전 모드"
+          }
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "example": "Disarmed",
+          "title": {
+            "en": "New mode",
+            "da": "Ny tilstand",
+            "de": "Neuer Modus",
+            "es": "Nuevo modo",
+            "fr": "Nouveau mode",
+            "it": "Nuova modalità",
+            "ko": "새 모드",
+            "nl": "Nieuwe modus",
+            "no": "Ny modus",
+            "pl": "Nowy tryb",
+            "sv": "Nytt läge"
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "entry_delay",
+      "title": {
+        "en": "Entry delay activated",
+        "nl": "Inloopvertraging geactiveerd",
+        "de": "",
+        "fr": "",
+        "it": "",
+        "ko": "",
+        "no": "",
+        "sv": "",
+        "da": "",
+        "es": ""
+      },
+      "tokens": [
+        {
+          "name": "faultedDevices",
+          "type": "string",
+          "example": "home",
+          "title": {
+            "en": "Device",
+            "da": "",
+            "de": "",
+            "es": "",
+            "fr": "",
+            "it": "",
+            "nl": "",
+            "no": "",
+            "pl": "",
+            "sv": "",
+            "ko": ""
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "alarm_burglar_true",
+      "highlight": true,
+      "title": {
+        "en": "The burglar alarm turned on",
+        "nl": "Het inbraakalarm gaat aan",
+        "de": "Der Einbruch-Alarm ist angegangen",
+        "fr": "L'alarme anti-intrusion s'est activée",
+        "it": "L'allarme antifurto è stato attivato",
+        "sv": "Inbrottslarmet aktiverat",
+        "no": "Innbruddsalarmen ble aktivert",
+        "es": "La alarma antirrobo se ha activado",
+        "da": "Indbrudsalarmen blev aktiveret",
+        "pl": "Alarm antywłamaniowy włączony",
+        "ko": "침입 경보가 켜졌습니다"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_burglar_false",
+      "title": {
+        "en": "The burglar alarm turned off",
+        "nl": "Het inbraakalarm gaat uit",
+        "de": "Der Einbruch-Alarm ist ausgegangen",
+        "fr": "L'alarme anti-intrusion s'est désactivée",
+        "it": "L'allarme antifurto è stato disattivato",
+        "sv": "Inbrottslarmet inaktiverat",
+        "no": "Innbruddsalarmen ble deaktivert",
+        "es": "La alarma antirrobo se ha desactivado",
+        "da": "Indbrudsalarmen blev deaktiveret",
+        "pl": "Alarm antywłamaniowy wyłączony",
+        "ko": "침입 경보가 꺼졌습니다"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_medical_true",
+      "highlight": true,
+      "title": {
+        "en": "The medical alarm turned on",
+        "nl": "Het medisch alarm gaat aan",
+        "de": "Der medizinische Alarm ist angegangen",
+        "fr": "L'alarme médicale s'est activée",
+        "it": "L'allarme medico è stato attivato",
+        "sv": "Medicinskt larm aktiverat",
+        "no": "Medisinsk alarm ble aktivert",
+        "es": "La alarma médica se ha activado",
+        "da": "Den medicinske alarm blev aktiveret",
+        "pl": "Alarm medyczny włączony",
+        "ko": "의료 경보가 켜졌습니다"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_medical_false",
+      "title": {
+        "en": "The medical alarm turned off",
+        "nl": "Het medisch alarm gaat uit",
+        "de": "Der medizinische Alarm ist ausgegangen",
+        "fr": "L'alarme médicale s'est désactivée",
+        "it": "L'allarme medico è stato disattivato",
+        "sv": "Medicinskt larm inaktiverat",
+        "no": "Medisinsk alarm ble deaktivert",
+        "es": "La alarma médica se ha desactivado",
+        "da": "Den medicinske alarm blev deaktiveret",
+        "pl": "Alarm medyczny wyłączony",
+        "ko": "의료 경보가 꺼졌습니다"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_fire_true",
+      "highlight": true,
+      "title": {
+        "en": "The fire alarm turned on",
+        "nl": "Het brandalarm gaat aan",
+        "de": "",
+        "fr": "",
+        "it": "",
+        "sv": "",
+        "no": "",
+        "es": "",
+        "da": "",
+        "pl": "",
+        "ko": ""
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_fire_false",
+      "title": {
+        "en": "The fire alarm turned off",
+        "nl": "Het brandalarm gaat uit",
+        "de": "",
+        "fr": "",
+        "it": "",
+        "sv": "",
+        "no": "",
+        "es": "",
+        "da": "",
+        "pl": "",
+        "ko": ""
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_panic_true",
+      "highlight": true,
+      "title": {
+        "en": "The panic alarm turned on",
+        "nl": "Het paniekalarm gaat aan",
+        "de": "",
+        "fr": "",
+        "it": "",
+        "sv": "",
+        "no": "",
+        "es": "",
+        "da": "",
+        "pl": "",
+        "ko": ""
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "alarm_panic_false",
+      "title": {
+        "en": "The panic alarm turned off",
+        "nl": "Het paniekalarm gaat uit",
+        "de": "",
+        "fr": "",
+        "it": "",
+        "sv": "",
+        "no": "",
+        "es": "",
+        "da": "",
+        "pl": "",
+        "ko": ""
+      },
+      "args": [],
+      "tokens": [
+        {
+          "title": {
+            "en": "Time triggered",
+            "da": "Tid udløst",
+            "de": "Zeit ausgelöst",
+            "es": "Hora activada",
+            "fr": "Heure déclenchée",
+            "it": "Ora attivata",
+            "nl": "Tijd geactiveerd",
+            "no": "Tid utløst",
+            "pl": "Czas wyzwolenia",
+            "sv": "Tid utlöst",
+            "ko": "트리거된 시간"
+          },
+          "name": "timestamp",
+          "type": "string",
+          "example": "2025-10-18T14:30:00.000Z"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "alarm_burglar",
+      "title": {
+        "en": "The burglar alarm is !{{on|off}}",
+        "nl": "Het inbraakalarm is !{{aan|uit}}",
+        "de": "Der Einbruch-Alarm ist !{{an|aus}}",
+        "fr": "L'alarme anti-intrusion est !{{en marche|arrêtée}}",
+        "it": "L'allarme antifurto è !{{acceso|spento}}",
+        "sv": "Inbrottslarmet är !{{på|av}}",
+        "no": "Innbruddsalarmen er !{{på|av}}",
+        "es": "La alarma antirrobo está !{{activada|desactivada}}",
+        "da": "Indbrudsalarmen er !{{tændt|slukket}}",
+        "pl": "Alarm antywłamaniowy jest !{{włączony|wyłączony}}",
+        "ko": "침입 경보가 !{{켜짐|꺼짐}}"
+      },
+      "args": []
+    },
+    {
+      "id": "alarm_fire",
+      "title": {
+        "en": "The fire alarm is !{{on|off}}",
+        "nl": "Het brandalarm is !{{aan|uit}}",
+        "de": "Der Feueralarm ist !{{an|aus}}",
+        "fr": "L'alarme incendie est !{{en marche|arrêtée}}",
+        "it": "L'allarme antincendio è !{{acceso|spento}}",
+        "sv": "Brandlarmet är !{{på|av}}",
+        "no": "Brannalarmen er !{{på|av}}",
+        "es": "La alarma de incendio está !{{activada|desactivada}}",
+        "da": "Brandalarmen er !{{tændt|slukket}}",
+        "pl": "Alarm przeciwpożarowy jest !{{włączony|wyłączony}}",
+        "ko": "화재 경보가 !{{켜짐|꺼짐}}"
+      },
+      "args": []
+    },
+    {
+      "id": "alarm_medical",
+      "title": {
+        "en": "The medical alarm is !{{on|off}}",
+        "nl": "Het medisch alarm is !{{aan|uit}}",
+        "de": "Der medizinische Alarm ist !{{an|aus}}",
+        "fr": "L'alarme médicale est !{{en marche|arrêtée}}",
+        "it": "L'allarme medico è !{{acceso|spento}}",
+        "sv": "Medicinskt larm är !{{på|av}}",
+        "no": "Medisinsk alarm er !{{på|av}}",
+        "es": "La alarma médica está !{{activada|desactivada}}",
+        "da": "Den medicinske alarm er !{{tændt|slukket}}",
+        "pl": "Alarm medyczny jest !{{włączony|wyłączony}}",
+        "ko": "의료 경보가 !{{켜짐|꺼짐}}"
+      },
+      "args": []
+    },
+    {
+      "id": "alarm_panic",
+      "title": {
+        "en": "The panic alarm is !{{on|off}}",
+        "nl": "Het paniekalarm is !{{aan|uit}}",
+        "de": "Der Panikalarm ist !{{an|aus}}",
+        "fr": "L'alarme panique est !{{en marche|arrêtée}}",
+        "it": "L'allarme antipanico è !{{acceso|spento}}",
+        "sv": "Paniklarmet är !{{på|av}}",
+        "no": "Panikkalarmen er !{{på|av}}",
+        "es": "La alarma de pánico está !{{activada|desactivada}}",
+        "da": "Panikalarmen er !{{tændt|slukket}}",
+        "pl": "Alarm paniki jest !{{włączony|wyłączony}}",
+        "ko": "패닉 경보가 !{{켜짐|꺼짐}}"
+      },
+      "args": []
+    }
+  ]
+}

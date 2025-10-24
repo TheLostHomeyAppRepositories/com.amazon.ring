@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Flood light",
+    "da": "Flomlys",
+    "de": "Flutlicht",
+    "es": "Foco de inundación",
+    "fr": "Projecteur",
+    "it": "Faro alluvione",
+    "ko": "투광등",
+    "nl": "Schijnwerper",
+    "no": "Flomlys",
+    "pl": "Reflektor",
+    "sv": "Översvämningsljus"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "uiQuickAction": true
+}

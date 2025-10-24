@@ -1,0 +1,23 @@
+{
+  "id": "alarm_generic_false",
+  "title": {
+    "en": "The doorbell stops ringing",
+    "nl": "De deurbel stopt met rinkelen",
+    "de": "Die Türklingel hört auf zu läuten",
+    "fr": "La sonnette cesse de retentir",
+    "it": "Il campanello smette di suonare",
+    "sv": "Dörrklockan slutar ringa",
+    "no": "Dørklokken slutter å ringe",
+    "es": "El timbre deja de sonar",
+    "da": "Dørklokken holder op med at ringe",
+    "pl": "Dzwonek do drzwi przestaje dzwonić",
+    "ko": "초인종이 멈춥니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=doorbell|intercom"
+    }
+  ]
+}

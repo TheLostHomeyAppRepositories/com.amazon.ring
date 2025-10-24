@@ -1,0 +1,80 @@
+{
+  "id": "change_location_mode",
+  "title": {
+    "en": "Change the mode for a location",
+    "ko": "위치 모드 변경",
+    "da": "Skift tilstand for en placering",
+    "de": "Ändern Sie den Modus für einen Standort",
+    "es": "Cambiar el modo para una ubicación",
+    "fr": "Changer le mode pour un emplacement",
+    "it": "Cambia la modalità per una posizione",
+    "nl": "Verander de modus voor een locatie",
+    "no": "Endre modus for en plassering",
+    "pl": "Zmień tryb dla lokalizacji",
+    "sv": "Ändra läge för en plats"
+  },
+  "titleFormatted": {
+    "en": "Change the mode for [[location]] to [[mode]]",
+    "ko": "[[location]] 위치 모드를 [[mode]]로 변경",
+    "da": "Skift tilstand for [[location]] til [[mode]]",
+    "de": "Ändere den Modus für [[location]] zu [[mode]]",
+    "es": "Cambiar el modo para [[location]] a [[mode]]",
+    "fr": "Changer le mode pour [[location]] à [[mode]]",
+    "it": "Cambiare la modalità per [[location]] a [[mode]]",
+    "nl": "Verander de modus voor [[location]] naar [[mode]]",
+    "no": "Endre modus for [[location]] til [[mode]]",
+    "pl": "Zmień tryb dla [[location]] na [[mode]]",
+    "sv": "Ändra läget för [[location]] till [[mode]]"
+  },
+  "args": [
+    {
+      "title": {
+        "en": "Location",
+        "nl": "Locatie",
+        "ko": "위치"
+      },
+      "name": "location",
+      "type": "autocomplete",
+      "placeholder": {
+        "en": "NOTE: You must have a location setup in Ring",
+        "ko": "참고: Ring에서 위치를 설정해야 합니다",
+        "da": "BEMÆRK: Du skal have en placering opsat i Ring",
+        "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
+        "es": "NOTA: Debe tener una ubicación configurada en Ring",
+        "fr": "REMARQUE: Vous devez avoir une localisation configurée dans Ring",
+        "it": "NOTA: È necessario avere una posizione impostata in Ring",
+        "nl": "OPMERKING: U moet een locatie instellen in Ring",
+        "no": "MERK: Du må ha en plassering satt opp i Ring",
+        "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
+        "sv": "OBS: Du måste ha en plats inställd i Ring"
+      }
+    },
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "home",
+          "label": {
+            "en": "Home",
+            "ko": "집"
+          }
+        },
+        {
+          "id": "disarmed",
+          "label": {
+            "en": "Disarmed",
+            "ko": "해제"
+          }
+        },
+        {
+          "id": "away",
+          "label": {
+            "en": "Away",
+            "ko": "외출"
+          }
+        }
+      ]
+    }
+  ]
+}

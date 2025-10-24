@@ -1,0 +1,60 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Medical alarm",
+    "nl": "Medisch alarm",
+    "de": "Medizinischer Alarm",
+    "fr": "Alarme médicale",
+    "it": "Allarme medico",
+    "ko": "의료 경보",
+    "sv": "Medicinskt larm",
+    "no": "Medisinsk alarm",
+    "es": "Alarma médica",
+    "da": "Medicinsk alarm",
+    "pl": "Alarm medyczny"
+  },
+  "desc": {
+    "en": "True when a medical emergency has been detected",
+    "nl": "Gaat af als er een medisch noodgeval gedetecteerd wordt",
+    "de": "True, wenn ein medizinischer Notfall erkannt wurde",
+    "fr": "Vrai si une urgence médicale a été détectée",
+    "it": "Vero quando è stata rilevata un'emergenza medica",
+    "ko": "의료 비상 상황이 감지되면 '참'으로 표시됩니다",
+    "sv": "Sant när medicinsk nödsituation upptäckts",
+    "no": "Sann når en medisinsk nødsituasjon har blitt påvist",
+    "es": "Activado cuando se detecta una emergencia médica",
+    "da": "Sandt, når en medicinsk nødsituation er blevet opdaget",
+    "pl": "Alarm medyczny"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Medical alarm turned on",
+    "nl": "Medisch alarm ging af",
+    "de": "Medizinischer Alarm ist angegangen",
+    "fr": "Alarme médicale s'est activée",
+    "it": "Allarme medico attivato",
+    "ko": "의료 경보가 켜졌습니다",
+    "sv": "Medicinskt larm aktiverat",
+    "no": "Medisinsk alarm ble aktivert",
+    "es": "Alarma médica activada",
+    "da": "Medicinsk alarm blev aktiveret",
+    "pl": "Adekwatny, kiedy wykryto nagły przypadek medyczny"
+  },
+  "insightsTitleFalse": {
+    "en": "Medical alarm turned off",
+    "nl": "Medisch alarm ging uit",
+    "de": "Medizinischer Alarm ist ausgegangen",
+    "fr": "Alarme médicale s'est désactivée",
+    "it": "Allarme medico disattivato",
+    "ko": "의료 경보가 꺼졌습니다",
+    "sv": "Medicinskt larm inaktiverat",
+    "no": "Medisinsk alarm deaktivert",
+    "es": "Alarma médica desactivada",
+    "da": "Medicinsk alarm blev deaktiveret",
+    "pl": "Alarm medyczny wyłączony"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "drivers/basestation/assets/alarm_medical.svg"
+}

@@ -1,0 +1,75 @@
+{
+  "conditions": [
+    {
+      "id": "alarm_generic",
+      "title": {
+        "en": "The doorbell is !{{ |not }}ringing",
+        "ko": "초인종이 !{{울림|멈춤}} 상태입니다",
+        "nl": "De bewegingsmelder is !{{aan|uit}}",
+        "de": "Der Bewegungs-Alarm ist !{{an|aus}}",
+        "fr": "L'alarme mouvement est !{{en marche|arrêtée}}",
+        "it": "L'allarme di movimento è !{{acceso|spento}}",
+        "sv": "Rörelselarmet är !{{på|av}}",
+        "no": "Bevegelsesalarmen er !{{på|av}}",
+        "es": "La alarma de movimiento está !{{activada|desactivada}}",
+        "da": "Bevægelsesalarmen er !{{tændt|slukket}}",
+        "ru": "Сигнал движения !{{вкл.|выкл.}}",
+        "pl": "Czujnik ruchu !{{włączony|wyłączony}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "ring_grab_snapshot",
+      "title": {
+        "en": "Grab current snapshot",
+        "ko": "현재 스냅샷 캡처",
+        "da": "Hent øjebliksbillede",
+        "de": "Aktuellen Schnappschuss erfassen",
+        "es": "Capturar instantánea actual",
+        "fr": "Capturer l'instantané actuel",
+        "it": "Acquisisci istantanea corrente",
+        "nl": "Huidige snapshot pakken",
+        "no": "Ta øyeblikksbilde nå",
+        "pl": "Zrób obecny zrzut ekranu",
+        "sv": "Ta aktuell ögonblicksbild"
+      },
+      "args": []
+    },
+    {
+      "id": "doorbell_enable_motion",
+      "title": {
+        "en": "Enable motion detection",
+        "ko": "모션 감지 활성화",
+        "da": "Aktiver bevægelsesregistrering",
+        "de": "Bewegungserkennung aktivieren",
+        "es": "Activar la detección de movimiento",
+        "fr": "Activer la détection de mouvement",
+        "it": "Abilita la rilevazione del movimento",
+        "nl": "Bewegingsdetectie inschakelen",
+        "no": "Aktiver bevegelsesdeteksjon",
+        "pl": "Włącz wykrywanie ruchu",
+        "sv": "Aktivera rörelsedetektering"
+      },
+      "args": []
+    },
+    {
+      "id": "doorbell_disable_motion",
+      "title": {
+        "en": "Disable motion detection",
+        "ko": "모션 감지 비활성화",
+        "da": "Deaktiver bevægelsesregistrering",
+        "de": "Bewegungserkennung deaktivieren",
+        "es": "Desactivar la detección de movimiento",
+        "fr": "Désactiver la détection de mouvement",
+        "it": "Disattivare il rilevamento del movimento",
+        "nl": "Bewegingsdetectie uitschakelen",
+        "no": "Deaktiver bevegelsesdeteksjon",
+        "pl": "Wyłącz wykrywanie ruchu",
+        "sv": "Inaktivera rörelsedetektion"
+      },
+      "args": []
+    }
+  ]
+}

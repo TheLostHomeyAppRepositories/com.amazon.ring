@@ -1,0 +1,23 @@
+{
+  "id": "alarm_motion_false",
+  "title": {
+    "en": "The motion alarm turned off",
+    "nl": "De bewegingsmelder gaat uit",
+    "de": "Der Bewegungs-Alarm ist ausgegangen",
+    "fr": "L'alarme mouvement s'est désactivée",
+    "it": "L'allarme di movimento è stato disattivato",
+    "sv": "Rörelselarmet inaktiverat",
+    "no": "Bevegelsesalarmen deaktivert",
+    "es": "La alarma de movimiento se ha desactivado",
+    "da": "Bevægelsesalarmen blev deaktiveret",
+    "pl": "Czujnik ruchu wyłączony",
+    "ko": "모션 경보가 꺼졌습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=doorbell|stickupcam|motiondetector"
+    }
+  ]
+}

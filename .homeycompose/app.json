@@ -1,0 +1,83 @@
+{
+  "id": "com.amazon.ring",
+  "version": "2.14.6",
+  "compatibility": ">=12.9.0",
+  "platforms": [
+    "local"
+  ],
+  "sdk": 3,
+  "brandColor": "#1A98D5",
+  "name": {
+    "en": "Ring"
+  },
+  "author": {
+    "name": "Danee de Kruyff",
+    "email": "daneedekruyff@outlook.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Dennie de Groot",
+        "email": "mail@denniedegroot.nl"
+      },
+      {
+        "name": "Kaoh",
+        "email": "kaoh@kaoh.nl"
+      },
+      {
+        "name": "tokreutz",
+        "email": "tor.kreutzer@gmail.com"
+      },
+      {
+        "name": "Stefan Schweiger"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "daneedekruyff"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/daneedk/com.amazon.ring/issues"
+  },
+  "homeyCommunityTopicId": 76364,
+  "source": "https://github.com/daneedk/com.amazon.ring",
+  "support": "https://community.homey.app/t/76364",
+  "description": {
+    "en": "Ring Doorbell, Camera and Alarm support for Homey",
+    "da": "Ring Doorbell, kamera og alarm-understøttelse til Homey",
+    "de": "Unterstützung von Ring Doorbell, Kamera und Alarm für Homey",
+    "es": "Soporte para Ring Doorbell, Cámara y Alarma en Homey",
+    "fr": "Prise en charge de la sonnette, de la caméra et de l'alarme Ring pour Homey",
+    "it": "Supporto per la videocamera, il campanello e l'allarme Ring su Homey",
+    "ko": "Homey에서 Ring 초인종, 카메라 및 알람을 편리하게 사용할 수 있습니다.",
+    "nl": "Ring Deurbell-, Camera- en Alarm-ondersteuning voor Homey",
+    "no": "Ring Doorbell, Camera og Alarm-støtte for Homey",
+    "pl": "Obsługa dzwonka, kamery i alarmu Ring dla Homey",
+    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey"
+  },
+  "images": {
+    "large": "./assets/images/large.jpg",
+    "small": "./assets/images/small.jpg"
+  },
+  "category": "appliances",
+  "tags": {
+    "en": [
+      "Ring",
+      "Doorbell",
+      "Camera",
+      "Chime",
+      "Intercom",
+      "Alarm"
+    ]
+  },
+  "api": {
+    "getDevicesInfo": {
+      "method": "GET",
+      "path": "/devicesinfo"
+    }
+  }
+}
