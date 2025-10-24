@@ -273,26 +273,21 @@ class DeviceBasestation extends Device {
 
         }
     }
-
-    /*
-    _onCapabilityRingAlarmState( newState, opts ) {
-        
-        this.log('onCapabilityRingAlarmState:', newState)
-        this.log('Selected mode:',locationModesAlarm[newState])
-        this.log('Basestation location:',this.getData().location)
-        
-
-        this.homey.app._api.setLocationMode(this.getData().location,locationModesAlarm[newState])
-            .then(result => {})
-            .catch(error => {this.error(error)})
-
-        // todo add code to actually set the mode
-
-        return Promise.resolve( true );
-
-    }
-    */
     
+    changeAlarmMode(args) {
+        if (this._device instanceof Error)
+            throw this._device;
+
+        return this.homey.app._api.setLocationMode(this.getData().location,args.mode)
+            .then(result => { 
+                return result 
+            })
+            .catch(error => {
+                this.error(error);
+                return Promise.reject(error);
+            })
+    }
+
     _onCapabilityRingAlarmState(newState, opts) {
 
         this.log('onCapabilityRingAlarmState:', newState)

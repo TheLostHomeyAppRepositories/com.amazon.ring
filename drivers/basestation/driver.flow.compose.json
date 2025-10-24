@@ -463,5 +463,45 @@
       },
       "args": []
     }
+  ],
+  "actions": [
+    {
+      "id": "change_ring_alarm_mode",
+      "title": {
+        "en": "Change the mode"
+      },
+      "hint": {
+        "en": "Use this card to set the mode on your basestation"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "home",
+              "label": {
+                "en": "Home",
+                "ko": "집"
+              }
+            },
+            {
+              "id": "disarmed",
+              "label": {
+                "en": "Disarmed",
+                "ko": "해제"
+              }
+            },
+            {
+              "id": "away",
+              "label": {
+                "en": "Away",
+                "ko": "외출"
+              }
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

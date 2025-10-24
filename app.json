@@ -1190,6 +1190,49 @@
         ]
       },
       {
+        "id": "change_ring_alarm_mode",
+        "title": {
+          "en": "Change the mode"
+        },
+        "hint": {
+          "en": "Use this card to set the mode on your basestation"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home",
+                  "ko": "집"
+                }
+              },
+              {
+                "id": "disarmed",
+                "label": {
+                  "en": "Disarmed",
+                  "ko": "해제"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "ko": "외출"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "ring_chime",
         "title": {
           "en": "Ring Chime with",

@@ -40,6 +40,9 @@ class DriverBasestation extends Driver {
                 return args.device.isAlarmMedicalOn(); // Promise<boolean>
             })
 
+        this.homey.flow.getActionCard('change_ring_alarm_mode')
+            .registerRunListener(args => args.device.changeAlarmMode(args));
+
     }
 
     // this function is called from device.js
