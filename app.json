@@ -380,19 +380,30 @@
       {
         "id": "ring_alarm_mode_changed",
         "title": {
-          "en": "Mode changed.",
-          "nl": "Toezicht modus is gewijzigd.",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "ko": "",
-          "no": "",
-          "sv": "",
-          "da": "",
-          "es": ""
+          "en": "The mode changed.",
+          "da": "Tilstanden er ændret.",
+          "de": "Der Modus wurde geändert.",
+          "es": "El modo ha cambiado.",
+          "fr": "Le mode a changé.",
+          "it": "La modalità è cambiata.",
+          "ko": "모드가 변경되었습니다.",
+          "nl": "De toezicht modus is gewijzigd.",
+          "no": "Modusen er endret.",
+          "pl": "Tryb został zmieniony.",
+          "sv": "Läget har ändrats."
         },
         "hint": {
-          "en": "This card is triggered when the Surveillance Mode is changed, the new Mode is available in the Surveillance Mode tag."
+          "en": "This card is triggered when the Surveillance Mode is changed, the new Mode is available in the Surveillance Mode tag.",
+          "da": "Dette kort udløses, når overvågningstilstanden ændres; den nye tilstand er tilgængelig i overvågningstilstands-tagget.",
+          "de": "Diese Karte wird ausgelöst, wenn der Überwachungsmodus geändert wird; der neue Modus ist im Überwachungsmodus-Tag verfügbar.",
+          "es": "Esta tarjeta se activa cuando se cambia el modo de vigilancia; el nuevo modo está disponible en la etiqueta de modo de vigilancia.",
+          "fr": "Cette carte est déclenchée lorsque le mode de surveillance est modifié ; le nouveau mode est disponible dans le tag du mode de surveillance.",
+          "it": "Questa scheda viene attivata quando la modalità di sorveglianza viene modificata; la nuova modalità è disponibile nel tag della modalità di sorveglianza.",
+          "ko": "감시 모드가 변경되면 이 카드가 트리거됩니다. 새 모드는 감시 모드 태그에서 확인할 수 있습니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de toezichtmodus wordt gewijzigd; de nieuwe modus is beschikbaar in de toezichtmodus-tag.",
+          "no": "Dette kort utløses når overvåkingsmodusen endres; den nye modusen er tilgjengelig i overvåkingsmodus-taggen.",
+          "pl": "Ta karta jest uruchamiana, gdy tryb nadzoru zostanie zmieniony; nowy tryb jest dostępny w tagu trybu nadzoru.",
+          "sv": "Detta kort utlöses när övervakningsläget ändras; det nya läget är tillgängligt i taggen för övervakningsläge."
         },
         "tokens": [
           {
@@ -406,11 +417,11 @@
               "es": "Modo anterior",
               "fr": "Mode précédent",
               "it": "Modalità precedente",
+              "ko": "이전 모드",
               "nl": "Vorige modus",
               "no": "Forrige modus",
               "pl": "Poprzedni tryb",
-              "sv": "Föregående läge",
-              "ko": "이전 모드"
+              "sv": "Föregående läge"
             }
           },
           {
@@ -443,16 +454,29 @@
       {
         "id": "entry_delay",
         "title": {
-          "en": "Entry delay activated",
+          "en": "The entry delay activated",
           "nl": "Inloopvertraging geactiveerd",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "ko": "",
-          "no": "",
-          "sv": "",
-          "da": "",
-          "es": ""
+          "de": "Die Eintrittsverzögerung wurde aktiviert",
+          "fr": "Le délai d’entrée est activé",
+          "it": "Il ritardo d’ingresso è attivato",
+          "ko": "입장 지연이 활성화되었습니다",
+          "no": "Inngangsforsinkelsen er aktivert",
+          "sv": "Ingångsfördröjningen har aktiverats",
+          "da": "Indgangsforsinkelsen er aktiveret",
+          "es": "El retraso de entrada se ha activado"
+        },
+        "hint": {
+          "en": "This card is triggered when the entry delay is activated, giving time to disarm the system before an alarm sounds.",
+          "da": "Dette kort udløses, når indgangsforsinkelsen aktiveres, så der er tid til at deaktivere systemet, inden alarmen går.",
+          "de": "Diese Karte wird ausgelöst, wenn die Eintrittsverzögerung aktiviert wird, wodurch Zeit bleibt, das System zu deaktivieren, bevor ein Alarm ausgelöst wird.",
+          "es": "Esta tarjeta se activa cuando se activa el retraso de entrada, dando tiempo para desarmar el sistema antes de que suene la alarma.",
+          "fr": "Cette carte est déclenchée lorsque le délai d’entrée est activé, laissant le temps de désarmer le système avant que l’alarme ne se déclenche.",
+          "it": "Questa scheda viene attivata quando il ritardo d’ingresso è attivato, dando il tempo di disattivare il sistema prima che suoni l’allarme.",
+          "ko": "이 카드는 입장 지연이 활성화될 때 트리거되며, 경보가 울리기 전에 시스템을 해제할 수 있는 시간을 제공합니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de inloopvertraging wordt geactiveerd, waardoor tijd is om het systeem uit te schakelen voordat het alarm afgaat.",
+          "no": "Dette kortet utløses når inngangsforsinkelsen aktiveres, og gir tid til å deaktivere systemet før alarmen utløses.",
+          "pl": "Ta karta jest uruchamiana, gdy opóźnienie wejścia zostaje aktywowane, dając czas na rozbrojenie systemu przed włączeniem alarmu.",
+          "sv": "Detta kort utlöses när ingångsfördröjningen aktiveras, vilket ger tid att avaktivera systemet innan larmet går."
         },
         "tokens": [
           {
@@ -461,16 +485,16 @@
             "example": "home",
             "title": {
               "en": "Device",
-              "da": "",
-              "de": "",
-              "es": "",
-              "fr": "",
-              "it": "",
-              "nl": "",
-              "no": "",
-              "pl": "",
-              "sv": "",
-              "ko": ""
+              "da": "Enhed",
+              "de": "Gerät",
+              "es": "Dispositivo",
+              "fr": "Appareil",
+              "it": "Dispositivo",
+              "ko": "장치",
+              "nl": "Apparaat",
+              "no": "Enhet",
+              "pl": "Urządzenie",
+              "sv": "Enhet"
             }
           }
         ],
@@ -487,16 +511,29 @@
         "highlight": true,
         "title": {
           "en": "The burglar alarm turned on",
-          "nl": "Het inbraakalarm gaat aan",
+          "da": "Indbrudsalarmen blev aktiveret",
           "de": "Der Einbruch-Alarm ist angegangen",
+          "es": "La alarma antirrobo se ha activado",
           "fr": "L'alarme anti-intrusion s'est activée",
           "it": "L'allarme antifurto è stato attivato",
-          "sv": "Inbrottslarmet aktiverat",
+          "ko": "침입 경보가 켜졌습니다",
+          "nl": "Het inbraakalarm gaat aan",
           "no": "Innbruddsalarmen ble aktivert",
-          "es": "La alarma antirrobo se ha activado",
-          "da": "Indbrudsalarmen blev aktiveret",
           "pl": "Alarm antywłamaniowy włączony",
-          "ko": "침입 경보가 켜졌습니다"
+          "sv": "Inbrottslarmet aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the burglar alarm is activated, indicating a potential intrusion.",
+          "da": "Dette kort udløses, når indbrudsalarmen aktiveres, hvilket indikerer en potentiel indtrængen.",
+          "de": "Diese Karte wird ausgelöst, wenn der Einbruch-Alarm aktiviert wird und auf einen möglichen Einbruch hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma antirrobo, indicando una posible intrusión.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme anti-intrusion est activée, indiquant une intrusion potentielle.",
+          "it": "Questa scheda viene attivata quando l’allarme antifurto è attivato, indicando una possibile intrusione.",
+          "ko": "이 카드는 침입 경보가 켜질 때 트리거되며, 잠재적인 침입을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het inbraakalarm afgaat, wat wijst op een mogelijke inbraak.",
+          "no": "Dette kortet utløses når innbruddsalarmen aktiveres, og indikerer et mulig innbrudd.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm antywłamaniowy zostaje włączony, wskazując na potencjalne włamanie.",
+          "sv": "Detta kort utlöses när inbrottslarmet aktiveras, vilket indikerar ett potentiellt intrång."
         },
         "args": [
           {
@@ -514,11 +551,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -530,16 +567,29 @@
         "id": "alarm_burglar_false",
         "title": {
           "en": "The burglar alarm turned off",
-          "nl": "Het inbraakalarm gaat uit",
+          "da": "Indbrudsalarmen blev deaktiveret",
           "de": "Der Einbruch-Alarm ist ausgegangen",
+          "es": "La alarma antirrobo se ha desactivado",
           "fr": "L'alarme anti-intrusion s'est désactivée",
           "it": "L'allarme antifurto è stato disattivato",
-          "sv": "Inbrottslarmet inaktiverat",
+          "ko": "침입 경보가 꺼졌습니다",
+          "nl": "Het inbraakalarm gaat uit",
           "no": "Innbruddsalarmen ble deaktivert",
-          "es": "La alarma antirrobo se ha desactivado",
-          "da": "Indbrudsalarmen blev deaktiveret",
           "pl": "Alarm antywłamaniowy wyłączony",
-          "ko": "침입 경보가 꺼졌습니다"
+          "sv": "Inbrottslarmet inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the burglar alarm is deactivated, indicating the system is no longer in alarm mode.",
+          "da": "Dette kort udløses, når indbrudsalarmen deaktiveres, hvilket indikerer, at systemet ikke længere er i alarmtilstand.",
+          "de": "Diese Karte wird ausgelöst, wenn der Einbruch-Alarm deaktiviert wird und anzeigt, dass das System nicht mehr im Alarmmodus ist.",
+          "es": "Esta tarjeta se activa cuando la alarma antirrobo se desactiva, indicando que el sistema ya no está en modo de alarma.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme anti-intrusion est désactivée, indiquant que le système n’est plus en mode alarme.",
+          "it": "Questa scheda viene attivata quando l’allarme antifurto viene disattivato, indicando che il sistema non è più in modalità allarme.",
+          "ko": "이 카드는 침입 경보가 해제될 때 트리거되며, 시스템이 더 이상 경보 모드가 아님을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het inbraakalarm wordt uitgeschakeld, wat aangeeft dat het systeem niet langer in alarmstand is.",
+          "no": "Dette kortet utløses når innbruddsalarmen deaktiveres, noe som indikerer at systemet ikke lenger er i alarmmodus.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm antywłamaniowy zostaje dezaktywowany, co oznacza, że system nie jest już w trybie alarmu.",
+          "sv": "Detta kort utlöses när inbrottslarmet avaktiveras, vilket indikerar att systemet inte längre är i larmläge."
         },
         "args": [
           {
@@ -557,11 +607,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -574,16 +624,29 @@
         "highlight": true,
         "title": {
           "en": "The medical alarm turned on",
-          "nl": "Het medisch alarm gaat aan",
+          "da": "Den medicinske alarm blev aktiveret",
           "de": "Der medizinische Alarm ist angegangen",
+          "es": "La alarma médica se ha activado",
           "fr": "L'alarme médicale s'est activée",
           "it": "L'allarme medico è stato attivato",
-          "sv": "Medicinskt larm aktiverat",
+          "ko": "의료 경보가 켜졌습니다",
+          "nl": "Het medisch alarm gaat aan",
           "no": "Medisinsk alarm ble aktivert",
-          "es": "La alarma médica se ha activado",
-          "da": "Den medicinske alarm blev aktiveret",
           "pl": "Alarm medyczny włączony",
-          "ko": "의료 경보가 켜졌습니다"
+          "sv": "Medicinskt larm aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the medical alarm is activated, indicating a possible medical emergency.",
+          "da": "Dette kort udløses, når den medicinske alarm aktiveres, hvilket indikerer en mulig medicinsk nødsituation.",
+          "de": "Diese Karte wird ausgelöst, wenn der medizinische Alarm aktiviert wird und auf einen möglichen medizinischen Notfall hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma médica, indicando una posible emergencia médica.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme médicale est activée, indiquant une urgence médicale potentielle.",
+          "it": "Questa scheda viene attivata quando l’allarme medico è attivato, indicando una possibile emergenza medica.",
+          "ko": "이 카드는 의료 경보가 켜질 때 트리거되며, 잠재적인 의료 응급 상황을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het medisch alarm wordt ingeschakeld, wat duidt op een mogelijke medische noodsituatie.",
+          "no": "Dette kortet utløses når medisinsk alarm aktiveres, og indikerer en mulig medisinsk nødsituasjon.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm medyczny zostaje włączony, wskazując na możliwy stan zagrożenia zdrowia.",
+          "sv": "Detta kort utlöses när det medicinska larmet aktiveras, vilket indikerar en möjlig medicinsk nödsituation."
         },
         "args": [
           {
@@ -601,11 +664,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -617,16 +680,29 @@
         "id": "alarm_medical_false",
         "title": {
           "en": "The medical alarm turned off",
-          "nl": "Het medisch alarm gaat uit",
+          "da": "Den medicinske alarm blev deaktiveret",
           "de": "Der medizinische Alarm ist ausgegangen",
+          "es": "La alarma médica se ha desactivado",
           "fr": "L'alarme médicale s'est désactivée",
           "it": "L'allarme medico è stato disattivato",
-          "sv": "Medicinskt larm inaktiverat",
+          "ko": "의료 경보가 꺼졌습니다",
+          "nl": "Het medisch alarm gaat uit",
           "no": "Medisinsk alarm ble deaktivert",
-          "es": "La alarma médica se ha desactivado",
-          "da": "Den medicinske alarm blev deaktiveret",
           "pl": "Alarm medyczny wyłączony",
-          "ko": "의료 경보가 꺼졌습니다"
+          "sv": "Medicinskt larm inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the medical alarm is deactivated, indicating the system is no longer in medical alert mode.",
+          "da": "Dette kort udløses, når den medicinske alarm deaktiveres, hvilket indikerer, at systemet ikke længere er i medicinsk alarmtilstand.",
+          "de": "Diese Karte wird ausgelöst, wenn der medizinische Alarm deaktiviert wird und anzeigt, dass das System nicht mehr im medizinischen Alarmmodus ist.",
+          "es": "Esta tarjeta se activa cuando se desactiva la alarma médica, indicando que el sistema ya no está en modo de alerta médica.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme médicale est désactivée, indiquant que le système n’est plus en mode alerte médicale.",
+          "it": "Questa scheda viene attivata quando l’allarme medico viene disattivato, indicando che il sistema non è più in modalità allarme medico.",
+          "ko": "이 카드는 의료 경보가 해제될 때 트리거되며, 시스템이 더 이상 의료 경보 모드가 아님을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het medisch alarm wordt uitgeschakeld, wat aangeeft dat het systeem niet langer in medische alarmmodus is.",
+          "no": "Dette kortet utløses når medisinsk alarm deaktiveres, noe som indikerer at systemet ikke lenger er i medisinsk alarmmodus.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm medyczny zostaje dezaktywowany, co oznacza, że system nie jest już w trybie alarmu medycznego.",
+          "sv": "Detta kort utlöses när det medicinska larmet avaktiveras, vilket indikerar att systemet inte längre är i medicinskt larmläge."
         },
         "args": [
           {
@@ -644,11 +720,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -661,16 +737,29 @@
         "highlight": true,
         "title": {
           "en": "The fire alarm turned on",
+          "da": "Brandalarmen blev aktiveret",
+          "de": "Der Feueralarm ist ausgelöst",
+          "es": "La alarma de incendio se ha activado",
+          "fr": "L'alarme incendie s'est déclenchée",
+          "it": "L'allarme antincendio è stato attivato",
+          "ko": "화재 경보가 켜졌습니다",
           "nl": "Het brandalarm gaat aan",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "sv": "",
-          "no": "",
-          "es": "",
-          "da": "",
-          "pl": "",
-          "ko": ""
+          "no": "Brannalarmen ble aktivert",
+          "pl": "Alarm pożarowy włączony",
+          "sv": "Brandlarmet aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the fire alarm is activated, indicating a potential fire emergency.",
+          "da": "Dette kort udløses, når brandalarmen aktiveres, hvilket indikerer en potentiel brandnødsituation.",
+          "de": "Diese Karte wird ausgelöst, wenn der Feueralarm aktiviert wird und auf einen möglichen Brand hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma de incendio, indicando una posible emergencia de incendio.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme incendie est activée, indiquant une urgence incendie potentielle.",
+          "it": "Questa scheda viene attivata quando l’allarme antincendio è attivato, indicando una possibile emergenza incendio.",
+          "ko": "이 카드는 화재 경보가 켜질 때 트리거되며, 잠재적인 화재 비상 상황을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het brandalarm afgaat, wat wijst op een mogelijke brandnoodsituatie.",
+          "no": "Dette kortet utløses når brannalarmen aktiveres, og indikerer en mulig brannnødsituasjon.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm pożarowy zostaje włączony, wskazując na potencjalne zagrożenie pożarowe.",
+          "sv": "Detta kort utlöses när brandlarmet aktiveras, vilket indikerar en potentiell brandnödsituation."
         },
         "args": [
           {
@@ -688,11 +777,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -704,16 +793,29 @@
         "id": "alarm_fire_false",
         "title": {
           "en": "The fire alarm turned off",
+          "da": "Brandalarmen blev deaktiveret",
+          "de": "Der Feueralarm ist deaktiviert",
+          "es": "La alarma de incendio se ha desactivado",
+          "fr": "L'alarme incendie s'est désactivée",
+          "it": "L'allarme antincendio è stato disattivato",
+          "ko": "화재 경보가 꺼졌습니다",
           "nl": "Het brandalarm gaat uit",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "sv": "",
-          "no": "",
-          "es": "",
-          "da": "",
-          "pl": "",
-          "ko": ""
+          "no": "Brannalarmen ble deaktivert",
+          "pl": "Alarm pożarowy wyłączony",
+          "sv": "Brandlarmet inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the fire alarm is deactivated, indicating the system is no longer in fire alert mode.",
+          "da": "Dette kort udløses, når brandalarmen deaktiveres, hvilket indikerer, at systemet ikke længere er i brandalarmtilstand.",
+          "de": "Diese Karte wird ausgelöst, wenn der Feueralarm deaktiviert wird und anzeigt, dass das System nicht mehr im Brandalarmmodus ist.",
+          "es": "Esta tarjeta se activa cuando se desactiva la alarma de incendio, indicando que el sistema ya no está en modo de alerta por incendio.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme incendie est désactivée, indiquant que le système n’est plus en mode alerte incendie.",
+          "it": "Questa scheda viene attivata quando l’allarme antincendio viene disattivato, indicando che il sistema non è più in modalità allarme incendio.",
+          "ko": "이 카드는 화재 경보가 해제될 때 트리거되며, 시스템이 더 이상 화재 경보 모드가 아님을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het brandalarm wordt uitgeschakeld, wat aangeeft dat het systeem niet langer in brandalarmmodus is.",
+          "no": "Dette kortet utløses når brannalarmen deaktiveres, noe som indikerer at systemet ikke lenger er i brannalarmmodus.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm pożarowy zostaje dezaktywowany, co oznacza, że system nie jest już w trybie alarmu pożarowego.",
+          "sv": "Detta kort utlöses när brandlarmet avaktiveras, vilket indikerar att systemet inte längre är i brandlarmläge."
         },
         "args": [
           {
@@ -731,11 +833,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -748,16 +850,29 @@
         "highlight": true,
         "title": {
           "en": "The panic alarm turned on",
+          "da": "Panikknappen blev aktiveret",
+          "de": "Der Panikalarm ist ausgelöst",
+          "es": "La alarma de pánico se ha activado",
+          "fr": "L'alarme panique s'est activée",
+          "it": "L'allarme panico è stato attivato",
+          "ko": "패닉 알람이 켜졌습니다",
           "nl": "Het paniekalarm gaat aan",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "sv": "",
-          "no": "",
-          "es": "",
-          "da": "",
-          "pl": "",
-          "ko": ""
+          "no": "Panikkalarmen ble aktivert",
+          "pl": "Alarm panikowy włączony",
+          "sv": "Paniklarmet aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the panic alarm is activated, indicating an urgent emergency situation.",
+          "da": "Dette kort udløses, når panikknappen aktiveres, hvilket indikerer en akut nødsituation.",
+          "de": "Diese Karte wird ausgelöst, wenn der Panikalarm aktiviert wird und auf eine dringende Notfallsituation hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma de pánico, indicando una situación de emergencia urgente.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme panique est activée, indiquant une situation d’urgence urgente.",
+          "it": "Questa scheda viene attivata quando l’allarme panico è attivato, indicando una situazione di emergenza urgente.",
+          "ko": "이 카드는 패닉 알람이 켜질 때 트리거되며, 긴급한 비상 상황을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het paniekalarm wordt ingeschakeld, wat wijst op een urgente noodsituatie.",
+          "no": "Dette kortet utløses når panikkalarmen aktiveres, og indikerer en akutt nødsituasjon.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm panikowy zostaje włączony, wskazując na pilną sytuację awaryjną.",
+          "sv": "Detta kort utlöses när paniklarmet aktiveras, vilket indikerar en akut nödsituation."
         },
         "args": [
           {
@@ -775,11 +890,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -791,16 +906,29 @@
         "id": "alarm_panic_false",
         "title": {
           "en": "The panic alarm turned off",
+          "da": "Panikknappen blev deaktiveret",
+          "de": "Der Panikalarm ist deaktiviert",
+          "es": "La alarma de pánico se ha desactivado",
+          "fr": "L'alarme panique s'est désactivée",
+          "it": "L'allarme panico è stato disattivato",
+          "ko": "패닉 알람이 꺼졌습니다",
           "nl": "Het paniekalarm gaat uit",
-          "de": "",
-          "fr": "",
-          "it": "",
-          "sv": "",
-          "no": "",
-          "es": "",
-          "da": "",
-          "pl": "",
-          "ko": ""
+          "no": "Panikkalarmen ble deaktivert",
+          "pl": "Alarm panikowy wyłączony",
+          "sv": "Paniklarmet inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the panic alarm is deactivated, indicating the emergency alert has ended.",
+          "da": "Dette kort udløses, når panikknappen deaktiveres, hvilket indikerer, at nødsituationen er afsluttet.",
+          "de": "Diese Karte wird ausgelöst, wenn der Panikalarm deaktiviert wird und anzeigt, dass die Notfallsituation beendet ist.",
+          "es": "Esta tarjeta se activa cuando se desactiva la alarma de pánico, indicando que la alerta de emergencia ha finalizado.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme panique est désactivée, indiquant que l’alerte d’urgence est terminée.",
+          "it": "Questa scheda viene attivata quando l’allarme panico viene disattivato, indicando che l’allerta di emergenza è terminata.",
+          "ko": "이 카드는 패닉 알람이 해제될 때 트리거되며, 비상 경보가 종료되었음을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het paniekalarm wordt uitgeschakeld, wat aangeeft dat de noodmelding is beëindigd.",
+          "no": "Dette kortet utløses når panikkalarmen deaktiveres, noe som indikerer at nødalarmen er avsluttet.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm panikowy zostaje dezaktywowany, co oznacza zakończenie stanu alarmowego.",
+          "sv": "Detta kort utlöses när paniklarmet avaktiveras, vilket indikerar att nödlarmet har avslutats."
         },
         "args": [
           {
@@ -818,11 +946,11 @@
               "es": "Hora activada",
               "fr": "Heure déclenchée",
               "it": "Ora attivata",
+              "ko": "트리거된 시간",
               "nl": "Tijd geactiveerd",
               "no": "Tid utløst",
               "pl": "Czas wyzwolenia",
-              "sv": "Tid utlöst",
-              "ko": "트리거된 시간"
+              "sv": "Tid utlöst"
             },
             "name": "timestamp",
             "type": "string",
@@ -972,16 +1100,29 @@
         "id": "alarm_burglar",
         "title": {
           "en": "The burglar alarm is !{{on|off}}",
-          "nl": "Het inbraakalarm is !{{aan|uit}}",
+          "da": "Indbrudsalarmen er !{{tændt|slukket}}",
           "de": "Der Einbruch-Alarm ist !{{an|aus}}",
+          "es": "La alarma antirrobo está !{{activada|desactivada}}",
           "fr": "L'alarme anti-intrusion est !{{en marche|arrêtée}}",
           "it": "L'allarme antifurto è !{{acceso|spento}}",
-          "sv": "Inbrottslarmet är !{{på|av}}",
+          "nl": "Het inbraakalarm is !{{aan|uit}}",
           "no": "Innbruddsalarmen er !{{på|av}}",
-          "es": "La alarma antirrobo está !{{activada|desactivada}}",
-          "da": "Indbrudsalarmen er !{{tændt|slukket}}",
           "pl": "Alarm antywłamaniowy jest !{{włączony|wyłączony}}",
+          "sv": "Inbrottslarmet är !{{på|av}}",
           "ko": "침입 경보가 !{{켜짐|꺼짐}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the burglar alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for indbrudsalarmen, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des Einbruch-Alarms, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma antirrobo, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme anti-intrusion, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme antifurto, attivato o disattivato.",
+          "ko": "이 카드는 침입 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het inbraakalarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for innbruddsalarmen, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu antywłamaniowego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för inbrottslarmet, aktiverat eller avaktiverat."
         },
         "args": [
           {
@@ -995,16 +1136,29 @@
         "id": "alarm_fire",
         "title": {
           "en": "The fire alarm is !{{on|off}}",
-          "nl": "Het brandalarm is !{{aan|uit}}",
+          "da": "Brandalarmen er !{{tændt|slukket}}",
           "de": "Der Feueralarm ist !{{an|aus}}",
+          "es": "La alarma de incendio está !{{activada|desactivada}}",
           "fr": "L'alarme incendie est !{{en marche|arrêtée}}",
           "it": "L'allarme antincendio è !{{acceso|spento}}",
-          "sv": "Brandlarmet är !{{på|av}}",
+          "ko": "화재 경보가 !{{켜짐|꺼짐}}",
+          "nl": "Het brandalarm is !{{aan|uit}}",
           "no": "Brannalarmen er !{{på|av}}",
-          "es": "La alarma de incendio está !{{activada|desactivada}}",
-          "da": "Brandalarmen er !{{tændt|slukket}}",
           "pl": "Alarm przeciwpożarowy jest !{{włączony|wyłączony}}",
-          "ko": "화재 경보가 !{{켜짐|꺼짐}}"
+          "sv": "Brandlarmet är !{{på|av}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the fire alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for brandalarmen, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des Feueralarms, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma de incendio, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme incendie, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme antincendio, attivato o disattivato.",
+          "ko": "이 카드는 화재 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het brandalarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for brannalarmen, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu przeciwpożarowego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för brandlarmet, aktiverat eller avaktiverat."
         },
         "args": [
           {
@@ -1018,16 +1172,29 @@
         "id": "alarm_medical",
         "title": {
           "en": "The medical alarm is !{{on|off}}",
-          "nl": "Het medisch alarm is !{{aan|uit}}",
+          "da": "Den medicinske alarm er !{{tændt|slukket}}",
           "de": "Der medizinische Alarm ist !{{an|aus}}",
+          "es": "La alarma médica está !{{activada|desactivada}}",
           "fr": "L'alarme médicale est !{{en marche|arrêtée}}",
           "it": "L'allarme medico è !{{acceso|spento}}",
-          "sv": "Medicinskt larm är !{{på|av}}",
+          "ko": "의료 경보가 !{{켜짐|꺼짐}}",
+          "nl": "Het medisch alarm is !{{aan|uit}}",
           "no": "Medisinsk alarm er !{{på|av}}",
-          "es": "La alarma médica está !{{activada|desactivada}}",
-          "da": "Den medicinske alarm er !{{tændt|slukket}}",
           "pl": "Alarm medyczny jest !{{włączony|wyłączony}}",
-          "ko": "의료 경보가 !{{켜짐|꺼짐}}"
+          "sv": "Medicinskt larm är !{{på|av}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the medical alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for den medicinske alarm, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des medizinischen Alarms, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma médica, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme médicale, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme medico, attivato o disattivato.",
+          "ko": "이 카드는 의료 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het medisch alarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for medisinsk alarm, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu medycznego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för medicinskt larm, aktiverat eller avaktiverat."
         },
         "args": [
           {
@@ -1041,22 +1208,125 @@
         "id": "alarm_panic",
         "title": {
           "en": "The panic alarm is !{{on|off}}",
-          "nl": "Het paniekalarm is !{{aan|uit}}",
+          "da": "Panikalarmen er !{{tændt|slukket}}",
           "de": "Der Panikalarm ist !{{an|aus}}",
+          "es": "La alarma de pánico está !{{activada|desactivada}}",
           "fr": "L'alarme panique est !{{en marche|arrêtée}}",
           "it": "L'allarme antipanico è !{{acceso|spento}}",
-          "sv": "Paniklarmet är !{{på|av}}",
+          "ko": "패닉 경보가 !{{켜짐|꺼짐}}",
+          "nl": "Het paniekalarm is !{{aan|uit}}",
           "no": "Panikkalarmen er !{{på|av}}",
-          "es": "La alarma de pánico está !{{activada|desactivada}}",
-          "da": "Panikalarmen er !{{tændt|slukket}}",
           "pl": "Alarm paniki jest !{{włączony|wyłączony}}",
-          "ko": "패닉 경보가 !{{켜짐|꺼짐}}"
+          "sv": "Paniklarmet är !{{på|av}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the panic alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for panikknappen, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des Panikalarm, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma de pánico, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme panique, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme antipanico, attivato o disattivato.",
+          "ko": "이 카드는 패닉 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het paniekalarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for panikkalarmen, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu panikowego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för paniklarmet, aktiverat eller avaktiverat."
         },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "basestation_mode_active",
+        "title": {
+          "en": "The mode is",
+          "da": "Tilstanden er",
+          "de": "Der Modus ist",
+          "es": "El modo es",
+          "fr": "Le mode est",
+          "it": "La modalità è",
+          "nl": "De modus is",
+          "no": "Modusen er",
+          "pl": "Tryb jest",
+          "sv": "Läget är",
+          "ko": "모드는"
+        },
+        "hint": {
+          "en": "Use this card to check which mode your basestation is in",
+          "da": "Brug dette kort til at tjekke, hvilken tilstand din basestation er i",
+          "de": "Verwenden Sie diese Karte, um zu überprüfen, in welchem Modus sich Ihre Basisstation befindet",
+          "es": "Usa esta tarjeta para comprobar en qué modo se encuentra tu estación base",
+          "fr": "Utilisez cette carte pour vérifier dans quel mode se trouve votre station de base",
+          "it": "Usa questa scheda per controllare in quale modalità si trova la tua stazione base",
+          "nl": "Gebruik deze kaart om te controleren in welke modus je basisstation staat",
+          "no": "Bruk dette kortet for å sjekke hvilken modus basestasjonen din er i",
+          "pl": "Użyj tej karty, aby sprawdzić, w jakim trybie jest twoja stacja bazowa",
+          "sv": "Använd detta kort för att kontrollera vilket läge din basstation är i",
+          "ko": "이 카드를 사용하여 베이스스테이션이 어떤 모드인지 확인하세요"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home",
+                  "da": "Hjem",
+                  "de": "Zuhause",
+                  "es": "Casa",
+                  "fr": "Maison",
+                  "it": "Casa",
+                  "ko": "집",
+                  "nl": "Thuis",
+                  "no": "Hjem",
+                  "pl": "Dom",
+                  "sv": "Hem"
+                }
+              },
+              {
+                "id": "disarmed",
+                "label": {
+                  "en": "Disarmed",
+                  "da": "Afbundet",
+                  "de": "Entwaffnet",
+                  "es": "Desarmado",
+                  "fr": "Désarmé",
+                  "it": "Disarmato",
+                  "ko": "비활성화됨",
+                  "nl": "Uitgeschakeld",
+                  "no": "Deaktivert",
+                  "pl": "Rozbrojony",
+                  "sv": "Avaktiverad"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "da": "Ude",
+                  "de": "Abwesend",
+                  "es": "Ausente",
+                  "fr": "Absent",
+                  "it": "Assente",
+                  "ko": "외출",
+                  "nl": "Weg",
+                  "no": "Borte",
+                  "pl": "Poza domem",
+                  "sv": "Borta"
+                }
+              }
+            ]
           }
         ]
       },
@@ -1192,10 +1462,30 @@
       {
         "id": "change_ring_alarm_mode",
         "title": {
-          "en": "Change the mode"
+          "en": "Change the mode to",
+          "da": "Skift tilstand til",
+          "de": "Modus ändern zu",
+          "es": "Cambiar el modo a",
+          "fr": "Changer le mode en",
+          "it": "Cambia la modalità in",
+          "ko": "모드를 변경",
+          "nl": "Wijzig de modus naar",
+          "no": "Endre modus til",
+          "pl": "Zmień tryb na",
+          "sv": "Byt läge till"
         },
         "hint": {
-          "en": "Use this card to set the mode on your basestation"
+          "en": "Use this card to set the mode on your basestation",
+          "da": "Brug dette kort til at indstille tilstanden på din basestation",
+          "de": "Verwenden Sie diese Karte, um den Modus Ihrer Basisstation einzustellen",
+          "es": "Usa esta tarjeta para establecer el modo en tu estación base",
+          "fr": "Utilisez cette carte pour définir le mode de votre station de base",
+          "it": "Usa questa scheda per impostare la modalità sulla tua stazione base",
+          "ko": "이 카드를 사용하여 베이스스테이션의 모드를 설정하세요",
+          "nl": "Gebruik deze kaart om de modus op je basisstation in te stellen",
+          "no": "Bruk dette kortet for å sette modus på basestasjonen din",
+          "pl": "Użyj tej karty, aby ustawić tryb w stacji bazowej",
+          "sv": "Använd detta kort för att ställa in läget på din basstation"
         },
         "args": [
           {
@@ -1211,21 +1501,48 @@
                 "id": "home",
                 "label": {
                   "en": "Home",
-                  "ko": "집"
+                  "da": "Hjem",
+                  "de": "Zuhause",
+                  "es": "Casa",
+                  "fr": "Maison",
+                  "it": "Casa",
+                  "ko": "집",
+                  "nl": "Thuis",
+                  "no": "Hjem",
+                  "pl": "Dom",
+                  "sv": "Hem"
                 }
               },
               {
                 "id": "disarmed",
                 "label": {
                   "en": "Disarmed",
-                  "ko": "해제"
+                  "da": "Afbundet",
+                  "de": "Entwaffnet",
+                  "es": "Desarmado",
+                  "fr": "Désarmé",
+                  "it": "Disarmato",
+                  "ko": "비활성화됨",
+                  "nl": "Uitgeschakeld",
+                  "no": "Deaktivert",
+                  "pl": "Rozbrojony",
+                  "sv": "Avaktiverad"
                 }
               },
               {
                 "id": "away",
                 "label": {
                   "en": "Away",
-                  "ko": "외출"
+                  "da": "Ude",
+                  "de": "Abwesend",
+                  "es": "Ausente",
+                  "fr": "Absent",
+                  "it": "Assente",
+                  "ko": "외출",
+                  "nl": "Weg",
+                  "no": "Borte",
+                  "pl": "Poza domem",
+                  "sv": "Borta"
                 }
               }
             ]

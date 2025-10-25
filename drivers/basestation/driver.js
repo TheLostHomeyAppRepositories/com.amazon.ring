@@ -22,22 +22,27 @@ class DriverBasestation extends Driver {
 
         this.homey.flow.getConditionCard('alarm_burglar')
             .registerRunListener(async ( args, state ) => {
-                return args.device.isAlarmMedicalOn(); // Promise<boolean>
+                return args.device.isAlarmBurglarOn();
             })
 
         this.homey.flow.getConditionCard('alarm_fire')
             .registerRunListener(async ( args, state ) => {
-                return args.device.isAlarmMedicalOn(); // Promise<boolean>
+                return args.device.isAlarmFireOn();
             })
 
         this.homey.flow.getConditionCard('alarm_medical')
             .registerRunListener(async ( args, state ) => {
-                return args.device.isAlarmMedicalOn(); // Promise<boolean>
+                return args.device.isAlarmMedicalOn();
             })
 
         this.homey.flow.getConditionCard('alarm_panic')
             .registerRunListener(async ( args, state ) => {
-                return args.device.isAlarmMedicalOn(); // Promise<boolean>
+                return args.device.isAlarmPanicOn();
+            })
+
+        this.homey.flow.getConditionCard('basestation_mode_active')
+            .registerRunListener(async ( args, state ) => {
+                return args.device.isAlarmMode(args);
             })
 
         this.homey.flow.getActionCard('change_ring_alarm_mode')

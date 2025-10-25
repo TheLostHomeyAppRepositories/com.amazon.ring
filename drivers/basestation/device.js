@@ -56,42 +56,51 @@ class DeviceBasestation extends Device {
         this.registerCapabilityListener('ring_alarm_state', this._onCapabilityRingAlarmState.bind(this))
 
     }
-    
-    isAlarmBurglarOn()
-    {
-        const _this = this;
-        return new Promise(function(resolve, reject) {
-            return resolve(_this.getCapabilityValue('alarm_burglar'));
-        });
 
+    async getSafeCapabilityValue(capability) {
+        try {
+            const value = this.getCapabilityValue(capability);
+            if (value === undefined) {
+                throw new Error(`${capability} capability not available`);
+            }
+            return value;
+        } catch (error) {
+            this.error(`getSafeCapabilityValue error (${capability}):`, error);
+            throw error;
+        }
     }
 
-    isAlarmFireOn()
-    {
-        const _this = this;
-        return new Promise(function(resolve, reject) {
-            return resolve(_this.getCapabilityValue('alarm_fire'));
-        });
-
+    async isAlarmPanicOn() {
+        return this.getSafeCapabilityValue('alarm_panic');
     }
 
-    isAlarmMedicalOn()
-    {
-        const _this = this;
-        return new Promise(function(resolve, reject) {
-            return resolve(_this.getCapabilityValue('alarm_medical'));
-        });
-
+    async isAlarmMedicalOn() {
+        return this.getSafeCapabilityValue('alarm_medical');
     }
 
-    isAlarmPanicOn()
-    {
-        const _this = this;
-        return new Promise(function(resolve, reject) {
-            return resolve(_this.getCapabilityValue('alarm_panic'));
-        });
-
+    async isAlarmFireOn() {
+        return this.getSafeCapabilityValue('alarm_fire');
     }
+
+    async isAlarmBurglarOn() {
+        return this.getSafeCapabilityValue('alarm_burglar');
+    }
+
+    async isAlarmMode(args)
+    {
+        try {
+            const ringState = this.getCapabilityValue('ring_alarm_state');
+            if (!ringState) throw new Error('ring_alarm_state capability not available');
+
+            const baseStationMode = locationModesAlarm[ringState];
+            if (baseStationMode === undefined) throw new Error(`Unknown ring state: ${ringState}`);
+
+            return baseStationMode === args.mode;
+        } catch (error) {
+            this.error('isAlarmMode error:', error);
+            throw error;
+        }
+    }    
 
     _setAvailability(status) {
         if (status == 'authenticated') {
