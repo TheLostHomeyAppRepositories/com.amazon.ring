@@ -462,7 +462,7 @@
     "sv": "Förbättrad nätströmsdetektering för dörrklockor"
   },
   "2.14.7": {
-    "en": "Added the Ring Alarm Basestation",
+    "en": "Added the Ring Alarm Basestation, Added debug logging",
     "da": "Tilføjet Ring Alarm-basenheden",
     "de": "Ring Alarm-Basisstation hinzugefügt",
     "es": "Se agregó la estación base de Ring Alarm",

@@ -29,7 +29,9 @@
             "error": "Fout:",
             "action": "Je moet (opnieuw) authenticeren via de apparaat onderhoudsfunctie of wizard om een apparaat toe te voegen",
             "revoke": "Trek authenticatie in"
-        }
+        },
+        "enabledebug": "Schakel debuglogboek in",
+        "debuginfo": "Open de browserconsole om het debuglog te bekijken"
     },
     "devices": {
         "unauthenticated": {

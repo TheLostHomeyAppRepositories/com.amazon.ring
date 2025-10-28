@@ -107,6 +107,8 @@ class App extends Homey.App {
         if (system && system.mode !== data.mode) {
             this.log('Alarm system mode changed for', system.location.name,'to',data.mode);
             system.mode = data.mode;
+            let logLine = " app.js || _ringOnAlarmData || Alarm system mode changed for " + system.location.name + " to " + data.mode
+            this.homey.app.writeLog(logLine);
         }
 
         // Always emit the event, DEPRECATED

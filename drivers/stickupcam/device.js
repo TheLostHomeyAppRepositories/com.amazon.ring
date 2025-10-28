@@ -182,6 +182,8 @@ class DeviceStickUpCam extends Device {
                 .catch(error => {this.error(error)});
 
             this.homey.app.logRealtime('stickupcam', 'motion');
+            let logLine = " stickupcam || _ringOnNotification || " + this.getName() + " reported motion event";
+            this.homey.app.writeLog(logLine);
 
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             //const type = notification.ding.detection_type ? notification.ding.detection_type : null;

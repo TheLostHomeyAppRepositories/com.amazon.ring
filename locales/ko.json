@@ -33,7 +33,9 @@
     "troubleshooting": {
       "header": "문제 해결",
       "viewlog": "로그 보기"
-    }
+    },
+    "enabledebug": "디버그 로그 활성화",
+    "debuginfo": "디버그 로그를 보려면 브라우저 콘솔을 여세요"
   },
   "devices": {
     "unauthenticated": "Homey가 더 이상 Ring에서 인증되지 않았습니다. 복구 기능을 사용하여 다시 인증하세요."

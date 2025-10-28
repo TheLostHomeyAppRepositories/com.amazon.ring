@@ -26,6 +26,7 @@ function onHomeyReady(Homey) {
 
             if (data) {
                 configureDebug()
+                document.getElementById('setting-debuginfo').style.display = 'block';
             }
         }
     });
@@ -137,9 +138,11 @@ function onSetDebug(Homey) {
     const isDebugEnabled = document.getElementById('settings-enable-debug').checked
     Homey.set('isDebugEnabled', isDebugEnabled);
     if (isDebugEnabled) {
-        configureDebug()        
+        configureDebug()
+        document.getElementById('setting-debuginfo').style.display = 'block';        
     } else {
         console.clear();
+        document.getElementById('setting-debuginfo').style.display = 'none';
     }
 }
 

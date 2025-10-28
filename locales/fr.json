@@ -29,7 +29,9 @@
             "error": "Erreur :",
             "action": "Vous devez (ré-)authentifier cette application depuis la fonction de maintenance de l'appareil ou l'assistant d'ajout d'appareil",
             "revoke": "Révoquer l'authentification"
-        }
+        },
+        "enabledebug": "Activer la journalisation de débogage",
+        "debuginfo": "Ouvrez la console du navigateur pour afficher le journal de débogage"
     },
     "devices": {
         "unauthenticated": {

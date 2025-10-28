@@ -33,7 +33,9 @@
         "troubleshooting": {
             "header": "Rozwiązywanie problemów",
             "viewlog": "Wyświetl dziennik"
-        }
+        },
+        "enabledebug": "Włącz rejestrowanie debugowania",
+        "debuginfo": "Otwórz konsolę przeglądarki, aby zobaczyć dziennik debugowania"
     },
     "devices": {
         "unauthenticated": "Homey nie jest już uwierzytelniony w Ring. Skorzystaj z funkcji naprawy, aby ponownie uwierzytelnić"

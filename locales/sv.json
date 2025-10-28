@@ -29,7 +29,9 @@
             "error": "Fel:",
             "action": "Du behöver (åter-)autentisera denna app från enhetsunderhållsfunktionen eller lägg till enhetsguiden",
             "revoke": "Återkalla autentisering"
-        }
+        },
+        "enabledebug": "Aktivera felsökningsloggning",
+        "debuginfo": "Öppna webbläsarkonsolen för att visa felsökningsloggen"
     },
     "devices": {
         "unauthenticated": {

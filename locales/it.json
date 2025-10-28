@@ -29,7 +29,9 @@
             "error": "Errore:",
             "action": "Devi autenticare nuovamente questa app tramite la funzione di manutenzione del dispositivo o la procedura guidata per l'aggiunta di dispositivi",
             "revoke": "Revoca autenticazione"
-        }
+        },
+        "enabledebug": "Attiva la registrazione di debug",
+        "debuginfo": "Apri la console del browser per visualizzare il registro di debug"
     },
     "devices": {
         "unauthenticated": {

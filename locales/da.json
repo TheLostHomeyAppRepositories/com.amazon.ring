@@ -29,7 +29,9 @@
             "error": "Fejl:",
             "action": "Du skal godkende denne app igen fra enhedsvedligeholdelsesfunktionen eller tilføjelsesguiden til enheder",
             "revoke": "Tilbagekald godkendelse"
-        }
+        },
+        "enabledebug": "Aktivér fejllogningsfunktion",
+        "debuginfo": "Åbn browserkonsollen for at se fejlloggen"
     },
     "devices": {
         "unauthenticated": {

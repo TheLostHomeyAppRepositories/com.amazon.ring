@@ -34,7 +34,8 @@
             "header": "Troubleshooting",
             "viewlog": "View log"
         },
-        "enabledebug": "Turn on debug logging"
+        "enabledebug": "Turn on debug logging",
+        "debuginfo": "Open the browser console to view the debug log"
     },
     "devices": {
         "unauthenticated": "Homey is no longer authenticated at Ring. Please use the repair function to reauthenticate"
