@@ -18,6 +18,8 @@ class App extends Homey.App {
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
         
+        this.isDebugEnabled = !!(await this.homey.settings.get('isDebugEnabled'));
+
         // Registry for all devices
         this._devices = []; // deviceId -> device instance
 
@@ -45,15 +47,15 @@ class App extends Homey.App {
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
 
         // Purge the logfile
-        this.homey.settings.set('myLog', '' );
+        // this.homey.settings.set('debugLog', '' );
 
         await this._api.init();
 
         // new code for authentication
         this.homey.on('authenticationChanged', this._onAuthenticationChanged.bind(this));
 
-        //let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
-        //this.homey.app.writeLog(logLine);
+        let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
+        this.homey.app.writeLog(logLine);
       
     }
 
@@ -216,67 +218,52 @@ class App extends Homey.App {
     registerLocationModeChanged() {
         this._triggerLocationModeChangedTo
             .registerRunListener((args, state) => {
-                return Promise.resolve( args.location.name === state.location.name );
+                return args.location.name === state.location.name;
             })
             .getArgument('location')
-            .registerAutocompleteListener((query, args) => {
-                return new Promise(async (resolve) => {
-                    const locations = await this._api.userLocations();
-                    //this.log('I found these locations',locations);
-                    resolve(locations);
-                });
+            .registerAutocompleteListener(async () => {
+                const locations = await this._api.userLocations();
+                // this.log('I found these locations', locations);
+                return locations;
             });
     }
 
     // flow condition
     conditionLocationMode() {
         this._conditionLocationMode
-            .registerRunListener((args, state) => {
-                return new Promise((resolve, reject) => {
-                    var matchedLocationMode = this.lastLocationModes.find(lastLocationMode =>{
-                        return lastLocationMode.id==args.location.id;
-                    });
-                    if(matchedLocationMode!=undefined) {
-                        //this.log ('stored location mode found for location ' + matchedLocationMode.name);
-                        resolve(matchedLocationMode.mode === args.mode);
-                    } else {
-                        //this.log ('stored location mode not found for location ' + args.location.id)
-                        reject('unknown location');
-                    }
-                });
+            .registerRunListener(async (args) => {
+                const matchedLocationMode = this.lastLocationModes.find(
+                    (lastLocationMode) => lastLocationMode.id === args.location.id
+                );
+                if (matchedLocationMode) {
+                    // this.log('stored location mode found for location ' + matchedLocationMode.name);
+                    return matchedLocationMode.mode === args.mode; // resolves true/false
+                } else {
+                    // this.log('stored location mode not found for location ' + args.location.id);
+                    throw new Error('unknown location');
+                }
             })
             .getArgument('location')
-            .registerAutocompleteListener((query, args) => {
-                return new Promise(async (resolve) => {
+            .registerAutocompleteListener(async () => {
                 const locations = await this._api.userLocations();
-                //this.log ('I found these locations',locations);
-                resolve(locations);
-                });
+                // this.log('I found these locations', locations);
+                return locations;
             });
     }
 
     // flow action
     setLocationMode() {
         this._setLocationMode
-            .registerRunListener(async (args, state) => {
-                //this.log ('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
-                return new Promise((resolve, reject) => {
-                    this._api.setLocationMode(args.location.id,args.mode)
-                        .then(() => {
-                            resolve(true);
-                        })
-                        .catch((error) => {
-                            reject(error);
-                        })
-                });
+            .registerRunListener(async (args) => {
+                // this.log('attempt to switch location (' + args.location.name + ') to new state: ' + args.mode);
+                await this._api.setLocationMode(args.location.id, args.mode);
+                return true;
             })
             .getArgument('location')
-            .registerAutocompleteListener((query, args) => {
-                return new Promise(async (resolve) => {
+            .registerAutocompleteListener(async (query, args) => {
                 const locations = await this._api.userLocations();
-                //this.log ('I found these locations',locations);
-                resolve(locations);
-                });
+                // this.log('I found these locations', locations);
+                return locations; 
             });
     }
 
@@ -299,7 +286,9 @@ class App extends Homey.App {
     // Write information to the Ring log and cleanup 20% when history above 2000 lines
     // - Called from multiple functions
     async writeLog(logLine) {
-        let savedHistory = this.homey.settings.get('myLog');
+        if (!this.isDebugEnabled) return;
+
+        let savedHistory = this.homey.settings.get('debugLog');
         if ( savedHistory != undefined ) {
             // cleanup history
             let lineCount = savedHistory.split(/\r\n|\r|\n/).length;
@@ -314,7 +303,7 @@ class App extends Homey.App {
         } else {
             this.log("writeLog: savedHistory is undefined!")
         }
-        this.homey.settings.set('myLog', logLine );
+        this.homey.settings.set('debugLog', logLine );
 
         logLine = "";
     }

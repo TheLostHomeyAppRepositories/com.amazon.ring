@@ -134,8 +134,8 @@ class DeviceDoorbell extends Device {
 
             if (!this.getCapabilityValue('alarm_generic')) {
                 this.homey.app.logRealtime('doorbell', 'ding');
-                //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported ding event";
-                //this.homey.app.writeLog(logLine);
+                let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported ding event";
+                this.homey.app.writeLog(logLine);
                 
             }
             
@@ -153,8 +153,8 @@ class DeviceDoorbell extends Device {
         } else if (notification.android_config.category === 'com.ring.pn.live-event.motion') {
             if (!this.getCapabilityValue('alarm_motion')) {
                 this.homey.app.logRealtime('doorbell', 'motion');
-                //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported motion event";
-                //this.homey.app.writeLog(logLine);
+                let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported motion event";
+                this.homey.app.writeLog(logLine);
             }
             
             await this.setCapabilityValue('alarm_motion', true)

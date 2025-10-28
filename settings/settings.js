@@ -3,6 +3,7 @@ function onHomeyReady(Homey) {
 
     this.doubleClicked = false;
     this.keysEntered = "";
+    this.isDebugEnabled = false
 
     writeAuthenticationState();
 
@@ -16,10 +17,37 @@ function onHomeyReady(Homey) {
         }
     });
 
+    Homey.get('isDebugEnabled', function (err, data) {
+        if ( err ) {
+            Homey.alert( err );
+        } else {
+            this.isDebugEnabled = data
+            document.getElementById('settings-enable-debug').checked = data;
+
+            if (data) {
+                configureDebug()
+            }
+        }
+    });
+
+    // make the slider to enable debug logging only available in a computer browser
+    let regexp = /android|iphone|ipad/i;
+    let isMobileDevice = regexp.test(navigator.userAgent);
+    if (!isMobileDevice) {
+        document.getElementById('setting-enabledebug').style.display = 'block';
+    }
+
     document.getElementById('settings-auth-revoke').addEventListener('click', function(elem) {
         onRevokeAuth(Homey);
     });
 
+    document.getElementById('settings-enable-debug').addEventListener('click', function(elem) {
+        onSetDebug(Homey);
+    });
+
+}
+
+function configureDebug() {
     // The stuff below is just for troubleshooting in the Developer Tools and will only work in a browser on a computer
     // Will not work on:
     let regexp = /android|iphone|ipad/i;
@@ -47,7 +75,7 @@ function onHomeyReady(Homey) {
                 _this.doubleClicked = false;
             }, 500);
 
-            Homey.get('myLog', function(err, logging){
+            Homey.get('debugLog', function(err, logging){
                 if( err ) {
                     console.error('showHistory: Could not get history', err);
                     return
@@ -60,7 +88,7 @@ function onHomeyReady(Homey) {
         document.addEventListener('keypress', function(event) {
             _this.keysEntered += event.key;
             if (_this.keysEntered == "Clearlog" ) {
-                Homey.set('myLog','');
+                Homey.set('debugLog','');
                 console.clear();
                 console.log("log was cleared");
                 _this.keysEntered = "";
@@ -103,6 +131,16 @@ async function writeAuthenticationState() {
 function onRevokeAuth(Homey) {
     document.getElementById('settings-auth-revoke').classList.add('is-loading');
     Homey.set('isRevoked', true);
+}
+
+function onSetDebug(Homey) {    
+    const isDebugEnabled = document.getElementById('settings-enable-debug').checked
+    Homey.set('isDebugEnabled', isDebugEnabled);
+    if (isDebugEnabled) {
+        configureDebug()        
+    } else {
+        console.clear();
+    }
 }
 
 async function getDevices() {

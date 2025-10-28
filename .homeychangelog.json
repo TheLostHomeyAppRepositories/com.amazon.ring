@@ -449,16 +449,29 @@
     "sv": "Lade till Live-vy för kameror och dörrklockor, lade till stöd för flera platser"
   },
   "2.14.6": {
-    "en": "Ring Alarm Basestation support",
-    "da": "Understøttelse af Ring Alarm-basestation",
-    "de": "Unterstützung für Ring Alarm-Basisstation",
-    "es": "Compatibilidad con la estación base Ring Alarm",
-    "fr": "Prise en charge de la station de base Ring Alarm",
-    "it": "Supporto per la stazione base Ring Alarm",
-    "ko": "Ring Alarm 베이스스테이션 지원",
-    "nl": "Ondersteuning voor Ring Alarm-basisstation",
-    "no": "Støtte for Ring Alarm-basestasjon",
-    "pl": "Obsługa stacji bazowej Ring Alarm",
-    "sv": "Stöd för Ring Alarm-basstation"
+    "en": "Improved mains power detection for doorbells",
+    "da": "Forbedret netstrømsregistrering for dørklokker",
+    "de": "Verbesserte Netzstromerkennung für Türklingeln",
+    "es": "Mejor detección de alimentación de red para timbres",
+    "fr": "Amélioration de la détection de l’alimentation secteur pour les sonnettes",
+    "it": "Migliorato il rilevamento dell’alimentazione di rete per i campanelli",
+    "ko": "도어벨의 전원 감지 기능이 개선되었습니다",
+    "nl": "Verbeterde netstroomdetectie voor deurbellen",
+    "no": "Forbedret registrering av strømtilkobling for ringeklokker",
+    "pl": "Ulepszono wykrywanie zasilania sieciowego dla dzwonków",
+    "sv": "Förbättrad nätströmsdetektering för dörrklockor"
+  },
+  "2.14.7": {
+    "en": "Added the Ring Alarm Basestation",
+    "da": "Tilføjet Ring Alarm-basenheden",
+    "de": "Ring Alarm-Basisstation hinzugefügt",
+    "es": "Se agregó la estación base de Ring Alarm",
+    "fr": "Ajout de la station de base Ring Alarm",
+    "it": "Aggiunta la stazione base Ring Alarm",
+    "ko": "Ring Alarm 베이스 스테이션이 추가되었습니다",
+    "nl": "Ring Alarm-basestation toegevoegd",
+    "no": "La til Ring Alarm-basestasjonen",
+    "pl": "Dodano stację bazową Ring Alarm",
+    "sv": "Lade till Ring Alarm-basstationen"
   }
 }
