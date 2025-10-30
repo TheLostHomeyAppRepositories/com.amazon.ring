@@ -652,11 +652,24 @@
         "es": "El modo es",
         "fr": "Le mode est",
         "it": "La modalità è",
+        "ko": "모드는",
         "nl": "De modus is",
         "no": "Modusen er",
         "pl": "Tryb jest",
-        "sv": "Läget är",
-        "ko": "모드는"
+        "sv": "Läget är"
+      },
+      "titleFormatted": {
+        "en": "The mode is [[mode]]",
+        "da": "Tilstanden er [[mode]]",
+        "de": "Der Modus ist [[mode]]",
+        "es": "El modo es [[mode]]",
+        "fr": "Le mode est [[mode]]",
+        "it": "La modalità è [[mode]]",
+        "ko": "모드는 [[mode]]",
+        "nl": "De modus is [[mode]]",
+        "no": "Modusen er [[mode]]",
+        "pl": "Tryb jest [[mode]]",
+        "sv": "Läget är [[mode]]"
       },
       "hint": {
         "en": "Use this card to check which mode your basestation is in",
@@ -665,11 +678,11 @@
         "es": "Usa esta tarjeta para comprobar en qué modo se encuentra tu estación base",
         "fr": "Utilisez cette carte pour vérifier dans quel mode se trouve votre station de base",
         "it": "Usa questa scheda per controllare in quale modalità si trova la tua stazione base",
+        "ko": "이 카드를 사용하여 베이스스테이션이 어떤 모드인지 확인하세요",
         "nl": "Gebruik deze kaart om te controleren in welke modus je basisstation staat",
         "no": "Bruk dette kortet for å sjekke hvilken modus basestasjonen din er i",
         "pl": "Użyj tej karty, aby sprawdzić, w jakim trybie jest twoja stacja bazowa",
-        "sv": "Använd detta kort för att kontrollera vilket läge din basstation är i",
-        "ko": "이 카드를 사용하여 베이스스테이션이 어떤 모드인지 확인하세요"
+        "sv": "Använd detta kort för att kontrollera vilket läge din basstation är i"
       },
       "args": [
         {
@@ -745,6 +758,19 @@
         "pl": "Zmień tryb na",
         "sv": "Byt läge till"
       },
+      "titleFormatted": {
+        "en": "Change the mode to [[mode]]",
+        "da": "Skift tilstand til [[mode]]",
+        "de": "Modus ändern zu [[mode]]",
+        "es": "Cambiar el modo a [[mode]]",
+        "fr": "Changer le mode en [[mode]]",
+        "it": "Cambia la modalità in [[mode]]",
+        "ko": "모드를 변경 [[mode]]",
+        "nl": "Wijzig de modus naar [[mode]]",
+        "no": "Endre modus til [[mode]]",
+        "pl": "Zmień tryb na [[mode]]",
+        "sv": "Byt läge till [[mode]]"
+      },      
       "hint": {
         "en": "Use this card to set the mode on your basestation",
         "da": "Brug dette kort til at indstille tilstanden på din basestation",
