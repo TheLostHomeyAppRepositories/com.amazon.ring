@@ -26,7 +26,6 @@ function onHomeyReady(Homey) {
 
             if (data) {
                 configureDebug()
-                document.getElementById('setting-debuginfo').style.display = 'block';
             }
         }
     });
@@ -55,6 +54,7 @@ function configureDebug() {
     let isMobileDevice = regexp.test(navigator.userAgent);
     let _this = this;
     if (!isMobileDevice) {
+        document.getElementById('setting-debuginfo').style.display = 'block';
         console.clear();
         console.log('Single Click the Ring logo to see all devices info');
         console.log('Double Click the Ring logo to see the log');

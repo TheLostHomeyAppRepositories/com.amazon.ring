@@ -351,53 +351,40 @@ class DeviceStickUpCam extends Device {
         return this.homey.app.sirenOff(device_data);
     }
 
-    async onSettings( settings ) {
-        settings.changedKeys.forEach((changedSetting) => {
-            if (changedSetting == 'useMotionDetection') {
+    async onSettings(settings) {
+        for (const changedSetting of settings.changedKeys) {
+            if (changedSetting === 'useMotionDetection') {
                 if (settings.newSettings.useMotionDetection) {
-                    this.enableMotion(this._device)
+                    await this.enableMotion();
                 } else {
-                    this.disableMotion(this._device)
+                    await this.disableMotion();
                 }
-            } else if (changedSetting == 'motionTimeout') {
+            } else if (changedSetting === 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout;
             }
-        })
+        }
     }
 
-    enableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+    async enableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.enableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.enableMotion(device_data);
+        return true;
     }
 
-    disableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+    async disableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.disableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.disableMotion(device_data);
+        return true;
     }
+
 }
 
 module.exports = DeviceStickUpCam;

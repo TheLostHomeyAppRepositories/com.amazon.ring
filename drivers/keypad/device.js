@@ -36,7 +36,7 @@ class DeviceKeypad extends Device {
             try {
                 if ( this.getAvailable() ) {
                     // this.getAvailable() always returns true, need other condition
-                    // this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
                 }
             }
             catch(e) {

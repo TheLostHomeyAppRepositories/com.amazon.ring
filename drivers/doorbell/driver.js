@@ -42,41 +42,22 @@ class DriverDoorbell extends Driver {
             .catch(error => {_this.log('grabImage trigger device:',error)})
     }
 
-
-    onPairListDevices(data, callback) {
+    async onPairListDevices() {
         this.log('onPairListDevices');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
-
-            this.homey.app.getRingDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
-
-                result.doorbots.forEach((device_data) => {
-                    foundDevices.push({
-                        name : device_data.description,
-                        data : {
-                            id: device_data.id
-                        }
-                    });
-                });
-
-                //result.authorized_doorbots.forEach((device_data) => {
-                result.authorizedDoorbots.forEach((device_data) => {
-                    foundDevices.push({
-                        name : device_data.description,
-                        data : {
-                            id: device_data.id
-                        }
-                    });
-                });
-
-                resolve(foundDevices);
-            });
-        });
+        try {
+            const result = await this.homey.app.getRingDevices();
+            const devices = [...result.doorbots, ...result.authorizedDoorbots];
+            return devices.map(device => ({
+                name: device.description,
+                data: { id: device.id }
+            }));
+        } catch (error) {
+            this.error(error);
+            throw error;
+        }
     }
+
 }
 
 module.exports = DriverDoorbell;

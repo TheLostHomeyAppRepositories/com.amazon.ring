@@ -244,38 +244,24 @@ class DeviceDoorbell extends Device {
         })
     }
 
-    enableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+   async enableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.enableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.enableMotion(device_data);
+        return true;
     }
 
-    disableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+    async disableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.disableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.disableMotion(device_data);
+        return true;
     }
 }
 

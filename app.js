@@ -24,7 +24,7 @@ class App extends Homey.App {
         this._devices = []; // deviceId -> device instance
 
         this.lastLocationModes = [];
-        // this.alarmSystem = { location: {} };
+        
         this.homey.app.alarmSystems = [];
 
         this._api = new api(this.homey);
@@ -190,21 +190,22 @@ class App extends Homey.App {
         return this._api.grabVideo(data,offerSdp);
     }
 
-    getRingDevices(callback) {
-        this._api.getDevices(callback);
+    async getRingDevices() {
+        return await this._api.getDevices();
     }
 
-    getRingAlarmDevices(callback) {
-        this._api.getAlarmDevices(callback);
+    async getRingAlarmDevices() {
+        return await this._api.getAlarmDevices();
     }
 
-    enableMotion(data, callback) {
-        this._api.enableMotion(data, callback);
+    async enableMotion(data) {
+        return this._api.enableMotion(data);
     }
 
-    disableMotion(data, callback) {
-        this._api.disableMotion(data, callback);
+    async disableMotion(data) {
+        return this._api.disableMotion(data);
     }
+
 
     logRealtime(event, details) {
         this.homey.api.realtime(event, details)
@@ -269,20 +270,14 @@ class App extends Homey.App {
             });
     }
 
-    // Called from settingspages through api.js
+    // Called from settings pages through api.js
     async getDevicesInfo() {
-        //this.log('getDevicesInfo is called through api.js')
-        return new Promise((resolve, reject) => {
-
-            this.homey.app.getRingDevices((error, result) => {
-                if (error) {
-                return reject(error);
-                }
-
-                resolve(result);
-            });
-
-        });
+        try {
+            return await this.homey.app.getRingDevices();
+        } catch (error) {
+            this.error(error);
+            throw error;
+        }
     }
 
     // Write information to the Ring log and cleanup 20% when history above 2000 lines

@@ -7,35 +7,28 @@ class DriverContactSensor extends Driver {
         this.log('onInit');
     }
 
-    onPairListDevices(data, callback) {
+    async onPairListDevices() {
         this.log('onPairListDevicesContactSensor');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
+        const foundDevices = [];
+        const result = await this.homey.app.getRingAlarmDevices();
 
-            this.homey.app.getRingAlarmDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
+        for (const device of result) {
+            if (device.data.deviceType === 'sensor.contact') {
+                foundDevices.push({
+                    name: device.data.name,
+                    data: {
+                        id: device.data.serialNumber,
+                        catalogId: device.data.catalogId,
+                        zid: device.data.zid,
+                    },
+                });
+            }
+        }
 
-                result.forEach(async (device) => {
-                    if (device.data.deviceType === 'sensor.contact') {
-                        foundDevices.push({
-                            name : device.data.name,
-                            data : {
-                                id: device.data.serialNumber,
-                                catalogId: device.data.catalogId,
-                                zid: device.data.zid
-                            }
-                        });    
-
-                    }
-                })
-
-                resolve(foundDevices);
-            });
-        });
+        return foundDevices;
     }
+
 }
 
 module.exports = DriverContactSensor;

@@ -1,7 +1,7 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.14.7",
-  "compatibility": ">=12.9.0",
+  "version": "2.14.8",
+  "compatibility": ">=12.8.9",
   "platforms": [
     "local"
   ],
@@ -19,17 +19,6 @@
       {
         "name": "Dennie de Groot",
         "email": "mail@denniedegroot.nl"
-      },
-      {
-        "name": "Kaoh",
-        "email": "kaoh@kaoh.nl"
-      },
-      {
-        "name": "tokreutz",
-        "email": "tor.kreutzer@gmail.com"
-      },
-      {
-        "name": "Stefan Schweiger"
       }
     ]
   },

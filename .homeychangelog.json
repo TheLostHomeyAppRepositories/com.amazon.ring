@@ -473,5 +473,18 @@
     "no": "La til Ring Alarm-basestasjonen og feilsøkingslogging",
     "pl": "Dodano stację bazową Ring Alarm oraz rejestrowanie debugowania",
     "sv": "Lade till Ring Alarm-basstationen och felsökningsloggning"
+  },
+  "2.14.8": {
+    "en": "Added the Ring Alarm Basestation, added debug logging",
+    "da": "Tilføjet Ring Alarm-basenheden og fejllogning",
+    "de": "Ring Alarm-Basisstation und Debug-Protokollierung hinzugefügt",
+    "es": "Se agregó la estación base de Ring Alarm y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 및 디버그 로그가 추가되었습니다",
+    "nl": "Ring Alarm-basestation en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm-basestasjonen og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm-basstationen och felsökningsloggning"
   }
 }

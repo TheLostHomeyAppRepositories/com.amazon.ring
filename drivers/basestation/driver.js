@@ -105,36 +105,30 @@ class DriverBasestation extends Driver {
             .catch(this.error);
     }
 
-    onPairListDevices(data, callback) {
+    async onPairListDevices() {
         this.log('onPairListDevicesBasestation');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
+        const foundDevices = [];
+        const result = await this.homey.app.getRingAlarmDevices();
 
-            this.homey.app.getRingAlarmDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
+        for (const device of result) {
+            this.log('Device type found:', device.data.deviceType, device.data.name);
 
-                result.forEach(async (device) => {
-                    this.log('               Device type found:      ',device.data.deviceType, device.data.name)
-                    if (device.data.deviceType === 'hub.redsky') {
-                        foundDevices.push({
-                            name : device.data.name,
-                            data : {
-                                id: device.data.serialNumber,
-                                catalogId: device.data.catalogId,
-                                location: device.location.locationDetails.location_id
-                            }
-                        });    
+            if (device.data.deviceType === 'hub.redsky') {
+                foundDevices.push({
+                    name: device.data.name,
+                    data: {
+                        id: device.data.serialNumber,
+                        catalogId: device.data.catalogId,
+                        location: device.location.locationDetails.location_id,
+                    },
+                });
+            }
+        }
 
-                    }
-                })
-
-                resolve(foundDevices);
-            });
-        });
+        return foundDevices;
     }
+
 }
 
 module.exports = DriverBasestation;
