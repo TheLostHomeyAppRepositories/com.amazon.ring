@@ -29,7 +29,7 @@ class DeviceBasestation extends Device {
         this.setCapabilityValue('connection_source', 'eth0')
             .catch(error => {this.error(error)});
 
-        this.setCapabilityValue('ring_alarm_state', 'disarmed')
+        this.setCapabilityValue('homealarm_state', 'disarmed') //ring_alarm_state
             .catch(error => {this.error(error)});
 
         this.setCapabilityValue('alarm_burglar', false)
@@ -53,7 +53,7 @@ class DeviceBasestation extends Device {
 
         //this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
 
-        this.registerCapabilityListener('ring_alarm_state', this._onCapabilityRingAlarmState.bind(this))
+        this.registerCapabilityListener('homealarm_state', this._onCapabilityRingAlarmState.bind(this))  //ring_alarm_state
 
     }
 
@@ -89,8 +89,8 @@ class DeviceBasestation extends Device {
     async isAlarmMode(args)
     {
         try {
-            const ringState = this.getCapabilityValue('ring_alarm_state');
-            if (!ringState) throw new Error('ring_alarm_state capability not available');
+            const ringState = this.getCapabilityValue('homealarm_state');  //ring_alarm_state
+            if (!ringState) throw new Error('homealarm_state capability not available');  //ring_alarm_state
 
             const baseStationMode = locationModesAlarm[ringState];
             if (baseStationMode === undefined) throw new Error(`Unknown ring state: ${ringState}`);
@@ -223,7 +223,7 @@ class DeviceBasestation extends Device {
             this.log('=============================================')
             */
 
-            this.setCapabilityValue('ring_alarm_state', locationModesHomey[data.mode])
+            this.setCapabilityValue('homealarm_state', locationModesHomey[data.mode])  //ring_alarm_state
                 .catch(error => {this.error(error)});
 
             if ( data.mode != system.oldmode ) {

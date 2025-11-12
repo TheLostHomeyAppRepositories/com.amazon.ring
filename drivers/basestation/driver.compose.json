@@ -14,7 +14,7 @@
     "power_source",
     "connection_source",
     "measure_battery",
-    "ring_alarm_state"
+    "homealarm_state"
   ],
   "energy": {
     "batteries": [

@@ -98,16 +98,11 @@ class DeviceStickUpCam extends Device {
                 }
             }
             /*
-            if(!this.hasCapability("alarm_generic"))
-            {
-                //this.log ('_enableSirenCapability, this stickup camera has a siren, so use it to detect a Alarm');
-                this.addCapability("alarm_generic");
-            }
-            */
             if(this.hasCapability("alarm_generic"))
                 {
                     this.removeCapability("alarm_generic");
                 }
+            */
         } else {
             //this.log ('_enableSirenCapability, device has no siren, ignore siren related features');
         }

@@ -2004,7 +2004,7 @@
         "power_source",
         "connection_source",
         "measure_battery",
-        "ring_alarm_state"
+        "homealarm_state"
       ],
       "energy": {
         "batteries": [
@@ -3006,59 +3006,7 @@
       "uiComponent": "button",
       "uiQuickAction": true
     },
-    "power_source": {
-      "type": "enum",
-      "title": {
-        "en": "Power Source",
-        "da": "Strømkilde",
-        "de": "Stromquelle",
-        "fr": "Source d'énergie",
-        "it": "Fonte di alimentazione",
-        "ko": "전원 공급 방식",
-        "nl": "Stroombron",
-        "no": "Strømkilde",
-        "es": "Fuente de energía",
-        "sv": "Strömkälla"
-      },
-      "values": [
-        {
-          "id": "ac",
-          "title": {
-            "en": "Mains Power",
-            "da": "Nettet",
-            "de": "Stromnetz",
-            "fr": "Réseau électrique",
-            "it": "Rete elettrica",
-            "ko": "가정용 전원",
-            "nl": "Netstroom",
-            "no": "Nettstrøm",
-            "es": "Red eléctrica",
-            "sv": "Nätström"
-          }
-        },
-        {
-          "id": "battery.internal",
-          "title": {
-            "en": "Internal Battery",
-            "da": "Intern batteri",
-            "de": "Internes Akku",
-            "fr": "Batterie interne",
-            "it": "Batteria interna",
-            "ko": "내장 배터리",
-            "nl": "Interne batterij",
-            "no": "Intern batteri",
-            "es": "Batería interna",
-            "sv": "Interna batteri"
-          }
-        }
-      ],
-      "desc": "The Power Source",
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "drivers/basestation/assets/power_source.svg"
-    },
-    "ring_alarm_state": {
+    "homealarm_state": {
       "type": "enum",
       "title": {
         "da": "Alarm status for hjemmet",
@@ -3122,6 +3070,58 @@
       "getable": true,
       "setable": true,
       "uiComponent": "picker"
+    },
+    "power_source": {
+      "type": "enum",
+      "title": {
+        "en": "Power Source",
+        "da": "Strømkilde",
+        "de": "Stromquelle",
+        "fr": "Source d'énergie",
+        "it": "Fonte di alimentazione",
+        "ko": "전원 공급 방식",
+        "nl": "Stroombron",
+        "no": "Strømkilde",
+        "es": "Fuente de energía",
+        "sv": "Strömkälla"
+      },
+      "values": [
+        {
+          "id": "ac",
+          "title": {
+            "en": "Mains Power",
+            "da": "Nettet",
+            "de": "Stromnetz",
+            "fr": "Réseau électrique",
+            "it": "Rete elettrica",
+            "ko": "가정용 전원",
+            "nl": "Netstroom",
+            "no": "Nettstrøm",
+            "es": "Red eléctrica",
+            "sv": "Nätström"
+          }
+        },
+        {
+          "id": "battery.internal",
+          "title": {
+            "en": "Internal Battery",
+            "da": "Intern batteri",
+            "de": "Internes Akku",
+            "fr": "Batterie interne",
+            "it": "Batteria interna",
+            "ko": "내장 배터리",
+            "nl": "Interne batterij",
+            "no": "Intern batteri",
+            "es": "Batería interna",
+            "sv": "Interna batteri"
+          }
+        }
+      ],
+      "desc": "The Power Source",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/power_source.svg"
     },
     "siren": {
       "type": "boolean",
