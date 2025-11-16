@@ -499,5 +499,18 @@
     "no": "La til Ring Alarm-basestasjonen og feilsøkingslogging",
     "pl": "Dodano stację bazową Ring Alarm oraz rejestrowanie debugowania",
     "sv": "Lade till Ring Alarm-basstationen och felsökningsloggning"
+  },
+  "2.14.10": {
+    "en": "Added the Ring Alarm Basestation, Added Ring Intercom Video, Added debug logging",
+    "da": "Tilføjet Ring Alarm Basenheden, tilføjet Ring Intercom Video og fejllogning",
+    "de": "Ring Alarm Basisstation hinzugefügt, Ring Intercom Video hinzugefügt und Debug-Protokollierung",
+    "es": "Se agregó la estación base de Ring Alarm, se añadió Ring Intercom Video y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm, ajout de la vidéo Ring Intercom et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm, aggiunto Ring Intercom Video e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 추가, Ring Intercom 비디오 추가, 디버그 로그 추가",
+    "nl": "Ring Alarm Basestation toegevoegd, Ring Intercom Video toegevoegd en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm Basestasjonen, la til Ring Intercom Video og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm, dodano Ring Intercom Video oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm Basstationen, lade till Ring Intercom Video och felsökningsloggning"
   }
 }

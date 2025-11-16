@@ -1,6 +1,17 @@
 const Homey = require('homey');
 const api   = require('./lib/Api.js');
 
+/*
+depcheck
+Unused dependencies
+* blob-polyfill
+* domexception
+* homey-log-to-file
+* node-fetch
+* web-streams-polyfill
+
+*/
+
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
@@ -87,10 +98,7 @@ class App extends Homey.App {
 
     // Called from event emitted from _connectRingAPI() in Api.js
     _ringOnData(data) {
-        // Always emit the event, DEPRECATED
-        // this.homey.emit('ringOnData', data.name);
-
-        // find the device for which this message is and call its function to act on it
+        // Find the device for which this message is and call its function to act on it
         Object.values(this._devices).forEach(device => {
             if ( data.id === device.getData().id) {
                 device.ringOnData?.(data);
