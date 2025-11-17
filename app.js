@@ -4,11 +4,11 @@ const api   = require('./lib/Api.js');
 /*
 depcheck
 Unused dependencies
-* blob-polyfill
-* domexception
+* blob-polyfill -
+* domexception -
 * homey-log-to-file
-* node-fetch
-* web-streams-polyfill
+* node-fetch -
+* web-streams-polyfill -
 
 */
 
