@@ -25,10 +25,10 @@ class App extends Homey.App {
             await LogToFile();
             // log at: http://<homey IP>:8008
         }
-        */           
+        */
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
-        
+
         this.isDebugEnabled = !!(await this.homey.settings.get('isDebugEnabled'));
 
         // Registry for all devices
@@ -49,11 +49,34 @@ class App extends Homey.App {
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
 
+        this._triggerAppError = this.homey.flow.getTriggerCard('app_error_occurred');
+        this.registerAppError();
+
         this._conditionLocationMode = this.homey.flow.getConditionCard('ring_location_mode_active');
         this.conditionLocationMode();
 
         this._setLocationMode = this.homey.flow.getActionCard('change_location_mode');
         this.setLocationMode();
+
+        // catch all errors and send them to the log and flowcard
+        const original = console.error;
+
+        console.error = (...args) => {
+            let errorText;
+
+            errorText = args.map(arg => {
+                if (arg instanceof Error) {
+                    return arg.stack || arg.toString();
+                }
+                return typeof arg === 'object' ? JSON.stringify(arg) : String(arg);
+            }).join(' ');
+
+            this.homey.app.writeLog(errorText);
+            const tokens = { error: errorText };
+            this.triggerAppError(tokens);
+
+            original(...args);
+        };
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
 
@@ -65,7 +88,10 @@ class App extends Homey.App {
         // new code for authentication
         this.homey.on('authenticationChanged', this._onAuthenticationChanged.bind(this));
 
-        let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
+        let logLine = "===============================================================================================";
+        this.homey.app.writeLog(logLine);
+
+        logLine = "app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
       
     }
@@ -115,7 +141,7 @@ class App extends Homey.App {
         if (system && system.mode !== data.mode) {
             this.log('Alarm system mode changed for', system.location.name,'to',data.mode);
             system.mode = data.mode;
-            let logLine = " app.js || _ringOnAlarmData || Alarm system mode changed for " + system.location.name + " to " + data.mode
+            let logLine = "app.js || _ringOnAlarmData || Alarm system mode changed for " + system.location.name + " to " + data.mode
             this.homey.app.writeLog(logLine);
         }
 
@@ -237,6 +263,14 @@ class App extends Homey.App {
                 // this.log('I found these locations', locations);
                 return locations;
             });
+    }
+
+    registerAppError() {
+        this._triggerAppError.registerRunListener();
+    }
+
+    triggerAppError(tokens) {
+        this._triggerAppError.trigger(tokens);
     }
 
     // flow condition

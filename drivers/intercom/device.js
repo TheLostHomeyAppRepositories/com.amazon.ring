@@ -69,7 +69,7 @@ class DeviceIntercom extends Device {
 
         if (!this.getCapabilityValue("alarm_generic")) {
             this.homey.app.logRealtime("intercom", "ding");
-            let logLine = " intercom || _ringOnNotification || " + this.getName() + " reported ding event";
+            let logLine = "intercom || _ringOnNotification || " + this.getName() + " reported ding event";
             this.homey.app.writeLog(logLine);
         }
 
