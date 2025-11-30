@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.amazon.ring",
-  "version": "2.14.11",
+  "version": "2.14.12",
   "compatibility": ">=12.8.9",
   "platforms": [
     "local"
@@ -1281,17 +1281,17 @@
           "sv": "Läget är"
         },
         "titleFormatted": {
-          "en": "The mode is [[mode]]",
-          "da": "Tilstanden er [[mode]]",
-          "de": "Der Modus ist [[mode]]",
-          "es": "El modo es [[mode]]",
-          "fr": "Le mode est [[mode]]",
-          "it": "La modalità è [[mode]]",
-          "ko": "모드는 [[mode]]",
-          "nl": "De modus is [[mode]]",
-          "no": "Modusen er [[mode]]",
-          "pl": "Tryb jest [[mode]]",
-          "sv": "Läget är [[mode]]"
+          "en": "The mode is !{{|not}} [[mode]]",
+          "da": "Tilstanden er !{{|ikke}} [[mode]]",
+          "de": "Der Modus ist !{{|nicht}} [[mode]]",
+          "es": "El modo !{{|no}} es [[mode]]",
+          "fr": "Le mode !{{est|n'est pas}} [[mode]]",
+          "it": "La modalità è !{{|non}} [[mode]]",
+          "ko": "홈 알람 상태가 다음!{{이면|이 아니면}} [[mode]]",
+          "nl": "De modus is !{{|niet}} [[mode]]",
+          "no": "Modusen er !{{|ikke}} [[mode]]",
+          "pl": "Tryb jest !{{|nie}} [[mode]]",
+          "sv": "Läget är !{{|inte}} [[mode]]"
         },
         "hint": {
           "en": "Use this card to check which mode your basestation is in",

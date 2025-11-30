@@ -525,5 +525,18 @@
     "no": "La til Ring Alarm Basestasjonen, la til Ring Intercom Video og feilsøkingslogging",
     "pl": "Dodano stację bazową Ring Alarm, dodano Ring Intercom Video oraz rejestrowanie debugowania",
     "sv": "Lade till Ring Alarm Basstationen, lade till Ring Intercom Video och felsökningsloggning"
+  },
+  "2.14.12": {
+    "en": "Fixed Basestation condition card",
+    "da": "Rettede Basestation-betingelseskort",
+    "de": "Korrektur der Basestation-Bedingungskarte",
+    "es": "Corregida la tarjeta de condición de la estación base",
+    "fr": "Correction de la carte de condition de la station de base",
+    "it": "Corretta la scheda condizione della stazione base",
+    "ko": "베이스스테이션 조건 카드 수정",
+    "nl": "Basestation-voorwaardekaart opgelost",
+    "no": "Fikset betingelseskort for basestasjonen",
+    "pl": "Naprawiono kartę warunku stacji bazowej",
+    "sv": "Fixade villkortskortet för basstationen"
   }
 }
