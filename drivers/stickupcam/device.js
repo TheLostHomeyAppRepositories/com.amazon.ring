@@ -19,6 +19,12 @@ class DeviceStickUpCam extends Device {
             this.motionTimeout = 30;
         }
         
+        try {
+            this.motionAlerts = this.getSetting('motionAlerts');
+        } catch (e) {
+            this.motionAlerts = true
+        }
+
         this.setCapabilityValue('alarm_motion', false)
             .catch(error => {this.error(error)});
          
@@ -182,9 +188,11 @@ class DeviceStickUpCam extends Device {
 
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
-            const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null;
+            const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null; 
             const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
-            this.driver.alarmMotionOn(this, tokens);
+            if (this.motionAlerts) {
+                this.driver.alarmMotionOn(this, tokens);
+            }
 
             clearTimeout(this.device.timer.motion);
 
@@ -193,6 +201,7 @@ class DeviceStickUpCam extends Device {
                     .catch(error => {this.error(error)});
             }, (this.motionTimeout  * 1000));
 
+            if( type === null ) throw error ('New detection type', notification.data.event.ding.detection_type);
         }
     }
 
@@ -354,7 +363,10 @@ class DeviceStickUpCam extends Device {
                 } else {
                     await this.disableMotion();
                 }
-            } else if (changedSetting === 'motionTimeout') {
+            } else if (changedSetting === 'useMotionAlerts') {
+                this.motionAlerts = settings.newSettings.useMotionAlerts;
+            } 
+            else if (changedSetting === 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout;
             }
         }
@@ -378,6 +390,10 @@ class DeviceStickUpCam extends Device {
         const device_data = this.getData();
         await this.homey.app.disableMotion(device_data);
         return true;
+    }
+
+    async setMotionAlerts(state) {
+        await this.setSettings({useMotionAlerts: state}); 
     }
 
 }

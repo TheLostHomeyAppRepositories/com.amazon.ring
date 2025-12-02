@@ -1,8 +1,8 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.amazon.ring",
-  "version": "2.14.12",
-  "compatibility": ">=12.8.9",
+  "version": "2.14.13",
+  "compatibility": ">=12.9.0",
   "platforms": [
     "local"
   ],
@@ -31,7 +31,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/daneedk/com.amazon.ring/issues"
+    "url": "https://community.homey.app/t/76364"
   },
   "homeyCommunityTopicId": 76364,
   "source": "https://github.com/daneedk/com.amazon.ring",
@@ -1861,6 +1861,52 @@
         ]
       },
       {
+        "id": "doorbell_enable_motion_alerts",
+        "title": {
+          "en": "Enable motion alerts",
+          "ko": "모션 알림 활성화",
+          "da": "Aktivér bevægelsesalarmer",
+          "de": "Bewegungsalarme aktivieren",
+          "es": "Activar alertas de movimiento",
+          "fr": "Activer les alertes de mouvement",
+          "it": "Abilita gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen inschakelen",
+          "no": "Aktiver bevegelsesvarsler",
+          "pl": "Włącz alerty ruchu",
+          "sv": "Aktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_disable_motion_alerts",
+        "title": {
+          "en": "Disable motion alerts",
+          "ko": "모션 알림 비활성화",
+          "da": "Deaktiver bevægelsesalarmer",
+          "de": "Bewegungsalarme deaktivieren",
+          "es": "Desactivar alertas de movimiento",
+          "fr": "Désactiver les alertes de mouvement",
+          "it": "Disattivare gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen uitschakelen",
+          "no": "Deaktiver bevegelsesvarsler",
+          "pl": "Wyłącz alerty ruchu",
+          "sv": "Inaktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
         "id": "stickupcam_grab_snapshot",
         "title": {
           "en": "Grab current snapshot",
@@ -1920,6 +1966,52 @@
           "no": "Deaktiver bevegelsesdeteksjon",
           "pl": "Wyłącz wykrywanie ruchu",
           "sv": "Inaktivera rörelsedetektion"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_enable_motion_alerts",
+        "title": {
+          "en": "Enable motion alerts",
+          "ko": "모션 알림 활성화",
+          "da": "Aktivér bevægelsesalarmer",
+          "de": "Bewegungsalarme aktivieren",
+          "es": "Activar alertas de movimiento",
+          "fr": "Activer les alertes de mouvement",
+          "it": "Abilita gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen inschakelen",
+          "no": "Aktiver bevegelsesvarsler",
+          "pl": "Włącz alerty ruchu",
+          "sv": "Aktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_disable_motion_alerts",
+        "title": {
+          "en": "Disable motion alerts",
+          "ko": "모션 알림 비활성화",
+          "da": "Deaktiver bevægelsesalarmer",
+          "de": "Bewegungsalarme deaktivieren",
+          "es": "Desactivar alertas de movimiento",
+          "fr": "Désactiver les alertes de mouvement",
+          "it": "Disattivare gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen uitschakelen",
+          "no": "Deaktiver bevegelsesvarsler",
+          "pl": "Wyłącz alerty ruchu",
+          "sv": "Inaktivera rörelsevarningar"
         },
         "args": [
           {
@@ -2294,6 +2386,37 @@
               }
             },
             {
+              "id": "useMotionAlerts",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Alerts",
+                "da": "Brug bevægelsesalarmer",
+                "de": "Bewegungsalarme verwenden",
+                "es": "Usar alertas de movimiento",
+                "fr": "Utiliser les alertes de mouvement",
+                "it": "Usa gli avvisi di movimento",
+                "nl": "Bewegingsalarmen gebruiken",
+                "no": "Bruk bevegelsesvarsler",
+                "pl": "Użyj alertów ruchu",
+                "sv": "Använd rörelsevarningar",
+                "ko": "움직임 알림 사용"
+              },
+              "hint": {
+                "en": "This setting let's you enable and disable if Homey reacts to Motion Alerts",
+                "da": "Denne indstilling lader dig slå til og fra, om Homey skal reagere på bevægelsesalarmer.",
+                "de": "Diese Einstellung ermöglicht es Ihnen festzulegen, ob Homey auf Bewegungsalarme reagieren soll.",
+                "es": "Esta configuración permite activar o desactivar si Homey debe reaccionar a las alertas de movimiento.",
+                "fr": "Ce paramètre vous permet d’activer ou de désactiver la réaction de Homey aux alertes de mouvement.",
+                "it": "Questa impostazione consente di abilitare o disabilitare la reazione di Homey agli avvisi di movimento.",
+                "nl": "Met deze instelling kun je bepalen of Homey reageert op bewegingsalarmen.",
+                "no": "Denne innstillingen lar deg slå av og på om Homey skal reagere på bevegelsesvarsler.",
+                "pl": "To ustawienie pozwala włączyć lub wyłączyć reakcję Homey na alerty ruchu.",
+                "sv": "Den här inställningen låter dig slå på eller av om Homey ska reagera på rörelsevarningar.",
+                "ko": "이 설정을 통해 Homey가 움직임 알림에 반응할지 여부를 켜거나 끌 수 있습니다."
+              }
+            },
+            {
               "id": "motionTimeout",
               "type": "number",
               "value": 30,
@@ -2656,6 +2779,37 @@
                 "pl": "Możesz użyć swojego kamery Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
                 "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
                 "ko": "이 설정을 켜면 Ring 카메라를 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용하여 움직임 감지를 동적으로 켜거나 끌 수 있습니다."
+              }
+            },
+            {
+              "id": "useMotionAlerts",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Alerts",
+                "da": "Brug bevægelsesalarmer",
+                "de": "Bewegungsalarme verwenden",
+                "es": "Usar alertas de movimiento",
+                "fr": "Utiliser les alertes de mouvement",
+                "it": "Usa gli avvisi di movimento",
+                "nl": "Bewegingsalarmen gebruiken",
+                "no": "Bruk bevegelsesvarsler",
+                "pl": "Użyj alertów ruchu",
+                "sv": "Använd rörelsevarningar",
+                "ko": "움직임 알림 사용"
+              },
+              "hint": {
+                "en": "This setting let's you enable and disable if Homey reacts to Motion Alerts",
+                "da": "Denne indstilling lader dig slå til og fra, om Homey skal reagere på bevægelsesalarmer.",
+                "de": "Diese Einstellung ermöglicht es Ihnen festzulegen, ob Homey auf Bewegungsalarme reagieren soll.",
+                "es": "Esta configuración permite activar o desactivar si Homey debe reaccionar a las alertas de movimiento.",
+                "fr": "Ce paramètre vous permet d’activer ou de désactiver la réaction de Homey aux alertes de mouvement.",
+                "it": "Questa impostazione consente di abilitare o disabilitare la reazione di Homey agli avvisi di movimento.",
+                "nl": "Met deze instelling kun je bepalen of Homey reageert op bewegingsalarmen.",
+                "no": "Denne innstillingen lar deg slå av og på om Homey skal reagere på bevegelsesvarsler.",
+                "pl": "To ustawienie pozwala włączyć lub wyłączyć reakcję Homey na alerty ruchu.",
+                "sv": "Den här inställningen låter dig slå på eller av om Homey ska reagera på rörelsevarningar.",
+                "ko": "이 설정을 통해 Homey가 움직임 알림에 반응할지 여부를 켜거나 끌 수 있습니다."
               }
             },
             {

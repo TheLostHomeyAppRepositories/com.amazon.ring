@@ -98,6 +98,37 @@
           }
         },
         {
+          "id": "useMotionAlerts",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Use Motion Alerts",
+            "da": "Brug bevægelsesalarmer",
+            "de": "Bewegungsalarme verwenden",
+            "es": "Usar alertas de movimiento",
+            "fr": "Utiliser les alertes de mouvement",
+            "it": "Usa gli avvisi di movimento",
+            "nl": "Bewegingsalarmen gebruiken",
+            "no": "Bruk bevegelsesvarsler",
+            "pl": "Użyj alertów ruchu",
+            "sv": "Använd rörelsevarningar",
+            "ko": "움직임 알림 사용"
+          },
+          "hint": {
+            "en": "This setting let's you enable and disable if Homey reacts to Motion Alerts",
+            "da": "Denne indstilling lader dig slå til og fra, om Homey skal reagere på bevægelsesalarmer.",
+            "de": "Diese Einstellung ermöglicht es Ihnen festzulegen, ob Homey auf Bewegungsalarme reagieren soll.",
+            "es": "Esta configuración permite activar o desactivar si Homey debe reaccionar a las alertas de movimiento.",
+            "fr": "Ce paramètre vous permet d’activer ou de désactiver la réaction de Homey aux alertes de mouvement.",
+            "it": "Questa impostazione consente di abilitare o disabilitare la reazione di Homey agli avvisi di movimento.",
+            "nl": "Met deze instelling kun je bepalen of Homey reageert op bewegingsalarmen.",
+            "no": "Denne innstillingen lar deg slå av og på om Homey skal reagere på bevegelsesvarsler.",
+            "pl": "To ustawienie pozwala włączyć lub wyłączyć reakcję Homey na alerty ruchu.",
+            "sv": "Den här inställningen låter dig slå på eller av om Homey ska reagera på rörelsevarningar.",
+            "ko": "이 설정을 통해 Homey가 움직임 알림에 반응할지 여부를 켜거나 끌 수 있습니다."
+          }
+        },
+        {
           "id": "motionTimeout",
           "type": "number",
           "value": 30,

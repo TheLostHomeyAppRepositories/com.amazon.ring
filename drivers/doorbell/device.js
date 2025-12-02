@@ -19,6 +19,12 @@ class DeviceDoorbell extends Device {
             this.motionTimeout = 30;
         }
 
+        try {
+            this.motionAlerts = this.getSetting('motionAlerts');
+        } catch (e) {
+            this.motionAlerts = true
+        }
+
         this.setCapabilityValue('alarm_generic', false)
             .catch(error => {this.error(error)});
 
@@ -165,7 +171,9 @@ class DeviceDoorbell extends Device {
             const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null;
             //if (!this.motionTypes[type]) { this.log('unknown motionType:', type)}
             const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
-            this.driver.alarmMotionOn(this, tokens);
+            if (this.motionAlerts) {
+                this.driver.alarmMotionOn(this, tokens);
+            }
 
             //this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
 
@@ -238,6 +246,8 @@ class DeviceDoorbell extends Device {
                 } else {
                     this.disableMotion(this._device)
                 }
+            } else if (changedSetting === 'useMotionAlerts') {
+                this.motionAlerts = settings.newSettings.useMotionAlerts                     
             } else if (changedSetting == 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout * 1000;
             }
@@ -262,6 +272,10 @@ class DeviceDoorbell extends Device {
         const device_data = this.getData();
         await this.homey.app.disableMotion(device_data);
         return true;
+    }
+
+    async setMotionAlerts(state) {
+        await this.setSettings({useMotionAlerts: state}); 
     }
 }
 

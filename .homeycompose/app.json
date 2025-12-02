@@ -1,7 +1,7 @@
 {
   "id": "com.amazon.ring",
-  "version": "2.14.12",
-  "compatibility": ">=12.8.9",
+  "version": "2.14.13",
+  "compatibility": ">=12.9.0",
   "platforms": [
     "local"
   ],
@@ -30,7 +30,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/daneedk/com.amazon.ring/issues"
+    "url": "https://community.homey.app/t/76364"
   },
   "homeyCommunityTopicId": 76364,
   "source": "https://github.com/daneedk/com.amazon.ring",

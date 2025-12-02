@@ -70,6 +70,40 @@
         "sv": "Inaktivera rörelsedetektion"
       },
       "args": []
+    },
+    {
+      "id": "doorbell_enable_motion_alerts",
+      "title": {
+        "en": "Enable motion alerts",
+        "ko": "모션 알림 활성화",
+        "da": "Aktivér bevægelsesalarmer",
+        "de": "Bewegungsalarme aktivieren",
+        "es": "Activar alertas de movimiento",
+        "fr": "Activer les alertes de mouvement",
+        "it": "Abilita gli avvisi di movimento",
+        "nl": "Bewegingsmeldingen inschakelen",
+        "no": "Aktiver bevegelsesvarsler",
+        "pl": "Włącz alerty ruchu",
+        "sv": "Aktivera rörelsevarningar"
+      },
+      "args": []
+    },
+    {
+      "id": "doorbell_disable_motion_alerts",
+      "title": {
+        "en": "Disable motion alerts",
+        "ko": "모션 알림 비활성화",
+        "da": "Deaktiver bevægelsesalarmer",
+        "de": "Bewegungsalarme deaktivieren",
+        "es": "Desactivar alertas de movimiento",
+        "fr": "Désactiver les alertes de mouvement",
+        "it": "Disattivare gli avvisi di movimento",
+        "nl": "Bewegingsmeldingen uitschakelen",
+        "no": "Deaktiver bevegelsesvarsler",
+        "pl": "Wyłącz alerty ruchu",
+        "sv": "Inaktivera rörelsevarningar"
+      },
+      "args": []
     }
   ]
 }
