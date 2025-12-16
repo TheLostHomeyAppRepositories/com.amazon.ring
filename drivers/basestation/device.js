@@ -223,8 +223,10 @@ class DeviceBasestation extends Device {
             this.log('=============================================')
             */
 
-            this.setCapabilityValue('homealarm_state', locationModesHomey[data.mode])  //ring_alarm_state
+            await this.setCapabilityValue('homealarm_state', locationModesHomey[data.mode])  //ring_alarm_state
                 .catch(error => {this.error(error)});
+
+            await new Promise(resolve => setTimeout(resolve, 0));
 
             if ( data.mode != system.oldmode ) {
                 const tokens = { mode: modeMapping[data.mode], oldmode: modeMapping[system.oldmode] }
