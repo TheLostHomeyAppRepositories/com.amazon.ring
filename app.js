@@ -1,17 +1,6 @@
 const Homey = require('homey');
 const api   = require('./lib/Api.js');
 
-/*
-depcheck
-Unused dependencies
-* blob-polyfill -
-* domexception -
-* homey-log-to-file
-* node-fetch -
-* web-streams-polyfill -
-
-*/
-
 // !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 

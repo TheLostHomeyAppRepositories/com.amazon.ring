@@ -551,5 +551,8 @@
     "no": "La til innstillinger og flytkort for Kamera og Dørklokke for å aktivere eller deaktivere bevegelsesvarsler",
     "pl": "Dodano ustawienia i karty przepływu dla Kamery i Dzwonka, aby włączyć lub wyłączyć alerty ruchu",
     "sv": "Lade till inställningar och flödeskort för Kamera och Dörrklocka för att aktivera eller inaktivera rörelseaviseringar"
+  },
+  "2.14.14": {
+    "en": "Test version for new ring-client-api"
   }
 }
