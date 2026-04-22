@@ -1,11 +1,16 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.amazon.ring",
-  "version": "2.14.5",
-  "compatibility": ">=12.7.1",
-  "platforms": ["local"],
+  "version": "2.14.14",
+  "compatibility": ">=12.11.0",
+  "platforms": [
+    "local"
+  ],
   "sdk": 3,
   "brandColor": "#1A98D5",
-  "name": { "en": "Ring" },
+  "name": {
+    "en": "Ring"
+  },
   "author": {
     "name": "Danee de Kruyff",
     "email": "daneedekruyff@outlook.com"
@@ -15,17 +20,6 @@
       {
         "name": "Dennie de Groot",
         "email": "mail@denniedegroot.nl"
-      },
-      {
-        "name": "Kaoh",
-        "email": "kaoh@kaoh.nl"
-      },
-      {
-        "name": "tokreutz",
-        "email": "tor.kreutzer@gmail.com"
-      },
-      {
-        "name": "Stefan Schweiger"
       }
     ]
   },
@@ -37,7 +31,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/daneedk/com.amazon.ring/issues"
+    "url": "https://community.homey.app/t/76364"
   },
   "homeyCommunityTopicId": 76364,
   "source": "https://github.com/daneedk/com.amazon.ring",
@@ -49,11 +43,11 @@
     "es": "Soporte para Ring Doorbell, Cámara y Alarma en Homey",
     "fr": "Prise en charge de la sonnette, de la caméra et de l'alarme Ring pour Homey",
     "it": "Supporto per la videocamera, il campanello e l'allarme Ring su Homey",
+    "ko": "Homey에서 Ring 초인종, 카메라 및 알람을 편리하게 사용할 수 있습니다.",
     "nl": "Ring Deurbell-, Camera- en Alarm-ondersteuning voor Homey",
     "no": "Ring Doorbell, Camera og Alarm-støtte for Homey",
     "pl": "Obsługa dzwonka, kamery i alarmu Ring dla Homey",
-    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey",
-    "ko": "Homey에서 Ring 초인종, 카메라 및 알람을 편리하게 사용할 수 있습니다."
+    "sv": "Stöd för Ring Doorbell, kamera och alarm i Homey"
   },
   "images": {
     "large": "./assets/images/large.jpg",
@@ -61,778 +55,43 @@
   },
   "category": "appliances",
   "tags": {
-    "en": ["Ring", "Doorbell", "Camera", "Chime", "Intercom", "Alarm"]
+    "en": [
+      "Ring",
+      "Doorbell",
+      "Camera",
+      "Chime",
+      "Intercom",
+      "Alarm"
+    ]
   },
-  "capabilities": {
-    "flood_light": {
-      "type": "boolean",
-      "title": {
-        "en": "Flood light",
-        "da": "Flomlys",
-        "de": "Flutlicht",
-        "es": "Foco de inundación",
-        "fr": "Projecteur",
-        "it": "Faro alluvione",
-        "nl": "Schijnwerper",
-        "no": "Flomlys",
-        "pl": "Reflektor",
-        "sv": "Översvämningsljus",
-        "ko": "투광등"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "uiQuickAction": true
-    },
-    "siren": {
-      "type": "boolean",
-      "title": {
-        "en": "Siren",
-        "da": "Sirene",
-        "de": "Sirene",
-        "es": "Sirena",
-        "fr": "Sirène",
-        "it": "Sirena",
-        "nl": "Sirene",
-        "no": "Sirene",
-        "pl": "Syrena",
-        "sv": "Siren",
-        "ko": "사이렌"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "uiQuickAction": false
-    },
-    "alarm_motion": {
-      "type": "boolean",
-      "title": {
-        "en": "Motion alarm",
-        "nl": "Bewegingsalarm",
-        "de": "Bewegungs-Alarm",
-        "fr": "Alarme mouvement",
-        "it": "Allarme di movimento",
-        "sv": "Rörelselarm",
-        "no": "Bevegelsesalarm",
-        "es": "Alarma de movimiento",
-        "da": "Bevægelsesalarm",
-        "ru": "Сигнал движения",
-        "pl": "Czujnik ruchu",
-        "ko": "움직임 알람"
-      },
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "Motion alarm turned on",
-        "nl": "Bewegingsalarm ging af",
-        "de": "Bewegungs-Alarm ist angegangen",
-        "fr": "Alarme mouvement s'est déclenchée",
-        "it": "Allarme di movimento attivato",
-        "sv": "Rörelselarm aktiverat",
-        "no": "Bevegelsesalarm aktivert",
-        "es": "Alarma de movimiento activada",
-        "da": "Bevægelsesalarm blev aktiveret",
-        "ru": "Сигнал движения включен",
-        "pl": "Czujnik ruchu włączony",
-        "ko": "움직임 알람이 켜졌습니다"
-      },
-      "insightsTitleFalse": {
-        "en": "Motion alarm turned off",
-        "nl": "Bewegingsalarm ging uit",
-        "de": "Bewegungs-Alarm ist ausgegangen",
-        "fr": "Alarme mouvement s'est désactivée",
-        "it": "Allarme di movimento disattivato",
-        "sv": "Rörelselarm inaktiverat",
-        "no": "Bevegelsesalarm deaktivert",
-        "es": "Alarma de movimiento desactivada",
-        "da": "Bevægelsesalarm blev deaktiveret",
-        "ru": "Сигнал движения выключен",
-        "pl": "Czujnik ruchu wyłączony",
-        "ko": "움직임 알람이 꺼졌습니다"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "options": {
-        "zoneActivity": true
-      }
-    },
-    "alarm_generic": {
-      "type": "boolean",
-      "title": {
-        "en": "Doorbell",
-        "nl": "Deurbel",
-        "de": "Türklingel",
-        "fr": "Sonnette",
-        "it": "Campanello",
-        "sv": "Dörrklocka",
-        "no": "Dørklokke",
-        "es": "Timbre",
-        "da": "Dørklokke",
-        "pl": "Dzwonek do drzwi",
-        "ko": "초인종"
-      },
-      "desc": {
-        "en": "Doorbell",
-        "da": "Dørklokke",
-        "de": "Türklingel",
-        "es": "Portero",
-        "fr": "Sonnette",
-        "it": "Campanello",
-        "nl": "Deurbel",
-        "no": "Dørklokke",
-        "pl": "Domofon",
-        "sv": "Dörrklocka",
-        "ko": "초인종"
-      },
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "Doorbell turned on",
-        "nl": "Deurbel aangezet",
-        "de": "Türklingel eingeschaltet",
-        "fr": "Sonnette activée",
-        "it": "Campanello acceso",
-        "sv": "Dörrklocka aktiverad",
-        "no": "Dørklokke slått på",
-        "es": "Timbre encendido",
-        "da": "Dørklokke tændt",
-        "pl": "Dzwonek do drzwi włączony",
-        "ko": "초인종이 울리기 시작했습니다"
-      },
-      "insightsTitleFalse": {
-        "en": "Doorbell turned off",
-        "nl": "Deurbel uitgezet",
-        "de": "Türklingel ausgeschaltet",
-        "fr": "Sonnette désactivée",
-        "it": "Campanello spento",
-        "sv": "Dörrklocka avstängd",
-        "no": "Dørklokke slått av",
-        "es": "Timbre apagado",
-        "da": "Dørklokke slukket",
-        "pl": "Dzwonek do drzwi wyłączony",
-        "ko": "초인종이 꺼졌습니다"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
+  "api": {
+    "getDevicesInfo": {
+      "method": "GET",
+      "path": "/devicesinfo"
     }
   },
-  "drivers": [
-    {
-      "id": "doorbell",
-      "name": {
-        "en": "Doorbell",
-        "da": "Dørklokke",
-        "de": "Türklingel",
-        "es": "Portero",
-        "fr": "Sonnette",
-        "it": "Campanello",
-        "nl": "Deurbel",
-        "no": "Dørklokke",
-        "pl": "Domofon",
-        "sv": "Dörrklocka",
-        "ko": "초인종"
-      },
-      "images": {
-        "large": "./drivers/doorbell/assets/images/large.jpg",
-        "small": "./drivers/doorbell/assets/images/small.jpg"
-      },
-      "class": "sensor",
-      "capabilities": ["alarm_generic", "alarm_motion", "measure_battery"],
-      "energy": {
-        "batteries": ["INTERNAL"]
-      },
-      "pair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "repair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "done",
-          "template": "done"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Homey integration settings",
-            "da": "Homey integrationsindstillinger",
-            "de": "Homey Integrations-Einstellungen",
-            "es": "Configuración de integración de Homey",
-            "fr": "Paramètres d'intégration Homey",
-            "it": "Impostazioni di integrazione Homey",
-            "nl": "Homey integratie-instellingen",
-            "no": "Homey integreringsinnstillinger",
-            "pl": "Ustawienia integracji Homey",
-            "sv": "Homey integrationsinställningar",
-            "ko": "Homey 연동 설정"
-          },
-          "children": [
-            {
-              "id": "useMotionDetection",
-              "type": "checkbox",
-              "value": true,
-              "label": {
-                "en": "Use Motion Detection",
-                "da": "Brug bevægelsesregistrering",
-                "de": "Bewegungserkennung verwenden",
-                "es": "Usar detección de movimiento",
-                "fr": "Utiliser la détection de mouvement",
-                "it": "Usa il rilevamento del movimento",
-                "nl": "Bewegingsdetectie gebruiken",
-                "no": "Bruk bevegelsesdeteksjon",
-                "pl": "Użyj wykrywania ruchu",
-                "sv": "Använd rörelsedetektering",
-                "ko": "움직임 감지 사용"
-              },
-              "hint": {
-                "en": "You can use your Ring Doorbell as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
-                "da": "Du kan bruge din Ring Doorbell som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
-                "de": "Sie können Ihre Ring Doorbell als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
-                "es": "Puede utilizar su Ring Doorbell como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
-                "fr": "Vous pouvez utiliser votre Ring Doorbell comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
-                "it": "Puoi utilizzare la tua Ring Doorbell come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
-                "nl": "U kunt uw Ring Doorbell gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
-                "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
-                "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
-                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
-                "ko": "이 옵션을 켜면 Ring 초인종을 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용해 움직임 감지를 동적으로 켜거나 끌 수도 있습니다."
-              }
-            },
-            {
-              "id": "motionTimeout",
-              "type": "number",
-              "value": 30,
-              "attr": {
-                "min": 30,
-                "max": 600
-              },
-              "units": {
-                "en": "sec.",
-                "nl": "sec."
-              },
-              "label": {
-                "en": "Disable motion alarm after",
-                "da": "Deaktiver bevægelsesalarm efter",
-                "de": "Bewegungsalarm deaktivieren nach",
-                "es": "Desactivar alarma de movimiento después de",
-                "fr": "Désactiver l'alarme de mouvement après",
-                "it": "Disattivare l'allarme di movimento dopo",
-                "nl": "Schakel bewegingsalarm uit na",
-                "no": "Deaktiver bevegelsesalarm etter",
-                "pl": "Wyłącz alarm ruchu po",
-                "sv": "Inaktivera rörelsealarm efter",
-                "ko": "다음 시간 이후 움직임 알람 끄기"
-              },
-              "hint": {
-                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
-                "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
-                "de": "Diese Einstellung deaktiviert den Bewegungsalarm nach Ablauf der angegebenen Zeit.\n\nStandardmäßig: 30 Sekunden.",
-                "es": "Esta configuración desactivará la alarma de movimiento después de que expire el tiempo especificado.\n\nPredeterminado: 30 segundos.",
-                "fr": "Ce paramètre désactivera l'alarme de mouvement après que le temps spécifié se soit écoulé.\n\nPar défaut: 30 secondes.",
-                "it": "Questa impostazione disabiliterà l'allarme di movimento dopo che il tempo indicato è scaduto.\n\nDefault: 30 secondi.",
-                "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
-                "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
-                "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
-                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder.",
-                "ko": "지정된 시간이 지나면 움직임 알람이 자동으로 꺼집니다.\n\n기본값: 30초"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "chime",
-      "name": {
-        "en": "Chime",
-        "nl": "Chime",
-        "ko": "차임"
-      },
-      "images": {
-        "large": "./drivers/chime/assets/images/large.jpg",
-        "small": "./drivers/chime/assets/images/small.jpg"
-      },
-      "class": "sensor",
-      "capabilities": [],
-      "pair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "repair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "done",
-          "template": "done"
-        }
-      ]
-    },
-    {
-      "id": "stickupcam",
-      "name": {
-        "en": "Camera",
-        "nl": "Camera",
-        "ko": "카메라"
-      },
-      "images": {
-        "large": "./drivers/stickupcam/assets/images/large.jpg",
-        "small": "./drivers/stickupcam/assets/images/small.jpg"
-      },
-      "class": "sensor",
-      "capabilities": ["alarm_motion", "measure_battery"],
-      "energy": {
-        "batteries": ["INTERNAL"]
-      },
-      "pair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "repair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "done",
-          "template": "done"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Homey integration settings",
-            "da": "Homey integrationsindstillinger",
-            "de": "Homey Integrations-Einstellungen",
-            "es": "Configuración de integración de Homey",
-            "fr": "Paramètres d'intégration Homey",
-            "it": "Impostazioni di integrazione Homey",
-            "nl": "Homey integratie-instellingen",
-            "no": "Homey integreringsinnstillinger",
-            "pl": "Ustawienia integracji Homey",
-            "sv": "Homey integrationsinställningar",
-            "ko": "Homey 연동 설정"
-          },
-          "children": [
-            {
-              "id": "useMotionDetection",
-              "type": "checkbox",
-              "value": true,
-              "label": {
-                "en": "Use Motion Detection",
-                "da": "Brug bevægelsesregistrering",
-                "de": "Bewegungserkennung verwenden",
-                "es": "Usar detección de movimiento",
-                "fr": "Utiliser la détection de mouvement",
-                "it": "Usa il rilevamento del movimento",
-                "nl": "Bewegingsdetectie gebruiken",
-                "no": "Bruk bevegelsesdeteksjon",
-                "pl": "Użyj wykrywania ruchu",
-                "sv": "Använd rörelsedetektering",
-                "ko": "움직임 감지 사용"
-              },
-              "hint": {
-                "en": "You can use your Ring Camera as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
-                "da": "Du kan bruge din Ring Camera som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
-                "de": "Sie können Ihre Ring Camera als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
-                "es": "Puede utilizar su Ring Camera como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
-                "fr": "Vous pouvez utiliser votre Ring Camera comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
-                "it": "Puoi utilizzare la tua Ring Camera come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
-                "nl": "U kunt uw Ring Camera gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
-                "no": "Du kan bruke Ring Camera som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
-                "pl": "Możesz użyć swojego kamery Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
-                "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
-                "ko": "이 설정을 켜면 Ring 카메라를 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용하여 움직임 감지를 동적으로 켜거나 끌 수 있습니다."
-              }
-            },
-            {
-              "id": "motionTimeout",
-              "type": "number",
-              "value": 30,
-              "attr": {
-                "min": 30,
-                "max": 600
-              },
-              "units": {
-                "en": "sec.",
-                "nl": "sec."
-              },
-              "label": {
-                "en": "Disable motion alarm after",
-                "da": "Deaktiver bevægelsesalarm efter",
-                "de": "Bewegungsalarm deaktivieren nach",
-                "es": "Desactivar alarma de movimiento después de",
-                "fr": "Désactiver l'alarme de mouvement après",
-                "it": "Disattivare l'allarme di movimento dopo",
-                "nl": "Schakel bewegingsalarm uit na",
-                "no": "Deaktiver bevegelsesalarm etter",
-                "pl": "Wyłącz alarm ruchu po",
-                "sv": "Inaktivera rörelsealarm efter",
-                "ko": "다음 시간 이후 움직임 알람 끄기"
-              },
-              "hint": {
-                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
-                "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
-                "de": "Diese Einstellung deaktiviert den Bewegungsalarm nach Ablauf der angegebenen Zeit.\n\nStandardmäßig: 30 Sekunden.",
-                "es": "Esta configuración desactivará la alarma de movimiento después de que expire el tiempo especificado.\n\nPredeterminado: 30 segundos.",
-                "fr": "Ce paramètre désactivera l'alarme de mouvement après que le temps spécifié se soit écoulé.\n\nPar défaut: 30 secondes.",
-                "it": "Questa impostazione disabiliterà l'allarme di movimento dopo che il tempo indicato è scaduto.\n\nDefault: 30 secondi.",
-                "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
-                "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
-                "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
-                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder.",
-                "ko": "지정된 시간이 지나면 움직임 알람이 자동으로 꺼집니다.\n\n기본값: 30초"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "intercom",
-      "name": {
-        "en": "Intercom",
-        "da": "Samtaleanlæg",
-        "de": "Gegensprechanlage",
-        "es": "Intercomunicador",
-        "fr": "Interphone",
-        "it": "Citofono",
-        "nl": "Intercom",
-        "no": "Intercom",
-        "pl": "Awiofon",
-        "sv": "Intercom",
-        "ko": "인터폰"
-      },
-      "images": {
-        "large": "./drivers/intercom/assets/images/large.png",
-        "small": "./drivers/intercom/assets/images/small.png"
-      },
-      "class": "lock",
-      "capabilities": ["alarm_generic", "measure_battery", "locked"],
-      "capabilitiesOptions": {
-        "locked": {
-          "uiQuickAction": true,
-          "uiComponent": "toggle"
-        }
-      },
-      "energy": {
-        "batteries": ["INTERNAL"]
-      },
-      "pair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "repair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "done",
-          "template": "done"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Homey integration settings",
-            "da": "Homey integrationsindstillinger",
-            "de": "Homey Integrations-Einstellungen",
-            "es": "Configuración de integración de Homey",
-            "fr": "Paramètres d'intégration Homey",
-            "it": "Impostazioni di integrazione Homey",
-            "nl": "Homey integratie-instellingen",
-            "no": "Homey integreringsinnstillinger",
-            "pl": "Ustawienia integracji Homey",
-            "sv": "Homey integrationsinställningar",
-            "ko": "Homey 연동 설정"
-          },
-          "children": [
-            {
-              "id": "unlockTimeout",
-              "type": "number",
-              "value": 5,
-              "attr": {
-                "min": 5,
-                "max": 60
-              },
-              "units": {
-                "en": "sec.",
-                "nl": "sec."
-              },
-              "label": {
-                "en": "Revert back to locked state after",
-                "da": "Gå tilbage til låst tilstand efter",
-                "de": "Zurückkehren in den gesperrten Zustand nach",
-                "es": "Volver al estado de bloqueo después de",
-                "fr": "Retour à l'état verrouillé après",
-                "it": "Torna allo stato di blocco dopo",
-                "nl": "Terugkeren naar vergrendelde status na",
-                "no": "Gå tilbake til låst tilstand etter",
-                "pl": "Powrót do stanu zablokowania po",
-                "sv": "Återgå till låst läge efter",
-                "ko": "다음 시간 이후 잠금 상태로 복귀"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "contactsensor",
-        "name": {
-          "en": "Contact Sensor",
-          "nl": "Contactsensor",
-          "ko": "접촉 센서"
-        },
-        "class": "sensor",
-        "capabilities": [
-          "alarm_contact",
-          "alarm_tamper",
-          "measure_battery"
-        ],
-        "energy": {
-          "batteries": ["CR2032", "CR2032"]
-        },
-        "images": {
-          "large": "./drivers/contactsensor/assets/images/large.jpg",
-          "small": "./drivers/contactsensor/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "start"
-          },
-          {
-            "id": "status"
-          },
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ],
-        "repair": [
-          {
-            "id": "start"
-          },
-          {
-            "id": "status"
-          },
-          {
-            "id": "done",
-            "template": "done"
-          }
-        ]
-    },
-    {
-      "id": "motiondetector",
-        "name": {
-          "en": "Motion Detector",
-          "nl": "Bewegingsdetector",
-          "ko": "모션 감지기"
-        },
-        "class": "sensor",
-        "capabilities": [
-          "alarm_motion",
-          "alarm_tamper",
-          "measure_battery"
-        ],
-        "energy": {
-          "batteries": ["AA", "AA"]
-        },
-        "images": {
-          "large": "./drivers/motiondetector/assets/images/large.jpg",
-          "small": "./drivers/motiondetector/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "start"
-          },
-          {
-            "id": "status"
-          },
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ],
-        "repair": [
-          {
-            "id": "start"
-          },
-          {
-            "id": "status"
-          },
-          {
-            "id": "done",
-            "template": "done"
-          }
-        ]
-    },
-    {
-      "id": "keypad",
-      "name": {
-        "en": "Keypad",
-        "nl": "Bedieningspaneel",
-        "ko": "키패드"
-      },
-      "class": "homealarm",
-      "capabilities": [
-        "alarm_tamper",
-        "measure_battery"
-      ],
-      "energy": {
-        "batteries": ["INTERNAL"]
-      },
-      "images": {
-        "large": "./drivers/keypad/assets/images/large.jpg",
-        "small": "./drivers/keypad/assets/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "repair": [
-        {
-          "id": "start"
-        },
-        {
-          "id": "status"
-        },
-        {
-          "id": "done",
-          "template": "done"
-        }
-      ]
-    }
-  ],
   "flow": {
     "triggers": [
       {
-        "id": "alarm_motion_true_default",
-        "highlight": true,
+        "id": "alarm_generic_false",
         "title": {
-          "en": "The motion alarm turned on",
-          "nl": "De bewegingsmelder gaat aan",
-          "de": "Der Bewegungs-Alarm ist angegangen",
-          "fr": "L'alarme mouvement s'est activée",
-          "it": "L'allarme di movimento è stato attivato",
-          "sv": "Rörelselarmet aktiverat",
-          "no": "Bevegelsesalarmen aktivert",
-          "es": "La alarma de movimiento se ha activado",
-          "da": "Bevægelsesalarmen blev aktiveret",
-          "pl": "Czujnik ruchu włączony",
-          "ko": "모션 경보가 켜졌습니다"
+          "en": "The doorbell stops ringing",
+          "nl": "De deurbel stopt met rinkelen",
+          "de": "Die Türklingel hört auf zu läuten",
+          "fr": "La sonnette cesse de retentir",
+          "it": "Il campanello smette di suonare",
+          "sv": "Dörrklockan slutar ringa",
+          "no": "Dørklokken slutter å ringe",
+          "es": "El timbre deja de sonar",
+          "da": "Dørklokken holder op med at ringe",
+          "pl": "Dzwonek do drzwi przestaje dzwonić",
+          "ko": "초인종이 멈춥니다"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=motiondetector"
+            "filter": "driver_id=doorbell|intercom"
           }
         ]
       },
@@ -861,25 +120,25 @@
         ]
       },
       {
-        "id": "alarm_generic_false",
+        "id": "alarm_motion_false",
         "title": {
-          "en": "The doorbell stops ringing",
-          "nl": "De deurbel stopt met rinkelen",
-          "de": "Die Türklingel hört auf zu läuten",
-          "fr": "La sonnette cesse de retentir",
-          "it": "Il campanello smette di suonare",
-          "sv": "Dörrklockan slutar ringa",
-          "no": "Dørklokken slutter å ringe",
-          "es": "El timbre deja de sonar",
-          "da": "Dørklokken holder op med at ringe",
-          "pl": "Dzwonek do drzwi przestaje dzwonić",
-          "ko": "초인종이 멈춥니다"
+          "en": "The motion alarm turned off",
+          "nl": "De bewegingsmelder gaat uit",
+          "de": "Der Bewegungs-Alarm ist ausgegangen",
+          "fr": "L'alarme mouvement s'est désactivée",
+          "it": "L'allarme di movimento è stato disattivato",
+          "sv": "Rörelselarmet inaktiverat",
+          "no": "Bevegelsesalarmen deaktivert",
+          "es": "La alarma de movimiento se ha desactivado",
+          "da": "Bevægelsesalarmen blev deaktiveret",
+          "pl": "Czujnik ruchu wyłączony",
+          "ko": "모션 경보가 꺼졌습니다"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=doorbell|intercom"
+            "filter": "driver_id=doorbell|stickupcam|motiondetector"
           }
         ]
       },
@@ -931,103 +190,38 @@
         ]
       },
       {
-        "id": "alarm_motion_false",
+        "id": "app_error_occurred",
         "title": {
-          "en": "The motion alarm turned off",
-          "nl": "De bewegingsmelder gaat uit",
-          "de": "Der Bewegungs-Alarm ist ausgegangen",
-          "fr": "L'alarme mouvement s'est désactivée",
-          "it": "L'allarme di movimento è stato disattivato",
-          "sv": "Rörelselarmet inaktiverat",
-          "no": "Bevegelsesalarmen deaktivert",
-          "es": "La alarma de movimiento se ha desactivado",
-          "da": "Bevægelsesalarmen blev deaktiveret",
-          "pl": "Czujnik ruchu wyłączony",
-          "ko": "모션 경보가 꺼졌습니다"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=doorbell|stickupcam|motiondetector"
-          }
-        ]
-      },
-      {
-        "id": "ring_snapshot_received_device",
-        "title": {
-          "en": "Snapshot is grabbed",
-          "da": "Snapshot er taget",
-          "de": "Snapshot wurde aufgenommen",
-          "es": "Se ha capturado una instantánea",
-          "fr": "La capture d'écran est effectuée",
-          "it": "È stata catturata una istantanea",
-          "nl": "Snapshot is vastgelegd",
-          "no": "Snapshot er tatt",
-          "pl": "Zrobiono zrzut ekranu",
-          "sv": "Snapshot har fångats",
-          "ko": "스냅샷이 캡처되었습니다"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=doorbell|stickupcam"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "ring_image",
-            "type": "image",
-            "title": {
-              "en": "image",
-              "da": "billede",
-              "de": "Bild",
-              "es": "imagen",
-              "fr": "image",
-              "it": "immagine",
-              "nl": "afbeelding",
-              "no": "bilde",
-              "pl": "obraz",
-              "sv": "bild",
-              "ko": "이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "ring_snapshot_received",
-        "deprecated": true,
-        "title": {
-          "en": "Snapshot is grabbed",
-          "da": "Snapshot er taget",
-          "de": "Snapshot wurde aufgenommen",
-          "es": "Se ha capturado una instantánea",
-          "fr": "La capture d'écran est effectuée",
-          "it": "È stata catturata una istantanea",
-          "nl": "Snapshot is vastgelegd",
-          "no": "Snapshot er tatt",
-          "pl": "Zrobiono zrzut ekranu",
-          "sv": "Snapshot har fångats",
-          "ko": "스냅샷이 캡처되었습니다"
+          "en": "An error occurred in the app",
+          "da": "Der opstod en fejl i appen",
+          "de": "In der App ist ein Fehler aufgetreten",
+          "es": "Se produjo un error en la aplicación",
+          "fr": "Une erreur s'est produite dans l'application",
+          "it": "Si è verificato un errore nell'app",
+          "ko": "앱에서 오류가 발생했습니다",
+          "nl": "Er is een fout opgetreden in de app",
+          "no": "Det oppstod en feil i appen",
+          "pl": "Wystąpił błąd w aplikacji",
+          "sv": "Ett fel uppstod i appen"
         },
         "tokens": [
           {
-            "name": "ring_image",
-            "type": "image",
             "title": {
-              "en": "image",
-              "da": "billede",
-              "de": "Bild",
-              "es": "imagen",
-              "fr": "image",
-              "it": "immagine",
-              "nl": "afbeelding",
-              "no": "bilde",
-              "pl": "obraz",
-              "sv": "bild",
-              "ko": "이미지"
-            }
+              "en": "Error",
+              "da": "Fejl",
+              "de": "Fehler",
+              "es": "Error",
+              "fr": "Erreur",
+              "it": "Errore",
+              "ko": "오류",
+              "nl": "Fout",
+              "no": "Feil",
+              "pl": "Błąd",
+              "sv": "Fel"
+            },
+            "name": "error",
+            "type": "string",
+            "example": "Ring API failed with status 403"
           }
         ]
       },
@@ -1118,514 +312,703 @@
               "es": "Nuevo modo",
               "fr": "Nouveau mode",
               "it": "Nuova modalità",
+              "ko": "새 모드",
               "nl": "Nieuwe modus",
               "no": "Ny modus",
               "pl": "Nowy tryb",
-              "sv": "Nytt läge",
-              "ko": "새 모드"
+              "sv": "Nytt läge"
             },
             "name": "mode",
             "type": "string",
             "example": "armed"
           }
         ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "ring_chime",
-        "title": {
-          "en": "Ring Chime with",
-          "da": "Ringeklokke med",
-          "de": "Ring Chime mit",
-          "es": "Ring Chime con",
-          "fr": "Sonnette Ring avec",
-          "it": "Campanello Ring con",
-          "nl": "Ring Chime met",
-          "no": "Ring Chime med",
-          "pl": "Dzwonek Ring z",
-          "sv": "Ring Chime med",
-          "ko": "Ring Chime 소리"
-        },
-        "titleFormatted": {
-          "en": "Ring Chime with [[sound]]",
-          "da": "Ring Chime med [[sound]]",
-          "de": "Ring Chime mit [[sound]]",
-          "es": "Timbre de Ring con [[sound]]",
-          "fr": "Sonnette Ring avec [[sound]]",
-          "it": "Suoneria Ring con [[sound]]",
-          "nl": "Ring Chime met [[sound]]",
-          "no": "Ring Chime med [[sound]]",
-          "pl": "Dzwonek Ring z [[sound]]",
-          "sv": "Ring Chime med [[sound]]",
-          "ko": "[[sound]] 소리로 Ring Chime"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=chime"
-          },
-          {
-            "name": "sound",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "ring",
-                "label": {
-                  "en": "Ring sound",
-                  "da": "Ringelyd",
-                  "de": "Klingelton",
-                  "es": "Sonido de timbre",
-                  "fr": "Sonnerie",
-                  "it": "Suoneria",
-                  "nl": "Beltoon",
-                  "no": "Ringetone",
-                  "pl": "Dźwięk dzwonka",
-                  "sv": "Ringljud",
-                  "ko": "벨 소리"
-                }
-              },
-              {
-                "id": "motion",
-                "label": {
-                  "en": "Motion sound",
-                  "da": "Bevægelseslyd",
-                  "de": "Bewegungsklang",
-                  "es": "Sonido de movimiento",
-                  "fr": "Son de mouvement",
-                  "it": "Suono di movimento",
-                  "nl": "Bewegingsgeluid",
-                  "no": "Bevegelseslyd",
-                  "pl": "Dźwięk ruchu",
-                  "sv": "Rörelseljud",
-                  "ko": "모션 소리"
-                }
-              }
-            ]
-          }
-        ]
       },
       {
-        "id": "snoozeChime",
+        "id": "ring_snapshot_received",
+        "deprecated": true,
         "title": {
-          "en": "Snooze Chime for ",
-          "da": "Slumre-kime for ",
-          "de": "Schlummer-Gong für ",
-          "es": "Tono de aplazamiento para ",
-          "fr": "Sonnerie de répétition pour ",
-          "it": "Snooze Chime per ",
-          "nl": "Snooze Chime gedurende ",
-          "no": "Snooze-klokke for ",
-          "pl": "Dzwonek drzemki dla ",
-          "sv": "Snooze-signal för ",
-          "ko": "스누즈 알람: "
+          "en": "Snapshot is grabbed",
+          "da": "Snapshot er taget",
+          "de": "Snapshot wurde aufgenommen",
+          "es": "Se ha capturado una instantánea",
+          "fr": "La capture d'écran est effectuée",
+          "it": "È stata catturata una istantanea",
+          "nl": "Snapshot is vastgelegd",
+          "no": "Snapshot er tatt",
+          "pl": "Zrobiono zrzut ekranu",
+          "sv": "Snapshot har fångats",
+          "ko": "스냅샷이 캡처되었습니다"
         },
-        "titleFormatted": {
-          "en": "Snooze Chime for [[duration]]",
-          "da": "Snooze klokkespil i [[duration]]",
-          "de": "Snooze Glockenspiel für [[duration]]",
-          "es": "Snooze campana durante [[duration]]",
-          "fr": "Snooze carillon pendant [[duration]]",
-          "it": "Snooze campana per [[duration]]",
-          "nl": "Snooze Chime gedurende [[duration]]",
-          "no": "Snooze klokkespill i [[duration]]",
-          "pl": "Snooze dzwon w ciągu [[duration]]",
-          "sv": "Snooze klockspel i [[duration]]",
-          "ko": "[[duration]] 동안 스누즈 알람"
-        },
-        "args": [
+        "tokens": [
           {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=chime"
-          },
-          {
-            "type": "dropdown",
-            "name": "duration",
-            "title": { "en": "Duration", "ko": "기간" },
-            "values": [
-              { "id": "1", "label": { "en": "1 hour", "ko": "1시간" } },
-              { "id": "3", "label": { "en": "3 hours", "ko": "3시간" } },
-              { "id": "6", "label": { "en": "6 hours", "ko": "6시간" } },
-              { "id": "9", "label": { "en": "9 hours", "ko": "9시간" } },
-              { "id": "12", "label": { "en": "12 hours", "ko": "12시간" } }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "unsnoozeChime",
-        "title": {
-          "en": "Unsnooze Chime",
-          "da": "Fjern slumre på klokke",
-          "de": "Wecker wiederholen",
-          "es": "Desactivar repetición de alarma",
-          "fr": "Désactiver le répétiteur d'alarme",
-          "it": "Disattiva la ripetizione della sveglia",
-          "nl": "Unsnooze Chime",
-          "no": "Deaktiver snooze på alarm",
-          "pl": "Wyłącz powtarzanie alarmu",
-          "sv": "Stoppa snooze på klocka",
-          "ko": "스누즈 알람 해제"
-        },
-        "titleFormatted": {
-          "en": "Unsnooze Chime",
-          "ko": "스누즈 알람 해제",
-          "da": "Fjern slumre på klokke",
-          "de": "Wecker wiederholen",
-          "es": "Desactivar repetición de alarma",
-          "fr": "Désactiver le répétiteur d'alarme",
-          "it": "Disattiva la ripetizione della sveglia",
-          "nl": "Unsnooze Chime",
-          "no": "Deaktiver snooze på alarm",
-          "pl": "Wyłącz powtarzanie alarmu",
-          "sv": "Stoppa snooze på klocka"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=chime"
-          }
-        ]
-      },
-      {
-        "id": "ring_grab_snapshot",
-        "title": {
-          "en": "Grab current snapshot",
-          "ko": "현재 스냅샷 캡처",
-          "da": "Hent øjebliksbillede",
-          "de": "Aktuellen Schnappschuss erfassen",
-          "es": "Capturar instantánea actual",
-          "fr": "Capturer l'instantané actuel",
-          "it": "Acquisisci istantanea corrente",
-          "nl": "Huidige snapshot pakken",
-          "no": "Ta øyeblikksbilde nå",
-          "pl": "Zrób obecny zrzut ekranu",
-          "sv": "Ta aktuell ögonblicksbild"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
-      {
-        "id": "doorbell_enable_motion",
-        "title": {
-          "en": "Enable motion detection",
-          "ko": "모션 감지 활성화",
-          "da": "Aktiver bevægelsesregistrering",
-          "de": "Bewegungserkennung aktivieren",
-          "es": "Activar la detección de movimiento",
-          "fr": "Activer la détection de mouvement",
-          "it": "Abilita la rilevazione del movimento",
-          "nl": "Bewegingsdetectie inschakelen",
-          "no": "Aktiver bevegelsesdeteksjon",
-          "pl": "Włącz wykrywanie ruchu",
-          "sv": "Aktivera rörelsedetektering"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
-      {
-        "id": "doorbell_disable_motion",
-        "title": {
-          "en": "Disable motion detection",
-          "ko": "모션 감지 비활성화",
-          "da": "Deaktiver bevægelsesregistrering",
-          "de": "Bewegungserkennung deaktivieren",
-          "es": "Desactivar la detección de movimiento",
-          "fr": "Désactiver la détection de mouvement",
-          "it": "Disattivare il rilevamento del movimento",
-          "nl": "Bewegingsdetectie uitschakelen",
-          "no": "Deaktiver bevegelsesdeteksjon",
-          "pl": "Wyłącz wykrywanie ruchu",
-          "sv": "Inaktivera rörelsedetektion"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_grab_snapshot",
-        "title": {
-          "en": "Grab current snapshot",
-          "ko": "현재 스냅샷 캡처",
-          "da": "Hent øjebliksbillede",
-          "de": "Aktuellen Schnappschuss erfassen",
-          "es": "Capturar instantánea actual",
-          "fr": "Capturer l'instantané actuel",
-          "it": "Acquisisci istantanea corrente",
-          "nl": "Huidige snapshot pakken",
-          "no": "Ta øyeblikksbilde nå",
-          "pl": "Zrób obecny zrzut ekranu",
-          "sv": "Ta aktuell ögonblicksbild"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_enable_motion",
-        "title": {
-          "en": "Enable motion detection",
-          "ko": "모션 감지 활성화",
-          "da": "Aktiver bevægelsesregistrering",
-          "de": "Bewegungserkennung aktivieren",
-          "es": "Activar la detección de movimiento",
-          "fr": "Activer la détection de mouvement",
-          "it": "Abilita la rilevazione del movimento",
-          "nl": "Bewegingsdetectie inschakelen",
-          "no": "Aktiver bevegelsesdeteksjon",
-          "pl": "Włącz wykrywanie ruchu",
-          "sv": "Aktivera rörelsedetektering"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_disable_motion",
-        "title": {
-          "en": "Disable motion detection",
-          "ko": "모션 감지 비활성화",
-          "da": "Deaktiver bevægelsesregistrering",
-          "de": "Bewegungserkennung deaktivieren",
-          "es": "Desactivar la detección de movimiento",
-          "fr": "Désactiver la détection de mouvement",
-          "it": "Disattivare il rilevamento del movimento",
-          "nl": "Bewegingsdetectie uitschakelen",
-          "no": "Deaktiver bevegelsesdeteksjon",
-          "pl": "Wyłącz wykrywanie ruchu",
-          "sv": "Inaktivera rörelsedetektion"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_light_on",
-        "title": {
-          "en": "Turn the floodlight on",
-          "ko": "홍수등 켜기",
-          "da": "Tænd oversvømmelseslyset",
-          "de": "Schalte die Flutlichtanlage ein",
-          "es": "Enciende el foco de inundación",
-          "fr": "Allumez le projecteur",
-          "it": "Accendi il faro",
-          "nl": "Zet de schijnwerper aan",
-          "no": "Slå på flomlyset",
-          "pl": "Włącz reflektor",
-          "sv": "Sätt på översvämningsljuset"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_light_off",
-        "title": {
-          "en": "Turn the floodlight off",
-          "ko": "홍수등 끄기",
-          "da": "Sluk for flomlyset",
-          "de": "Schalte das Flutlichtanlage aus",
-          "es": "Apaga el foco de inundación",
-          "fr": "Éteignez le projecteur",
-          "it": "Spegni i fari da esterno",
-          "nl": "Zet de schijnwerper uit",
-          "no": "Slå av flomlyset",
-          "pl": "Wyłącz reflektor",
-          "sv": "Stäng av översvämningsljuset"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_siren_off",
-        "title": {
-          "en": "Turn the siren off",
-          "ko": "사이렌 끄기",
-          "da": "Sluk sirenen",
-          "de": "Schalte die Sirene aus",
-          "es": "Apaga la sirena",
-          "fr": "Éteignez la sirène",
-          "it": "Spegni la sirena",
-          "nl": "Zet de sirene uit",
-          "no": "Slå av sirenen",
-          "pl": "Wyłącz syrenę",
-          "sv": "Stäng av siren"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_siren_on",
-        "title": {
-          "en": "Turn the siren on",
-          "ko": "사이렌 켜기",
-          "da": "Tænd sirenen",
-          "de": "Schalte die Sirene ein",
-          "es": "Enciende la sirena",
-          "fr": "Allumez la sirène",
-          "it": "Accendi la sirena",
-          "nl": "Zet de sirene aan",
-          "no": "Slå på sirenen",
-          "pl": "Włącz syrenę",
-          "sv": "Sätt på sirenen"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
-          }
-        ]
-      },
-      {
-        "id": "change_location_mode",
-        "title": {
-          "en": "Change the mode for a location",
-          "ko": "위치 모드 변경",
-          "da": "Skift tilstand for en placering",
-          "de": "Ändern Sie den Modus für einen Standort",
-          "es": "Cambiar el modo para una ubicación",
-          "fr": "Changer le mode pour un emplacement",
-          "it": "Cambia la modalità per una posizione",
-          "nl": "Verander de modus voor een locatie",
-          "no": "Endre modus for en plassering",
-          "pl": "Zmień tryb dla lokalizacji",
-          "sv": "Ändra läge för en plats"
-        },
-        "titleFormatted": {
-          "en": "Change the mode for [[location]] to [[mode]]",
-          "ko": "[[location]] 위치 모드를 [[mode]]로 변경",
-          "da": "Skift tilstand for [[location]] til [[mode]]",
-          "de": "Ändere den Modus für [[location]] zu [[mode]]",
-          "es": "Cambiar el modo para [[location]] a [[mode]]",
-          "fr": "Changer le mode pour [[location]] à [[mode]]",
-          "it": "Cambiare la modalità per [[location]] a [[mode]]",
-          "nl": "Verander de modus voor [[location]] naar [[mode]]",
-          "no": "Endre modus for [[location]] til [[mode]]",
-          "pl": "Zmień tryb dla [[location]] na [[mode]]",
-          "sv": "Ändra läget för [[location]] till [[mode]]"
-        },
-        "args": [
-          {
+            "name": "ring_image",
+            "type": "image",
             "title": {
-              "en": "Location",
-              "nl": "Locatie",
-              "ko": "위치"
-            },
-            "name": "location",
-            "type": "autocomplete",
-            "placeholder": {
-              "en": "NOTE: You must have a location setup in Ring",
-              "ko": "참고: Ring에서 위치를 설정해야 합니다",
-              "da": "BEMÆRK: Du skal have en placering opsat i Ring",
-              "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
-              "es": "NOTA: Debe tener una ubicación configurada en Ring",
-              "fr": "REMARQUE: Vous devez avoir une localisation configurée dans Ring",
-              "it": "NOTA: È necessario avere una posizione impostata in Ring",
-              "nl": "OPMERKING: U moet een locatie instellen in Ring",
-              "no": "MERK: Du må ha en plassering satt opp i Ring",
-              "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
-              "sv": "OBS: Du måste ha en plats inställd i Ring"
+              "en": "image",
+              "da": "billede",
+              "de": "Bild",
+              "es": "imagen",
+              "fr": "image",
+              "it": "immagine",
+              "nl": "afbeelding",
+              "no": "bilde",
+              "pl": "obraz",
+              "sv": "bild",
+              "ko": "이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ring_snapshot_received_device",
+        "title": {
+          "en": "Snapshot is grabbed",
+          "da": "Snapshot er taget",
+          "de": "Snapshot wurde aufgenommen",
+          "es": "Se ha capturado una instantánea",
+          "fr": "La capture d'écran est effectuée",
+          "it": "È stata catturata una istantanea",
+          "nl": "Snapshot is vastgelegd",
+          "no": "Snapshot er tatt",
+          "pl": "Zrobiono zrzut ekranu",
+          "sv": "Snapshot har fångats",
+          "ko": "스냅샷이 캡처되었습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell|stickupcam"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "ring_image",
+            "type": "image",
+            "title": {
+              "en": "image",
+              "da": "billede",
+              "de": "Bild",
+              "es": "imagen",
+              "fr": "image",
+              "it": "immagine",
+              "nl": "afbeelding",
+              "no": "bilde",
+              "pl": "obraz",
+              "sv": "bild",
+              "ko": "이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ring_alarm_mode_changed",
+        "title": {
+          "en": "The mode changed.",
+          "da": "Tilstanden er ændret.",
+          "de": "Der Modus wurde geändert.",
+          "es": "El modo ha cambiado.",
+          "fr": "Le mode a changé.",
+          "it": "La modalità è cambiata.",
+          "ko": "모드가 변경되었습니다.",
+          "nl": "De toezicht modus is gewijzigd.",
+          "no": "Modusen er endret.",
+          "pl": "Tryb został zmieniony.",
+          "sv": "Läget har ändrats."
+        },
+        "hint": {
+          "en": "This card is triggered when the Surveillance Mode is changed, the new Mode is available in the Surveillance Mode tag.",
+          "da": "Dette kort udløses, når overvågningstilstanden ændres; den nye tilstand er tilgængelig i overvågningstilstands-tagget.",
+          "de": "Diese Karte wird ausgelöst, wenn der Überwachungsmodus geändert wird; der neue Modus ist im Überwachungsmodus-Tag verfügbar.",
+          "es": "Esta tarjeta se activa cuando se cambia el modo de vigilancia; el nuevo modo está disponible en la etiqueta de modo de vigilancia.",
+          "fr": "Cette carte est déclenchée lorsque le mode de surveillance est modifié ; le nouveau mode est disponible dans le tag du mode de surveillance.",
+          "it": "Questa scheda viene attivata quando la modalità di sorveglianza viene modificata; la nuova modalità è disponibile nel tag della modalità di sorveglianza.",
+          "ko": "감시 모드가 변경되면 이 카드가 트리거됩니다. 새 모드는 감시 모드 태그에서 확인할 수 있습니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de toezichtmodus wordt gewijzigd; de nieuwe modus is beschikbaar in de toezichtmodus-tag.",
+          "no": "Dette kort utløses når overvåkingsmodusen endres; den nye modusen er tilgjengelig i overvåkingsmodus-taggen.",
+          "pl": "Ta karta jest uruchamiana, gdy tryb nadzoru zostanie zmieniony; nowy tryb jest dostępny w tagu trybu nadzoru.",
+          "sv": "Detta kort utlöses när övervakningsläget ändras; det nya läget är tillgängligt i taggen för övervakningsläge."
+        },
+        "tokens": [
+          {
+            "name": "oldmode",
+            "type": "string",
+            "example": "home",
+            "title": {
+              "en": "Previous mode",
+              "da": "Tidligere tilstand",
+              "de": "Vorheriger Modus",
+              "es": "Modo anterior",
+              "fr": "Mode précédent",
+              "it": "Modalità precedente",
+              "ko": "이전 모드",
+              "nl": "Vorige modus",
+              "no": "Forrige modus",
+              "pl": "Poprzedni tryb",
+              "sv": "Föregående läge"
             }
           },
           {
             "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "home",
-                "label": {
-                  "en": "Home", 
-                  "ko": "집" 
-                  } 
-              },
-              {
-                "id": "disarmed",
-                "label": {
-                  "en": "Disarmed",
-                  "ko": "해제" 
-                }
-              },
-              {
-                "id": "away",
-                "label": {
-                  "en": "Away",
-                  "ko": "외출"
-                }
-              }
-            ]
+            "type": "string",
+            "example": "Disarmed",
+            "title": {
+              "en": "New mode",
+              "da": "Ny tilstand",
+              "de": "Neuer Modus",
+              "es": "Nuevo modo",
+              "fr": "Nouveau mode",
+              "it": "Nuova modalità",
+              "ko": "새 모드",
+              "nl": "Nieuwe modus",
+              "no": "Ny modus",
+              "pl": "Nowy tryb",
+              "sv": "Nytt läge"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "entry_delay",
+        "title": {
+          "en": "The entry delay activated",
+          "nl": "Inloopvertraging geactiveerd",
+          "de": "Die Eintrittsverzögerung wurde aktiviert",
+          "fr": "Le délai d’entrée est activé",
+          "it": "Il ritardo d’ingresso è attivato",
+          "ko": "입장 지연이 활성화되었습니다",
+          "no": "Inngangsforsinkelsen er aktivert",
+          "sv": "Ingångsfördröjningen har aktiverats",
+          "da": "Indgangsforsinkelsen er aktiveret",
+          "es": "El retraso de entrada se ha activado"
+        },
+        "hint": {
+          "en": "This card is triggered when the entry delay is activated, giving time to disarm the system before an alarm sounds.",
+          "da": "Dette kort udløses, når indgangsforsinkelsen aktiveres, så der er tid til at deaktivere systemet, inden alarmen går.",
+          "de": "Diese Karte wird ausgelöst, wenn die Eintrittsverzögerung aktiviert wird, wodurch Zeit bleibt, das System zu deaktivieren, bevor ein Alarm ausgelöst wird.",
+          "es": "Esta tarjeta se activa cuando se activa el retraso de entrada, dando tiempo para desarmar el sistema antes de que suene la alarma.",
+          "fr": "Cette carte est déclenchée lorsque le délai d’entrée est activé, laissant le temps de désarmer le système avant que l’alarme ne se déclenche.",
+          "it": "Questa scheda viene attivata quando il ritardo d’ingresso è attivato, dando il tempo di disattivare il sistema prima che suoni l’allarme.",
+          "ko": "이 카드는 입장 지연이 활성화될 때 트리거되며, 경보가 울리기 전에 시스템을 해제할 수 있는 시간을 제공합니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de inloopvertraging wordt geactiveerd, waardoor tijd is om het systeem uit te schakelen voordat het alarm afgaat.",
+          "no": "Dette kortet utløses når inngangsforsinkelsen aktiveres, og gir tid til å deaktivere systemet før alarmen utløses.",
+          "pl": "Ta karta jest uruchamiana, gdy opóźnienie wejścia zostaje aktywowane, dając czas na rozbrojenie systemu przed włączeniem alarmu.",
+          "sv": "Detta kort utlöses när ingångsfördröjningen aktiveras, vilket ger tid att avaktivera systemet innan larmet går."
+        },
+        "tokens": [
+          {
+            "name": "faultedDevices",
+            "type": "string",
+            "example": "home",
+            "title": {
+              "en": "Device",
+              "da": "Enhed",
+              "de": "Gerät",
+              "es": "Dispositivo",
+              "fr": "Appareil",
+              "it": "Dispositivo",
+              "ko": "장치",
+              "nl": "Apparaat",
+              "no": "Enhet",
+              "pl": "Urządzenie",
+              "sv": "Enhet"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_burglar_true",
+        "highlight": true,
+        "title": {
+          "en": "The burglar alarm turned on",
+          "da": "Indbrudsalarmen blev aktiveret",
+          "de": "Der Einbruch-Alarm ist angegangen",
+          "es": "La alarma antirrobo se ha activado",
+          "fr": "L'alarme anti-intrusion s'est activée",
+          "it": "L'allarme antifurto è stato attivato",
+          "ko": "침입 경보가 켜졌습니다",
+          "nl": "Het inbraakalarm gaat aan",
+          "no": "Innbruddsalarmen ble aktivert",
+          "pl": "Alarm antywłamaniowy włączony",
+          "sv": "Inbrottslarmet aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the burglar alarm is activated, indicating a potential intrusion.",
+          "da": "Dette kort udløses, når indbrudsalarmen aktiveres, hvilket indikerer en potentiel indtrængen.",
+          "de": "Diese Karte wird ausgelöst, wenn der Einbruch-Alarm aktiviert wird und auf einen möglichen Einbruch hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma antirrobo, indicando una posible intrusión.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme anti-intrusion est activée, indiquant une intrusion potentielle.",
+          "it": "Questa scheda viene attivata quando l’allarme antifurto è attivato, indicando una possibile intrusione.",
+          "ko": "이 카드는 침입 경보가 켜질 때 트리거되며, 잠재적인 침입을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het inbraakalarm afgaat, wat wijst op een mogelijke inbraak.",
+          "no": "Dette kortet utløses når innbruddsalarmen aktiveres, og indikerer et mulig innbrudd.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm antywłamaniowy zostaje włączony, wskazując na potencjalne włamanie.",
+          "sv": "Detta kort utlöses när inbrottslarmet aktiveras, vilket indikerar ett potentiellt intrång."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_burglar_false",
+        "title": {
+          "en": "The burglar alarm turned off",
+          "da": "Indbrudsalarmen blev deaktiveret",
+          "de": "Der Einbruch-Alarm ist ausgegangen",
+          "es": "La alarma antirrobo se ha desactivado",
+          "fr": "L'alarme anti-intrusion s'est désactivée",
+          "it": "L'allarme antifurto è stato disattivato",
+          "ko": "침입 경보가 꺼졌습니다",
+          "nl": "Het inbraakalarm gaat uit",
+          "no": "Innbruddsalarmen ble deaktivert",
+          "pl": "Alarm antywłamaniowy wyłączony",
+          "sv": "Inbrottslarmet inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the burglar alarm is deactivated, indicating the system is no longer in alarm mode.",
+          "da": "Dette kort udløses, når indbrudsalarmen deaktiveres, hvilket indikerer, at systemet ikke længere er i alarmtilstand.",
+          "de": "Diese Karte wird ausgelöst, wenn der Einbruch-Alarm deaktiviert wird und anzeigt, dass das System nicht mehr im Alarmmodus ist.",
+          "es": "Esta tarjeta se activa cuando la alarma antirrobo se desactiva, indicando que el sistema ya no está en modo de alarma.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme anti-intrusion est désactivée, indiquant que le système n’est plus en mode alarme.",
+          "it": "Questa scheda viene attivata quando l’allarme antifurto viene disattivato, indicando che il sistema non è più in modalità allarme.",
+          "ko": "이 카드는 침입 경보가 해제될 때 트리거되며, 시스템이 더 이상 경보 모드가 아님을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het inbraakalarm wordt uitgeschakeld, wat aangeeft dat het systeem niet langer in alarmstand is.",
+          "no": "Dette kortet utløses når innbruddsalarmen deaktiveres, noe som indikerer at systemet ikke lenger er i alarmmodus.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm antywłamaniowy zostaje dezaktywowany, co oznacza, że system nie jest już w trybie alarmu.",
+          "sv": "Detta kort utlöses när inbrottslarmet avaktiveras, vilket indikerar att systemet inte längre är i larmläge."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_medical_true",
+        "highlight": true,
+        "title": {
+          "en": "The medical alarm turned on",
+          "da": "Den medicinske alarm blev aktiveret",
+          "de": "Der medizinische Alarm ist angegangen",
+          "es": "La alarma médica se ha activado",
+          "fr": "L'alarme médicale s'est activée",
+          "it": "L'allarme medico è stato attivato",
+          "ko": "의료 경보가 켜졌습니다",
+          "nl": "Het medisch alarm gaat aan",
+          "no": "Medisinsk alarm ble aktivert",
+          "pl": "Alarm medyczny włączony",
+          "sv": "Medicinskt larm aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the medical alarm is activated, indicating a possible medical emergency.",
+          "da": "Dette kort udløses, når den medicinske alarm aktiveres, hvilket indikerer en mulig medicinsk nødsituation.",
+          "de": "Diese Karte wird ausgelöst, wenn der medizinische Alarm aktiviert wird und auf einen möglichen medizinischen Notfall hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma médica, indicando una posible emergencia médica.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme médicale est activée, indiquant une urgence médicale potentielle.",
+          "it": "Questa scheda viene attivata quando l’allarme medico è attivato, indicando una possibile emergenza medica.",
+          "ko": "이 카드는 의료 경보가 켜질 때 트리거되며, 잠재적인 의료 응급 상황을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het medisch alarm wordt ingeschakeld, wat duidt op een mogelijke medische noodsituatie.",
+          "no": "Dette kortet utløses når medisinsk alarm aktiveres, og indikerer en mulig medisinsk nødsituasjon.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm medyczny zostaje włączony, wskazując na możliwy stan zagrożenia zdrowia.",
+          "sv": "Detta kort utlöses när det medicinska larmet aktiveras, vilket indikerar en möjlig medicinsk nödsituation."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_medical_false",
+        "title": {
+          "en": "The medical alarm turned off",
+          "da": "Den medicinske alarm blev deaktiveret",
+          "de": "Der medizinische Alarm ist ausgegangen",
+          "es": "La alarma médica se ha desactivado",
+          "fr": "L'alarme médicale s'est désactivée",
+          "it": "L'allarme medico è stato disattivato",
+          "ko": "의료 경보가 꺼졌습니다",
+          "nl": "Het medisch alarm gaat uit",
+          "no": "Medisinsk alarm ble deaktivert",
+          "pl": "Alarm medyczny wyłączony",
+          "sv": "Medicinskt larm inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the medical alarm is deactivated, indicating the system is no longer in medical alert mode.",
+          "da": "Dette kort udløses, når den medicinske alarm deaktiveres, hvilket indikerer, at systemet ikke længere er i medicinsk alarmtilstand.",
+          "de": "Diese Karte wird ausgelöst, wenn der medizinische Alarm deaktiviert wird und anzeigt, dass das System nicht mehr im medizinischen Alarmmodus ist.",
+          "es": "Esta tarjeta se activa cuando se desactiva la alarma médica, indicando que el sistema ya no está en modo de alerta médica.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme médicale est désactivée, indiquant que le système n’est plus en mode alerte médicale.",
+          "it": "Questa scheda viene attivata quando l’allarme medico viene disattivato, indicando che il sistema non è più in modalità allarme medico.",
+          "ko": "이 카드는 의료 경보가 해제될 때 트리거되며, 시스템이 더 이상 의료 경보 모드가 아님을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het medisch alarm wordt uitgeschakeld, wat aangeeft dat het systeem niet langer in medische alarmmodus is.",
+          "no": "Dette kortet utløses når medisinsk alarm deaktiveres, noe som indikerer at systemet ikke lenger er i medisinsk alarmmodus.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm medyczny zostaje dezaktywowany, co oznacza, że system nie jest już w trybie alarmu medycznego.",
+          "sv": "Detta kort utlöses när det medicinska larmet avaktiveras, vilket indikerar att systemet inte längre är i medicinskt larmläge."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_fire_true",
+        "highlight": true,
+        "title": {
+          "en": "The fire alarm turned on",
+          "da": "Brandalarmen blev aktiveret",
+          "de": "Der Feueralarm ist ausgelöst",
+          "es": "La alarma de incendio se ha activado",
+          "fr": "L'alarme incendie s'est déclenchée",
+          "it": "L'allarme antincendio è stato attivato",
+          "ko": "화재 경보가 켜졌습니다",
+          "nl": "Het brandalarm gaat aan",
+          "no": "Brannalarmen ble aktivert",
+          "pl": "Alarm pożarowy włączony",
+          "sv": "Brandlarmet aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the fire alarm is activated, indicating a potential fire emergency.",
+          "da": "Dette kort udløses, når brandalarmen aktiveres, hvilket indikerer en potentiel brandnødsituation.",
+          "de": "Diese Karte wird ausgelöst, wenn der Feueralarm aktiviert wird und auf einen möglichen Brand hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma de incendio, indicando una posible emergencia de incendio.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme incendie est activée, indiquant une urgence incendie potentielle.",
+          "it": "Questa scheda viene attivata quando l’allarme antincendio è attivato, indicando una possibile emergenza incendio.",
+          "ko": "이 카드는 화재 경보가 켜질 때 트리거되며, 잠재적인 화재 비상 상황을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het brandalarm afgaat, wat wijst op een mogelijke brandnoodsituatie.",
+          "no": "Dette kortet utløses når brannalarmen aktiveres, og indikerer en mulig brannnødsituasjon.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm pożarowy zostaje włączony, wskazując na potencjalne zagrożenie pożarowe.",
+          "sv": "Detta kort utlöses när brandlarmet aktiveras, vilket indikerar en potentiell brandnödsituation."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_fire_false",
+        "title": {
+          "en": "The fire alarm turned off",
+          "da": "Brandalarmen blev deaktiveret",
+          "de": "Der Feueralarm ist deaktiviert",
+          "es": "La alarma de incendio se ha desactivado",
+          "fr": "L'alarme incendie s'est désactivée",
+          "it": "L'allarme antincendio è stato disattivato",
+          "ko": "화재 경보가 꺼졌습니다",
+          "nl": "Het brandalarm gaat uit",
+          "no": "Brannalarmen ble deaktivert",
+          "pl": "Alarm pożarowy wyłączony",
+          "sv": "Brandlarmet inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the fire alarm is deactivated, indicating the system is no longer in fire alert mode.",
+          "da": "Dette kort udløses, når brandalarmen deaktiveres, hvilket indikerer, at systemet ikke længere er i brandalarmtilstand.",
+          "de": "Diese Karte wird ausgelöst, wenn der Feueralarm deaktiviert wird und anzeigt, dass das System nicht mehr im Brandalarmmodus ist.",
+          "es": "Esta tarjeta se activa cuando se desactiva la alarma de incendio, indicando que el sistema ya no está en modo de alerta por incendio.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme incendie est désactivée, indiquant que le système n’est plus en mode alerte incendie.",
+          "it": "Questa scheda viene attivata quando l’allarme antincendio viene disattivato, indicando che il sistema non è più in modalità allarme incendio.",
+          "ko": "이 카드는 화재 경보가 해제될 때 트리거되며, 시스템이 더 이상 화재 경보 모드가 아님을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het brandalarm wordt uitgeschakeld, wat aangeeft dat het systeem niet langer in brandalarmmodus is.",
+          "no": "Dette kortet utløses når brannalarmen deaktiveres, noe som indikerer at systemet ikke lenger er i brannalarmmodus.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm pożarowy zostaje dezaktywowany, co oznacza, że system nie jest już w trybie alarmu pożarowego.",
+          "sv": "Detta kort utlöses när brandlarmet avaktiveras, vilket indikerar att systemet inte längre är i brandlarmläge."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_panic_true",
+        "highlight": true,
+        "title": {
+          "en": "The panic alarm turned on",
+          "da": "Panikknappen blev aktiveret",
+          "de": "Der Panikalarm ist ausgelöst",
+          "es": "La alarma de pánico se ha activado",
+          "fr": "L'alarme panique s'est activée",
+          "it": "L'allarme panico è stato attivato",
+          "ko": "패닉 알람이 켜졌습니다",
+          "nl": "Het paniekalarm gaat aan",
+          "no": "Panikkalarmen ble aktivert",
+          "pl": "Alarm panikowy włączony",
+          "sv": "Paniklarmet aktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the panic alarm is activated, indicating an urgent emergency situation.",
+          "da": "Dette kort udløses, når panikknappen aktiveres, hvilket indikerer en akut nødsituation.",
+          "de": "Diese Karte wird ausgelöst, wenn der Panikalarm aktiviert wird und auf eine dringende Notfallsituation hinweist.",
+          "es": "Esta tarjeta se activa cuando se activa la alarma de pánico, indicando una situación de emergencia urgente.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme panique est activée, indiquant une situation d’urgence urgente.",
+          "it": "Questa scheda viene attivata quando l’allarme panico è attivato, indicando una situazione di emergenza urgente.",
+          "ko": "이 카드는 패닉 알람이 켜질 때 트리거되며, 긴급한 비상 상황을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het paniekalarm wordt ingeschakeld, wat wijst op een urgente noodsituatie.",
+          "no": "Dette kortet utløses når panikkalarmen aktiveres, og indikerer en akutt nødsituasjon.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm panikowy zostaje włączony, wskazując na pilną sytuację awaryjną.",
+          "sv": "Detta kort utlöses när paniklarmet aktiveras, vilket indikerar en akut nödsituation."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_panic_false",
+        "title": {
+          "en": "The panic alarm turned off",
+          "da": "Panikknappen blev deaktiveret",
+          "de": "Der Panikalarm ist deaktiviert",
+          "es": "La alarma de pánico se ha desactivado",
+          "fr": "L'alarme panique s'est désactivée",
+          "it": "L'allarme panico è stato disattivato",
+          "ko": "패닉 알람이 꺼졌습니다",
+          "nl": "Het paniekalarm gaat uit",
+          "no": "Panikkalarmen ble deaktivert",
+          "pl": "Alarm panikowy wyłączony",
+          "sv": "Paniklarmet inaktiverat"
+        },
+        "hint": {
+          "en": "This card is triggered when the panic alarm is deactivated, indicating the emergency alert has ended.",
+          "da": "Dette kort udløses, når panikknappen deaktiveres, hvilket indikerer, at nødsituationen er afsluttet.",
+          "de": "Diese Karte wird ausgelöst, wenn der Panikalarm deaktiviert wird und anzeigt, dass die Notfallsituation beendet ist.",
+          "es": "Esta tarjeta se activa cuando se desactiva la alarma de pánico, indicando que la alerta de emergencia ha finalizado.",
+          "fr": "Cette carte est déclenchée lorsque l’alarme panique est désactivée, indiquant que l’alerte d’urgence est terminée.",
+          "it": "Questa scheda viene attivata quando l’allarme panico viene disattivato, indicando che l’allerta di emergenza è terminata.",
+          "ko": "이 카드는 패닉 알람이 해제될 때 트리거되며, 비상 경보가 종료되었음을 나타냅니다.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het paniekalarm wordt uitgeschakeld, wat aangeeft dat de noodmelding is beëindigd.",
+          "no": "Dette kortet utløses når panikkalarmen deaktiveres, noe som indikerer at nødalarmen er avsluttet.",
+          "pl": "Ta karta jest uruchamiana, gdy alarm panikowy zostaje dezaktywowany, co oznacza zakończenie stanu alarmowego.",
+          "sv": "Detta kort utlöses när paniklarmet avaktiveras, vilket indikerar att nödlarmet har avslutats."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ],
+        "tokens": [
+          {
+            "title": {
+              "en": "Time triggered",
+              "da": "Tid udløst",
+              "de": "Zeit ausgelöst",
+              "es": "Hora activada",
+              "fr": "Heure déclenchée",
+              "it": "Ora attivata",
+              "ko": "트리거된 시간",
+              "nl": "Tijd geactiveerd",
+              "no": "Tid utløst",
+              "pl": "Czas wyzwolenia",
+              "sv": "Tid utlöst"
+            },
+            "name": "timestamp",
+            "type": "string",
+            "example": "2025-10-18T14:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "alarm_motion_true_default",
+        "highlight": true,
+        "title": {
+          "en": "The motion alarm turned on",
+          "nl": "De bewegingsmelder gaat aan",
+          "de": "Der Bewegungs-Alarm ist angegangen",
+          "fr": "L'alarme mouvement s'est activée",
+          "it": "L'allarme di movimento è stato attivato",
+          "sv": "Rörelselarmet aktiverat",
+          "no": "Bevegelsesalarmen aktivert",
+          "es": "La alarma de movimiento se ha activado",
+          "da": "Bevægelsesalarmen blev aktiveret",
+          "pl": "Czujnik ruchu włączony",
+          "ko": "모션 경보가 켜졌습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motiondetector"
           }
         ]
       }
     ],
     "conditions": [
-      {
-        "id": "alarm_generic",
-        "title": {
-          "en": "The doorbell is !{{ |not }}ringing",
-          "ko": "초인종이 !{{울림|멈춤}} 상태입니다",
-          "nl": "De bewegingsmelder is !{{aan|uit}}",
-          "de": "Der Bewegungs-Alarm ist !{{an|aus}}",
-          "fr": "L'alarme mouvement est !{{en marche|arrêtée}}",
-          "it": "L'allarme di movimento è !{{acceso|spento}}",
-          "sv": "Rörelselarmet är !{{på|av}}",
-          "no": "Bevegelsesalarmen er !{{på|av}}",
-          "es": "La alarma de movimiento está !{{activada|desactivada}}",
-          "da": "Bevægelsesalarmen er !{{tændt|slukket}}",
-          "ru": "Сигнал движения !{{вкл.|выкл.}}",
-          "pl": "Czujnik ruchu !{{włączony|wyłączony}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
       {
         "id": "alarm_motion",
         "title": {
@@ -1647,29 +1030,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=doorbell|stickupcam|motiondetector"
-          }
-        ]
-      },
-      {
-        "id": "stickupcam_floodLight_on",
-        "title": {
-          "en": "The floodlight !{{is|isn't}} on",
-          "ko": "조명이 !{{켜짐|꺼짐}} 상태입니다",
-          "da": "Flomlyset !{{er|er ikke}} tændt",
-          "de": "Die Flutlichtanlage !{{ist|ist nicht}} an",
-          "es": "El foco de inundación !{{está|no está}} encendido",
-          "fr": "Le projecteur !{{est|n'est pas}} allumé",
-          "it": "Il proiettore !{{è|non è}} acceso",
-          "nl": "De schijnwerper !{{staat|staat niet}} aan",
-          "no": "Flomlyset !{{er|er ikke}} på",
-          "pl": "Reflektor !{{jest|nie jest}} włączony",
-          "sv": "Strålkastaren !{{är|är inte}} på"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=stickupcam"
           }
         ]
       },
@@ -1760,13 +1120,2218 @@
             ]
           }
         ]
+      },
+      {
+        "id": "alarm_burglar",
+        "title": {
+          "en": "The burglar alarm is !{{on|off}}",
+          "da": "Indbrudsalarmen er !{{tændt|slukket}}",
+          "de": "Der Einbruch-Alarm ist !{{an|aus}}",
+          "es": "La alarma antirrobo está !{{activada|desactivada}}",
+          "fr": "L'alarme anti-intrusion est !{{en marche|arrêtée}}",
+          "it": "L'allarme antifurto è !{{acceso|spento}}",
+          "nl": "Het inbraakalarm is !{{aan|uit}}",
+          "no": "Innbruddsalarmen er !{{på|av}}",
+          "pl": "Alarm antywłamaniowy jest !{{włączony|wyłączony}}",
+          "sv": "Inbrottslarmet är !{{på|av}}",
+          "ko": "침입 경보가 !{{켜짐|꺼짐}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the burglar alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for indbrudsalarmen, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des Einbruch-Alarms, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma antirrobo, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme anti-intrusion, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme antifurto, attivato o disattivato.",
+          "ko": "이 카드는 침입 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het inbraakalarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for innbruddsalarmen, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu antywłamaniowego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för inbrottslarmet, aktiverat eller avaktiverat."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_fire",
+        "title": {
+          "en": "The fire alarm is !{{on|off}}",
+          "da": "Brandalarmen er !{{tændt|slukket}}",
+          "de": "Der Feueralarm ist !{{an|aus}}",
+          "es": "La alarma de incendio está !{{activada|desactivada}}",
+          "fr": "L'alarme incendie est !{{en marche|arrêtée}}",
+          "it": "L'allarme antincendio è !{{acceso|spento}}",
+          "ko": "화재 경보가 !{{켜짐|꺼짐}}",
+          "nl": "Het brandalarm is !{{aan|uit}}",
+          "no": "Brannalarmen er !{{på|av}}",
+          "pl": "Alarm przeciwpożarowy jest !{{włączony|wyłączony}}",
+          "sv": "Brandlarmet är !{{på|av}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the fire alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for brandalarmen, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des Feueralarms, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma de incendio, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme incendie, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme antincendio, attivato o disattivato.",
+          "ko": "이 카드는 화재 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het brandalarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for brannalarmen, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu przeciwpożarowego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för brandlarmet, aktiverat eller avaktiverat."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_medical",
+        "title": {
+          "en": "The medical alarm is !{{on|off}}",
+          "da": "Den medicinske alarm er !{{tændt|slukket}}",
+          "de": "Der medizinische Alarm ist !{{an|aus}}",
+          "es": "La alarma médica está !{{activada|desactivada}}",
+          "fr": "L'alarme médicale est !{{en marche|arrêtée}}",
+          "it": "L'allarme medico è !{{acceso|spento}}",
+          "ko": "의료 경보가 !{{켜짐|꺼짐}}",
+          "nl": "Het medisch alarm is !{{aan|uit}}",
+          "no": "Medisinsk alarm er !{{på|av}}",
+          "pl": "Alarm medyczny jest !{{włączony|wyłączony}}",
+          "sv": "Medicinskt larm är !{{på|av}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the medical alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for den medicinske alarm, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des medizinischen Alarms, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma médica, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme médicale, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme medico, attivato o disattivato.",
+          "ko": "이 카드는 의료 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het medisch alarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for medisinsk alarm, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu medycznego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för medicinskt larm, aktiverat eller avaktiverat."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "alarm_panic",
+        "title": {
+          "en": "The panic alarm is !{{on|off}}",
+          "da": "Panikalarmen er !{{tændt|slukket}}",
+          "de": "Der Panikalarm ist !{{an|aus}}",
+          "es": "La alarma de pánico está !{{activada|desactivada}}",
+          "fr": "L'alarme panique est !{{en marche|arrêtée}}",
+          "it": "L'allarme antipanico è !{{acceso|spento}}",
+          "ko": "패닉 경보가 !{{켜짐|꺼짐}}",
+          "nl": "Het paniekalarm is !{{aan|uit}}",
+          "no": "Panikkalarmen er !{{på|av}}",
+          "pl": "Alarm paniki jest !{{włączony|wyłączony}}",
+          "sv": "Paniklarmet är !{{på|av}}"
+        },
+        "hint": {
+          "en": "This card reflects the current state of the panic alarm, either activated or deactivated.",
+          "da": "Dette kort viser den aktuelle tilstand for panikknappen, enten aktiveret eller deaktiveret.",
+          "de": "Diese Karte zeigt den aktuellen Zustand des Panikalarm, aktiviert oder deaktiviert.",
+          "es": "Esta tarjeta refleja el estado actual de la alarma de pánico, activada o desactivada.",
+          "fr": "Cette carte indique l’état actuel de l’alarme panique, activée ou désactivée.",
+          "it": "Questa scheda mostra lo stato attuale dell’allarme antipanico, attivato o disattivato.",
+          "ko": "이 카드는 패닉 경보의 현재 상태를 나타내며, 켜짐 또는 꺼짐일 수 있습니다.",
+          "nl": "Deze kaart toont de huidige status van het paniekalarm, geactiveerd of gedeactiveerd.",
+          "no": "Dette kortet viser gjeldende status for panikkalarmen, aktivert eller deaktivert.",
+          "pl": "Ta karta pokazuje aktualny stan alarmu panikowego, włączony lub wyłączony.",
+          "sv": "Detta kort visar det aktuella läget för paniklarmet, aktiverat eller avaktiverat."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          }
+        ]
+      },
+      {
+        "id": "basestation_mode_active",
+        "title": {
+          "en": "The mode is",
+          "da": "Tilstanden er",
+          "de": "Der Modus ist",
+          "es": "El modo es",
+          "fr": "Le mode est",
+          "it": "La modalità è",
+          "ko": "모드는",
+          "nl": "De modus is",
+          "no": "Modusen er",
+          "pl": "Tryb jest",
+          "sv": "Läget är"
+        },
+        "titleFormatted": {
+          "en": "The mode is !{{|not}} [[mode]]",
+          "da": "Tilstanden er !{{|ikke}} [[mode]]",
+          "de": "Der Modus ist !{{|nicht}} [[mode]]",
+          "es": "El modo !{{|no}} es [[mode]]",
+          "fr": "Le mode !{{est|n'est pas}} [[mode]]",
+          "it": "La modalità è !{{|non}} [[mode]]",
+          "ko": "홈 알람 상태가 다음!{{이면|이 아니면}} [[mode]]",
+          "nl": "De modus is !{{|niet}} [[mode]]",
+          "no": "Modusen er !{{|ikke}} [[mode]]",
+          "pl": "Tryb jest !{{|nie}} [[mode]]",
+          "sv": "Läget är !{{|inte}} [[mode]]"
+        },
+        "hint": {
+          "en": "Use this card to check which mode your basestation is in",
+          "da": "Brug dette kort til at tjekke, hvilken tilstand din basestation er i",
+          "de": "Verwenden Sie diese Karte, um zu überprüfen, in welchem Modus sich Ihre Basisstation befindet",
+          "es": "Usa esta tarjeta para comprobar en qué modo se encuentra tu estación base",
+          "fr": "Utilisez cette carte pour vérifier dans quel mode se trouve votre station de base",
+          "it": "Usa questa scheda per controllare in quale modalità si trova la tua stazione base",
+          "ko": "이 카드를 사용하여 베이스스테이션이 어떤 모드인지 확인하세요",
+          "nl": "Gebruik deze kaart om te controleren in welke modus je basisstation staat",
+          "no": "Bruk dette kortet for å sjekke hvilken modus basestasjonen din er i",
+          "pl": "Użyj tej karty, aby sprawdzić, w jakim trybie jest twoja stacja bazowa",
+          "sv": "Använd detta kort för att kontrollera vilket läge din basstation är i"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home",
+                  "da": "Hjem",
+                  "de": "Zuhause",
+                  "es": "Casa",
+                  "fr": "Maison",
+                  "it": "Casa",
+                  "ko": "집",
+                  "nl": "Thuis",
+                  "no": "Hjem",
+                  "pl": "Dom",
+                  "sv": "Hem"
+                }
+              },
+              {
+                "id": "disarmed",
+                "label": {
+                  "en": "Disarmed",
+                  "da": "Afbundet",
+                  "de": "Entwaffnet",
+                  "es": "Desarmado",
+                  "fr": "Désarmé",
+                  "it": "Disarmato",
+                  "ko": "비활성화됨",
+                  "nl": "Uitgeschakeld",
+                  "no": "Deaktivert",
+                  "pl": "Rozbrojony",
+                  "sv": "Avaktiverad"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "da": "Ude",
+                  "de": "Abwesend",
+                  "es": "Ausente",
+                  "fr": "Absent",
+                  "it": "Assente",
+                  "ko": "외출",
+                  "nl": "Weg",
+                  "no": "Borte",
+                  "pl": "Poza domem",
+                  "sv": "Borta"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alarm_generic",
+        "title": {
+          "en": "The doorbell is !{{ |not }}ringing",
+          "ko": "초인종이 !{{울림|멈춤}} 상태입니다",
+          "nl": "De bewegingsmelder is !{{aan|uit}}",
+          "de": "Der Bewegungs-Alarm ist !{{an|aus}}",
+          "fr": "L'alarme mouvement est !{{en marche|arrêtée}}",
+          "it": "L'allarme di movimento è !{{acceso|spento}}",
+          "sv": "Rörelselarmet är !{{på|av}}",
+          "no": "Bevegelsesalarmen er !{{på|av}}",
+          "es": "La alarma de movimiento está !{{activada|desactivada}}",
+          "da": "Bevægelsesalarmen er !{{tændt|slukket}}",
+          "ru": "Сигнал движения !{{вкл.|выкл.}}",
+          "pl": "Czujnik ruchu !{{włączony|wyłączony}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_floodLight_on",
+        "title": {
+          "en": "The floodlight !{{is|isn't}} on",
+          "ko": "조명이 !{{켜짐|꺼짐}} 상태입니다",
+          "da": "Flomlyset !{{er|er ikke}} tændt",
+          "de": "Die Flutlichtanlage !{{ist|ist nicht}} an",
+          "es": "El foco de inundación !{{está|no está}} encendido",
+          "fr": "Le projecteur !{{est|n'est pas}} allumé",
+          "it": "Il proiettore !{{è|non è}} acceso",
+          "nl": "De schijnwerper !{{staat|staat niet}} aan",
+          "no": "Flomlyset !{{er|er ikke}} på",
+          "pl": "Reflektor !{{jest|nie jest}} włączony",
+          "sv": "Strålkastaren !{{är|är inte}} på"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "change_location_mode",
+        "title": {
+          "en": "Change the mode for a location",
+          "ko": "위치 모드 변경",
+          "da": "Skift tilstand for en placering",
+          "de": "Ändern Sie den Modus für einen Standort",
+          "es": "Cambiar el modo para una ubicación",
+          "fr": "Changer le mode pour un emplacement",
+          "it": "Cambia la modalità per una posizione",
+          "nl": "Verander de modus voor een locatie",
+          "no": "Endre modus for en plassering",
+          "pl": "Zmień tryb dla lokalizacji",
+          "sv": "Ändra läge för en plats"
+        },
+        "titleFormatted": {
+          "en": "Change the mode for [[location]] to [[mode]]",
+          "ko": "[[location]] 위치 모드를 [[mode]]로 변경",
+          "da": "Skift tilstand for [[location]] til [[mode]]",
+          "de": "Ändere den Modus für [[location]] zu [[mode]]",
+          "es": "Cambiar el modo para [[location]] a [[mode]]",
+          "fr": "Changer le mode pour [[location]] à [[mode]]",
+          "it": "Cambiare la modalità per [[location]] a [[mode]]",
+          "nl": "Verander de modus voor [[location]] naar [[mode]]",
+          "no": "Endre modus for [[location]] til [[mode]]",
+          "pl": "Zmień tryb dla [[location]] na [[mode]]",
+          "sv": "Ändra läget för [[location]] till [[mode]]"
+        },
+        "args": [
+          {
+            "title": {
+              "en": "Location",
+              "nl": "Locatie",
+              "ko": "위치"
+            },
+            "name": "location",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "NOTE: You must have a location setup in Ring",
+              "ko": "참고: Ring에서 위치를 설정해야 합니다",
+              "da": "BEMÆRK: Du skal have en placering opsat i Ring",
+              "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
+              "es": "NOTA: Debe tener una ubicación configurada en Ring",
+              "fr": "REMARQUE: Vous devez avoir une localisation configurée dans Ring",
+              "it": "NOTA: È necessario avere una posizione impostata in Ring",
+              "nl": "OPMERKING: U moet een locatie instellen in Ring",
+              "no": "MERK: Du må ha en plassering satt opp i Ring",
+              "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
+              "sv": "OBS: Du måste ha en plats inställd i Ring"
+            }
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home",
+                  "ko": "집"
+                }
+              },
+              {
+                "id": "disarmed",
+                "label": {
+                  "en": "Disarmed",
+                  "ko": "해제"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "ko": "외출"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_ring_alarm_mode",
+        "title": {
+          "en": "Change the mode to",
+          "da": "Skift tilstand til",
+          "de": "Modus ändern zu",
+          "es": "Cambiar el modo a",
+          "fr": "Changer le mode en",
+          "it": "Cambia la modalità in",
+          "ko": "모드를 변경",
+          "nl": "Wijzig de modus naar",
+          "no": "Endre modus til",
+          "pl": "Zmień tryb na",
+          "sv": "Byt läge till"
+        },
+        "titleFormatted": {
+          "en": "Change the mode to [[mode]]",
+          "da": "Skift tilstand til [[mode]]",
+          "de": "Modus ändern zu [[mode]]",
+          "es": "Cambiar el modo a [[mode]]",
+          "fr": "Changer le mode en [[mode]]",
+          "it": "Cambia la modalità in [[mode]]",
+          "ko": "모드를 변경 [[mode]]",
+          "nl": "Wijzig de modus naar [[mode]]",
+          "no": "Endre modus til [[mode]]",
+          "pl": "Zmień tryb na [[mode]]",
+          "sv": "Byt läge till [[mode]]"
+        },
+        "hint": {
+          "en": "Use this card to set the mode on your basestation",
+          "da": "Brug dette kort til at indstille tilstanden på din basestation",
+          "de": "Verwenden Sie diese Karte, um den Modus Ihrer Basisstation einzustellen",
+          "es": "Usa esta tarjeta para establecer el modo en tu estación base",
+          "fr": "Utilisez cette carte pour définir le mode de votre station de base",
+          "it": "Usa questa scheda per impostare la modalità sulla tua stazione base",
+          "ko": "이 카드를 사용하여 베이스스테이션의 모드를 설정하세요",
+          "nl": "Gebruik deze kaart om de modus op je basisstation in te stellen",
+          "no": "Bruk dette kortet for å sette modus på basestasjonen din",
+          "pl": "Użyj tej karty, aby ustawić tryb w stacji bazowej",
+          "sv": "Använd detta kort för att ställa in läget på din basstation"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=basestation"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home",
+                  "da": "Hjem",
+                  "de": "Zuhause",
+                  "es": "Casa",
+                  "fr": "Maison",
+                  "it": "Casa",
+                  "ko": "집",
+                  "nl": "Thuis",
+                  "no": "Hjem",
+                  "pl": "Dom",
+                  "sv": "Hem"
+                }
+              },
+              {
+                "id": "disarmed",
+                "label": {
+                  "en": "Disarmed",
+                  "da": "Afbundet",
+                  "de": "Entwaffnet",
+                  "es": "Desarmado",
+                  "fr": "Désarmé",
+                  "it": "Disarmato",
+                  "ko": "비활성화됨",
+                  "nl": "Uitgeschakeld",
+                  "no": "Deaktivert",
+                  "pl": "Rozbrojony",
+                  "sv": "Avaktiverad"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "da": "Ude",
+                  "de": "Abwesend",
+                  "es": "Ausente",
+                  "fr": "Absent",
+                  "it": "Assente",
+                  "ko": "외출",
+                  "nl": "Weg",
+                  "no": "Borte",
+                  "pl": "Poza domem",
+                  "sv": "Borta"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ring_chime",
+        "title": {
+          "en": "Ring Chime with",
+          "da": "Ringeklokke med",
+          "de": "Ring Chime mit",
+          "es": "Ring Chime con",
+          "fr": "Sonnette Ring avec",
+          "it": "Campanello Ring con",
+          "nl": "Ring Chime met",
+          "no": "Ring Chime med",
+          "pl": "Dzwonek Ring z",
+          "sv": "Ring Chime med",
+          "ko": "Ring Chime 소리"
+        },
+        "titleFormatted": {
+          "en": "Ring Chime with [[sound]]",
+          "da": "Ring Chime med [[sound]]",
+          "de": "Ring Chime mit [[sound]]",
+          "es": "Timbre de Ring con [[sound]]",
+          "fr": "Sonnette Ring avec [[sound]]",
+          "it": "Suoneria Ring con [[sound]]",
+          "nl": "Ring Chime met [[sound]]",
+          "no": "Ring Chime med [[sound]]",
+          "pl": "Dzwonek Ring z [[sound]]",
+          "sv": "Ring Chime med [[sound]]",
+          "ko": "[[sound]] 소리로 Ring Chime"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=chime"
+          },
+          {
+            "name": "sound",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "ring",
+                "label": {
+                  "en": "Ring sound",
+                  "da": "Ringelyd",
+                  "de": "Klingelton",
+                  "es": "Sonido de timbre",
+                  "fr": "Sonnerie",
+                  "it": "Suoneria",
+                  "nl": "Beltoon",
+                  "no": "Ringetone",
+                  "pl": "Dźwięk dzwonka",
+                  "sv": "Ringljud",
+                  "ko": "벨 소리"
+                }
+              },
+              {
+                "id": "motion",
+                "label": {
+                  "en": "Motion sound",
+                  "da": "Bevægelseslyd",
+                  "de": "Bewegungsklang",
+                  "es": "Sonido de movimiento",
+                  "fr": "Son de mouvement",
+                  "it": "Suono di movimento",
+                  "nl": "Bewegingsgeluid",
+                  "no": "Bevegelseslyd",
+                  "pl": "Dźwięk ruchu",
+                  "sv": "Rörelseljud",
+                  "ko": "모션 소리"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "snoozeChime",
+        "title": {
+          "en": "Snooze Chime for ",
+          "da": "Slumre-kime for ",
+          "de": "Schlummer-Gong für ",
+          "es": "Tono de aplazamiento para ",
+          "fr": "Sonnerie de répétition pour ",
+          "it": "Snooze Chime per ",
+          "nl": "Snooze Chime gedurende ",
+          "no": "Snooze-klokke for ",
+          "pl": "Dzwonek drzemki dla ",
+          "sv": "Snooze-signal för ",
+          "ko": "스누즈 알람: "
+        },
+        "titleFormatted": {
+          "en": "Snooze Chime for [[duration]]",
+          "da": "Snooze klokkespil i [[duration]]",
+          "de": "Snooze Glockenspiel für [[duration]]",
+          "es": "Snooze campana durante [[duration]]",
+          "fr": "Snooze carillon pendant [[duration]]",
+          "it": "Snooze campana per [[duration]]",
+          "nl": "Snooze Chime gedurende [[duration]]",
+          "no": "Snooze klokkespill i [[duration]]",
+          "pl": "Snooze dzwon w ciągu [[duration]]",
+          "sv": "Snooze klockspel i [[duration]]",
+          "ko": "[[duration]] 동안 스누즈 알람"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=chime"
+          },
+          {
+            "type": "dropdown",
+            "name": "duration",
+            "title": {
+              "en": "Duration",
+              "ko": "기간"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "1 hour",
+                  "ko": "1시간"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "3 hours",
+                  "ko": "3시간"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "6 hours",
+                  "ko": "6시간"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "9 hours",
+                  "ko": "9시간"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "12 hours",
+                  "ko": "12시간"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unsnoozeChime",
+        "title": {
+          "en": "Unsnooze Chime",
+          "da": "Fjern slumre på klokke",
+          "de": "Wecker wiederholen",
+          "es": "Desactivar repetición de alarma",
+          "fr": "Désactiver le répétiteur d'alarme",
+          "it": "Disattiva la ripetizione della sveglia",
+          "nl": "Unsnooze Chime",
+          "no": "Deaktiver snooze på alarm",
+          "pl": "Wyłącz powtarzanie alarmu",
+          "sv": "Stoppa snooze på klocka",
+          "ko": "스누즈 알람 해제"
+        },
+        "titleFormatted": {
+          "en": "Unsnooze Chime",
+          "ko": "스누즈 알람 해제",
+          "da": "Fjern slumre på klokke",
+          "de": "Wecker wiederholen",
+          "es": "Desactivar repetición de alarma",
+          "fr": "Désactiver le répétiteur d'alarme",
+          "it": "Disattiva la ripetizione della sveglia",
+          "nl": "Unsnooze Chime",
+          "no": "Deaktiver snooze på alarm",
+          "pl": "Wyłącz powtarzanie alarmu",
+          "sv": "Stoppa snooze på klocka"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=chime"
+          }
+        ]
+      },
+      {
+        "id": "ring_grab_snapshot",
+        "title": {
+          "en": "Grab current snapshot",
+          "ko": "현재 스냅샷 캡처",
+          "da": "Hent øjebliksbillede",
+          "de": "Aktuellen Schnappschuss erfassen",
+          "es": "Capturar instantánea actual",
+          "fr": "Capturer l'instantané actuel",
+          "it": "Acquisisci istantanea corrente",
+          "nl": "Huidige snapshot pakken",
+          "no": "Ta øyeblikksbilde nå",
+          "pl": "Zrób obecny zrzut ekranu",
+          "sv": "Ta aktuell ögonblicksbild"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_enable_motion",
+        "title": {
+          "en": "Enable motion detection",
+          "ko": "모션 감지 활성화",
+          "da": "Aktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung aktivieren",
+          "es": "Activar la detección de movimiento",
+          "fr": "Activer la détection de mouvement",
+          "it": "Abilita la rilevazione del movimento",
+          "nl": "Bewegingsdetectie inschakelen",
+          "no": "Aktiver bevegelsesdeteksjon",
+          "pl": "Włącz wykrywanie ruchu",
+          "sv": "Aktivera rörelsedetektering"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_disable_motion",
+        "title": {
+          "en": "Disable motion detection",
+          "ko": "모션 감지 비활성화",
+          "da": "Deaktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung deaktivieren",
+          "es": "Desactivar la detección de movimiento",
+          "fr": "Désactiver la détection de mouvement",
+          "it": "Disattivare il rilevamento del movimento",
+          "nl": "Bewegingsdetectie uitschakelen",
+          "no": "Deaktiver bevegelsesdeteksjon",
+          "pl": "Wyłącz wykrywanie ruchu",
+          "sv": "Inaktivera rörelsedetektion"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_enable_motion_alerts",
+        "title": {
+          "en": "Enable motion alerts",
+          "ko": "모션 알림 활성화",
+          "da": "Aktivér bevægelsesalarmer",
+          "de": "Bewegungsalarme aktivieren",
+          "es": "Activar alertas de movimiento",
+          "fr": "Activer les alertes de mouvement",
+          "it": "Abilita gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen inschakelen",
+          "no": "Aktiver bevegelsesvarsler",
+          "pl": "Włącz alerty ruchu",
+          "sv": "Aktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_disable_motion_alerts",
+        "title": {
+          "en": "Disable motion alerts",
+          "ko": "모션 알림 비활성화",
+          "da": "Deaktiver bevægelsesalarmer",
+          "de": "Bewegungsalarme deaktivieren",
+          "es": "Desactivar alertas de movimiento",
+          "fr": "Désactiver les alertes de mouvement",
+          "it": "Disattivare gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen uitschakelen",
+          "no": "Deaktiver bevegelsesvarsler",
+          "pl": "Wyłącz alerty ruchu",
+          "sv": "Inaktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_grab_snapshot",
+        "title": {
+          "en": "Grab current snapshot",
+          "ko": "현재 스냅샷 캡처",
+          "da": "Hent øjebliksbillede",
+          "de": "Aktuellen Schnappschuss erfassen",
+          "es": "Capturar instantánea actual",
+          "fr": "Capturer l'instantané actuel",
+          "it": "Acquisisci istantanea corrente",
+          "nl": "Huidige snapshot pakken",
+          "no": "Ta øyeblikksbilde nå",
+          "pl": "Zrób obecny zrzut ekranu",
+          "sv": "Ta aktuell ögonblicksbild"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_enable_motion",
+        "title": {
+          "en": "Enable motion detection",
+          "ko": "모션 감지 활성화",
+          "da": "Aktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung aktivieren",
+          "es": "Activar la detección de movimiento",
+          "fr": "Activer la détection de mouvement",
+          "it": "Abilita la rilevazione del movimento",
+          "nl": "Bewegingsdetectie inschakelen",
+          "no": "Aktiver bevegelsesdeteksjon",
+          "pl": "Włącz wykrywanie ruchu",
+          "sv": "Aktivera rörelsedetektering"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_disable_motion",
+        "title": {
+          "en": "Disable motion detection",
+          "ko": "모션 감지 비활성화",
+          "da": "Deaktiver bevægelsesregistrering",
+          "de": "Bewegungserkennung deaktivieren",
+          "es": "Desactivar la detección de movimiento",
+          "fr": "Désactiver la détection de mouvement",
+          "it": "Disattivare il rilevamento del movimento",
+          "nl": "Bewegingsdetectie uitschakelen",
+          "no": "Deaktiver bevegelsesdeteksjon",
+          "pl": "Wyłącz wykrywanie ruchu",
+          "sv": "Inaktivera rörelsedetektion"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_enable_motion_alerts",
+        "title": {
+          "en": "Enable motion alerts",
+          "ko": "모션 알림 활성화",
+          "da": "Aktivér bevægelsesalarmer",
+          "de": "Bewegungsalarme aktivieren",
+          "es": "Activar alertas de movimiento",
+          "fr": "Activer les alertes de mouvement",
+          "it": "Abilita gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen inschakelen",
+          "no": "Aktiver bevegelsesvarsler",
+          "pl": "Włącz alerty ruchu",
+          "sv": "Aktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_disable_motion_alerts",
+        "title": {
+          "en": "Disable motion alerts",
+          "ko": "모션 알림 비활성화",
+          "da": "Deaktiver bevægelsesalarmer",
+          "de": "Bewegungsalarme deaktivieren",
+          "es": "Desactivar alertas de movimiento",
+          "fr": "Désactiver les alertes de mouvement",
+          "it": "Disattivare gli avvisi di movimento",
+          "nl": "Bewegingsmeldingen uitschakelen",
+          "no": "Deaktiver bevegelsesvarsler",
+          "pl": "Wyłącz alerty ruchu",
+          "sv": "Inaktivera rörelsevarningar"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_light_on",
+        "title": {
+          "en": "Turn the floodlight on",
+          "ko": "홍수등 켜기",
+          "da": "Tænd oversvømmelseslyset",
+          "de": "Schalte die Flutlichtanlage ein",
+          "es": "Enciende el foco de inundación",
+          "fr": "Allumez le projecteur",
+          "it": "Accendi il faro",
+          "nl": "Zet de schijnwerper aan",
+          "no": "Slå på flomlyset",
+          "pl": "Włącz reflektor",
+          "sv": "Sätt på översvämningsljuset"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_light_off",
+        "title": {
+          "en": "Turn the floodlight off",
+          "ko": "홍수등 끄기",
+          "da": "Sluk for flomlyset",
+          "de": "Schalte das Flutlichtanlage aus",
+          "es": "Apaga el foco de inundación",
+          "fr": "Éteignez le projecteur",
+          "it": "Spegni i fari da esterno",
+          "nl": "Zet de schijnwerper uit",
+          "no": "Slå av flomlyset",
+          "pl": "Wyłącz reflektor",
+          "sv": "Stäng av översvämningsljuset"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_siren_off",
+        "title": {
+          "en": "Turn the siren off",
+          "ko": "사이렌 끄기",
+          "da": "Sluk sirenen",
+          "de": "Schalte die Sirene aus",
+          "es": "Apaga la sirena",
+          "fr": "Éteignez la sirène",
+          "it": "Spegni la sirena",
+          "nl": "Zet de sirene uit",
+          "no": "Slå av sirenen",
+          "pl": "Wyłącz syrenę",
+          "sv": "Stäng av siren"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
+      },
+      {
+        "id": "stickupcam_siren_on",
+        "title": {
+          "en": "Turn the siren on",
+          "ko": "사이렌 켜기",
+          "da": "Tænd sirenen",
+          "de": "Schalte die Sirene ein",
+          "es": "Enciende la sirena",
+          "fr": "Allumez la sirène",
+          "it": "Accendi la sirena",
+          "nl": "Zet de sirene aan",
+          "no": "Slå på sirenen",
+          "pl": "Włącz syrenę",
+          "sv": "Sätt på sirenen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=stickupcam"
+          }
+        ]
       }
     ]
   },
-  "api": {
-    "getDevicesInfo": {
-      "method": "GET",
-      "path": "/devicesinfo"
+  "drivers": [
+    {
+      "name": {
+        "en": "Basestation",
+        "nl": "Basisstation",
+        "ko": "베이스스테이션"
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "alarm_burglar",
+        "alarm_fire",
+        "alarm_medical",
+        "alarm_panic",
+        "alarm_tamper",
+        "power_source",
+        "connection_source",
+        "measure_battery",
+        "homealarm_state"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "images": {
+        "xlarge": "/drivers/basestation/assets/images/xlarge.png",
+        "large": "/drivers/basestation/assets/images/large.png",
+        "small": "/drivers/basestation/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "basestation"
+    },
+    {
+      "name": {
+        "en": "Chime",
+        "nl": "Chime",
+        "ko": "차임"
+      },
+      "images": {
+        "large": "./drivers/chime/assets/images/large.jpg",
+        "small": "./drivers/chime/assets/images/small.jpg"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "chime"
+    },
+    {
+      "name": {
+        "en": "Contact Sensor",
+        "nl": "Contactsensor",
+        "ko": "접촉 센서"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ]
+      },
+      "images": {
+        "large": "./drivers/contactsensor/assets/images/large.jpg",
+        "small": "./drivers/contactsensor/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "contactsensor"
+    },
+    {
+      "name": {
+        "en": "Doorbell",
+        "da": "Dørklokke",
+        "de": "Türklingel",
+        "es": "Portero",
+        "fr": "Sonnette",
+        "it": "Campanello",
+        "nl": "Deurbel",
+        "no": "Dørklokke",
+        "pl": "Domofon",
+        "sv": "Dörrklocka",
+        "ko": "초인종"
+      },
+      "images": {
+        "large": "./drivers/doorbell/assets/images/large.jpg",
+        "small": "./drivers/doorbell/assets/images/small.jpg"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Homey integration settings",
+            "da": "Homey integrationsindstillinger",
+            "de": "Homey Integrations-Einstellungen",
+            "es": "Configuración de integración de Homey",
+            "fr": "Paramètres d'intégration Homey",
+            "it": "Impostazioni di integrazione Homey",
+            "nl": "Homey integratie-instellingen",
+            "no": "Homey integreringsinnstillinger",
+            "pl": "Ustawienia integracji Homey",
+            "sv": "Homey integrationsinställningar",
+            "ko": "Homey 연동 설정"
+          },
+          "children": [
+            {
+              "id": "useMotionDetection",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Detection",
+                "da": "Brug bevægelsesregistrering",
+                "de": "Bewegungserkennung verwenden",
+                "es": "Usar detección de movimiento",
+                "fr": "Utiliser la détection de mouvement",
+                "it": "Usa il rilevamento del movimento",
+                "nl": "Bewegingsdetectie gebruiken",
+                "no": "Bruk bevegelsesdeteksjon",
+                "pl": "Użyj wykrywania ruchu",
+                "sv": "Använd rörelsedetektering",
+                "ko": "움직임 감지 사용"
+              },
+              "hint": {
+                "en": "You can use your Ring Doorbell as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
+                "da": "Du kan bruge din Ring Doorbell som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
+                "de": "Sie können Ihre Ring Doorbell als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
+                "es": "Puede utilizar su Ring Doorbell como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
+                "fr": "Vous pouvez utiliser votre Ring Doorbell comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
+                "it": "Puoi utilizzare la tua Ring Doorbell come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
+                "nl": "U kunt uw Ring Doorbell gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
+                "no": "Du kan bruke Ring Doorbell som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
+                "pl": "Możesz użyć swojego dzwonka Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
+                "sv": "Du kan använda din Ring Doorbell som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
+                "ko": "이 옵션을 켜면 Ring 초인종을 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용해 움직임 감지를 동적으로 켜거나 끌 수도 있습니다."
+              }
+            },
+            {
+              "id": "useMotionAlerts",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Alerts",
+                "da": "Brug bevægelsesalarmer",
+                "de": "Bewegungsalarme verwenden",
+                "es": "Usar alertas de movimiento",
+                "fr": "Utiliser les alertes de mouvement",
+                "it": "Usa gli avvisi di movimento",
+                "nl": "Bewegingsalarmen gebruiken",
+                "no": "Bruk bevegelsesvarsler",
+                "pl": "Użyj alertów ruchu",
+                "sv": "Använd rörelsevarningar",
+                "ko": "움직임 알림 사용"
+              },
+              "hint": {
+                "en": "This setting let's you enable and disable if Homey reacts to Motion Alerts",
+                "da": "Denne indstilling lader dig slå til og fra, om Homey skal reagere på bevægelsesalarmer.",
+                "de": "Diese Einstellung ermöglicht es Ihnen festzulegen, ob Homey auf Bewegungsalarme reagieren soll.",
+                "es": "Esta configuración permite activar o desactivar si Homey debe reaccionar a las alertas de movimiento.",
+                "fr": "Ce paramètre vous permet d’activer ou de désactiver la réaction de Homey aux alertes de mouvement.",
+                "it": "Questa impostazione consente di abilitare o disabilitare la reazione di Homey agli avvisi di movimento.",
+                "nl": "Met deze instelling kun je bepalen of Homey reageert op bewegingsalarmen.",
+                "no": "Denne innstillingen lar deg slå av og på om Homey skal reagere på bevegelsesvarsler.",
+                "pl": "To ustawienie pozwala włączyć lub wyłączyć reakcję Homey na alerty ruchu.",
+                "sv": "Den här inställningen låter dig slå på eller av om Homey ska reagera på rörelsevarningar.",
+                "ko": "이 설정을 통해 Homey가 움직임 알림에 반응할지 여부를 켜거나 끌 수 있습니다."
+              }
+            },
+            {
+              "id": "motionTimeout",
+              "type": "number",
+              "value": 30,
+              "attr": {
+                "min": 30,
+                "max": 600
+              },
+              "units": {
+                "en": "sec.",
+                "nl": "sec."
+              },
+              "label": {
+                "en": "Disable motion alarm after",
+                "da": "Deaktiver bevægelsesalarm efter",
+                "de": "Bewegungsalarm deaktivieren nach",
+                "es": "Desactivar alarma de movimiento después de",
+                "fr": "Désactiver l'alarme de mouvement après",
+                "it": "Disattivare l'allarme di movimento dopo",
+                "nl": "Schakel bewegingsalarm uit na",
+                "no": "Deaktiver bevegelsesalarm etter",
+                "pl": "Wyłącz alarm ruchu po",
+                "sv": "Inaktivera rörelsealarm efter",
+                "ko": "다음 시간 이후 움직임 알람 끄기"
+              },
+              "hint": {
+                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
+                "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
+                "de": "Diese Einstellung deaktiviert den Bewegungsalarm nach Ablauf der angegebenen Zeit.\n\nStandardmäßig: 30 Sekunden.",
+                "es": "Esta configuración desactivará la alarma de movimiento después de que expire el tiempo especificado.\n\nPredeterminado: 30 segundos.",
+                "fr": "Ce paramètre désactivera l'alarme de mouvement après que le temps spécifié se soit écoulé.\n\nPar défaut: 30 secondes.",
+                "it": "Questa impostazione disabiliterà l'allarme di movimento dopo che il tempo indicato è scaduto.\n\nDefault: 30 secondi.",
+                "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
+                "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
+                "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
+                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder.",
+                "ko": "지정된 시간이 지나면 움직임 알람이 자동으로 꺼집니다.\n\n기본값: 30초"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "doorbell"
+    },
+    {
+      "name": {
+        "en": "Intercom",
+        "da": "Samtaleanlæg",
+        "de": "Gegensprechanlage",
+        "es": "Intercomunicador",
+        "fr": "Interphone",
+        "it": "Citofono",
+        "nl": "Intercom",
+        "no": "Intercom",
+        "pl": "Awiofon",
+        "sv": "Intercom",
+        "ko": "인터폰"
+      },
+      "images": {
+        "large": "./drivers/intercom/assets/images/large.png",
+        "small": "./drivers/intercom/assets/images/small.png"
+      },
+      "class": "lock",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery",
+        "locked"
+      ],
+      "capabilitiesOptions": {
+        "locked": {
+          "uiQuickAction": true,
+          "uiComponent": "toggle"
+        }
+      },
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Homey integration settings",
+            "da": "Homey integrationsindstillinger",
+            "de": "Homey Integrations-Einstellungen",
+            "es": "Configuración de integración de Homey",
+            "fr": "Paramètres d'intégration Homey",
+            "it": "Impostazioni di integrazione Homey",
+            "nl": "Homey integratie-instellingen",
+            "no": "Homey integreringsinnstillinger",
+            "pl": "Ustawienia integracji Homey",
+            "sv": "Homey integrationsinställningar",
+            "ko": "Homey 연동 설정"
+          },
+          "children": [
+            {
+              "id": "unlockTimeout",
+              "type": "number",
+              "value": 5,
+              "attr": {
+                "min": 5,
+                "max": 60
+              },
+              "units": {
+                "en": "sec.",
+                "nl": "sec."
+              },
+              "label": {
+                "en": "Revert back to locked state after",
+                "da": "Gå tilbage til låst tilstand efter",
+                "de": "Zurückkehren in den gesperrten Zustand nach",
+                "es": "Volver al estado de bloqueo después de",
+                "fr": "Retour à l'état verrouillé après",
+                "it": "Torna allo stato di blocco dopo",
+                "nl": "Terugkeren naar vergrendelde status na",
+                "no": "Gå tilbake til låst tilstand etter",
+                "pl": "Powrót do stanu zablokowania po",
+                "sv": "Återgå till låst läge efter",
+                "ko": "다음 시간 이후 잠금 상태로 복귀"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "intercom"
+    },
+    {
+      "name": {
+        "en": "Keypad",
+        "nl": "Bedieningspaneel",
+        "ko": "키패드"
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "images": {
+        "large": "./drivers/keypad/assets/images/large.jpg",
+        "small": "./drivers/keypad/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "keypad"
+    },
+    {
+      "name": {
+        "en": "Motion Detector",
+        "nl": "Bewegingsdetector",
+        "ko": "모션 감지기"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
+      "images": {
+        "large": "./drivers/motiondetector/assets/images/large.jpg",
+        "small": "./drivers/motiondetector/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "motiondetector"
+    },
+    {
+      "name": {
+        "en": "Camera",
+        "nl": "Camera",
+        "ko": "카메라"
+      },
+      "images": {
+        "large": "./drivers/stickupcam/assets/images/large.jpg",
+        "small": "./drivers/stickupcam/assets/images/small.jpg"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "status"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Homey integration settings",
+            "da": "Homey integrationsindstillinger",
+            "de": "Homey Integrations-Einstellungen",
+            "es": "Configuración de integración de Homey",
+            "fr": "Paramètres d'intégration Homey",
+            "it": "Impostazioni di integrazione Homey",
+            "nl": "Homey integratie-instellingen",
+            "no": "Homey integreringsinnstillinger",
+            "pl": "Ustawienia integracji Homey",
+            "sv": "Homey integrationsinställningar",
+            "ko": "Homey 연동 설정"
+          },
+          "children": [
+            {
+              "id": "useMotionDetection",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Detection",
+                "da": "Brug bevægelsesregistrering",
+                "de": "Bewegungserkennung verwenden",
+                "es": "Usar detección de movimiento",
+                "fr": "Utiliser la détection de mouvement",
+                "it": "Usa il rilevamento del movimento",
+                "nl": "Bewegingsdetectie gebruiken",
+                "no": "Bruk bevegelsesdeteksjon",
+                "pl": "Użyj wykrywania ruchu",
+                "sv": "Använd rörelsedetektering",
+                "ko": "움직임 감지 사용"
+              },
+              "hint": {
+                "en": "You can use your Ring Camera as a Motion Detector when you enable this settings. There are also flow action cards to enable and disable the motion detection dynamically.",
+                "da": "Du kan bruge din Ring Camera som en bevægelsesdetektor, når du aktiverer denne indstilling. Der er også flow action-kort til at aktivere og deaktivere bevægelsesdetektionen dynamisk.",
+                "de": "Sie können Ihre Ring Camera als Bewegungserkennung verwenden, wenn Sie diese Einstellungen aktivieren. Es gibt auch Flow-Aktionskarten, um die Bewegungserkennung dynamisch zu aktivieren und zu deaktivieren.",
+                "es": "Puede utilizar su Ring Camera como un detector de movimiento cuando habilita esta configuración. También hay tarjetas de acción de flujo para habilitar y deshabilitar la detección de movimiento dinámicamente.",
+                "fr": "Vous pouvez utiliser votre Ring Camera comme un détecteur de mouvement lorsque vous activez ce paramètre. Il existe également des cartes d'action de flux pour activer et désactiver la détection de mouvement de manière dynamique.",
+                "it": "Puoi utilizzare la tua Ring Camera come rilevatore di movimento quando abiliti questa impostazione. Ci sono anche carte di azione di flusso per abilitare e disabilitare la rilevazione del movimento in modo dinamico.",
+                "nl": "U kunt uw Ring Camera gebruiken als bewegingsdetector wanneer u deze instellingen inschakelt. Er zijn ook flow-actiekaarten om de bewegingsdetectie dynamisch in en uit te schakelen.",
+                "no": "Du kan bruke Ring Camera som en bevegelsesdetektor når du aktiverer denne innstillingen. Det finnes også flow-aksjonskort for å aktivere og deaktivere bevegelsesdeteksjonen dynamisk.",
+                "pl": "Możesz użyć swojego kamery Ring jako wykrywacza ruchu, gdy włączysz tę opcję. Istnieją również karty akcji przepływu, które umożliwiają dynamiczne włączanie i wyłączanie wykrywania ruchu.",
+                "sv": "Du kan använda din Ring Camera som en rörelsedetektor när du aktiverar denna inställning. Det finns också flödesåtgärds-kort för att dynamiskt aktivera och inaktivera rörelsedetektionen.",
+                "ko": "이 설정을 켜면 Ring 카메라를 움직임 감지기로 활용할 수 있습니다. 또한 플로우 액션 카드를 사용하여 움직임 감지를 동적으로 켜거나 끌 수 있습니다."
+              }
+            },
+            {
+              "id": "useMotionAlerts",
+              "type": "checkbox",
+              "value": true,
+              "label": {
+                "en": "Use Motion Alerts",
+                "da": "Brug bevægelsesalarmer",
+                "de": "Bewegungsalarme verwenden",
+                "es": "Usar alertas de movimiento",
+                "fr": "Utiliser les alertes de mouvement",
+                "it": "Usa gli avvisi di movimento",
+                "nl": "Bewegingsalarmen gebruiken",
+                "no": "Bruk bevegelsesvarsler",
+                "pl": "Użyj alertów ruchu",
+                "sv": "Använd rörelsevarningar",
+                "ko": "움직임 알림 사용"
+              },
+              "hint": {
+                "en": "This setting let's you enable and disable if Homey reacts to Motion Alerts",
+                "da": "Denne indstilling lader dig slå til og fra, om Homey skal reagere på bevægelsesalarmer.",
+                "de": "Diese Einstellung ermöglicht es Ihnen festzulegen, ob Homey auf Bewegungsalarme reagieren soll.",
+                "es": "Esta configuración permite activar o desactivar si Homey debe reaccionar a las alertas de movimiento.",
+                "fr": "Ce paramètre vous permet d’activer ou de désactiver la réaction de Homey aux alertes de mouvement.",
+                "it": "Questa impostazione consente di abilitare o disabilitare la reazione di Homey agli avvisi di movimento.",
+                "nl": "Met deze instelling kun je bepalen of Homey reageert op bewegingsalarmen.",
+                "no": "Denne innstillingen lar deg slå av og på om Homey skal reagere på bevegelsesvarsler.",
+                "pl": "To ustawienie pozwala włączyć lub wyłączyć reakcję Homey na alerty ruchu.",
+                "sv": "Den här inställningen låter dig slå på eller av om Homey ska reagera på rörelsevarningar.",
+                "ko": "이 설정을 통해 Homey가 움직임 알림에 반응할지 여부를 켜거나 끌 수 있습니다."
+              }
+            },
+            {
+              "id": "motionTimeout",
+              "type": "number",
+              "value": 30,
+              "attr": {
+                "min": 30,
+                "max": 600
+              },
+              "units": {
+                "en": "sec.",
+                "nl": "sec."
+              },
+              "label": {
+                "en": "Disable motion alarm after",
+                "da": "Deaktiver bevægelsesalarm efter",
+                "de": "Bewegungsalarm deaktivieren nach",
+                "es": "Desactivar alarma de movimiento después de",
+                "fr": "Désactiver l'alarme de mouvement après",
+                "it": "Disattivare l'allarme di movimento dopo",
+                "nl": "Schakel bewegingsalarm uit na",
+                "no": "Deaktiver bevegelsesalarm etter",
+                "pl": "Wyłącz alarm ruchu po",
+                "sv": "Inaktivera rörelsealarm efter",
+                "ko": "다음 시간 이후 움직임 알람 끄기"
+              },
+              "hint": {
+                "en": "This setting will disable the motion alarm after the given time has expired.\n\nDefault: 30 seconds.",
+                "da": "Denne indstilling vil deaktivere bevægelsesalarmen efter den angivne tid er udløbet.\n\nStandard: 30 sekunder.",
+                "de": "Diese Einstellung deaktiviert den Bewegungsalarm nach Ablauf der angegebenen Zeit.\n\nStandardmäßig: 30 Sekunden.",
+                "es": "Esta configuración desactivará la alarma de movimiento después de que expire el tiempo especificado.\n\nPredeterminado: 30 segundos.",
+                "fr": "Ce paramètre désactivera l'alarme de mouvement après que le temps spécifié se soit écoulé.\n\nPar défaut: 30 secondes.",
+                "it": "Questa impostazione disabiliterà l'allarme di movimento dopo che il tempo indicato è scaduto.\n\nDefault: 30 secondi.",
+                "nl": "Deze instelling schakelt het bewegingsalarm uit nadat de opgegeven tijd is verstreken.\n\nStandaard: 30 seconden.",
+                "no": "Denne innstillingen vil deaktivere bevegelsesalarmen etter at den gitte tiden har utløpt.\n\nStandard: 30 sekunder.",
+                "pl": "Ta opcja wyłączy alarm ruchu po upływie określonego czasu.\n\nDomyślnie: 30 sekund.",
+                "sv": "Denna inställning kommer att inaktivera rörelselarmet efter att den angivna tiden har löpt ut.\n\nStandard: 30 sekunder.",
+                "ko": "지정된 시간이 지나면 움직임 알람이 자동으로 꺼집니다.\n\n기본값: 30초"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "stickupcam"
+    }
+  ],
+  "capabilities": {
+    "alarm_burglar": {
+      "type": "boolean",
+      "title": {
+        "en": "Burglar alarm",
+        "nl": "Inbraakalarm",
+        "de": "Einbruch-Alarm",
+        "fr": "Alarme anti-intrusion",
+        "it": "Allarme antifurto",
+        "ko": "침입 경보",
+        "sv": "Inbrottslarm",
+        "no": "Innbruddsalarm",
+        "es": "Alarma antirrobo",
+        "da": "Indbrudsalarm",
+        "pl": "Alarm antywłamaniowy"
+      },
+      "desc": {
+        "en": "True when a burglary has been detected",
+        "nl": "Gaat af als er een inbraak gedetecteerd wordt",
+        "de": "True, wenn ein Einbruch erkannt wurde",
+        "fr": "Vrai si une intrusion a été détectée",
+        "it": "Vero quando è stato rilevato un furto",
+        "ko": "침입이 감지되면 '참'으로 표시됩니다",
+        "sv": "Sant när inbrott upptäckts",
+        "no": "Sann når innbrudd har blitt påvist",
+        "es": "Activado cuando se detecta un robo",
+        "da": "Sandt, når et indbrud er blevet opdaget",
+        "pl": "Alarm antywłamaniowy"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Burglar alarm turned on",
+        "nl": "Inbraakalarm ging af",
+        "de": "Einbruch-Alarm ist angegangen",
+        "fr": "Alarme anti-intrusion s'est activée",
+        "it": "Allarme antifurto attivato",
+        "ko": "침입 경보가 켜졌습니다",
+        "sv": "Inbrottslarm aktiverat",
+        "no": "Innbruddsalarmen ble aktivert",
+        "es": "Alarma antirrobo activada",
+        "da": "Indbrudsalarm blev aktiveret",
+        "pl": "Adekwatny, kiedy wykryto włamanie"
+      },
+      "insightsTitleFalse": {
+        "en": "Burglar alarm turned off",
+        "nl": "Inbraakalarm ging uit",
+        "de": "Einbruch-Alarm ist ausgegangen",
+        "fr": "Alarme anti-intrusion s'est désactivée",
+        "it": "Allarme antifurto disattivato",
+        "ko": "침입 경보가 꺼졌습니다",
+        "sv": "Inbrottslarm inaktiverat",
+        "no": "Innbruddsalarm deaktivert",
+        "es": "Alarma antirrobo desactivada",
+        "da": "Indbrudsalarm blev deaktiveret",
+        "pl": "Alarm antywłamaniowy wyłączony"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/alarm_burglar.svg"
+    },
+    "alarm_generic": {
+      "type": "boolean",
+      "title": {
+        "en": "Doorbell",
+        "nl": "Deurbel",
+        "de": "Türklingel",
+        "fr": "Sonnette",
+        "it": "Campanello",
+        "ko": "초인종",
+        "sv": "Dörrklocka",
+        "no": "Dørklokke",
+        "es": "Timbre",
+        "da": "Dørklokke",
+        "pl": "Dzwonek do drzwi"
+      },
+      "desc": {
+        "en": "Doorbell",
+        "da": "Dørklokke",
+        "de": "Türklingel",
+        "es": "Portero",
+        "fr": "Sonnette",
+        "it": "Campanello",
+        "ko": "초인종",
+        "nl": "Deurbel",
+        "no": "Dørklokke",
+        "pl": "Domofon",
+        "sv": "Dörrklocka"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Doorbell turned on",
+        "nl": "Deurbel aangezet",
+        "de": "Türklingel eingeschaltet",
+        "fr": "Sonnette activée",
+        "it": "Campanello acceso",
+        "ko": "초인종이 울리기 시작했습니다",
+        "sv": "Dörrklocka aktiverad",
+        "no": "Dørklokke slått på",
+        "es": "Timbre encendido",
+        "da": "Dørklokke tændt",
+        "pl": "Dzwonek do drzwi włączony"
+      },
+      "insightsTitleFalse": {
+        "en": "Doorbell turned off",
+        "nl": "Deurbel uitgezet",
+        "de": "Türklingel ausgeschaltet",
+        "fr": "Sonnette désactivée",
+        "it": "Campanello spento",
+        "ko": "초인종이 꺼졌습니다",
+        "sv": "Dörrklocka avstängd",
+        "no": "Dørklokke slått av",
+        "es": "Timbre apagado",
+        "da": "Dørklokke slukket",
+        "pl": "Dzwonek do drzwi wyłączony"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "alarm_medical": {
+      "type": "boolean",
+      "title": {
+        "en": "Medical alarm",
+        "nl": "Medisch alarm",
+        "de": "Medizinischer Alarm",
+        "fr": "Alarme médicale",
+        "it": "Allarme medico",
+        "ko": "의료 경보",
+        "sv": "Medicinskt larm",
+        "no": "Medisinsk alarm",
+        "es": "Alarma médica",
+        "da": "Medicinsk alarm",
+        "pl": "Alarm medyczny"
+      },
+      "desc": {
+        "en": "True when a medical emergency has been detected",
+        "nl": "Gaat af als er een medisch noodgeval gedetecteerd wordt",
+        "de": "True, wenn ein medizinischer Notfall erkannt wurde",
+        "fr": "Vrai si une urgence médicale a été détectée",
+        "it": "Vero quando è stata rilevata un'emergenza medica",
+        "ko": "의료 비상 상황이 감지되면 '참'으로 표시됩니다",
+        "sv": "Sant när medicinsk nödsituation upptäckts",
+        "no": "Sann når en medisinsk nødsituasjon har blitt påvist",
+        "es": "Activado cuando se detecta una emergencia médica",
+        "da": "Sandt, når en medicinsk nødsituation er blevet opdaget",
+        "pl": "Alarm medyczny"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Medical alarm turned on",
+        "nl": "Medisch alarm ging af",
+        "de": "Medizinischer Alarm ist angegangen",
+        "fr": "Alarme médicale s'est activée",
+        "it": "Allarme medico attivato",
+        "ko": "의료 경보가 켜졌습니다",
+        "sv": "Medicinskt larm aktiverat",
+        "no": "Medisinsk alarm ble aktivert",
+        "es": "Alarma médica activada",
+        "da": "Medicinsk alarm blev aktiveret",
+        "pl": "Adekwatny, kiedy wykryto nagły przypadek medyczny"
+      },
+      "insightsTitleFalse": {
+        "en": "Medical alarm turned off",
+        "nl": "Medisch alarm ging uit",
+        "de": "Medizinischer Alarm ist ausgegangen",
+        "fr": "Alarme médicale s'est désactivée",
+        "it": "Allarme medico disattivato",
+        "ko": "의료 경보가 꺼졌습니다",
+        "sv": "Medicinskt larm inaktiverat",
+        "no": "Medisinsk alarm deaktivert",
+        "es": "Alarma médica desactivada",
+        "da": "Medicinsk alarm blev deaktiveret",
+        "pl": "Alarm medyczny wyłączony"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/alarm_medical.svg"
+    },
+    "alarm_motion": {
+      "type": "boolean",
+      "title": {
+        "en": "Motion alarm",
+        "nl": "Bewegingsalarm",
+        "de": "Bewegungs-Alarm",
+        "fr": "Alarme mouvement",
+        "it": "Allarme di movimento",
+        "ko": "움직임 알람",
+        "sv": "Rörelselarm",
+        "no": "Bevegelsesalarm",
+        "es": "Alarma de movimiento",
+        "da": "Bevægelsesalarm",
+        "ru": "Сигнал движения",
+        "pl": "Czujnik ruchu"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Motion alarm turned on",
+        "nl": "Bewegingsalarm ging af",
+        "de": "Bewegungs-Alarm ist angegangen",
+        "fr": "Alarme mouvement s'est déclenchée",
+        "it": "Allarme di movimento attivato",
+        "ko": "움직임 알람이 켜졌습니다",
+        "sv": "Rörelselarm aktiverat",
+        "no": "Bevegelsesalarm aktivert",
+        "es": "Alarma de movimiento activada",
+        "da": "Bevægelsesalarm blev aktiveret",
+        "ru": "Сигнал движения включен",
+        "pl": "Czujnik ruchu włączony"
+      },
+      "insightsTitleFalse": {
+        "en": "Motion alarm turned off",
+        "nl": "Bewegingsalarm ging uit",
+        "de": "Bewegungs-Alarm ist ausgegangen",
+        "fr": "Alarme mouvement s'est désactivée",
+        "it": "Allarme di movimento disattivato",
+        "ko": "움직임 알람이 꺼졌습니다",
+        "sv": "Rörelselarm inaktiverat",
+        "no": "Bevegelsesalarm deaktivert",
+        "es": "Alarma de movimiento desactivada",
+        "da": "Bevægelsesalarm blev deaktiveret",
+        "ru": "Сигнал движения выключен",
+        "pl": "Czujnik ruchu wyłączony"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "options": {
+        "zoneActivity": true
+      }
+    },
+    "alarm_panic": {
+      "type": "boolean",
+      "title": {
+        "en": "Panic Alarm",
+        "da": "Panikalarm",
+        "de": "Panikalarm",
+        "es": "Alarma de pánico",
+        "fr": "Alarme panique",
+        "it": "Allarme antipanico",
+        "ko": "패닉 경보",
+        "nl": "Paniekalarm",
+        "no": "Panikkalarm",
+        "pl": "Alarm paniki",
+        "sv": "Paniklarm"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false
+    },
+    "connection_source": {
+      "type": "enum",
+      "title": {
+        "en": "Communication",
+        "da": "Kommunikation",
+        "de": "Kommunikation",
+        "fr": "Communication",
+        "it": "Comunicazione",
+        "ko": "통신 방식",
+        "nl": "Communicatie",
+        "no": "Kommunikasjon",
+        "es": "Comunicación",
+        "sv": "Kommunikation"
+      },
+      "values": [
+        {
+          "id": "eth0",
+          "title": {
+            "en": "Wired",
+            "da": "Kablet",
+            "de": "Kabelgebunden",
+            "fr": "Câblé",
+            "it": "Cablaggio",
+            "ko": "유선 연결",
+            "nl": "Bekabeld",
+            "no": "Kablet",
+            "es": "Con cable",
+            "sv": "Kabelansluten"
+          }
+        },
+        {
+          "id": "ppp0",
+          "title": {
+            "en": "Cellular",
+            "da": "Mobilnetværk",
+            "de": "Mobilfunk",
+            "fr": "Cellulaire",
+            "it": "Cellulare",
+            "ko": "셀룰러",
+            "nl": "Mobiel netwerk",
+            "no": "Mobilnettverk",
+            "es": "Celular",
+            "sv": "Mobilnät"
+          }
+        },
+        {
+          "id": "wlan0",
+          "title": {
+            "en": "Wireless",
+            "da": "Trådløs",
+            "de": "Drahtlos",
+            "fr": "Sans fil",
+            "it": "Wireless",
+            "ko": "무선 연결",
+            "nl": "Draadloos",
+            "no": "Trådløs",
+            "es": "Inalámbrico",
+            "sv": "Trådlös"
+          }
+        }
+      ],
+      "desc": "The Communication type",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/connection_source.svg"
+    },
+    "flood_light": {
+      "type": "boolean",
+      "title": {
+        "en": "Flood light",
+        "da": "Flomlys",
+        "de": "Flutlicht",
+        "es": "Foco de inundación",
+        "fr": "Projecteur",
+        "it": "Faro alluvione",
+        "ko": "투광등",
+        "nl": "Schijnwerper",
+        "no": "Flomlys",
+        "pl": "Reflektor",
+        "sv": "Översvämningsljus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "homealarm_state": {
+      "type": "enum",
+      "title": {
+        "da": "Alarm status for hjemmet",
+        "de": "Heim Alarm Status",
+        "en": "Home Alarm state",
+        "es": "Estado de alarma de casa",
+        "fr": "État d'alarme à la maison",
+        "it": "Stato di Allarme Casa",
+        "ko": "가정용 알람 상태",
+        "nl": "Thuisalarm status",
+        "no": "Alarmstatus for hjemmet",
+        "sv": "Alarmstatus för hemmet"
+      },
+      "values": [
+        {
+          "id": "armed",
+          "title": {
+            "da": "Væk",
+            "de": "Abwesend",
+            "en": "Away",
+            "es": "Ausente",
+            "fr": "Absent",
+            "it": "Assente",
+            "ko": "외출",
+            "nl": "Weg",
+            "no": "Borte",
+            "sv": "Borta"
+          }
+        },
+        {
+          "id": "disarmed",
+          "title": {
+            "da": "Frakoblet",
+            "de": "Entsichert",
+            "en": "Disarmed",
+            "es": "Desarmada",
+            "fr": "Désactivée",
+            "it": "Disarmato",
+            "ko": "해제",
+            "nl": "Uitgeschakeld",
+            "no": "Frakoblet",
+            "sv": "Frånkopplad"
+          }
+        },
+        {
+          "id": "partially_armed",
+          "title": {
+            "da": "Hjemme",
+            "de": "Zuhause",
+            "en": "Home",
+            "es": "En casa",
+            "fr": "À la maison",
+            "it": "Casa",
+            "ko": "집",
+            "nl": "Thuis",
+            "no": "Hjemme",
+            "sv": "Hemma"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
+    "power_source": {
+      "type": "enum",
+      "title": {
+        "en": "Power Source",
+        "da": "Strømkilde",
+        "de": "Stromquelle",
+        "fr": "Source d'énergie",
+        "it": "Fonte di alimentazione",
+        "ko": "전원 공급 방식",
+        "nl": "Stroombron",
+        "no": "Strømkilde",
+        "es": "Fuente de energía",
+        "sv": "Strömkälla"
+      },
+      "values": [
+        {
+          "id": "ac",
+          "title": {
+            "en": "Mains Power",
+            "da": "Nettet",
+            "de": "Stromnetz",
+            "fr": "Réseau électrique",
+            "it": "Rete elettrica",
+            "ko": "가정용 전원",
+            "nl": "Netstroom",
+            "no": "Nettstrøm",
+            "es": "Red eléctrica",
+            "sv": "Nätström"
+          }
+        },
+        {
+          "id": "battery.internal",
+          "title": {
+            "en": "Internal Battery",
+            "da": "Intern batteri",
+            "de": "Internes Akku",
+            "fr": "Batterie interne",
+            "it": "Batteria interna",
+            "ko": "내장 배터리",
+            "nl": "Interne batterij",
+            "no": "Intern batteri",
+            "es": "Batería interna",
+            "sv": "Interna batteri"
+          }
+        }
+      ],
+      "desc": "The Power Source",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "drivers/basestation/assets/power_source.svg"
+    },
+    "siren": {
+      "type": "boolean",
+      "title": {
+        "en": "Siren",
+        "da": "Sirene",
+        "de": "Sirene",
+        "es": "Sirena",
+        "fr": "Sirène",
+        "it": "Sirena",
+        "ko": "사이렌",
+        "nl": "Sirene",
+        "no": "Sirene",
+        "pl": "Syrena",
+        "sv": "Siren"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": false
     }
   }
 }

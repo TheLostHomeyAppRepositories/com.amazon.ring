@@ -1,0 +1,88 @@
+{
+  "id": "ring_location_mode_active",
+  "title": {
+    "en": "A location mode is...",
+    "ko": "위치 모드가...",
+    "da": "En placeringstilstand er...",
+    "de": "Ein Standortmodus ist...",
+    "es": "Un modo de ubicación es...",
+    "fr": "Un mode de localisation est...",
+    "it": "Una modalità di posizione è...",
+    "nl": "Een locatiemodus is...",
+    "no": "En plasseringsmodus er...",
+    "pl": "Tryb lokalizacji to...",
+    "sv": "En platslägesfunktion är..."
+  },
+  "titleFormatted": {
+    "en": "The mode for [[location]] !{{is|isn't}} [[mode]]",
+    "ko": "[[location]] 위치 모드가 !{{[[mode]]|아님}} 상태입니다",
+    "da": "Modus for [[location]] !{{er|er ikke}} [[mode]]",
+    "de": "Der Modus für [[location]] !{{ist|ist nicht}} [[mode]]",
+    "es": "El modo para [[location]] !{{es|no es}} [[mode]]",
+    "fr": "Le mode pour [[location]] !{{est|n'est pas}} [[mode]]",
+    "it": "La modalità per [[location]] !{{è|non è}} [[mode]]",
+    "nl": "De modus voor [[location]] !{{is|is niet}} [[mode]]",
+    "no": "Modusen for [[location]] !{{er|er ikke}} [[mode]]",
+    "pl": "Tryb dla [[location]] !{{jest|nie jest}} [[mode]]",
+    "sv": "Läget för [[location]] !{{är|är inte}} [[mode]]"
+  },
+  "args": [
+    {
+      "name": "location",
+      "title": {
+        "en": "Location",
+        "ko": "위치",
+        "da": "Beliggenhed",
+        "de": "Ort",
+        "es": "Ubicación",
+        "fr": "Emplacement",
+        "it": "Posizione",
+        "nl": "Locatie",
+        "no": "Plassering",
+        "pl": "Lokalizacja",
+        "sv": "Plats"
+      },
+      "type": "autocomplete",
+      "placeholder": {
+        "en": "NOTE: You must have a location setup in Ring",
+        "ko": "참고: Ring에 위치가 설정되어 있어야 합니다",
+        "da": "BEMÆRK: Du skal have en placering opsat i Ring",
+        "de": "HINWEIS: Sie müssen einen Standort in Ring eingerichtet haben",
+        "es": "NOTA: Debe tener una ubicación configurada en Ring",
+        "fr": "REMARQUE: Vous devez avoir une localisation configurée dans Ring",
+        "it": "NOTA: È necessario avere una posizione impostata in Ring",
+        "nl": "OPMERKING: U moet een locatie instellen in Ring",
+        "no": "MERK: Du må ha en plassering satt opp i Ring",
+        "pl": "UWAGA: Musisz mieć ustawioną lokalizację w Ring",
+        "sv": "OBS: Du måste ha en plats inställd i Ring"
+      }
+    },
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "home",
+          "label": {
+            "en": "Home",
+            "ko": "집"
+          }
+        },
+        {
+          "id": "disarmed",
+          "label": {
+            "en": "Disarmed",
+            "ko": "해제됨"
+          }
+        },
+        {
+          "id": "away",
+          "label": {
+            "en": "Away",
+            "ko": "외출"
+          }
+        }
+      ]
+    }
+  ]
+}

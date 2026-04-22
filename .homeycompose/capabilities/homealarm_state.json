@@ -1,0 +1,65 @@
+{
+  "type": "enum",
+  "title": {
+    "da": "Alarm status for hjemmet",
+    "de": "Heim Alarm Status",
+    "en": "Home Alarm state",
+    "es": "Estado de alarma de casa",
+    "fr": "État d'alarme à la maison",
+    "it": "Stato di Allarme Casa",
+    "ko": "가정용 알람 상태",
+    "nl": "Thuisalarm status",
+    "no": "Alarmstatus for hjemmet",
+    "sv": "Alarmstatus för hemmet"
+  },
+  "values": [
+    {
+      "id": "armed",
+      "title": {
+        "da": "Væk",
+        "de": "Abwesend",
+        "en": "Away",
+        "es": "Ausente",
+        "fr": "Absent",
+        "it": "Assente",
+        "ko": "외출",
+        "nl": "Weg",
+        "no": "Borte",
+        "sv": "Borta"
+      }
+    },
+    {
+      "id": "disarmed",
+      "title": {
+        "da": "Frakoblet",
+        "de": "Entsichert",
+        "en": "Disarmed",
+        "es": "Desarmada",
+        "fr": "Désactivée",
+        "it": "Disarmato",
+        "ko": "해제",
+        "nl": "Uitgeschakeld",
+        "no": "Frakoblet",
+        "sv": "Frånkopplad"
+      }
+    },
+    {
+      "id": "partially_armed",
+      "title": {
+        "da": "Hjemme",
+        "de": "Zuhause",
+        "en": "Home",
+        "es": "En casa",
+        "fr": "À la maison",
+        "it": "Casa",
+        "ko": "집",
+        "nl": "Thuis",
+        "no": "Hjemme",
+        "sv": "Hemma"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker"
+}

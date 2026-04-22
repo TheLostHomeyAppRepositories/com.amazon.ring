@@ -14,30 +14,21 @@ class DriverIntercom extends Driver {
             .catch(this.error);
     }
 
-    onPairListDevices(data, callback) {
+    async onPairListDevices() {
         this.log('onPairListDevices');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
-
-            this.homey.app.getRingDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
-
-                result.intercoms.forEach((device_data) => {
-                    foundDevices.push({
-                        name: device_data.description,
-                        data: {
-                            id: device_data.id,
-                        },
-                    });
-                });
-
-                resolve(foundDevices);
-            });
-        });
+        try {
+            const result = await this.homey.app.getRingDevices();
+            return result.intercoms.map(device => ({
+                name: device.description,
+                data: { id: device.id }
+            }));
+        } catch (error) {
+            this.error(error);
+            throw error;
+        }
     }
+
 }
 
 module.exports = DriverIntercom;

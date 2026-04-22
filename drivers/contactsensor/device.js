@@ -24,7 +24,7 @@ class DeviceContactSensor extends Device {
         const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
         this._setAvailability(initialStatus);
 
-        this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
+        //this.homey.on('ringOnAlarmData',this._ringOnAlarmData.bind(this));
 
     }  
         
@@ -39,7 +39,7 @@ class DeviceContactSensor extends Device {
             try {
                 if ( this.getAvailable() ) {
                     // this.getAvailable() always returns true, need other condition
-                    // this.setUnavailable(this.homey.__("devices.unauthenticated"));
+                    this.setUnavailable(this.homey.__("devices.unauthenticated"));
                 }
             }
             catch(e) {
@@ -48,8 +48,9 @@ class DeviceContactSensor extends Device {
         }
     }
 
-    async _ringOnAlarmData(data) {
-        // this.log('_ringOnAlarmData data',data);
+    // Method called from app.js
+    async ringOnAlarmData(data) {
+        // this.log('ringOnAlarmData data',data);
         if (data.serialNumber !== this.getData().id)
             return;
 

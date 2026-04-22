@@ -29,7 +29,9 @@
             "error": "Feil:",
             "action": "Du må (re-)autentisere denne appen fra enhetsvedlikehold-funksjonen eller legge til enhetsveiviseren.",
             "revoke": "Tilbakekall autentisering"
-        }
+        },
+        "enabledebug": "Slå på feilsøkingslogging",
+        "debuginfo": "Åpne nettleserkonsollen for å vise feilsøkingsloggen"
     },
     "devices": {
         "unauthenticated": {

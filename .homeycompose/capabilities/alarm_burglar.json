@@ -1,0 +1,60 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Burglar alarm",
+    "nl": "Inbraakalarm",
+    "de": "Einbruch-Alarm",
+    "fr": "Alarme anti-intrusion",
+    "it": "Allarme antifurto",
+    "ko": "침입 경보",
+    "sv": "Inbrottslarm",
+    "no": "Innbruddsalarm",
+    "es": "Alarma antirrobo",
+    "da": "Indbrudsalarm",
+    "pl": "Alarm antywłamaniowy"
+  },
+  "desc": {
+    "en": "True when a burglary has been detected",
+    "nl": "Gaat af als er een inbraak gedetecteerd wordt",
+    "de": "True, wenn ein Einbruch erkannt wurde",
+    "fr": "Vrai si une intrusion a été détectée",
+    "it": "Vero quando è stato rilevato un furto",
+    "ko": "침입이 감지되면 '참'으로 표시됩니다",
+    "sv": "Sant när inbrott upptäckts",
+    "no": "Sann når innbrudd har blitt påvist",
+    "es": "Activado cuando se detecta un robo",
+    "da": "Sandt, når et indbrud er blevet opdaget",
+    "pl": "Alarm antywłamaniowy"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Burglar alarm turned on",
+    "nl": "Inbraakalarm ging af",
+    "de": "Einbruch-Alarm ist angegangen",
+    "fr": "Alarme anti-intrusion s'est activée",
+    "it": "Allarme antifurto attivato",
+    "ko": "침입 경보가 켜졌습니다",
+    "sv": "Inbrottslarm aktiverat",
+    "no": "Innbruddsalarmen ble aktivert",
+    "es": "Alarma antirrobo activada",
+    "da": "Indbrudsalarm blev aktiveret",
+    "pl": "Adekwatny, kiedy wykryto włamanie"
+  },
+  "insightsTitleFalse": {
+    "en": "Burglar alarm turned off",
+    "nl": "Inbraakalarm ging uit",
+    "de": "Einbruch-Alarm ist ausgegangen",
+    "fr": "Alarme anti-intrusion s'est désactivée",
+    "it": "Allarme antifurto disattivato",
+    "ko": "침입 경보가 꺼졌습니다",
+    "sv": "Inbrottslarm inaktiverat",
+    "no": "Innbruddsalarm deaktivert",
+    "es": "Alarma antirrobo desactivada",
+    "da": "Indbrudsalarm blev deaktiveret",
+    "pl": "Alarm antywłamaniowy wyłączony"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "drivers/basestation/assets/alarm_burglar.svg"
+}

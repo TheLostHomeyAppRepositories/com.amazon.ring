@@ -1,0 +1,176 @@
+{
+  "conditions": [
+    {
+      "id": "stickupcam_floodLight_on",
+      "title": {
+        "en": "The floodlight !{{is|isn't}} on",
+        "ko": "조명이 !{{켜짐|꺼짐}} 상태입니다",
+        "da": "Flomlyset !{{er|er ikke}} tændt",
+        "de": "Die Flutlichtanlage !{{ist|ist nicht}} an",
+        "es": "El foco de inundación !{{está|no está}} encendido",
+        "fr": "Le projecteur !{{est|n'est pas}} allumé",
+        "it": "Il proiettore !{{è|non è}} acceso",
+        "nl": "De schijnwerper !{{staat|staat niet}} aan",
+        "no": "Flomlyset !{{er|er ikke}} på",
+        "pl": "Reflektor !{{jest|nie jest}} włączony",
+        "sv": "Strålkastaren !{{är|är inte}} på"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "stickupcam_grab_snapshot",
+      "title": {
+        "en": "Grab current snapshot",
+        "ko": "현재 스냅샷 캡처",
+        "da": "Hent øjebliksbillede",
+        "de": "Aktuellen Schnappschuss erfassen",
+        "es": "Capturar instantánea actual",
+        "fr": "Capturer l'instantané actuel",
+        "it": "Acquisisci istantanea corrente",
+        "nl": "Huidige snapshot pakken",
+        "no": "Ta øyeblikksbilde nå",
+        "pl": "Zrób obecny zrzut ekranu",
+        "sv": "Ta aktuell ögonblicksbild"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_enable_motion",
+      "title": {
+        "en": "Enable motion detection",
+        "ko": "모션 감지 활성화",
+        "da": "Aktiver bevægelsesregistrering",
+        "de": "Bewegungserkennung aktivieren",
+        "es": "Activar la detección de movimiento",
+        "fr": "Activer la détection de mouvement",
+        "it": "Abilita la rilevazione del movimento",
+        "nl": "Bewegingsdetectie inschakelen",
+        "no": "Aktiver bevegelsesdeteksjon",
+        "pl": "Włącz wykrywanie ruchu",
+        "sv": "Aktivera rörelsedetektering"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_disable_motion",
+      "title": {
+        "en": "Disable motion detection",
+        "ko": "모션 감지 비활성화",
+        "da": "Deaktiver bevægelsesregistrering",
+        "de": "Bewegungserkennung deaktivieren",
+        "es": "Desactivar la detección de movimiento",
+        "fr": "Désactiver la détection de mouvement",
+        "it": "Disattivare il rilevamento del movimento",
+        "nl": "Bewegingsdetectie uitschakelen",
+        "no": "Deaktiver bevegelsesdeteksjon",
+        "pl": "Wyłącz wykrywanie ruchu",
+        "sv": "Inaktivera rörelsedetektion"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_enable_motion_alerts",
+      "title": {
+        "en": "Enable motion alerts",
+        "ko": "모션 알림 활성화",
+        "da": "Aktivér bevægelsesalarmer",
+        "de": "Bewegungsalarme aktivieren",
+        "es": "Activar alertas de movimiento",
+        "fr": "Activer les alertes de mouvement",
+        "it": "Abilita gli avvisi di movimento",
+        "nl": "Bewegingsmeldingen inschakelen",
+        "no": "Aktiver bevegelsesvarsler",
+        "pl": "Włącz alerty ruchu",
+        "sv": "Aktivera rörelsevarningar"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_disable_motion_alerts",
+      "title": {
+        "en": "Disable motion alerts",
+        "ko": "모션 알림 비활성화",
+        "da": "Deaktiver bevægelsesalarmer",
+        "de": "Bewegungsalarme deaktivieren",
+        "es": "Desactivar alertas de movimiento",
+        "fr": "Désactiver les alertes de mouvement",
+        "it": "Disattivare gli avvisi di movimento",
+        "nl": "Bewegingsmeldingen uitschakelen",
+        "no": "Deaktiver bevegelsesvarsler",
+        "pl": "Wyłącz alerty ruchu",
+        "sv": "Inaktivera rörelsevarningar"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_light_on",
+      "title": {
+        "en": "Turn the floodlight on",
+        "ko": "홍수등 켜기",
+        "da": "Tænd oversvømmelseslyset",
+        "de": "Schalte die Flutlichtanlage ein",
+        "es": "Enciende el foco de inundación",
+        "fr": "Allumez le projecteur",
+        "it": "Accendi il faro",
+        "nl": "Zet de schijnwerper aan",
+        "no": "Slå på flomlyset",
+        "pl": "Włącz reflektor",
+        "sv": "Sätt på översvämningsljuset"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_light_off",
+      "title": {
+        "en": "Turn the floodlight off",
+        "ko": "홍수등 끄기",
+        "da": "Sluk for flomlyset",
+        "de": "Schalte das Flutlichtanlage aus",
+        "es": "Apaga el foco de inundación",
+        "fr": "Éteignez le projecteur",
+        "it": "Spegni i fari da esterno",
+        "nl": "Zet de schijnwerper uit",
+        "no": "Slå av flomlyset",
+        "pl": "Wyłącz reflektor",
+        "sv": "Stäng av översvämningsljuset"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_siren_off",
+      "title": {
+        "en": "Turn the siren off",
+        "ko": "사이렌 끄기",
+        "da": "Sluk sirenen",
+        "de": "Schalte die Sirene aus",
+        "es": "Apaga la sirena",
+        "fr": "Éteignez la sirène",
+        "it": "Spegni la sirena",
+        "nl": "Zet de sirene uit",
+        "no": "Slå av sirenen",
+        "pl": "Wyłącz syrenę",
+        "sv": "Stäng av siren"
+      },
+      "args": []
+    },
+    {
+      "id": "stickupcam_siren_on",
+      "title": {
+        "en": "Turn the siren on",
+        "ko": "사이렌 켜기",
+        "da": "Tænd sirenen",
+        "de": "Schalte die Sirene ein",
+        "es": "Enciende la sirena",
+        "fr": "Allumez la sirène",
+        "it": "Accendi la sirena",
+        "nl": "Zet de sirene aan",
+        "no": "Slå på sirenen",
+        "pl": "Włącz syrenę",
+        "sv": "Sätt på sirenen"
+      },
+      "args": []
+    }
+  ]
+}

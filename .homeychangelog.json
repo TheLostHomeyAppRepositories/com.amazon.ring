@@ -447,5 +447,112 @@
     "no": "La til Live-visning for kameraer og ringeklokker, la til støtte for flere lokasjoner",
     "pl": "Dodano podgląd na żywo do kamer i dzwonków, dodano obsługę wielu lokalizacji",
     "sv": "Lade till Live-vy för kameror och dörrklockor, lade till stöd för flera platser"
+  },
+  "2.14.6": {
+    "en": "Improved mains power detection for doorbells",
+    "da": "Forbedret netstrømsregistrering for dørklokker",
+    "de": "Verbesserte Netzstromerkennung für Türklingeln",
+    "es": "Mejor detección de alimentación de red para timbres",
+    "fr": "Amélioration de la détection de l’alimentation secteur pour les sonnettes",
+    "it": "Migliorato il rilevamento dell’alimentazione di rete per i campanelli",
+    "ko": "도어벨의 전원 감지 기능이 개선되었습니다",
+    "nl": "Verbeterde netstroomdetectie voor deurbellen",
+    "no": "Forbedret registrering av strømtilkobling for ringeklokker",
+    "pl": "Ulepszono wykrywanie zasilania sieciowego dla dzwonków",
+    "sv": "Förbättrad nätströmsdetektering för dörrklockor"
+  },
+  "2.14.7": {
+    "en": "Added the Ring Alarm Basestation, added debug logging",
+    "da": "Tilføjet Ring Alarm-basenheden og fejllogning",
+    "de": "Ring Alarm-Basisstation und Debug-Protokollierung hinzugefügt",
+    "es": "Se agregó la estación base de Ring Alarm y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 및 디버그 로그가 추가되었습니다",
+    "nl": "Ring Alarm-basestation en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm-basestasjonen og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm-basstationen och felsökningsloggning"
+  },
+  "2.14.8": {
+    "en": "Added the Ring Alarm Basestation, added debug logging",
+    "da": "Tilføjet Ring Alarm-basenheden og fejllogning",
+    "de": "Ring Alarm-Basisstation und Debug-Protokollierung hinzugefügt",
+    "es": "Se agregó la estación base de Ring Alarm y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 및 디버그 로그가 추가되었습니다",
+    "nl": "Ring Alarm-basestation en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm-basestasjonen og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm-basstationen och felsökningsloggning"
+  },
+  "2.14.9": {
+    "en": "Added the Ring Alarm Basestation, added debug logging",
+    "da": "Tilføjet Ring Alarm-basenheden og fejllogning",
+    "de": "Ring Alarm-Basisstation und Debug-Protokollierung hinzugefügt",
+    "es": "Se agregó la estación base de Ring Alarm y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 및 디버그 로그가 추가되었습니다",
+    "nl": "Ring Alarm-basestation en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm-basestasjonen og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm-basstationen och felsökningsloggning"
+  },
+  "2.14.10": {
+    "en": "Added the Ring Alarm Basestation, Added Ring Intercom Video, Added debug logging",
+    "da": "Tilføjet Ring Alarm Basenheden, tilføjet Ring Intercom Video og fejllogning",
+    "de": "Ring Alarm Basisstation hinzugefügt, Ring Intercom Video hinzugefügt und Debug-Protokollierung",
+    "es": "Se agregó la estación base de Ring Alarm, se añadió Ring Intercom Video y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm, ajout de la vidéo Ring Intercom et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm, aggiunto Ring Intercom Video e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 추가, Ring Intercom 비디오 추가, 디버그 로그 추가",
+    "nl": "Ring Alarm Basestation toegevoegd, Ring Intercom Video toegevoegd en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm Basestasjonen, la til Ring Intercom Video og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm, dodano Ring Intercom Video oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm Basstationen, lade till Ring Intercom Video och felsökningsloggning"
+  },
+  "2.14.11": {
+    "en": "Added the Ring Alarm Basestation, Added Ring Intercom Video, Added debug logging",
+    "da": "Tilføjet Ring Alarm Basenheden, tilføjet Ring Intercom Video og fejllogning",
+    "de": "Ring Alarm Basisstation hinzugefügt, Ring Intercom Video hinzugefügt und Debug-Protokollierung",
+    "es": "Se agregó la estación base de Ring Alarm, se añadió Ring Intercom Video y el registro de depuración",
+    "fr": "Ajout de la station de base Ring Alarm, ajout de la vidéo Ring Intercom et de la journalisation de débogage",
+    "it": "Aggiunta la stazione base Ring Alarm, aggiunto Ring Intercom Video e la registrazione di debug",
+    "ko": "Ring Alarm 베이스 스테이션 추가, Ring Intercom 비디오 추가, 디버그 로그 추가",
+    "nl": "Ring Alarm Basestation toegevoegd, Ring Intercom Video toegevoegd en debuglogboek toegevoegd",
+    "no": "La til Ring Alarm Basestasjonen, la til Ring Intercom Video og feilsøkingslogging",
+    "pl": "Dodano stację bazową Ring Alarm, dodano Ring Intercom Video oraz rejestrowanie debugowania",
+    "sv": "Lade till Ring Alarm Basstationen, lade till Ring Intercom Video och felsökningsloggning"
+  },
+  "2.14.12": {
+    "en": "Fixed Basestation condition card",
+    "da": "Rettede Basestation-betingelseskort",
+    "de": "Korrektur der Basestation-Bedingungskarte",
+    "es": "Corregida la tarjeta de condición de la estación base",
+    "fr": "Correction de la carte de condition de la station de base",
+    "it": "Corretta la scheda condizione della stazione base",
+    "ko": "베이스스테이션 조건 카드 수정",
+    "nl": "Basestation-voorwaardekaart opgelost",
+    "no": "Fikset betingelseskort for basestasjonen",
+    "pl": "Naprawiono kartę warunku stacji bazowej",
+    "sv": "Fixade villkortskortet för basstationen"
+  },
+  "2.14.13": {
+    "en": "Added settings and flowcards to Camera and Doorbell to enable or disable Motion Alerts",
+    "da": "Tilføjet indstillinger og flowkort til Kamera og Dørklokke for at aktivere eller deaktivere bevægelsesalarmer",
+    "de": "Einstellungen und Flowkarten für Kamera und Türklingel hinzugefügt, um Bewegungsalarme zu aktivieren oder deaktivieren",
+    "es": "Se añadieron ajustes y tarjetas de flujo para Cámara y Timbre para activar o desactivar las alertas de movimiento",
+    "fr": "Ajout de paramètres et de cartes de flux pour la Caméra et la Sonnette afin d'activer ou de désactiver les alertes de mouvement",
+    "it": "Aggiunte impostazioni e schede flow per Camera e Campanello per abilitare o disabilitare gli avvisi di movimento",
+    "ko": "카메라와 도어벨에 모션 알림을 활성화하거나 비활성화할 수 있는 설정과 플로우 카드를 추가했습니다",
+    "nl": "Instellingen en flowkaarten toegevoegd aan Camera en Deurbel om bewegingsmeldingen in of uit te schakelen",
+    "no": "La til innstillinger og flytkort for Kamera og Dørklokke for å aktivere eller deaktivere bevegelsesvarsler",
+    "pl": "Dodano ustawienia i karty przepływu dla Kamery i Dzwonka, aby włączyć lub wyłączyć alerty ruchu",
+    "sv": "Lade till inställningar och flödeskort för Kamera och Dörrklocka för att aktivera eller inaktivera rörelseaviseringar"
+  },
+  "2.14.14": {
+    "en": "Test version for new ring-client-api"
   }
 }

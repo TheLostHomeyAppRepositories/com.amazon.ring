@@ -1,17 +1,14 @@
-require('./lib/polyfills');
 const Homey = require('homey');
 const api   = require('./lib/Api.js');
-//const events = require('events');
 
-// !!!! remark next lines before publishing !!!!
+// !!!! remove next lines before publishing !!!!
 // const LogToFile = require('homey-log-to-file'); // https://github.com/robertklep/homey-log-to-file
 
 class App extends Homey.App {
 
     async onInit() {
-        // !!!! remark next lines before publishing !!!!
-        
-        /*
+        // !!!! remove next lines before publishing !!!!
+        /*    
         const runningVersion = this.parseVersionString(Homey.manifest.version);
         if (process.env.DEBUG === '1' || runningVersion.patch % 2 != 0) { // either when running from console or odd patch version
             await LogToFile();
@@ -21,11 +18,13 @@ class App extends Homey.App {
 
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising --------------`);
 
+        this.isDebugEnabled = !!(await this.homey.settings.get('isDebugEnabled'));
+
         // Registry for all devices
         this._devices = []; // deviceId -> device instance
 
         this.lastLocationModes = [];
-        // this.alarmSystem = { location: {} };
+        
         this.homey.app.alarmSystems = [];
 
         this._api = new api(this.homey);
@@ -39,24 +38,50 @@ class App extends Homey.App {
         this._triggerLocationModeChangedTo = this.homey.flow.getTriggerCard('ring_location_mode_changed_generic');
         this.registerLocationModeChanged();
 
+        this._triggerAppError = this.homey.flow.getTriggerCard('app_error_occurred');
+        this.registerAppError();
+
         this._conditionLocationMode = this.homey.flow.getConditionCard('ring_location_mode_active');
         this.conditionLocationMode();
 
         this._setLocationMode = this.homey.flow.getActionCard('change_location_mode');
         this.setLocationMode();
 
+        // catch all errors and send them to the log and flowcard
+        const original = console.error;
+
+        console.error = (...args) => {
+            let errorText;
+
+            errorText = args.map(arg => {
+                if (arg instanceof Error) {
+                    return arg.stack || arg.toString();
+                }
+                return typeof arg === 'object' ? JSON.stringify(arg) : String(arg);
+            }).join(' ');
+
+            this.homey.app.writeLog(errorText);
+            const tokens = { error: errorText };
+            this.triggerAppError(tokens);
+
+            original(...args);
+        };
+
         this.log(`${Homey.manifest.id} ${Homey.manifest.version}    initialising done ---------`);
 
         // Purge the logfile
-        this.homey.settings.set('myLog', '' );
+        // this.homey.settings.set('debugLog', '' );
 
         await this._api.init();
 
         // new code for authentication
         this.homey.on('authenticationChanged', this._onAuthenticationChanged.bind(this));
 
-        //let logLine = " app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
-        //this.homey.app.writeLog(logLine);
+        let logLine = "===============================================================================================";
+        this.homey.app.writeLog(logLine);
+
+        logLine = "app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
+        this.homey.app.writeLog(logLine);
       
     }
 
@@ -88,7 +113,12 @@ class App extends Homey.App {
 
     // Called from event emitted from _connectRingAPI() in Api.js
     _ringOnData(data) {
-        this.homey.emit('ringOnData', data);
+        // Find the device for which this message is and call its function to act on it
+        Object.values(this._devices).forEach(device => {
+            if ( data.id === device.getData().id) {
+                device.ringOnData?.(data);
+            }
+        });        
     }
 
     // Called from event emitted from _connectRingAPI() in Api.js for Ring Alarm devices
@@ -98,12 +128,21 @@ class App extends Homey.App {
 
         // Update system mode only if a matching system is found
         if (system && system.mode !== data.mode) {
-            this.log('Alarm system mode changed:', system);
+            this.log('Alarm system mode changed for', system.location.name,'to',data.mode);
             system.mode = data.mode;
+            let logLine = "app.js || _ringOnAlarmData || Alarm system mode changed for " + system.location.name + " to " + data.mode
+            this.homey.app.writeLog(logLine);
         }
 
-        // Always emit the event
-        this.homey.emit('ringOnAlarmData', data);
+        // Always emit the event, DEPRECATED
+        // this.homey.emit('ringOnAlarmData', data);
+
+        // find the device for which this message is and call its function to act on it
+        Object.values(this._devices).forEach(device => {
+            if ( data.serialNumber === device.getData().id || system ) {
+                device.ringOnAlarmData?.(data);
+            }
+        });
     }
 
     // Called from event emitted from _connectRingAPI() in Api.js
@@ -174,21 +213,22 @@ class App extends Homey.App {
         return this._api.grabVideo(data,offerSdp);
     }
 
-    getRingDevices(callback) {
-        this._api.getDevices(callback);
+    async getRingDevices() {
+        return await this._api.getDevices();
     }
 
-    getRingAlarmDevices(callback) {
-        this._api.getAlarmDevices(callback);
+    async getRingAlarmDevices() {
+        return await this._api.getAlarmDevices();
     }
 
-    enableMotion(data, callback) {
-        this._api.enableMotion(data, callback);
+    async enableMotion(data) {
+        return this._api.enableMotion(data);
     }
 
-    disableMotion(data, callback) {
-        this._api.disableMotion(data, callback);
+    async disableMotion(data) {
+        return this._api.disableMotion(data);
     }
+
 
     logRealtime(event, details) {
         this.homey.api.realtime(event, details)
@@ -204,90 +244,79 @@ class App extends Homey.App {
     registerLocationModeChanged() {
         this._triggerLocationModeChangedTo
             .registerRunListener((args, state) => {
-                return Promise.resolve( args.location.name === state.location.name );
+                return args.location.name === state.location.name;
             })
             .getArgument('location')
-            .registerAutocompleteListener((query, args) => {
-                return new Promise(async (resolve) => {
-                    const locations = await this._api.userLocations();
-                    //this.log('I found these locations',locations);
-                    resolve(locations);
-                });
+            .registerAutocompleteListener(async () => {
+                const locations = await this._api.userLocations();
+                // this.log('I found these locations', locations);
+                return locations;
             });
+    }
+
+    registerAppError() {
+        this._triggerAppError.registerRunListener();
+    }
+
+    triggerAppError(tokens) {
+        this._triggerAppError.trigger(tokens);
     }
 
     // flow condition
     conditionLocationMode() {
         this._conditionLocationMode
-            .registerRunListener((args, state) => {
-                return new Promise((resolve, reject) => {
-                    var matchedLocationMode = this.lastLocationModes.find(lastLocationMode =>{
-                        return lastLocationMode.id==args.location.id;
-                    });
-                    if(matchedLocationMode!=undefined) {
-                        //this.log ('stored location mode found for location ' + matchedLocationMode.name);
-                        resolve(matchedLocationMode.mode === args.mode);
-                    } else {
-                        //this.log ('stored location mode not found for location ' + args.location.id)
-                        reject('unknown location');
-                    }
-                });
+            .registerRunListener(async (args) => {
+                const matchedLocationMode = this.lastLocationModes.find(
+                    (lastLocationMode) => lastLocationMode.id === args.location.id
+                );
+                if (matchedLocationMode) {
+                    // this.log('stored location mode found for location ' + matchedLocationMode.name);
+                    return matchedLocationMode.mode === args.mode; // resolves true/false
+                } else {
+                    // this.log('stored location mode not found for location ' + args.location.id);
+                    throw new Error('unknown location');
+                }
             })
             .getArgument('location')
-            .registerAutocompleteListener((query, args) => {
-                return new Promise(async (resolve) => {
+            .registerAutocompleteListener(async () => {
                 const locations = await this._api.userLocations();
-                //this.log ('I found these locations',locations);
-                resolve(locations);
-                });
+                // this.log('I found these locations', locations);
+                return locations;
             });
     }
 
     // flow action
     setLocationMode() {
         this._setLocationMode
-            .registerRunListener(async (args, state) => {
-                //this.log ('attempt to switch location ('+args.location.name+') to new state: '+args.mode);
-                return new Promise((resolve, reject) => {
-                    this._api.setLocationMode(args.location.id,args.mode)
-                        .then(() => {
-                            resolve(true);
-                        })
-                        .catch((error) => {
-                            reject(error);
-                        })
-                });
+            .registerRunListener(async (args) => {
+                // this.log('attempt to switch location (' + args.location.name + ') to new state: ' + args.mode);
+                await this._api.setLocationMode(args.location.id, args.mode);
+                return true;
             })
             .getArgument('location')
-            .registerAutocompleteListener((query, args) => {
-                return new Promise(async (resolve) => {
+            .registerAutocompleteListener(async (query, args) => {
                 const locations = await this._api.userLocations();
-                //this.log ('I found these locations',locations);
-                resolve(locations);
-                });
+                // this.log('I found these locations', locations);
+                return locations; 
             });
     }
 
-    // Called from settingspages through api.js
+    // Called from settings pages through api.js
     async getDevicesInfo() {
-        //this.log('getDevicesInfo is called through api.js')
-        return new Promise((resolve, reject) => {
-
-            this.homey.app.getRingDevices((error, result) => {
-                if (error) {
-                return reject(error);
-                }
-
-                resolve(result);
-            });
-
-        });
+        try {
+            return await this.homey.app.getRingDevices();
+        } catch (error) {
+            this.error(error);
+            throw error;
+        }
     }
 
     // Write information to the Ring log and cleanup 20% when history above 2000 lines
     // - Called from multiple functions
     async writeLog(logLine) {
-        let savedHistory = this.homey.settings.get('myLog');
+        if (!this.isDebugEnabled) return;
+
+        let savedHistory = this.homey.settings.get('debugLog');
         if ( savedHistory != undefined ) {
             // cleanup history
             let lineCount = savedHistory.split(/\r\n|\r|\n/).length;
@@ -302,7 +331,7 @@ class App extends Homey.App {
         } else {
             this.log("writeLog: savedHistory is undefined!")
         }
-        this.homey.settings.set('myLog', logLine );
+        this.homey.settings.set('debugLog', logLine );
 
         logLine = "";
     }

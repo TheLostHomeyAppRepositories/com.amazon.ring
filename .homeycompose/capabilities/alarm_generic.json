@@ -1,0 +1,59 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Doorbell",
+    "nl": "Deurbel",
+    "de": "Türklingel",
+    "fr": "Sonnette",
+    "it": "Campanello",
+    "ko": "초인종",
+    "sv": "Dörrklocka",
+    "no": "Dørklokke",
+    "es": "Timbre",
+    "da": "Dørklokke",
+    "pl": "Dzwonek do drzwi"
+  },
+  "desc": {
+    "en": "Doorbell",
+    "da": "Dørklokke",
+    "de": "Türklingel",
+    "es": "Portero",
+    "fr": "Sonnette",
+    "it": "Campanello",
+    "ko": "초인종",
+    "nl": "Deurbel",
+    "no": "Dørklokke",
+    "pl": "Domofon",
+    "sv": "Dörrklocka"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Doorbell turned on",
+    "nl": "Deurbel aangezet",
+    "de": "Türklingel eingeschaltet",
+    "fr": "Sonnette activée",
+    "it": "Campanello acceso",
+    "ko": "초인종이 울리기 시작했습니다",
+    "sv": "Dörrklocka aktiverad",
+    "no": "Dørklokke slått på",
+    "es": "Timbre encendido",
+    "da": "Dørklokke tændt",
+    "pl": "Dzwonek do drzwi włączony"
+  },
+  "insightsTitleFalse": {
+    "en": "Doorbell turned off",
+    "nl": "Deurbel uitgezet",
+    "de": "Türklingel ausgeschaltet",
+    "fr": "Sonnette désactivée",
+    "it": "Campanello spento",
+    "ko": "초인종이 꺼졌습니다",
+    "sv": "Dörrklocka avstängd",
+    "no": "Dørklokke slått av",
+    "es": "Timbre apagado",
+    "da": "Dørklokke slukket",
+    "pl": "Dzwonek do drzwi wyłączony"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

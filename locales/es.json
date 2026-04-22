@@ -29,7 +29,9 @@
             "error": "Error:",
             "action": "Necesitas (re)autenticar esta aplicación desde la función de mantenimiento del dispositivo o el asistente para agregar dispositivos",
             "revoke": "Revocar Autenticación"
-        }
+        },
+        "enabledebug": "Activar el registro de depuración",
+        "debuginfo": "Abre la consola del navegador para ver el registro de depuración"
     },
     "devices": {
         "unauthenticated": {

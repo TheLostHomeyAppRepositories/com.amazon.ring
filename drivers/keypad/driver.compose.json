@@ -1,0 +1,52 @@
+{
+  "name": {
+    "en": "Keypad",
+    "nl": "Bedieningspaneel",
+    "ko": "키패드"
+  },
+  "class": "homealarm",
+  "capabilities": [
+    "alarm_tamper",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "images": {
+    "large": "./drivers/keypad/assets/images/large.jpg",
+    "small": "./drivers/keypad/assets/images/small.jpg"
+  },
+  "pair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "done",
+      "template": "done"
+    }
+  ]
+}

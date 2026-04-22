@@ -1,0 +1,22 @@
+{
+  "triggers": [
+    {
+      "id": "alarm_motion_true_default",
+      "highlight": true,
+      "title": {
+        "en": "The motion alarm turned on",
+        "nl": "De bewegingsmelder gaat aan",
+        "de": "Der Bewegungs-Alarm ist angegangen",
+        "fr": "L'alarme mouvement s'est activée",
+        "it": "L'allarme di movimento è stato attivato",
+        "sv": "Rörelselarmet aktiverat",
+        "no": "Bevegelsesalarmen aktivert",
+        "es": "La alarma de movimiento se ha activado",
+        "da": "Bevægelsesalarmen blev aktiveret",
+        "pl": "Czujnik ruchu włączony",
+        "ko": "모션 경보가 켜졌습니다"
+      },
+      "args": []
+    }
+  ]
+}

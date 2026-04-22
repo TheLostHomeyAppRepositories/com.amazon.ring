@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Panic Alarm",
+    "da": "Panikalarm",
+    "de": "Panikalarm",
+    "es": "Alarma de pánico",
+    "fr": "Alarme panique",
+    "it": "Allarme antipanico",
+    "ko": "패닉 경보",
+    "nl": "Paniekalarm",
+    "no": "Panikkalarm",
+    "pl": "Alarm paniki",
+    "sv": "Paniklarm"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "sensor",
+  "uiQuickAction": false
+}

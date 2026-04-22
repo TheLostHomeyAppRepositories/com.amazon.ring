@@ -14,8 +14,6 @@ class DeviceChime extends Device {
         const initialStatus = this.homey.app?.isAuthenticated ? 'authenticated' : 'unauthenticated';
         this._setAvailability(initialStatus);
 
-        // this.homey.on('authenticationChanged', this._setAvailability.bind(this));
-
     }
 
     _setAvailability(status) {

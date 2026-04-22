@@ -27,34 +27,28 @@ class DriverMotionDetector extends Driver {
             .catch(this.error);
     }
 
-    onPairListDevices(data, callback) {
-        this.log('onPairListDevicesContactSensor');
+    async onPairListDevices() {
+        this.log('onPairListDevicesMotionSensor');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
+        const foundDevices = [];
+        const result = await this.homey.app.getRingAlarmDevices();
 
-            this.homey.app.getRingAlarmDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
-
-                result.forEach(async (device) => {
-                    if (device.data.deviceType === 'sensor.motion') {
-                        foundDevices.push({
-                            name : device.data.name,
-                            data : {
-                                id: device.data.serialNumber,
-                                catalogId: device.data.catalogId
-                            }
-                        });    
-
-                    }
-                })
-
-                resolve(foundDevices);
-            });
-        });
+        for (const device of result) {
+            if (device.data.deviceType === 'sensor.motion') {
+                foundDevices.push({
+                    name: device.data.name,
+                    data: {
+                        id: device.data.serialNumber,
+                        catalogId: device.data.catalogId,
+                        zid: device.data.zid,
+                    },
+                });
+            }
+        }
+console.log(foundDevices)
+        return foundDevices;
     }
+
 }
 
 module.exports = DriverMotionDetector;

@@ -17,30 +17,20 @@ class DriverChime extends Driver {
 
     }
 
-    onPairListDevices() {
+    async onPairListDevices() {
         this.log('onPairListDevices');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
-        
-            this.homey.app.getRingDevices((error, result) => {
-                if (error) {
-                    return reject(error);
-                }
-
-                result.chimes.forEach((device_data) => {
-                    foundDevices.push({
-                        name: device_data.description,
-                        data: {
-                        id: device_data.id,
-                        info: device_data
-                        }
-                    });
-                });
-
-                resolve(foundDevices);
-            });
-        });
+        try {
+            const result = await this.homey.app.getRingDevices();
+            return result.chimes.map(device => ({
+                name: device.description,
+                data: { id: device.id }
+                // data: { id: device.id, info: device }
+            }));
+        } catch (error) {
+            this.error(error);
+            throw error; // Homey pairing will handle the rejection
+        }
     }
       
 }

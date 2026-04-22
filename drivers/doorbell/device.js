@@ -19,6 +19,12 @@ class DeviceDoorbell extends Device {
             this.motionTimeout = 30;
         }
 
+        try {
+            this.motionAlerts = this.getSetting('motionAlerts');
+        } catch (e) {
+            this.motionAlerts = true
+        }
+
         this.setCapabilityValue('alarm_generic', false)
             .catch(error => {this.error(error)});
 
@@ -39,7 +45,7 @@ class DeviceDoorbell extends Device {
         }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
-        this.homey.on('ringOnData', this._ringOnData.bind(this));
+        //this.homey.on('ringOnData', this._ringOnData.bind(this));
 
     }  
         
@@ -77,7 +83,7 @@ class DeviceDoorbell extends Device {
                 snapshot.push(null);
                 return snapshot.pipe(stream);
             } catch (error) {
-                this.log('device.js grabImage', error.toString());
+                this.log('device.js grabImage', error);
 
                 const { Duplex } = require('stream');
                 const snapshot = new Duplex();
@@ -134,8 +140,8 @@ class DeviceDoorbell extends Device {
 
             if (!this.getCapabilityValue('alarm_generic')) {
                 this.homey.app.logRealtime('doorbell', 'ding');
-                //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported ding event";
-                //this.homey.app.writeLog(logLine);
+                let logLine = "doorbell || _ringOnNotification || " + this.getName() + " reported ding event";
+                this.homey.app.writeLog(logLine);
                 
             }
             
@@ -153,8 +159,8 @@ class DeviceDoorbell extends Device {
         } else if (notification.android_config.category === 'com.ring.pn.live-event.motion') {
             if (!this.getCapabilityValue('alarm_motion')) {
                 this.homey.app.logRealtime('doorbell', 'motion');
-                //let logLine = " doorbell || _ringOnNotification || " + this.getName() + " reported motion event";
-                //this.homey.app.writeLog(logLine);
+                let logLine = "doorbell || _ringOnNotification || " + this.getName() + " reported motion event";
+                this.homey.app.writeLog(logLine);
             }
             
             await this.setCapabilityValue('alarm_motion', true)
@@ -165,7 +171,9 @@ class DeviceDoorbell extends Device {
             const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null;
             //if (!this.motionTypes[type]) { this.log('unknown motionType:', type)}
             const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
-            this.driver.alarmMotionOn(this, tokens);
+            if (this.motionAlerts) {
+                this.driver.alarmMotionOn(this, tokens);
+            }
 
             //this.log('Motion detection Doorbell notification.subtype ==',notification.ding.detection_type);
 
@@ -179,10 +187,7 @@ class DeviceDoorbell extends Device {
         }
     }
 
-    async _ringOnData(data) {
-        if (data.id !== this.getData().id)
-            return;
-
+    async ringOnData(data) {
         //this.log('_ringOnData data',data);
 
         let battery = 100;
@@ -241,44 +246,36 @@ class DeviceDoorbell extends Device {
                 } else {
                     this.disableMotion(this._device)
                 }
+            } else if (changedSetting === 'useMotionAlerts') {
+                this.motionAlerts = settings.newSettings.useMotionAlerts                     
             } else if (changedSetting == 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout * 1000;
             }
         })
     }
 
-    enableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+   async enableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.enableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.enableMotion(device_data);
+        return true;
     }
 
-    disableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+    async disableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
+        const device_data = this.getData();
+        await this.homey.app.disableMotion(device_data);
+        return true;
+    }
 
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.disableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+    async setMotionAlerts(state) {
+        await this.setSettings({useMotionAlerts: state}); 
     }
 }
 

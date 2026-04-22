@@ -8,34 +8,27 @@ class DriverKeypad extends Driver {
 
     }
 
-    onPairListDevices(data, callback) {
+    async onPairListDevices() {
         this.log('onPairListDevicesKeypad');
 
-        return new Promise((resolve, reject) => {
-            let foundDevices = [];
+        const foundDevices = [];
+        const result = await this.homey.app.getRingAlarmDevices();
 
-            this.homey.app.getRingAlarmDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
+        for (const device of result) {
+            if (device.data.deviceType === 'security-keypad') {
+                foundDevices.push({
+                    name: device.data.name,
+                    data: {
+                        id: device.data.serialNumber,
+                        catalogId: device.data.catalogId,
+                    },
+                });
+            }
+        }
 
-                result.forEach(async (device) => {
-                    if (device.data.deviceType === 'security-keypad') {
-                        foundDevices.push({
-                            name : device.data.name,
-                            data : {
-                                id: device.data.serialNumber,
-                                catalogId: device.data.catalogId
-                            }
-                        });    
-
-                    }
-                })
-
-                resolve(foundDevices);
-            });
-        });
+        return foundDevices;
     }
+
 }
 
 module.exports = DriverKeypad;

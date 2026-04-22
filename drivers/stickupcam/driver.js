@@ -44,6 +44,11 @@ class DriverStickUpCam extends Driver {
         this.homey.flow.getActionCard('stickupcam_disable_motion')
             .registerRunListener((args, state) => args.device.disableMotion());
         
+        this.homey.flow.getActionCard('stickupcam_enable_motion_alerts')
+            .registerRunListener((args, state) => args.device.setMotionAlerts(true));
+
+        this.homey.flow.getActionCard('stickupcam_disable_motion_alerts')
+            .registerRunListener((args, state) => args.device.setMotionAlerts(false));
     }
 
     // this function is called from driver.js
@@ -59,30 +64,19 @@ class DriverStickUpCam extends Driver {
             .catch(error => {_this.log('grabImage trigger device:',error)})
     }
 
-    onPairListDevices(data, callback) {
+    async onPairListDevices() {
         this.log('onPairListDevices');
 
-        let foundDevices = [];
-
-        return new Promise((resolve, reject) => {        
-            this.homey.app.getRingDevices((error, result) => {
-                if (error) {
-                    return this.error(error);
-                }
-
-                //result.stickup_cams.forEach((device_data) => {
-                result.stickupCams.forEach((device_data) => {
-                    foundDevices.push({
-                        name : device_data.description,
-                        data : {
-                            id: device_data.id
-                        }
-                    });
-                });
-
-                resolve(foundDevices);
-            });
-        });
+        try {
+            const result = await this.homey.app.getRingDevices();
+            return result.stickupCams.map(device => ({
+                name: device.description,
+                data: { id: device.id }
+            }));
+        } catch (error) {
+            this.error(error);
+            throw error;
+        }
     }
 
 }

@@ -1,0 +1,54 @@
+{
+  "name": {
+    "en": "Contact Sensor",
+    "nl": "Contactsensor",
+    "ko": "접촉 센서"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "alarm_tamper",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2032"
+    ]
+  },
+  "images": {
+    "large": "./drivers/contactsensor/assets/images/large.jpg",
+    "small": "./drivers/contactsensor/assets/images/small.jpg"
+  },
+  "pair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "done",
+      "template": "done"
+    }
+  ]
+}

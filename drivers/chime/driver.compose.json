@@ -1,0 +1,44 @@
+{
+  "name": {
+    "en": "Chime",
+    "nl": "Chime",
+    "ko": "차임"
+  },
+  "images": {
+    "large": "./drivers/chime/assets/images/large.jpg",
+    "small": "./drivers/chime/assets/images/small.jpg"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "pair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "status"
+    },
+    {
+      "id": "done",
+      "template": "done"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+
+
+<div id="login-credentials-logo" class="logo" style='position: relative; width: 66%; height: 100px; margin-left: auto; margin-right: auto; background-position: center center; background-repeat: no-repeat; background-size: contain; background-image: url("../../../assets/images/small.jpg");'>
+</div>
+
+<br />
+<fieldset>
+    <legend data-i18n="pair.auth.state"></legend>
+
+    <div id="settings-auth">
+
+        <div class="field row" id="status-authenticating">
+            <span data-i18n="pair.auth.authenticating">Authenticating...</span>
+        </div>
+
+        <div class="field row" id="status-success" style="display: none;">
+            <span data-i18n="pair.auth.success" style='color: green;'>Your Homey is successfully authenticated at Ring</span>
+        </div>
+
+        <div class="field row" id="status-failed" style="display: none;">
+            <span data-i18n="pair.auth.failed" style='color: red;'>Authentication failed, please check your credentials</span>
+        </div>        
+
+        <br />
+        <button id="settings-auth-continue" class="homey-button-primary-full" data-i18n="pair.auth.continue" style="display: none;">Continue</button>
+        <br />
+        <button id="settings-auth-again" class="homey-button-primary-full" data-i18n="pair.auth.again" style="display: none;">Try again</button>
+        <br />
+        <button id="settings-auth-cancel" class="homey-button-primary-full" data-i18n="pair.auth.cancel" style="display: none;">Cancel</button>
+    </div>
+
+</fieldset>
+
+<script type="text/javascript">
+
+    // Listen to authentication state events
+    Homey.on("authentication", function (message) {
+        if ( message == "Success") {
+            document.getElementById('status-authenticating').style.display = 'none';
+            document.getElementById('settings-auth-again').style.display = 'none';
+            document.getElementById('settings-auth-cancel').style.display = 'none';
+            document.getElementById('status-success').style.display = 'block';
+            document.getElementById('settings-auth-continue').style.display = 'block';
+        } else if ( message == "Failed") {
+            document.getElementById('status-authenticating').style.display = 'none';
+            document.getElementById('status-failed').style.display = 'block';
+            document.getElementById('settings-auth-again').style.display = 'block';
+            document.getElementById('settings-auth-cancel').style.display = 'block';
+        }
+    });
+
+    document.getElementById('settings-auth-continue').addEventListener('click', function(elem) {
+        onContinue(Homey);
+    });
+
+    document.getElementById('settings-auth-again').addEventListener('click', function(elem) {
+        onAgain(Homey);
+    });
+    
+    document.getElementById('settings-auth-cancel').addEventListener('click', function(elem) {
+        onCancel(Homey);
+    });
+
+    function onContinue() {
+        Homey.nextView();
+    }
+
+    function onAgain() {
+        Homey.showView('start');
+    }
+
+    function onCancel() {
+        // How to cancel?
+        Homey.done()
+    }
+
+</script>
+

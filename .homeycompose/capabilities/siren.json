@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Siren",
+    "da": "Sirene",
+    "de": "Sirene",
+    "es": "Sirena",
+    "fr": "Sirène",
+    "it": "Sirena",
+    "ko": "사이렌",
+    "nl": "Sirene",
+    "no": "Sirene",
+    "pl": "Syrena",
+    "sv": "Siren"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "uiQuickAction": false
+}

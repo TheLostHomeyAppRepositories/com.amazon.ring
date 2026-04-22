@@ -1,0 +1,67 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Communication",
+    "da": "Kommunikation",
+    "de": "Kommunikation",
+    "fr": "Communication",
+    "it": "Comunicazione",
+    "ko": "통신 방식",
+    "nl": "Communicatie",
+    "no": "Kommunikasjon",
+    "es": "Comunicación",
+    "sv": "Kommunikation"
+  },
+  "values": [
+    {
+      "id": "eth0",
+      "title": {
+        "en": "Wired",
+        "da": "Kablet",
+        "de": "Kabelgebunden",
+        "fr": "Câblé",
+        "it": "Cablaggio",
+        "ko": "유선 연결",
+        "nl": "Bekabeld",
+        "no": "Kablet",
+        "es": "Con cable",
+        "sv": "Kabelansluten"
+      }
+    },
+    {
+      "id": "ppp0",
+      "title": {
+        "en": "Cellular",
+        "da": "Mobilnetværk",
+        "de": "Mobilfunk",
+        "fr": "Cellulaire",
+        "it": "Cellulare",
+        "ko": "셀룰러",
+        "nl": "Mobiel netwerk",
+        "no": "Mobilnettverk",
+        "es": "Celular",
+        "sv": "Mobilnät"
+      }
+    },
+    {
+      "id": "wlan0",
+      "title": {
+        "en": "Wireless",
+        "da": "Trådløs",
+        "de": "Drahtlos",
+        "fr": "Sans fil",
+        "it": "Wireless",
+        "ko": "무선 연결",
+        "nl": "Draadloos",
+        "no": "Trådløs",
+        "es": "Inalámbrico",
+        "sv": "Trådlös"
+      }
+    }
+  ],
+  "desc": "The Communication type",
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "drivers/basestation/assets/connection_source.svg"
+}

@@ -29,7 +29,9 @@
             "error": "Fehler:",
             "action": "Sie müssen diese App aus der Geräteverwaltungsfunktion oder dem Assistenten zum Hinzufügen von Geräten erneut authentifizieren.",
             "revoke": "Authentifizierung widerrufen"
-        }
+        },
+        "enabledebug": "Debug-Protokollierung aktivieren",
+        "debuginfo": "Öffnen Sie die Browserkonsole, um das Debug-Protokoll anzuzeigen"
     },
     "devices": {
         "unauthenticated": {

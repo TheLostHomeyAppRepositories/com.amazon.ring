@@ -19,6 +19,12 @@ class DeviceStickUpCam extends Device {
             this.motionTimeout = 30;
         }
         
+        try {
+            this.motionAlerts = this.getSetting('motionAlerts');
+        } catch (e) {
+            this.motionAlerts = true
+        }
+
         this.setCapabilityValue('alarm_motion', false)
             .catch(error => {this.error(error)});
          
@@ -36,7 +42,7 @@ class DeviceStickUpCam extends Device {
         }
 
         this.homey.on('ringOnNotification', this._ringOnNotification.bind(this));
-        this.homey.on('ringOnData', this._ringOnData.bind(this));
+        //this.homey.on('ringOnData', this._ringOnData.bind(this));
 
         // Hook up the capabilities that are already known.
         if ( this.hasCapability("flood_light") ) {
@@ -98,16 +104,11 @@ class DeviceStickUpCam extends Device {
                 }
             }
             /*
-            if(!this.hasCapability("alarm_generic"))
-            {
-                //this.log ('_enableSirenCapability, this stickup camera has a siren, so use it to detect a Alarm');
-                this.addCapability("alarm_generic");
-            }
-            */
             if(this.hasCapability("alarm_generic"))
                 {
                     this.removeCapability("alarm_generic");
                 }
+            */
         } else {
             //this.log ('_enableSirenCapability, device has no siren, ignore siren related features');
         }
@@ -127,7 +128,7 @@ class DeviceStickUpCam extends Device {
                 snapshot.push(null);
                 return snapshot.pipe(stream);
             } catch (error) {
-                this.log('device.js grabImage', error.toString());
+                this.log('device.js grabImage', error);
 
                 const { Duplex } = require('stream');
                 const snapshot = new Duplex();
@@ -182,12 +183,16 @@ class DeviceStickUpCam extends Device {
                 .catch(error => {this.error(error)});
 
             this.homey.app.logRealtime('stickupcam', 'motion');
+            let logLine = "stickupcam || _ringOnNotification || " + this.getName() + " reported motion event";
+            this.homey.app.writeLog(logLine);
 
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
-            const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null;
+            const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null; 
             const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
-            this.driver.alarmMotionOn(this, tokens);
+            if (this.motionAlerts) {
+                this.driver.alarmMotionOn(this, tokens);
+            }
 
             clearTimeout(this.device.timer.motion);
 
@@ -196,19 +201,16 @@ class DeviceStickUpCam extends Device {
                     .catch(error => {this.error(error)});
             }, (this.motionTimeout  * 1000));
 
+            if( type === null ) throw error ('New detection type', notification.data.event.ding.detection_type);
         }
     }
 
-    async _ringOnData(data) {
-        if (data.id !== this.getData().id)
-            return;
-
+    async ringOnData(data) {
         //this.log('_ringOnData data',data);
 
         this._enableLightCapability(data);
         this._enableSirenCapability(data);
 
-        // todo: Floodlight code needs testing
         if(this.hasCapability("flood_light"))
         {
             //this.log('_ringOnData, light status:'+data.led_status);
@@ -353,53 +355,47 @@ class DeviceStickUpCam extends Device {
         return this.homey.app.sirenOff(device_data);
     }
 
-    async onSettings( settings ) {
-        settings.changedKeys.forEach((changedSetting) => {
-            if (changedSetting == 'useMotionDetection') {
+    async onSettings(settings) {
+        for (const changedSetting of settings.changedKeys) {
+            if (changedSetting === 'useMotionDetection') {
                 if (settings.newSettings.useMotionDetection) {
-                    this.enableMotion(this._device)
+                    await this.enableMotion();
                 } else {
-                    this.disableMotion(this._device)
+                    await this.disableMotion();
                 }
-            } else if (changedSetting == 'motionTimeout') {
+            } else if (changedSetting === 'useMotionAlerts') {
+                this.motionAlerts = settings.newSettings.useMotionAlerts;
+            } 
+            else if (changedSetting === 'motionTimeout') {
                 this.motionTimeout = settings.newSettings.motionTimeout;
             }
-        })
+        }
     }
 
-    enableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+    async enableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.enableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.enableMotion(device_data);
+        return true;
     }
 
-    disableMotion(args, state) {
-        if (this._device instanceof Error)
-            return Promise.reject(this._device);
+    async disableMotion() {
+        if (this._device instanceof Error) {
+            throw this._device;
+        }
 
-        let _this = this;
-        let device_data = this.getData();
-
-        return new Promise(function(resolve, reject) {
-            _this.homey.app.disableMotion(device_data, (error, result) => {
-                if (error)
-                    return reject(error);
-
-                return resolve(true);
-            });
-        });
+        const device_data = this.getData();
+        await this.homey.app.disableMotion(device_data);
+        return true;
     }
+
+    async setMotionAlerts(state) {
+        await this.setSettings({useMotionAlerts: state}); 
+    }
+
 }
 
 module.exports = DeviceStickUpCam;
