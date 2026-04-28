@@ -83,6 +83,11 @@ class App extends Homey.App {
         logLine = "app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
       
+        await this.homey.ready();
+    }
+
+    async onUninit() {
+        this._api._disconnectRingAPI();
     }
 
     // make the authentication status available to devices by retrieving this.homey.app.isAuthenticated()

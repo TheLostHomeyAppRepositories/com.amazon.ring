@@ -201,7 +201,7 @@ class DeviceStickUpCam extends Device {
                     .catch(error => {this.error(error)});
             }, (this.motionTimeout  * 1000));
 
-            if( type === null ) throw error ('New detection type', notification.data.event.ding.detection_type);
+            if( type === null ) throw new Error ('New detection type', notification.data.event.ding.detection_type);
         }
     }
 

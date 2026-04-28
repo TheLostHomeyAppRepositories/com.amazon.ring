@@ -23,8 +23,8 @@ class DriverMotionDetector extends Driver {
     // this function is called from device.js
     alarmMotionOn(device) {
         this._triggerAlarmMotionOn.trigger(device)
-            .then()
-            .catch(this.error);
+            .then(() => this.log('alarmMotionOn triggered'))
+            .catch(error => { this.log('alarmMotionOn error:', error) })
     }
 
     async onPairListDevices() {
@@ -45,7 +45,7 @@ class DriverMotionDetector extends Driver {
                 });
             }
         }
-console.log(foundDevices)
+
         return foundDevices;
     }
 

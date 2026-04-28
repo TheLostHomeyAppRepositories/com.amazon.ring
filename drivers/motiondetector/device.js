@@ -57,14 +57,14 @@ class DeviceMotionDetector extends Device {
 
         // Set Alarm Contact capability
         try {
-            this.setCapabilityValue('alarm_motion', data.faulted);
+            this.setCapabilityValue('alarm_motion', !!data.faulted);
             if ( data.faulted ) {
                 this.driver.alarmMotionOn(this);
             } else {
 
             }
         }
-        catch(e) {
+        catch(error) {
             this.error(error)
         }
 
@@ -72,7 +72,7 @@ class DeviceMotionDetector extends Device {
         try {
             this.setCapabilityValue('alarm_tamper', statusMapping(data.tamperStatus));
         }
-        catch(e) {
+        catch(error) {
             this.error(error)
         }
 

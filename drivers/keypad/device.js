@@ -55,7 +55,7 @@ class DeviceKeypad extends Device {
         try {
             this.setCapabilityValue('alarm_tamper', statusMapping(data.tamperStatus));
         }
-        catch(e) {
+        catch(error) {
             this.error(error)
         }
 

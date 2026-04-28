@@ -8,11 +8,13 @@ class DriverIntercom extends Driver {
     }
 
     // this function is called from driver.js
+    /*
     alarmMotionOn(device, tokens) {
         this._triggerAlarmMotionOn.trigger(device, tokens)
             .then()
             .catch(this.error);
     }
+    */
 
     async onPairListDevices() {
         this.log('onPairListDevices');

@@ -38,14 +38,14 @@ class DriverDoorbell extends Driver {
     // this function is called from device.js
     alarmMotionOn(device, tokens) {
         this._triggerAlarmMotionOn.trigger(device, tokens)
-            .then()
-            .catch(this.error);
+            .then(() => this.log('alarmMotionOn triggered'))
+            .catch(error => { this.log('alarmMotionOn error:', error) })
     }
 
     sendSnapshot(device, tokens) {
         this._triggerSendSnapshot.trigger(device, tokens)
-            .then(this.log('sendSnapshot triggered'))
-            .catch(error => {_this.log('grabImage trigger device:',error)})
+            .then(() => this.log('sendSnapshot triggered'))
+            .catch(error => {this.log('grabImage trigger device:',error)})
     }
 
     async onPairListDevices() {

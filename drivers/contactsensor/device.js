@@ -56,9 +56,9 @@ class DeviceContactSensor extends Device {
 
         // Set Alarm Contact capability
         try {
-            this.setCapabilityValue('alarm_contact', data.faulted);
+            this.setCapabilityValue('alarm_contact', !!data.faulted);
         }
-        catch(e) {
+        catch(error) {
             this.error(error)
         }
 
@@ -66,7 +66,7 @@ class DeviceContactSensor extends Device {
         try {
             this.setCapabilityValue('alarm_tamper', statusMapping(data.tamperStatus));
         }
-        catch(e) {
+        catch(error) {
             this.error(error)
         }
 
