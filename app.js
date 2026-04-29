@@ -83,7 +83,6 @@ class App extends Homey.App {
         logLine = "app.js || onInit || --------- " + `${Homey.manifest.id} ${Homey.manifest.version} started ---------`;
         this.homey.app.writeLog(logLine);
       
-        await this.homey.ready();
     }
 
     async onUninit() {
