@@ -14,13 +14,13 @@ class DeviceDoorbell extends Device {
         this.device.timer = {};
         
         try {
-            this.motionTimeout = this.getSetting('motionTimeout');
+            this.motionTimeout = this.getSetting('motionTimeout') ?? 30;
         } catch (e) {
             this.motionTimeout = 30;
         }
 
         try {
-            this.motionAlerts = this.getSetting('motionAlerts');
+            this.motionAlerts = this.getSetting('motionAlerts') ?? true;
         } catch (e) {
             this.motionAlerts = true
         }

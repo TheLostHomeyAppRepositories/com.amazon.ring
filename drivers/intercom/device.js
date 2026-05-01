@@ -14,7 +14,7 @@ class DeviceIntercom extends Device {
         this.device.timer = {};
 
         try {
-            this.unlockTimeout = this.getSetting('unlockTimeout') * 1000;
+            this.unlockTimeout = (this.getSetting('unlockTimeout') ?? 5) * 1000;
         } catch (e) {
             this.unlockTimeout = 5 * 1000;
         }

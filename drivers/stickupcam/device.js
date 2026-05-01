@@ -14,13 +14,13 @@ class DeviceStickUpCam extends Device {
         this.device.timer = {};
         
         try {
-            this.motionTimeout = this.getSetting('motionTimeout');
+            this.motionTimeout = this.getSetting('motionTimeout') ?? 30;
         } catch (e) {
             this.motionTimeout = 30;
         }
         
         try {
-            this.motionAlerts = this.getSetting('motionAlerts');
+            this.motionAlerts = this.getSetting('motionAlerts') ?? true;
         } catch (e) {
             this.motionAlerts = true
         }
@@ -170,7 +170,7 @@ class DeviceStickUpCam extends Device {
         //if (notification.ding.doorbot_id !== this.getData().id)
         if (notification.data.device.id !== this.getData().id)
             return;
-        
+
         /*
         this.log('------------------------------------------------------------------');
         this.log('notification.android_config.category',notification.android_config.category)
@@ -181,7 +181,6 @@ class DeviceStickUpCam extends Device {
         if (notification.android_config.category === 'com.ring.pn.live-event.motion') {
             await this.setCapabilityValue('alarm_motion', true)
                 .catch(error => {this.error(error)});
-
             this.homey.app.logRealtime('stickupcam', 'motion');
             let logLine = "stickupcam || _ringOnNotification || " + this.getName() + " reported motion event";
             this.homey.app.writeLog(logLine);
@@ -189,7 +188,7 @@ class DeviceStickUpCam extends Device {
             //const type = notification.ding.detection_type; // null, human, package_delivery, other_motion
             //const type = notification.ding.detection_type ? notification.ding.detection_type : null;
             const type = notification.data.event.ding.detection_type ? notification.data.event.ding.detection_type : null; 
-            const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }
+            const tokens = { 'motionType' : this.motionTypes[type] || this.motionTypes.unknown }       
             if (this.motionAlerts) {
                 this.driver.alarmMotionOn(this, tokens);
             }

@@ -593,5 +593,18 @@
       "no": "• Forbedret registrering av strømmodus",
       "pl": "• Ulepszone wykrywanie trybu zasilania",
       "sv": "• Förbättrad identifiering av strömläge"
+  },
+  "2.14.18": {
+      "en": "• Fix bug in Motion Alerts",
+      "da": "• Rettelse af fejl i Bevægelsesvarsler",
+      "de": "• Fehlerbehebung in Bewegungswarnungen",
+      "es": "• Corrección de error en Alertas de movimiento",
+      "fr": "• Correction d'un bug dans les Alertes de mouvement",
+      "it": "• Correzione di un bug negli Avvisi di movimento",
+      "ko": "• 모션 알림의 버그 수정",
+      "nl": "• Bugfix in Bewegingsmeldingen",
+      "no": "• Feilretting i Bevegelsesvarslinger",
+      "pl": "• Poprawka błędu w Alertach ruchu",
+      "sv": "• Buggfix i Rörelseaviseringar"
   }
 }
