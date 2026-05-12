@@ -20,7 +20,7 @@ class DeviceDoorbell extends Device {
         }
 
         try {
-            this.motionAlerts = this.getSetting('motionAlerts') ?? true;
+            this.motionAlerts = this.getSetting('useMotionAlerts') ?? true;
         } catch (e) {
             this.motionAlerts = true
         }
@@ -249,7 +249,7 @@ class DeviceDoorbell extends Device {
             } else if (changedSetting === 'useMotionAlerts') {
                 this.motionAlerts = settings.newSettings.useMotionAlerts                     
             } else if (changedSetting == 'motionTimeout') {
-                this.motionTimeout = settings.newSettings.motionTimeout * 1000;
+                this.motionTimeout = settings.newSettings.motionTimeout;
             }
         })
     }

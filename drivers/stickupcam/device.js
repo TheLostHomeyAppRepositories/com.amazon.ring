@@ -20,7 +20,7 @@ class DeviceStickUpCam extends Device {
         }
         
         try {
-            this.motionAlerts = this.getSetting('motionAlerts') ?? true;
+            this.motionAlerts = this.getSetting('useMotionAlerts') ?? true;
         } catch (e) {
             this.motionAlerts = true
         }
